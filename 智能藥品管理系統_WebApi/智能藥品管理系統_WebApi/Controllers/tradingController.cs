@@ -95,6 +95,7 @@ namespace 智能藥品管理系統_WebApi.Controllers
             效期庫存異動,
             入庫,
             實瓶繳回,
+            空瓶繳回,
             None,
         }
 
