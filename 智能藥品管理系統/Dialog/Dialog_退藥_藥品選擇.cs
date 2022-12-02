@@ -27,6 +27,25 @@ namespace 智能藥品管理系統
         MySerialPort mySerialPort;
         private List<object[]> list_儲位資料 = new List<object[]>();
         private SQL_DataGridView sqL_DataGridView_入庫作業_藥品資料;
+
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
+
+            return this.DialogResult;
+        }
+
         public Dialog_退藥_藥品選擇(MySerialPort mySerialPort, List<object[]> list_儲位資料, SQL_DataGridView sqL_DataGridView_入庫作業_藥品資料)
         {
             InitializeComponent();

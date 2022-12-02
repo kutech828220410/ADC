@@ -27,6 +27,25 @@ namespace 智能藥品管理系統
         private MyThread MyThread_porgram;
         private MyTimer MyTimer_SannerTimeOut = new MyTimer();
         private PLC_Device pLC_Device_抽屜感應;
+
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
+
+            return this.DialogResult;
+        }
+
         public Dialog_退藥_掃碼(MySerialPort mySerialPort, object[] 儲位資料 , int 應入數量 , PLC_Device pLC_Device_抽屜感應)
         {
             InitializeComponent();

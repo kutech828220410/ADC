@@ -20,6 +20,23 @@ namespace 智能藥品管理系統
     public partial class Dialog_功能選擇 : Form
     {
         public enum_功能選擇 Value = enum_功能選擇.None;
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
+
+            return this.DialogResult;
+        }
         public Dialog_功能選擇()
         {
             InitializeComponent();

@@ -202,6 +202,14 @@ namespace 智能藥品管理系統
 
 
             Dialog_NumPannel.form = this.FindForm();
+            Dialog_手術房選擇.form = this.FindForm();
+            Dialog_功能選擇.form = this.FindForm();
+            Dialog_空瓶實瓶選擇.form = this.FindForm();
+            Dialog_套餐選擇.form = this.FindForm();
+            Dialog_病歷號及病人姓名輸入.form = this.FindForm();
+            Dialog_退藥_掃碼.form = this.FindForm();
+            Dialog_領藥_藥品選擇.form = this.FindForm();
+            Dialog_退藥_藥品選擇.form = this.FindForm();
             MyMessageBox.form = this.FindForm();
             MyMessageBox.音效 = false;
             this.plC_UI_Init1.Run(this.FindForm(), this.lowerMachine_Panel1);

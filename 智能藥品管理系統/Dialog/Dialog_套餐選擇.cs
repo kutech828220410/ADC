@@ -25,7 +25,23 @@ namespace 智能藥品管理系統
             this.sQL_DataGridView_套餐列表 = sQL_DataGridView_套餐列表;
             this.sQL_DataGridView_套餐內容 = sQL_DataGridView_套餐內容;
         }
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
 
+            return this.DialogResult;
+        }
         private void Dialog_套餐選擇_Load(object sender, EventArgs e)
         {
             this.plC_RJ_Button_取消.MouseDownEvent += PlC_RJ_Button_取消_MouseDownEvent;

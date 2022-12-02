@@ -33,6 +33,24 @@ namespace 智能藥品管理系統
                 return this.sqL_DataGridView_選擇藥品.GetAllRows();
             }
         }
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
+
+            return this.DialogResult;
+        }
+
         public Dialog_領藥_藥品選擇(List<object[]> list_儲位資料, SQL_DataGridView  sqL_DataGridView_入庫作業_藥品資料)
         {
             InitializeComponent();

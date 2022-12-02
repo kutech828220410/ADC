@@ -117,6 +117,7 @@ namespace 智能藥品管理系統
         private string 主畫面_領退藥_病人姓名 = "";
         private List<object[]> 主畫面_領退藥_藥品選擇 = new List<object[]>();
         private enum_功能選擇 主畫面_領退藥_功能選擇 = enum_功能選擇.None;
+        private enum_空瓶實瓶選擇 enum_空瓶實瓶選擇 = new enum_空瓶實瓶選擇();
         private MyUI.MyTimer MyTimer_主畫面_領退藥_退藥鎖逾時 = new MyUI.MyTimer();
         private MyUI.MyTimer MyTimer_主畫面_領退藥_馬達出料延遲 = new MyUI.MyTimer();
         MyUI.MyTimer MyTimer_主畫面_領退藥_重複登入延遲 = new MyUI.MyTimer();
@@ -242,11 +243,12 @@ namespace 智能藥品管理系統
             }
 
             if (cnt_Program_主畫面_領退藥 == 3000) cnt_Program_主畫面_領退藥_3000_退藥_藥品選擇(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 3001) cnt_Program_主畫面_領退藥_3000_退藥_等待退藥開鎖打開(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 3002) cnt_Program_主畫面_領退藥_3000_退藥_退藥開鎖打開結束(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 3003) cnt_Program_主畫面_領退藥_3000_退藥_開啟退藥掃碼頁面(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 3004) cnt_Program_主畫面_領退藥_3000_退藥_寫入交易紀錄(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 3005)
+            if (cnt_Program_主畫面_領退藥 == 3001) cnt_Program_主畫面_領退藥_3000_退藥_空瓶實瓶選擇(ref cnt_Program_主畫面_領退藥);            
+            if (cnt_Program_主畫面_領退藥 == 3002) cnt_Program_主畫面_領退藥_3000_退藥_等待退藥開鎖打開(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 3003) cnt_Program_主畫面_領退藥_3000_退藥_退藥開鎖打開結束(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 3004) cnt_Program_主畫面_領退藥_3000_退藥_開啟退藥掃碼頁面(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 3005) cnt_Program_主畫面_領退藥_3000_退藥_寫入交易紀錄(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 3006)
             {
                 cnt_Program_主畫面_領退藥 = 65500;
             }
@@ -1011,6 +1013,29 @@ namespace 智能藥品管理系統
             }
            
         }
+        void cnt_Program_主畫面_領退藥_3000_退藥_空瓶實瓶選擇(ref int cnt)
+        {
+            DialogResult dialogResult = DialogResult.None;
+            Dialog_空瓶實瓶選擇 dialog_空瓶實瓶選擇;
+            this.Invoke(new Action(delegate
+            {
+                dialog_空瓶實瓶選擇 = new Dialog_空瓶實瓶選擇();
+                dialogResult = dialog_空瓶實瓶選擇.ShowDialog();
+                this.enum_空瓶實瓶選擇 = dialog_空瓶實瓶選擇.enum_空瓶實瓶選擇;
+            }));
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                cnt++;
+                return;
+            }
+            else
+            {
+                cnt = 65500;
+                return;
+            }
+
+        }
         void cnt_Program_主畫面_領退藥_3000_退藥_等待退藥開鎖打開(ref int cnt)
         {
             string 狀態顯示 = "";
@@ -1069,7 +1094,8 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_3000_退藥_寫入交易紀錄(ref int cnt)
         {
-            string 動作 = enum_交易記錄查詢動作.實瓶繳回.GetEnumName();
+            string 動作 = enum_空瓶實瓶選擇.GetEnumName();
+
             string 藥品碼 = 主畫面_領退藥_退藥藥品[(int)enum_入庫作業_藥品資料.藥品碼].ObjectToString();
             string 藥品名稱 = 主畫面_領退藥_退藥藥品[(int)enum_入庫作業_藥品資料.藥品名稱].ObjectToString();
             string 藥袋序號 = "";

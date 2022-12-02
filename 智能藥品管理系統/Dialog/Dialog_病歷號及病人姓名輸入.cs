@@ -28,7 +28,23 @@ namespace 智能藥品管理系統
                 return this.rJ_TextBox_病人姓名.Texts;
             }
         }
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
 
+            return this.DialogResult;
+        }
 
         public Dialog_病歷號及病人姓名輸入()
         {

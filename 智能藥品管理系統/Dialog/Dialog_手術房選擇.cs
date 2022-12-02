@@ -14,7 +14,23 @@ namespace 智能藥品管理系統
     public partial class Dialog_手術房選擇 : Form
     {
         public object[] Value;
+        public static Form form;
+        public DialogResult ShowDialog()
+        {
+            if (form == null)
+            {
+                base.ShowDialog();
+            }
+            else
+            {
+                form.Invoke(new Action(delegate
+                {
+                    base.ShowDialog();
+                }));
+            }
 
+            return this.DialogResult;
+        }
         private SQLUI.SQL_DataGridView sQL_DataGridView;
         public Dialog_手術房選擇(SQLUI.SQL_DataGridView sQL_DataGridView)
         {
