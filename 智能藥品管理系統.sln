@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "智能藥品管理系統", "智能藥品管理系統\智能藥品管理系統.csproj", "{0E63AA9E-046A-4BF3-83F4-4363A3AE8AB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E63AA9E-046A-4BF3-83F4-4363A3AE8AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E63AA9E-046A-4BF3-83F4-4363A3AE8AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E63AA9E-046A-4BF3-83F4-4363A3AE8AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E63AA9E-046A-4BF3-83F4-4363A3AE8AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9459CF4-48E1-46D4-8D57-31A0899A69EC}
+	EndGlobalSection
+EndGlobal
