@@ -126,6 +126,7 @@ namespace 智能藥品管理系統
             this.Controls.Add(this.plC_RJ_Button_空瓶);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Dialog_空瓶實瓶選擇";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Dialog_空瓶實瓶選擇_Load);
             this.ResumeLayout(false);
 

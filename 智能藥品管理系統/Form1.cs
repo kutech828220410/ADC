@@ -195,6 +195,7 @@ namespace 智能藥品管理系統
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             this.label_Version.Text = $"Version {ProductVersion}";
             LoadMyConfig();
             LoadDBConfig();
