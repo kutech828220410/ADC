@@ -12,10 +12,10 @@
     <ROW Property="AiSkipExitDlg" Value="1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="鴻森整合機電有限公司"/>
-    <ROW Property="ProductCode" Value="1028:{186C9712-698E-4364-9958-99B5664B7D82} " Type="16"/>
+    <ROW Property="ProductCode" Value="1028:{2EE55604-0275-47F4-9A12-9C0E82DC9AEA} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1028"/>
     <ROW Property="ProductName" Value="智能藥品管理系統"/>
-    <ROW Property="ProductVersion" Value="1.0.2.0" Type="32" TargetFile="exe"/>
+    <ROW Property="ProductVersion" Value="1.0.3.0" Type="32" TargetFile="exe"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{4CA903DB-1A28-4063-9984-77417528B2D8}"/>
@@ -199,7 +199,7 @@
     <ROW File="DMC2C80.dll_1" Component_="DMC2C80.dll_1" FileName="DMC2C80.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC2C80\x86\DMC2C80.dll" SelfReg="false" NextFile="DMC1000B001.pro"/>
     <ROW File="Dmc1000.dll" Component_="Dmc1000.dll" FileName="Dmc1000.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC1000B\x64\Dmc1000.dll" SelfReg="false" NextFile="Dmc1000.dll_1"/>
     <ROW File="Dmc1000.dll_1" Component_="Dmc1000.dll_1" FileName="Dmc1000.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC1000B\x86\Dmc1000.dll" SelfReg="false" NextFile="DMC2410.dll"/>
-    <ROW File="DrawingClass.dll" Component_="DrawingClass.dll" FileName="DRAWIN~1.DLL|DrawingClass.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DrawingClass.dll" SelfReg="false" NextFile="MyFaceID.pdb"/>
+    <ROW File="DrawingClass.dll" Component_="DrawingClass.dll" FileName="DRAWIN~1.DLL|DrawingClass.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DrawingClass.dll" SelfReg="false" NextFile="program.bak.stp"/>
     <ROW File="Emgu.CV.UI.GL.dll" Component_="Emgu.CV.UI.GL.dll" FileName="EMGUCV~3.DLL|Emgu.CV.UI.GL.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.GL.dll" SelfReg="false" NextFile="Emgu.CV.UI.GL.xml"/>
     <ROW File="Emgu.CV.UI.GL.xml" Component_="Emgu.CV.World.xml" FileName="EMGUCV~2.XML|Emgu.CV.UI.GL.xml" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.GL.xml" SelfReg="false" NextFile="Emgu.CV.UI.xml"/>
     <ROW File="Emgu.CV.UI.dll" Component_="Emgu.CV.UI.dll" FileName="EMGUCV~2.DLL|Emgu.CV.UI.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.dll" SelfReg="false" NextFile="Emgu.CV.UI.GL.dll"/>
@@ -228,7 +228,6 @@
     <ROW File="MeasureSystemUI.dll" Component_="MeasureSystemUI.dll" FileName="MEASUR~1.DLL|MeasureSystemUI.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MeasureSystemUI.dll" SelfReg="false" NextFile="PortControlUI.dll"/>
     <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false" NextFile="libarcsoft_face_engine.dll"/>
     <ROW File="MyFaceID.dll" Component_="MyFaceID.dll" FileName="MyFaceID.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MyFaceID.dll" SelfReg="false" NextFile="exe.config"/>
-    <ROW File="MyFaceID.pdb" Component_="MyFaceID.dll" FileName="MyFaceID.pdb" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MyFaceID.pdb" SelfReg="false" NextFile="program.bak.stp"/>
     <ROW File="MyFtpUI.dll" Component_="MyFtpUI.dll" FileName="MyFtpUI.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MyFtpUI.dll" SelfReg="false" NextFile="Basic.dll"/>
     <ROW File="MySQL_Login.dll" Component_="MySQL_Login.dll" FileName="MYSQL_~1.DLL|MySQL_Login.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MySQL_Login.dll" SelfReg="false" NextFile="DrawingClass.dll"/>
     <ROW File="MySql.Data.dll" Component_="MySql.Data.dll" FileName="MYSQLD~1.DLL|MySql.Data.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MySql.Data.dll" SelfReg="false" NextFile="System.Buffers.dll"/>

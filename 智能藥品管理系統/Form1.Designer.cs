@@ -75,6 +75,8 @@
             this.plC_RJ_Button_主畫面_退藥 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_主畫面_領藥 = new MyUI.PLC_RJ_Button();
             this.登入畫面 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Pannel2 = new MyUI.PLC_RJ_Pannel();
+            this.ftp_DounloadUI = new MyFtpUI.Ftp_DounloadUI();
             this.plC_RJ_GroupBox16 = new MyUI.PLC_RJ_GroupBox();
             this.myFaceIDUI_Login = new MyFaceID.MyFaceIDUI();
             this.rJ_GroupBox7 = new MyUI.RJ_GroupBox();
@@ -558,8 +560,6 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
-            this.plC_RJ_Pannel2 = new MyUI.PLC_RJ_Pannel();
-            this.ftp_DounloadUI = new MyFtpUI.Ftp_DounloadUI();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -572,6 +572,7 @@
             this.rJ_GroupBox2.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox2.SuspendLayout();
             this.登入畫面.SuspendLayout();
+            this.plC_RJ_Pannel2.SuspendLayout();
             this.plC_RJ_GroupBox16.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox16.SuspendLayout();
             this.rJ_GroupBox7.ContentsPanel.SuspendLayout();
@@ -673,7 +674,6 @@
             this.plC_RJ_GroupBox17.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox17.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.plC_RJ_Pannel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pannel_Main01
@@ -1252,7 +1252,7 @@
             this.plC_ScreenPage_Main.Location = new System.Drawing.Point(0, 88);
             this.plC_ScreenPage_Main.Name = "plC_ScreenPage_Main";
             this.plC_ScreenPage_Main.SelectedIndex = 0;
-            this.plC_ScreenPage_Main.Size = new System.Drawing.Size(1064, 1772);
+            this.plC_ScreenPage_Main.Size = new System.Drawing.Size(1064, 1752);
             this.plC_ScreenPage_Main.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_Main.TabIndex = 3;
             this.plC_ScreenPage_Main.控制位址 = "D0";
@@ -1268,7 +1268,7 @@
             this.主畫面.Location = new System.Drawing.Point(4, 25);
             this.主畫面.Margin = new System.Windows.Forms.Padding(0);
             this.主畫面.Name = "主畫面";
-            this.主畫面.Size = new System.Drawing.Size(1056, 1743);
+            this.主畫面.Size = new System.Drawing.Size(1056, 1723);
             this.主畫面.TabIndex = 0;
             this.主畫面.Text = "主畫面";
             // 
@@ -1288,7 +1288,7 @@
             this.rJ_GroupBox3.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox3.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox3.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(1056, 946);
+            this.rJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(1056, 926);
             this.rJ_GroupBox3.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox3.Location = new System.Drawing.Point(0, 760);
@@ -1297,7 +1297,7 @@
             this.rJ_GroupBox3.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox3.PannelBorderRadius = 0;
             this.rJ_GroupBox3.PannelBorderSize = 2;
-            this.rJ_GroupBox3.Size = new System.Drawing.Size(1056, 983);
+            this.rJ_GroupBox3.Size = new System.Drawing.Size(1056, 963);
             this.rJ_GroupBox3.TabIndex = 9;
             this.rJ_GroupBox3.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox3.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -1355,7 +1355,7 @@
             this.sqL_DataGridView_主畫面_領退藥作業列表.RowsHeight = 90;
             this.sqL_DataGridView_主畫面_領退藥作業列表.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_主畫面_領退藥作業列表.Server = "127.0.0.0";
-            this.sqL_DataGridView_主畫面_領退藥作業列表.Size = new System.Drawing.Size(1046, 936);
+            this.sqL_DataGridView_主畫面_領退藥作業列表.Size = new System.Drawing.Size(1046, 916);
             this.sqL_DataGridView_主畫面_領退藥作業列表.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_主畫面_領退藥作業列表.TabIndex = 0;
             this.sqL_DataGridView_主畫面_領退藥作業列表.TableName = "take_medicine_page";
@@ -1835,9 +1835,41 @@
             this.登入畫面.Location = new System.Drawing.Point(4, 25);
             this.登入畫面.Margin = new System.Windows.Forms.Padding(0);
             this.登入畫面.Name = "登入畫面";
-            this.登入畫面.Size = new System.Drawing.Size(1056, 1743);
+            this.登入畫面.Size = new System.Drawing.Size(1056, 1723);
             this.登入畫面.TabIndex = 1;
             this.登入畫面.Text = "登入畫面";
+            // 
+            // plC_RJ_Pannel2
+            // 
+            this.plC_RJ_Pannel2.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel2.BorderColor = System.Drawing.Color.SkyBlue;
+            this.plC_RJ_Pannel2.BorderRadius = 10;
+            this.plC_RJ_Pannel2.BorderSize = 2;
+            this.plC_RJ_Pannel2.Controls.Add(this.ftp_DounloadUI);
+            this.plC_RJ_Pannel2.ForeColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel2.Location = new System.Drawing.Point(8, 12);
+            this.plC_RJ_Pannel2.Name = "plC_RJ_Pannel2";
+            this.plC_RJ_Pannel2.Size = new System.Drawing.Size(439, 129);
+            this.plC_RJ_Pannel2.TabIndex = 110;
+            this.plC_RJ_Pannel2.隱藏讀取位置 = "S4077";
+            // 
+            // ftp_DounloadUI
+            // 
+            this.ftp_DounloadUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ftp_DounloadUI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ftp_DounloadUI.FileName = "Setup.msi";
+            this.ftp_DounloadUI.ForeColor = System.Drawing.Color.Black;
+            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
+            this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
+            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
+            this.ftp_DounloadUI.Location = new System.Drawing.Point(0, 0);
+            this.ftp_DounloadUI.Name = "ftp_DounloadUI";
+            this.ftp_DounloadUI.Password = "test";
+            this.ftp_DounloadUI.Password_要顯示 = false;
+            this.ftp_DounloadUI.Size = new System.Drawing.Size(439, 129);
+            this.ftp_DounloadUI.TabIndex = 13;
+            this.ftp_DounloadUI.Username = "test";
+            this.ftp_DounloadUI.Username_要顯示 = false;
             // 
             // plC_RJ_GroupBox16
             // 
@@ -2077,7 +2109,7 @@
             this.入庫作業.Controls.Add(this.panel8);
             this.入庫作業.Location = new System.Drawing.Point(4, 25);
             this.入庫作業.Name = "入庫作業";
-            this.入庫作業.Size = new System.Drawing.Size(1056, 1743);
+            this.入庫作業.Size = new System.Drawing.Size(1056, 1723);
             this.入庫作業.TabIndex = 2;
             this.入庫作業.Text = "入庫作業";
             // 
@@ -3400,7 +3432,7 @@
             this.交易紀錄查詢.Controls.Add(this.sqL_DataGridView_交易記錄查詢);
             this.交易紀錄查詢.Location = new System.Drawing.Point(4, 25);
             this.交易紀錄查詢.Name = "交易紀錄查詢";
-            this.交易紀錄查詢.Size = new System.Drawing.Size(1056, 1743);
+            this.交易紀錄查詢.Size = new System.Drawing.Size(1056, 1723);
             this.交易紀錄查詢.TabIndex = 3;
             this.交易紀錄查詢.Text = "交易紀錄查詢";
             // 
@@ -3927,7 +3959,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_重複領藥
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_重複領藥.Location = new System.Drawing.Point(19, 176);
@@ -4087,7 +4121,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.Location = new System.Drawing.Point(177, 175);
@@ -4119,7 +4155,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_手輸領藥
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_手輸領藥.Location = new System.Drawing.Point(19, 47);
@@ -4183,7 +4221,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_入庫
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_入庫.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_入庫.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_入庫.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_入庫.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_入庫.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_入庫.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_入庫.Location = new System.Drawing.Point(373, 16);
@@ -4215,7 +4255,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_手輸退藥
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.Location = new System.Drawing.Point(19, 143);
@@ -4247,7 +4289,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_掃碼退藥.Location = new System.Drawing.Point(19, 111);
@@ -4279,7 +4323,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_批次領藥
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_批次領藥.Location = new System.Drawing.Point(19, 79);
@@ -4311,7 +4357,9 @@
             // 
             // plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥
             // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.Bool = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.Checked = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.ForeColor = System.Drawing.Color.Black;
             this.plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.Location = new System.Drawing.Point(19, 15);
@@ -4400,7 +4448,7 @@
             this.參數設定.Controls.Add(this.panel_參數設定);
             this.參數設定.Location = new System.Drawing.Point(4, 25);
             this.參數設定.Name = "參數設定";
-            this.參數設定.Size = new System.Drawing.Size(1056, 1743);
+            this.參數設定.Size = new System.Drawing.Size(1056, 1723);
             this.參數設定.TabIndex = 4;
             this.參數設定.Text = "參數設定";
             // 
@@ -4417,7 +4465,7 @@
             this.plC_ScreenPage_參數設定.Location = new System.Drawing.Point(0, 49);
             this.plC_ScreenPage_參數設定.Name = "plC_ScreenPage_參數設定";
             this.plC_ScreenPage_參數設定.SelectedIndex = 0;
-            this.plC_ScreenPage_參數設定.Size = new System.Drawing.Size(1056, 1694);
+            this.plC_ScreenPage_參數設定.Size = new System.Drawing.Size(1056, 1674);
             this.plC_ScreenPage_參數設定.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_參數設定.TabIndex = 5;
             this.plC_ScreenPage_參數設定.控制位址 = "D2";
@@ -4433,7 +4481,7 @@
             this.tabPage3.Controls.Add(this.sqL_DataGridView_參數設定_藥檔資料);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1048, 1665);
+            this.tabPage3.Size = new System.Drawing.Size(1048, 1645);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "藥檔資料";
             // 
@@ -5469,7 +5517,7 @@
             this.tabPage4.Controls.Add(this.rJ_GroupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1048, 1665);
+            this.tabPage4.Size = new System.Drawing.Size(1048, 1645);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "套餐設定";
             // 
@@ -5490,7 +5538,7 @@
             this.rJ_GroupBox8.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox8.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox8.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(656, 844);
+            this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(656, 824);
             this.rJ_GroupBox8.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox8.Location = new System.Drawing.Point(392, 784);
@@ -5499,7 +5547,7 @@
             this.rJ_GroupBox8.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox8.PannelBorderRadius = -37;
             this.rJ_GroupBox8.PannelBorderSize = 2;
-            this.rJ_GroupBox8.Size = new System.Drawing.Size(656, 881);
+            this.rJ_GroupBox8.Size = new System.Drawing.Size(656, 861);
             this.rJ_GroupBox8.TabIndex = 2;
             this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox8.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -5668,7 +5716,7 @@
             this.rJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(392, 844);
+            this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(392, 824);
             this.rJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox5.Location = new System.Drawing.Point(0, 784);
@@ -5677,7 +5725,7 @@
             this.rJ_GroupBox5.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox5.PannelBorderRadius = -37;
             this.rJ_GroupBox5.PannelBorderSize = 2;
-            this.rJ_GroupBox5.Size = new System.Drawing.Size(392, 881);
+            this.rJ_GroupBox5.Size = new System.Drawing.Size(392, 861);
             this.rJ_GroupBox5.TabIndex = 1;
             this.rJ_GroupBox5.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox5.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -6288,7 +6336,7 @@
             this.tabPage5.Controls.Add(this.rJ_GroupBox11);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1048, 1665);
+            this.tabPage5.Size = new System.Drawing.Size(1048, 1645);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "手術房設定";
             // 
@@ -6684,7 +6732,7 @@
             this.人員資料.Controls.Add(this.sqL_DataGridView_人員資料);
             this.人員資料.Location = new System.Drawing.Point(4, 25);
             this.人員資料.Name = "人員資料";
-            this.人員資料.Size = new System.Drawing.Size(1056, 1743);
+            this.人員資料.Size = new System.Drawing.Size(1056, 1723);
             this.人員資料.TabIndex = 5;
             this.人員資料.Text = "人員資料";
             // 
@@ -6704,7 +6752,7 @@
             this.plC_RJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(3, 40);
             this.plC_RJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox13.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1050, 577);
+            this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1050, 557);
             this.plC_RJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_GroupBox13.Location = new System.Drawing.Point(0, 1123);
@@ -6714,7 +6762,7 @@
             this.plC_RJ_GroupBox13.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox13.PannelBorderRadius = -43;
             this.plC_RJ_GroupBox13.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(1056, 620);
+            this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(1056, 600);
             this.plC_RJ_GroupBox13.TabIndex = 5;
             this.plC_RJ_GroupBox13.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.plC_RJ_GroupBox13.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -6745,7 +6793,7 @@
             this.loginIndex_Pannel.PanelHeight = 30;
             this.loginIndex_Pannel.PanelWidth = 220;
             this.loginIndex_Pannel.Show_Index = true;
-            this.loginIndex_Pannel.Size = new System.Drawing.Size(1044, 504);
+            this.loginIndex_Pannel.Size = new System.Drawing.Size(1044, 484);
             this.loginIndex_Pannel.SpaceWidth = 10;
             this.loginIndex_Pannel.TabIndex = 12;
             this.loginIndex_Pannel.Title_BackgroundColor = System.Drawing.Color.PaleTurquoise;
@@ -7656,7 +7704,7 @@
             this.儲位管理.Controls.Add(this.wT32_GPADC);
             this.儲位管理.Location = new System.Drawing.Point(4, 25);
             this.儲位管理.Name = "儲位管理";
-            this.儲位管理.Size = new System.Drawing.Size(1056, 1743);
+            this.儲位管理.Size = new System.Drawing.Size(1056, 1723);
             this.儲位管理.TabIndex = 7;
             this.儲位管理.Text = "儲位管理";
             // 
@@ -7667,7 +7715,7 @@
             // 
             this.plC_RJ_GroupBox5.ContentsPanel.BackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_GroupBox5.ContentsPanel.BorderRadius = 0;
+            this.plC_RJ_GroupBox5.ContentsPanel.BorderRadius = -37;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderSize = 2;
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_寫入);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_清除儲位);
@@ -7684,16 +7732,16 @@
             this.plC_RJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.plC_RJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(1056, 325);
+            this.plC_RJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(1056, 305);
             this.plC_RJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_GroupBox5.Location = new System.Drawing.Point(0, 1381);
             this.plC_RJ_GroupBox5.Name = "plC_RJ_GroupBox5";
             this.plC_RJ_GroupBox5.PannelBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox5.PannelBorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_GroupBox5.PannelBorderRadius = 0;
+            this.plC_RJ_GroupBox5.PannelBorderRadius = -37;
             this.plC_RJ_GroupBox5.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox5.Size = new System.Drawing.Size(1056, 362);
+            this.plC_RJ_GroupBox5.Size = new System.Drawing.Size(1056, 342);
             this.plC_RJ_GroupBox5.TabIndex = 2;
             this.plC_RJ_GroupBox5.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.plC_RJ_GroupBox5.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -8513,7 +8561,7 @@
             this.工程模式.Controls.Add(this.plC_RJ_GroupBox7);
             this.工程模式.Location = new System.Drawing.Point(4, 25);
             this.工程模式.Name = "工程模式";
-            this.工程模式.Size = new System.Drawing.Size(1056, 1743);
+            this.工程模式.Size = new System.Drawing.Size(1056, 1723);
             this.工程模式.TabIndex = 8;
             this.工程模式.Text = "工程模式";
             // 
@@ -8546,6 +8594,7 @@
             this.plC_Button_重複領藥不檢查.讀取位元反向 = false;
             this.plC_Button_重複領藥不檢查.讀取元件位置 = "S4041";
             this.plC_Button_重複領藥不檢查.讀寫鎖住 = false;
+            this.plC_Button_重複領藥不檢查.起始狀態 = false;
             this.plC_Button_重複領藥不檢查.音效 = true;
             this.plC_Button_重複領藥不檢查.顯示 = false;
             this.plC_Button_重複領藥不檢查.顯示狀態 = false;
@@ -8579,6 +8628,7 @@
             this.plC_Button66.讀取位元反向 = false;
             this.plC_Button66.讀取元件位置 = "S4040";
             this.plC_Button66.讀寫鎖住 = false;
+            this.plC_Button66.起始狀態 = false;
             this.plC_Button66.音效 = true;
             this.plC_Button66.顯示 = false;
             this.plC_Button66.顯示狀態 = false;
@@ -8667,6 +8717,7 @@
             this.plC_Button43.讀取位元反向 = false;
             this.plC_Button43.讀取元件位置 = "Y55";
             this.plC_Button43.讀寫鎖住 = false;
+            this.plC_Button43.起始狀態 = false;
             this.plC_Button43.音效 = true;
             this.plC_Button43.顯示 = false;
             this.plC_Button43.顯示狀態 = false;
@@ -8700,6 +8751,7 @@
             this.plC_Button44.讀取位元反向 = false;
             this.plC_Button44.讀取元件位置 = "Y54";
             this.plC_Button44.讀寫鎖住 = false;
+            this.plC_Button44.起始狀態 = false;
             this.plC_Button44.音效 = true;
             this.plC_Button44.顯示 = false;
             this.plC_Button44.顯示狀態 = false;
@@ -8733,6 +8785,7 @@
             this.plC_Button45.讀取位元反向 = false;
             this.plC_Button45.讀取元件位置 = "Y53";
             this.plC_Button45.讀寫鎖住 = false;
+            this.plC_Button45.起始狀態 = false;
             this.plC_Button45.音效 = true;
             this.plC_Button45.顯示 = false;
             this.plC_Button45.顯示狀態 = false;
@@ -8766,6 +8819,7 @@
             this.plC_Button46.讀取位元反向 = false;
             this.plC_Button46.讀取元件位置 = "Y52";
             this.plC_Button46.讀寫鎖住 = false;
+            this.plC_Button46.起始狀態 = false;
             this.plC_Button46.音效 = true;
             this.plC_Button46.顯示 = false;
             this.plC_Button46.顯示狀態 = false;
@@ -8799,6 +8853,7 @@
             this.plC_Button47.讀取位元反向 = false;
             this.plC_Button47.讀取元件位置 = "Y51";
             this.plC_Button47.讀寫鎖住 = false;
+            this.plC_Button47.起始狀態 = false;
             this.plC_Button47.音效 = true;
             this.plC_Button47.顯示 = false;
             this.plC_Button47.顯示狀態 = false;
@@ -8832,6 +8887,7 @@
             this.plC_Button48.讀取位元反向 = false;
             this.plC_Button48.讀取元件位置 = "Y50";
             this.plC_Button48.讀寫鎖住 = false;
+            this.plC_Button48.起始狀態 = false;
             this.plC_Button48.音效 = true;
             this.plC_Button48.顯示 = false;
             this.plC_Button48.顯示狀態 = false;
@@ -8908,6 +8964,7 @@
             this.plC_Button55.讀取位元反向 = false;
             this.plC_Button55.讀取元件位置 = "X45";
             this.plC_Button55.讀寫鎖住 = false;
+            this.plC_Button55.起始狀態 = false;
             this.plC_Button55.音效 = true;
             this.plC_Button55.顯示 = false;
             this.plC_Button55.顯示狀態 = false;
@@ -8939,6 +8996,7 @@
             this.plC_Button54.讀取位元反向 = false;
             this.plC_Button54.讀取元件位置 = "X44";
             this.plC_Button54.讀寫鎖住 = false;
+            this.plC_Button54.起始狀態 = false;
             this.plC_Button54.音效 = true;
             this.plC_Button54.顯示 = false;
             this.plC_Button54.顯示狀態 = false;
@@ -8970,6 +9028,7 @@
             this.plC_Button53.讀取位元反向 = false;
             this.plC_Button53.讀取元件位置 = "X43";
             this.plC_Button53.讀寫鎖住 = false;
+            this.plC_Button53.起始狀態 = false;
             this.plC_Button53.音效 = true;
             this.plC_Button53.顯示 = false;
             this.plC_Button53.顯示狀態 = false;
@@ -9001,6 +9060,7 @@
             this.plC_Button52.讀取位元反向 = false;
             this.plC_Button52.讀取元件位置 = "X42";
             this.plC_Button52.讀寫鎖住 = false;
+            this.plC_Button52.起始狀態 = false;
             this.plC_Button52.音效 = true;
             this.plC_Button52.顯示 = false;
             this.plC_Button52.顯示狀態 = false;
@@ -9032,6 +9092,7 @@
             this.plC_Button51.讀取位元反向 = false;
             this.plC_Button51.讀取元件位置 = "X41";
             this.plC_Button51.讀寫鎖住 = false;
+            this.plC_Button51.起始狀態 = false;
             this.plC_Button51.音效 = true;
             this.plC_Button51.顯示 = false;
             this.plC_Button51.顯示狀態 = false;
@@ -9063,6 +9124,7 @@
             this.plC_Button50.讀取位元反向 = false;
             this.plC_Button50.讀取元件位置 = "X40";
             this.plC_Button50.讀寫鎖住 = false;
+            this.plC_Button50.起始狀態 = false;
             this.plC_Button50.音效 = true;
             this.plC_Button50.顯示 = false;
             this.plC_Button50.顯示狀態 = false;
@@ -9096,6 +9158,7 @@
             this.plC_Button37.讀取位元反向 = false;
             this.plC_Button37.讀取元件位置 = "Y45";
             this.plC_Button37.讀寫鎖住 = false;
+            this.plC_Button37.起始狀態 = false;
             this.plC_Button37.音效 = true;
             this.plC_Button37.顯示 = false;
             this.plC_Button37.顯示狀態 = false;
@@ -9129,6 +9192,7 @@
             this.plC_Button38.讀取位元反向 = false;
             this.plC_Button38.讀取元件位置 = "Y44";
             this.plC_Button38.讀寫鎖住 = false;
+            this.plC_Button38.起始狀態 = false;
             this.plC_Button38.音效 = true;
             this.plC_Button38.顯示 = false;
             this.plC_Button38.顯示狀態 = false;
@@ -9162,6 +9226,7 @@
             this.plC_Button39.讀取位元反向 = false;
             this.plC_Button39.讀取元件位置 = "Y43";
             this.plC_Button39.讀寫鎖住 = false;
+            this.plC_Button39.起始狀態 = false;
             this.plC_Button39.音效 = true;
             this.plC_Button39.顯示 = false;
             this.plC_Button39.顯示狀態 = false;
@@ -9195,6 +9260,7 @@
             this.plC_Button40.讀取位元反向 = false;
             this.plC_Button40.讀取元件位置 = "Y42";
             this.plC_Button40.讀寫鎖住 = false;
+            this.plC_Button40.起始狀態 = false;
             this.plC_Button40.音效 = true;
             this.plC_Button40.顯示 = false;
             this.plC_Button40.顯示狀態 = false;
@@ -9228,6 +9294,7 @@
             this.plC_Button41.讀取位元反向 = false;
             this.plC_Button41.讀取元件位置 = "Y41";
             this.plC_Button41.讀寫鎖住 = false;
+            this.plC_Button41.起始狀態 = false;
             this.plC_Button41.音效 = true;
             this.plC_Button41.顯示 = false;
             this.plC_Button41.顯示狀態 = false;
@@ -9261,6 +9328,7 @@
             this.plC_Button42.讀取位元反向 = false;
             this.plC_Button42.讀取元件位置 = "Y40";
             this.plC_Button42.讀寫鎖住 = false;
+            this.plC_Button42.起始狀態 = false;
             this.plC_Button42.音效 = true;
             this.plC_Button42.顯示 = false;
             this.plC_Button42.顯示狀態 = false;
@@ -9294,6 +9362,7 @@
             this.plC_Button36.讀取位元反向 = false;
             this.plC_Button36.讀取元件位置 = "S7325";
             this.plC_Button36.讀寫鎖住 = false;
+            this.plC_Button36.起始狀態 = false;
             this.plC_Button36.音效 = true;
             this.plC_Button36.顯示 = false;
             this.plC_Button36.顯示狀態 = false;
@@ -9328,6 +9397,7 @@
             this.plC_Button35.讀取位元反向 = false;
             this.plC_Button35.讀取元件位置 = "S4015";
             this.plC_Button35.讀寫鎖住 = false;
+            this.plC_Button35.起始狀態 = false;
             this.plC_Button35.音效 = true;
             this.plC_Button35.顯示 = false;
             this.plC_Button35.顯示狀態 = false;
@@ -9434,6 +9504,7 @@
             this.plC_Button65.讀取位元反向 = false;
             this.plC_Button65.讀取元件位置 = "X74";
             this.plC_Button65.讀寫鎖住 = false;
+            this.plC_Button65.起始狀態 = false;
             this.plC_Button65.音效 = true;
             this.plC_Button65.顯示 = false;
             this.plC_Button65.顯示狀態 = false;
@@ -9452,6 +9523,8 @@
             // plC_NumBox16
             // 
             this.plC_NumBox16.Location = new System.Drawing.Point(379, 164);
+            this.plC_NumBox16.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox16.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox16.Name = "plC_NumBox16";
             this.plC_NumBox16.ReadOnly = false;
             this.plC_NumBox16.Size = new System.Drawing.Size(65, 22);
@@ -9514,6 +9587,7 @@
             this.plC_Button31.讀取位元反向 = false;
             this.plC_Button31.讀取元件位置 = "S7245";
             this.plC_Button31.讀寫鎖住 = false;
+            this.plC_Button31.起始狀態 = false;
             this.plC_Button31.音效 = true;
             this.plC_Button31.顯示 = false;
             this.plC_Button31.顯示狀態 = false;
@@ -9547,6 +9621,7 @@
             this.plC_Button30.讀取位元反向 = false;
             this.plC_Button30.讀取元件位置 = "S7285";
             this.plC_Button30.讀寫鎖住 = false;
+            this.plC_Button30.起始狀態 = false;
             this.plC_Button30.音效 = true;
             this.plC_Button30.顯示 = false;
             this.plC_Button30.顯示狀態 = false;
@@ -9580,6 +9655,7 @@
             this.plC_Button27.讀取位元反向 = false;
             this.plC_Button27.讀取元件位置 = "S7265";
             this.plC_Button27.讀寫鎖住 = false;
+            this.plC_Button27.起始狀態 = false;
             this.plC_Button27.音效 = true;
             this.plC_Button27.顯示 = false;
             this.plC_Button27.顯示狀態 = false;
@@ -9598,6 +9674,8 @@
             // plC_NumBox12
             // 
             this.plC_NumBox12.Location = new System.Drawing.Point(379, 117);
+            this.plC_NumBox12.mBackColor = System.Drawing.SystemColors.Control;
+            this.plC_NumBox12.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox12.Name = "plC_NumBox12";
             this.plC_NumBox12.ReadOnly = true;
             this.plC_NumBox12.Size = new System.Drawing.Size(65, 22);
@@ -9643,6 +9721,8 @@
             // plC_NumBox13
             // 
             this.plC_NumBox13.Location = new System.Drawing.Point(379, 18);
+            this.plC_NumBox13.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox13.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox13.Name = "plC_NumBox13";
             this.plC_NumBox13.ReadOnly = false;
             this.plC_NumBox13.Size = new System.Drawing.Size(65, 22);
@@ -9690,6 +9770,8 @@
             // plC_NumBox14
             // 
             this.plC_NumBox14.Location = new System.Drawing.Point(379, 51);
+            this.plC_NumBox14.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox14.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox14.Name = "plC_NumBox14";
             this.plC_NumBox14.ReadOnly = false;
             this.plC_NumBox14.Size = new System.Drawing.Size(65, 22);
@@ -9737,6 +9819,8 @@
             // plC_NumBox15
             // 
             this.plC_NumBox15.Location = new System.Drawing.Point(379, 84);
+            this.plC_NumBox15.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox15.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox15.Name = "plC_NumBox15";
             this.plC_NumBox15.ReadOnly = false;
             this.plC_NumBox15.Size = new System.Drawing.Size(65, 22);
@@ -9799,6 +9883,7 @@
             this.plC_Button28.讀取位元反向 = false;
             this.plC_Button28.讀取元件位置 = "S7225";
             this.plC_Button28.讀寫鎖住 = false;
+            this.plC_Button28.起始狀態 = false;
             this.plC_Button28.音效 = true;
             this.plC_Button28.顯示 = false;
             this.plC_Button28.顯示狀態 = false;
@@ -9832,6 +9917,7 @@
             this.plC_Button29.讀取位元反向 = false;
             this.plC_Button29.讀取元件位置 = "S7205";
             this.plC_Button29.讀寫鎖住 = false;
+            this.plC_Button29.起始狀態 = false;
             this.plC_Button29.音效 = true;
             this.plC_Button29.顯示 = false;
             this.plC_Button29.顯示狀態 = false;
@@ -9890,6 +9976,7 @@
             this.plC_Button33.讀取位元反向 = false;
             this.plC_Button33.讀取元件位置 = "X107";
             this.plC_Button33.讀寫鎖住 = false;
+            this.plC_Button33.起始狀態 = false;
             this.plC_Button33.音效 = true;
             this.plC_Button33.顯示 = false;
             this.plC_Button33.顯示狀態 = false;
@@ -9948,6 +10035,7 @@
             this.plC_Button34.讀取位元反向 = false;
             this.plC_Button34.讀取元件位置 = "X106";
             this.plC_Button34.讀寫鎖住 = false;
+            this.plC_Button34.起始狀態 = false;
             this.plC_Button34.音效 = true;
             this.plC_Button34.顯示 = false;
             this.plC_Button34.顯示狀態 = false;
@@ -10051,6 +10139,7 @@
             this.plC_Button26.讀取位元反向 = true;
             this.plC_Button26.讀取元件位置 = "Y13";
             this.plC_Button26.讀寫鎖住 = false;
+            this.plC_Button26.起始狀態 = false;
             this.plC_Button26.音效 = true;
             this.plC_Button26.顯示 = false;
             this.plC_Button26.顯示狀態 = false;
@@ -10058,6 +10147,8 @@
             // plC_NumBox1
             // 
             this.plC_NumBox1.Location = new System.Drawing.Point(517, 150);
+            this.plC_NumBox1.mBackColor = System.Drawing.SystemColors.Control;
+            this.plC_NumBox1.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox1.Name = "plC_NumBox1";
             this.plC_NumBox1.ReadOnly = true;
             this.plC_NumBox1.Size = new System.Drawing.Size(65, 22);
@@ -10103,6 +10194,8 @@
             // plC_NumBox8
             // 
             this.plC_NumBox8.Location = new System.Drawing.Point(517, 51);
+            this.plC_NumBox8.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox8.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox8.Name = "plC_NumBox8";
             this.plC_NumBox8.ReadOnly = false;
             this.plC_NumBox8.Size = new System.Drawing.Size(65, 22);
@@ -10150,6 +10243,8 @@
             // plC_NumBox9
             // 
             this.plC_NumBox9.Location = new System.Drawing.Point(517, 84);
+            this.plC_NumBox9.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox9.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox9.Name = "plC_NumBox9";
             this.plC_NumBox9.ReadOnly = false;
             this.plC_NumBox9.Size = new System.Drawing.Size(65, 22);
@@ -10197,6 +10292,8 @@
             // plC_NumBox10
             // 
             this.plC_NumBox10.Location = new System.Drawing.Point(517, 117);
+            this.plC_NumBox10.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox10.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox10.Name = "plC_NumBox10";
             this.plC_NumBox10.ReadOnly = false;
             this.plC_NumBox10.Size = new System.Drawing.Size(65, 22);
@@ -10244,6 +10341,8 @@
             // plC_NumBox11
             // 
             this.plC_NumBox11.Location = new System.Drawing.Point(517, 18);
+            this.plC_NumBox11.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox11.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox11.Name = "plC_NumBox11";
             this.plC_NumBox11.ReadOnly = false;
             this.plC_NumBox11.Size = new System.Drawing.Size(65, 22);
@@ -10306,6 +10405,7 @@
             this.plC_Button17.讀取位元反向 = false;
             this.plC_Button17.讀取元件位置 = "S7125";
             this.plC_Button17.讀寫鎖住 = false;
+            this.plC_Button17.起始狀態 = false;
             this.plC_Button17.音效 = true;
             this.plC_Button17.顯示 = false;
             this.plC_Button17.顯示狀態 = false;
@@ -10339,6 +10439,7 @@
             this.plC_Button18.讀取位元反向 = false;
             this.plC_Button18.讀取元件位置 = "S7105";
             this.plC_Button18.讀寫鎖住 = false;
+            this.plC_Button18.起始狀態 = false;
             this.plC_Button18.音效 = true;
             this.plC_Button18.顯示 = false;
             this.plC_Button18.顯示狀態 = false;
@@ -10372,6 +10473,7 @@
             this.plC_Button19.讀取位元反向 = false;
             this.plC_Button19.讀取元件位置 = "S7145";
             this.plC_Button19.讀寫鎖住 = false;
+            this.plC_Button19.起始狀態 = false;
             this.plC_Button19.音效 = true;
             this.plC_Button19.顯示 = false;
             this.plC_Button19.顯示狀態 = false;
@@ -10431,6 +10533,7 @@
             this.plC_Button20.讀取位元反向 = true;
             this.plC_Button20.讀取元件位置 = "X47";
             this.plC_Button20.讀寫鎖住 = false;
+            this.plC_Button20.起始狀態 = false;
             this.plC_Button20.音效 = true;
             this.plC_Button20.顯示 = false;
             this.plC_Button20.顯示狀態 = false;
@@ -10465,6 +10568,7 @@
             this.plC_Button21.讀取位元反向 = false;
             this.plC_Button21.讀取元件位置 = "Y11";
             this.plC_Button21.讀寫鎖住 = false;
+            this.plC_Button21.起始狀態 = false;
             this.plC_Button21.音效 = true;
             this.plC_Button21.顯示 = false;
             this.plC_Button21.顯示狀態 = false;
@@ -10523,6 +10627,7 @@
             this.plC_Button22.讀取位元反向 = false;
             this.plC_Button22.讀取元件位置 = "X105";
             this.plC_Button22.讀寫鎖住 = false;
+            this.plC_Button22.起始狀態 = false;
             this.plC_Button22.音效 = true;
             this.plC_Button22.顯示 = false;
             this.plC_Button22.顯示狀態 = false;
@@ -10581,6 +10686,7 @@
             this.plC_Button23.讀取位元反向 = false;
             this.plC_Button23.讀取元件位置 = "X104";
             this.plC_Button23.讀寫鎖住 = false;
+            this.plC_Button23.起始狀態 = false;
             this.plC_Button23.音效 = true;
             this.plC_Button23.顯示 = false;
             this.plC_Button23.顯示狀態 = false;
@@ -10639,6 +10745,7 @@
             this.plC_Button24.讀取位元反向 = false;
             this.plC_Button24.讀取元件位置 = "X103";
             this.plC_Button24.讀寫鎖住 = false;
+            this.plC_Button24.起始狀態 = false;
             this.plC_Button24.音效 = true;
             this.plC_Button24.顯示 = false;
             this.plC_Button24.顯示狀態 = false;
@@ -10673,6 +10780,7 @@
             this.plC_Button25.讀取位元反向 = true;
             this.plC_Button25.讀取元件位置 = "Y7";
             this.plC_Button25.讀寫鎖住 = false;
+            this.plC_Button25.起始狀態 = false;
             this.plC_Button25.音效 = true;
             this.plC_Button25.顯示 = false;
             this.plC_Button25.顯示狀態 = false;
@@ -10764,6 +10872,8 @@
             // 
             this.plC_NumBox32.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox32.Location = new System.Drawing.Point(153, 713);
+            this.plC_NumBox32.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox32.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox32.Name = "plC_NumBox32";
             this.plC_NumBox32.ReadOnly = false;
             this.plC_NumBox32.Size = new System.Drawing.Size(41, 22);
@@ -10783,6 +10893,8 @@
             // 
             this.plC_NumBox31.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox31.Location = new System.Drawing.Point(153, 682);
+            this.plC_NumBox31.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox31.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox31.Name = "plC_NumBox31";
             this.plC_NumBox31.ReadOnly = false;
             this.plC_NumBox31.Size = new System.Drawing.Size(41, 22);
@@ -10869,6 +10981,8 @@
             // 
             this.plC_NumBox29.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox29.Location = new System.Drawing.Point(120, 746);
+            this.plC_NumBox29.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox29.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox29.Name = "plC_NumBox29";
             this.plC_NumBox29.ReadOnly = false;
             this.plC_NumBox29.Size = new System.Drawing.Size(61, 22);
@@ -10930,6 +11044,7 @@
             this.plC_Button63.讀取位元反向 = false;
             this.plC_Button63.讀取元件位置 = "X76";
             this.plC_Button63.讀寫鎖住 = false;
+            this.plC_Button63.起始狀態 = false;
             this.plC_Button63.音效 = true;
             this.plC_Button63.顯示 = false;
             this.plC_Button63.顯示狀態 = false;
@@ -10961,6 +11076,7 @@
             this.plC_Button61.讀取位元反向 = false;
             this.plC_Button61.讀取元件位置 = "X75";
             this.plC_Button61.讀寫鎖住 = false;
+            this.plC_Button61.起始狀態 = false;
             this.plC_Button61.音效 = true;
             this.plC_Button61.顯示 = false;
             this.plC_Button61.顯示狀態 = false;
@@ -10995,6 +11111,7 @@
             this.plC_Button62.讀取位元反向 = false;
             this.plC_Button62.讀取元件位置 = "Y76";
             this.plC_Button62.讀寫鎖住 = false;
+            this.plC_Button62.起始狀態 = false;
             this.plC_Button62.音效 = true;
             this.plC_Button62.顯示 = false;
             this.plC_Button62.顯示狀態 = false;
@@ -11014,6 +11131,8 @@
             // 
             this.plC_NumBox28.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox28.Location = new System.Drawing.Point(120, 643);
+            this.plC_NumBox28.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox28.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox28.Name = "plC_NumBox28";
             this.plC_NumBox28.ReadOnly = false;
             this.plC_NumBox28.Size = new System.Drawing.Size(61, 22);
@@ -11075,6 +11194,7 @@
             this.plC_Button60.讀取位元反向 = false;
             this.plC_Button60.讀取元件位置 = "X77";
             this.plC_Button60.讀寫鎖住 = false;
+            this.plC_Button60.起始狀態 = false;
             this.plC_Button60.音效 = true;
             this.plC_Button60.顯示 = false;
             this.plC_Button60.顯示狀態 = false;
@@ -11109,6 +11229,7 @@
             this.plC_Button59.讀取位元反向 = false;
             this.plC_Button59.讀取元件位置 = "Y77";
             this.plC_Button59.讀寫鎖住 = false;
+            this.plC_Button59.起始狀態 = false;
             this.plC_Button59.音效 = true;
             this.plC_Button59.顯示 = false;
             this.plC_Button59.顯示狀態 = false;
@@ -11128,6 +11249,8 @@
             // 
             this.plC_NumBox27.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox27.Location = new System.Drawing.Point(120, 602);
+            this.plC_NumBox27.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox27.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox27.Name = "plC_NumBox27";
             this.plC_NumBox27.ReadOnly = false;
             this.plC_NumBox27.Size = new System.Drawing.Size(61, 22);
@@ -11221,6 +11344,7 @@
             this.plC_Button58.讀取位元反向 = false;
             this.plC_Button58.讀取元件位置 = "S7405";
             this.plC_Button58.讀寫鎖住 = false;
+            this.plC_Button58.起始狀態 = false;
             this.plC_Button58.音效 = true;
             this.plC_Button58.顯示 = false;
             this.plC_Button58.顯示狀態 = false;
@@ -11269,6 +11393,8 @@
             // 
             this.plC_NumBox25.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox25.Location = new System.Drawing.Point(98, 31);
+            this.plC_NumBox25.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox25.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox25.Name = "plC_NumBox25";
             this.plC_NumBox25.ReadOnly = false;
             this.plC_NumBox25.Size = new System.Drawing.Size(61, 22);
@@ -11289,6 +11415,8 @@
             // 
             this.plC_NumBox26.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox26.Location = new System.Drawing.Point(98, 68);
+            this.plC_NumBox26.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox26.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox26.Name = "plC_NumBox26";
             this.plC_NumBox26.ReadOnly = false;
             this.plC_NumBox26.Size = new System.Drawing.Size(61, 22);
@@ -11327,6 +11455,8 @@
             // 
             this.plC_NumBox24.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox24.Location = new System.Drawing.Point(120, 562);
+            this.plC_NumBox24.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox24.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox24.Name = "plC_NumBox24";
             this.plC_NumBox24.ReadOnly = false;
             this.plC_NumBox24.Size = new System.Drawing.Size(61, 22);
@@ -11391,6 +11521,7 @@
             this.plC_Button57.讀取位元反向 = false;
             this.plC_Button57.讀取元件位置 = "Y46";
             this.plC_Button57.讀寫鎖住 = false;
+            this.plC_Button57.起始狀態 = false;
             this.plC_Button57.音效 = true;
             this.plC_Button57.顯示 = false;
             this.plC_Button57.顯示狀態 = false;
@@ -11425,6 +11556,7 @@
             this.plC_Button56.讀取位元反向 = false;
             this.plC_Button56.讀取元件位置 = "S7365";
             this.plC_Button56.讀寫鎖住 = false;
+            this.plC_Button56.起始狀態 = false;
             this.plC_Button56.音效 = true;
             this.plC_Button56.顯示 = false;
             this.plC_Button56.顯示狀態 = false;
@@ -11459,6 +11591,7 @@
             this.plC_Button49.讀取位元反向 = false;
             this.plC_Button49.讀取元件位置 = "S7345";
             this.plC_Button49.讀寫鎖住 = false;
+            this.plC_Button49.起始狀態 = false;
             this.plC_Button49.音效 = true;
             this.plC_Button49.顯示 = false;
             this.plC_Button49.顯示狀態 = false;
@@ -11592,6 +11725,8 @@
             // 
             this.plC_NumBox22.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox22.Location = new System.Drawing.Point(282, 97);
+            this.plC_NumBox22.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox22.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox22.Name = "plC_NumBox22";
             this.plC_NumBox22.ReadOnly = false;
             this.plC_NumBox22.Size = new System.Drawing.Size(61, 22);
@@ -11630,6 +11765,8 @@
             // 
             this.plC_NumBox23.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox23.Location = new System.Drawing.Point(95, 97);
+            this.plC_NumBox23.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox23.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox23.Name = "plC_NumBox23";
             this.plC_NumBox23.ReadOnly = false;
             this.plC_NumBox23.Size = new System.Drawing.Size(61, 22);
@@ -11668,6 +11805,8 @@
             // 
             this.plC_NumBox20.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox20.Location = new System.Drawing.Point(282, 62);
+            this.plC_NumBox20.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox20.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox20.Name = "plC_NumBox20";
             this.plC_NumBox20.ReadOnly = false;
             this.plC_NumBox20.Size = new System.Drawing.Size(61, 22);
@@ -11706,6 +11845,8 @@
             // 
             this.plC_NumBox21.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox21.Location = new System.Drawing.Point(95, 62);
+            this.plC_NumBox21.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox21.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox21.Name = "plC_NumBox21";
             this.plC_NumBox21.ReadOnly = false;
             this.plC_NumBox21.Size = new System.Drawing.Size(61, 22);
@@ -11744,6 +11885,8 @@
             // 
             this.plC_NumBox19.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox19.Location = new System.Drawing.Point(282, 27);
+            this.plC_NumBox19.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox19.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox19.Name = "plC_NumBox19";
             this.plC_NumBox19.ReadOnly = false;
             this.plC_NumBox19.Size = new System.Drawing.Size(61, 22);
@@ -11782,6 +11925,8 @@
             // 
             this.plC_NumBox18.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox18.Location = new System.Drawing.Point(95, 27);
+            this.plC_NumBox18.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox18.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox18.Name = "plC_NumBox18";
             this.plC_NumBox18.ReadOnly = false;
             this.plC_NumBox18.Size = new System.Drawing.Size(61, 22);
@@ -11848,6 +11993,7 @@
             this.plC_Button64.讀取位元反向 = false;
             this.plC_Button64.讀取元件位置 = "S7470";
             this.plC_Button64.讀寫鎖住 = false;
+            this.plC_Button64.起始狀態 = false;
             this.plC_Button64.音效 = true;
             this.plC_Button64.顯示 = false;
             this.plC_Button64.顯示狀態 = false;
@@ -11867,6 +12013,8 @@
             // 
             this.plC_NumBox30.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox30.Location = new System.Drawing.Point(109, 116);
+            this.plC_NumBox30.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox30.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox30.Name = "plC_NumBox30";
             this.plC_NumBox30.ReadOnly = false;
             this.plC_NumBox30.Size = new System.Drawing.Size(61, 22);
@@ -12018,6 +12166,7 @@
             this.plC_Button32.讀取位元反向 = false;
             this.plC_Button32.讀取元件位置 = "S7305";
             this.plC_Button32.讀寫鎖住 = false;
+            this.plC_Button32.起始狀態 = false;
             this.plC_Button32.音效 = true;
             this.plC_Button32.顯示 = false;
             this.plC_Button32.顯示狀態 = false;
@@ -12026,6 +12175,8 @@
             // 
             this.plC_NumBox17.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox17.Location = new System.Drawing.Point(109, 43);
+            this.plC_NumBox17.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox17.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox17.Name = "plC_NumBox17";
             this.plC_NumBox17.ReadOnly = false;
             this.plC_NumBox17.Size = new System.Drawing.Size(61, 22);
@@ -12120,6 +12271,7 @@
             this.plC_Button16.讀取位元反向 = false;
             this.plC_Button16.讀取元件位置 = "S7005";
             this.plC_Button16.讀寫鎖住 = false;
+            this.plC_Button16.起始狀態 = false;
             this.plC_Button16.音效 = true;
             this.plC_Button16.顯示 = false;
             this.plC_Button16.顯示狀態 = false;
@@ -12128,6 +12280,8 @@
             // 
             this.plC_NumBox2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_NumBox2.Location = new System.Drawing.Point(132, 102);
+            this.plC_NumBox2.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox2.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox2.Name = "plC_NumBox2";
             this.plC_NumBox2.ReadOnly = false;
             this.plC_NumBox2.Size = new System.Drawing.Size(61, 22);
@@ -12307,6 +12461,8 @@
             // plC_NumBox7
             // 
             this.plC_NumBox7.Location = new System.Drawing.Point(517, 150);
+            this.plC_NumBox7.mBackColor = System.Drawing.SystemColors.Control;
+            this.plC_NumBox7.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox7.Name = "plC_NumBox7";
             this.plC_NumBox7.ReadOnly = true;
             this.plC_NumBox7.Size = new System.Drawing.Size(65, 22);
@@ -12352,6 +12508,8 @@
             // plC_NumBox6
             // 
             this.plC_NumBox6.Location = new System.Drawing.Point(517, 51);
+            this.plC_NumBox6.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox6.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox6.Name = "plC_NumBox6";
             this.plC_NumBox6.ReadOnly = false;
             this.plC_NumBox6.Size = new System.Drawing.Size(65, 22);
@@ -12399,6 +12557,8 @@
             // plC_NumBox5
             // 
             this.plC_NumBox5.Location = new System.Drawing.Point(517, 84);
+            this.plC_NumBox5.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox5.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox5.Name = "plC_NumBox5";
             this.plC_NumBox5.ReadOnly = false;
             this.plC_NumBox5.Size = new System.Drawing.Size(65, 22);
@@ -12446,6 +12606,8 @@
             // plC_NumBox4
             // 
             this.plC_NumBox4.Location = new System.Drawing.Point(517, 117);
+            this.plC_NumBox4.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox4.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox4.Name = "plC_NumBox4";
             this.plC_NumBox4.ReadOnly = false;
             this.plC_NumBox4.Size = new System.Drawing.Size(65, 22);
@@ -12493,6 +12655,8 @@
             // plC_NumBox3
             // 
             this.plC_NumBox3.Location = new System.Drawing.Point(517, 18);
+            this.plC_NumBox3.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox3.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox3.Name = "plC_NumBox3";
             this.plC_NumBox3.ReadOnly = false;
             this.plC_NumBox3.Size = new System.Drawing.Size(65, 22);
@@ -12555,6 +12719,7 @@
             this.plC_Button15.讀取位元反向 = false;
             this.plC_Button15.讀取元件位置 = "S7045";
             this.plC_Button15.讀寫鎖住 = false;
+            this.plC_Button15.起始狀態 = false;
             this.plC_Button15.音效 = true;
             this.plC_Button15.顯示 = false;
             this.plC_Button15.顯示狀態 = false;
@@ -12588,6 +12753,7 @@
             this.plC_Button14.讀取位元反向 = false;
             this.plC_Button14.讀取元件位置 = "S7025";
             this.plC_Button14.讀寫鎖住 = false;
+            this.plC_Button14.起始狀態 = false;
             this.plC_Button14.音效 = true;
             this.plC_Button14.顯示 = false;
             this.plC_Button14.顯示狀態 = false;
@@ -12621,6 +12787,7 @@
             this.plC_Button13.讀取位元反向 = false;
             this.plC_Button13.讀取元件位置 = "S7065";
             this.plC_Button13.讀寫鎖住 = false;
+            this.plC_Button13.起始狀態 = false;
             this.plC_Button13.音效 = true;
             this.plC_Button13.顯示 = false;
             this.plC_Button13.顯示狀態 = false;
@@ -12680,6 +12847,7 @@
             this.plC_Button12.讀取位元反向 = true;
             this.plC_Button12.讀取元件位置 = "X46";
             this.plC_Button12.讀寫鎖住 = false;
+            this.plC_Button12.起始狀態 = false;
             this.plC_Button12.音效 = true;
             this.plC_Button12.顯示 = false;
             this.plC_Button12.顯示狀態 = false;
@@ -12714,6 +12882,7 @@
             this.plC_Button11.讀取位元反向 = false;
             this.plC_Button11.讀取元件位置 = "Y10";
             this.plC_Button11.讀寫鎖住 = false;
+            this.plC_Button11.起始狀態 = false;
             this.plC_Button11.音效 = true;
             this.plC_Button11.顯示 = false;
             this.plC_Button11.顯示狀態 = false;
@@ -12772,6 +12941,7 @@
             this.plC_Button10.讀取位元反向 = false;
             this.plC_Button10.讀取元件位置 = "X102";
             this.plC_Button10.讀寫鎖住 = false;
+            this.plC_Button10.起始狀態 = false;
             this.plC_Button10.音效 = true;
             this.plC_Button10.顯示 = false;
             this.plC_Button10.顯示狀態 = false;
@@ -12830,6 +13000,7 @@
             this.plC_Button9.讀取位元反向 = false;
             this.plC_Button9.讀取元件位置 = "X101";
             this.plC_Button9.讀寫鎖住 = false;
+            this.plC_Button9.起始狀態 = false;
             this.plC_Button9.音效 = true;
             this.plC_Button9.顯示 = false;
             this.plC_Button9.顯示狀態 = false;
@@ -12888,6 +13059,7 @@
             this.plC_Button8.讀取位元反向 = false;
             this.plC_Button8.讀取元件位置 = "X100";
             this.plC_Button8.讀寫鎖住 = false;
+            this.plC_Button8.起始狀態 = false;
             this.plC_Button8.音效 = true;
             this.plC_Button8.顯示 = false;
             this.plC_Button8.顯示狀態 = false;
@@ -12922,6 +13094,7 @@
             this.plC_Button7.讀取位元反向 = true;
             this.plC_Button7.讀取元件位置 = "Y6";
             this.plC_Button7.讀寫鎖住 = false;
+            this.plC_Button7.起始狀態 = false;
             this.plC_Button7.音效 = true;
             this.plC_Button7.顯示 = false;
             this.plC_Button7.顯示狀態 = false;
@@ -12994,6 +13167,7 @@
             this.plC_Button6.讀取位元反向 = true;
             this.plC_Button6.讀取元件位置 = "Y5";
             this.plC_Button6.讀寫鎖住 = false;
+            this.plC_Button6.起始狀態 = false;
             this.plC_Button6.音效 = true;
             this.plC_Button6.顯示 = false;
             this.plC_Button6.顯示狀態 = false;
@@ -13027,6 +13201,7 @@
             this.plC_Button5.讀取位元反向 = true;
             this.plC_Button5.讀取元件位置 = "Y4";
             this.plC_Button5.讀寫鎖住 = false;
+            this.plC_Button5.起始狀態 = false;
             this.plC_Button5.音效 = true;
             this.plC_Button5.顯示 = false;
             this.plC_Button5.顯示狀態 = false;
@@ -13060,6 +13235,7 @@
             this.plC_Button4.讀取位元反向 = true;
             this.plC_Button4.讀取元件位置 = "Y3";
             this.plC_Button4.讀寫鎖住 = false;
+            this.plC_Button4.起始狀態 = false;
             this.plC_Button4.音效 = true;
             this.plC_Button4.顯示 = false;
             this.plC_Button4.顯示狀態 = false;
@@ -13093,6 +13269,7 @@
             this.plC_Button3.讀取位元反向 = true;
             this.plC_Button3.讀取元件位置 = "Y2";
             this.plC_Button3.讀寫鎖住 = false;
+            this.plC_Button3.起始狀態 = false;
             this.plC_Button3.音效 = true;
             this.plC_Button3.顯示 = false;
             this.plC_Button3.顯示狀態 = false;
@@ -13126,6 +13303,7 @@
             this.plC_Button2.讀取位元反向 = true;
             this.plC_Button2.讀取元件位置 = "Y1";
             this.plC_Button2.讀寫鎖住 = false;
+            this.plC_Button2.起始狀態 = false;
             this.plC_Button2.音效 = true;
             this.plC_Button2.顯示 = false;
             this.plC_Button2.顯示狀態 = false;
@@ -13159,6 +13337,7 @@
             this.plC_Button1.讀取位元反向 = true;
             this.plC_Button1.讀取元件位置 = "Y0";
             this.plC_Button1.讀寫鎖住 = false;
+            this.plC_Button1.起始狀態 = false;
             this.plC_Button1.音效 = true;
             this.plC_Button1.顯示 = false;
             this.plC_Button1.顯示狀態 = false;
@@ -13170,7 +13349,7 @@
             this.系統.Controls.Add(this.panel_系統);
             this.系統.Location = new System.Drawing.Point(4, 25);
             this.系統.Name = "系統";
-            this.系統.Size = new System.Drawing.Size(1056, 1743);
+            this.系統.Size = new System.Drawing.Size(1056, 1723);
             this.系統.TabIndex = 9;
             this.系統.Text = "系統";
             // 
@@ -13186,7 +13365,7 @@
             this.plC_ScreenPage_系統.Location = new System.Drawing.Point(0, 52);
             this.plC_ScreenPage_系統.Name = "plC_ScreenPage_系統";
             this.plC_ScreenPage_系統.SelectedIndex = 0;
-            this.plC_ScreenPage_系統.Size = new System.Drawing.Size(1056, 1691);
+            this.plC_ScreenPage_系統.Size = new System.Drawing.Size(1056, 1671);
             this.plC_ScreenPage_系統.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_系統.TabIndex = 116;
             this.plC_ScreenPage_系統.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -13202,7 +13381,7 @@
             this.tabPage6.Controls.Add(this.tabControl1);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1048, 1662);
+            this.tabPage6.Size = new System.Drawing.Size(1048, 1642);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "設定01";
             // 
@@ -13319,7 +13498,7 @@
             this.tabPage7.Controls.Add(this.plC_RJ_GroupBox17);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1048, 1662);
+            this.tabPage7.Size = new System.Drawing.Size(1048, 822);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "設定02";
             // 
@@ -13554,7 +13733,7 @@
             // plC_AlarmFlow1
             // 
             this.plC_AlarmFlow1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plC_AlarmFlow1.Location = new System.Drawing.Point(0, 1860);
+            this.plC_AlarmFlow1.Location = new System.Drawing.Point(0, 1840);
             this.plC_AlarmFlow1.Name = "plC_AlarmFlow1";
             this.plC_AlarmFlow1.Size = new System.Drawing.Size(1064, 41);
             this.plC_AlarmFlow1.TabIndex = 2;
@@ -13578,44 +13757,12 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // plC_RJ_Pannel2
-            // 
-            this.plC_RJ_Pannel2.BackColor = System.Drawing.Color.White;
-            this.plC_RJ_Pannel2.BorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_Pannel2.BorderRadius = 10;
-            this.plC_RJ_Pannel2.BorderSize = 2;
-            this.plC_RJ_Pannel2.Controls.Add(this.ftp_DounloadUI);
-            this.plC_RJ_Pannel2.ForeColor = System.Drawing.Color.White;
-            this.plC_RJ_Pannel2.Location = new System.Drawing.Point(8, 12);
-            this.plC_RJ_Pannel2.Name = "plC_RJ_Pannel2";
-            this.plC_RJ_Pannel2.Size = new System.Drawing.Size(439, 129);
-            this.plC_RJ_Pannel2.TabIndex = 110;
-            this.plC_RJ_Pannel2.隱藏讀取位置 = "S4077";
-            // 
-            // ftp_DounloadUI
-            // 
-            this.ftp_DounloadUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ftp_DounloadUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ftp_DounloadUI.FileName = "Setup.msi";
-            this.ftp_DounloadUI.ForeColor = System.Drawing.Color.Black;
-            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
-            this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
-            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
-            this.ftp_DounloadUI.Location = new System.Drawing.Point(0, 0);
-            this.ftp_DounloadUI.Name = "ftp_DounloadUI";
-            this.ftp_DounloadUI.Password = "test";
-            this.ftp_DounloadUI.Password_要顯示 = false;
-            this.ftp_DounloadUI.Size = new System.Drawing.Size(439, 129);
-            this.ftp_DounloadUI.TabIndex = 13;
-            this.ftp_DounloadUI.Username = "test";
-            this.ftp_DounloadUI.Username_要顯示 = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1064, 1901);
+            this.ClientSize = new System.Drawing.Size(1064, 1881);
             this.Controls.Add(this.plC_ScreenPage_Main);
             this.Controls.Add(this.plC_AlarmFlow1);
             this.Controls.Add(this.pannel_Main02);
@@ -13636,6 +13783,7 @@
             this.rJ_GroupBox2.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox2.ResumeLayout(false);
             this.登入畫面.ResumeLayout(false);
+            this.plC_RJ_Pannel2.ResumeLayout(false);
             this.plC_RJ_GroupBox16.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox16.ResumeLayout(false);
             this.rJ_GroupBox7.ContentsPanel.ResumeLayout(false);
@@ -13751,7 +13899,6 @@
             this.plC_RJ_GroupBox17.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox17.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.plC_RJ_Pannel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

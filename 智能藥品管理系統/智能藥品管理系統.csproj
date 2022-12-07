@@ -229,6 +229,12 @@
     <Compile Include="Dialog\Dialog_領藥_藥品選擇.Designer.cs">
       <DependentUpon>Dialog_領藥_藥品選擇.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_掃碼退藥.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_掃碼退藥.Designer.cs">
+      <DependentUpon>Dialog_掃碼退藥.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_領藥_藥品選擇.resx">
       <DependentUpon>Dialog_領藥_藥品選擇.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_掃碼退藥.resx">
+      <DependentUpon>Dialog_掃碼退藥.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

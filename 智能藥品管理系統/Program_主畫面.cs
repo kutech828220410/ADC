@@ -252,7 +252,13 @@ namespace 智能藥品管理系統
             {
                 cnt_Program_主畫面_領退藥 = 65500;
             }
-
+            if (cnt_Program_主畫面_領退藥 == 4000) cnt_Program_主畫面_領退藥_4000_退藥_等待退藥開鎖打開(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 4001) cnt_Program_主畫面_領退藥_4000_退藥_退藥開鎖打開結束(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 4002) cnt_Program_主畫面_領退藥_4000_退藥_開啟退藥掃碼頁面(ref cnt_Program_主畫面_領退藥);
+            if (cnt_Program_主畫面_領退藥 == 4003)
+            {
+                cnt_Program_主畫面_領退藥 = 65500;
+            }
 
             if (cnt_Program_主畫面_領退藥 == 5000) cnt_Program_主畫面_領退藥_5000_領藥_等待掃碼(ref cnt_Program_主畫面_領退藥);
             if (cnt_Program_主畫面_領退藥 == 5001) cnt_Program_主畫面_領退藥_5000_領藥_掃碼完成(ref cnt_Program_主畫面_領退藥);
@@ -722,7 +728,7 @@ namespace 智能藥品管理系統
             }
             if (主畫面_領退藥_功能選擇 == enum_功能選擇.藥品 && PLC_Device_主畫面_退藥按鈕.Bool)
             {
-                cnt = 3000;
+                cnt = 4000;
                 return;
             }
     
@@ -874,7 +880,6 @@ namespace 智能藥品管理系統
             }
         }
 
-
         void cnt_Program_主畫面_領退藥_2000_領藥_藥品選擇(ref int cnt)
         {          
             DialogResult dialogResult = DialogResult.None;
@@ -987,7 +992,6 @@ namespace 智能藥品管理系統
                 cnt++;
             }
         }
-
 
         void cnt_Program_主畫面_領退藥_3000_退藥_藥品選擇(ref int cnt)
         {
@@ -1129,7 +1133,108 @@ namespace 智能藥品管理系統
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
             cnt++;
         }
+
+        void cnt_Program_主畫面_領退藥_4000_退藥_等待退藥開鎖打開(ref int cnt)
+        {
+            string 狀態顯示 = "";
+            狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
+            狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Red, true);
+            狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
+            狀態顯示 += $"<請打開退藥抽屜>" + " \n";
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_06.GetAdress(), 狀態顯示);
+            PLC_Device_主畫面_領退藥_狀態顯示_06.Bool = true;
+            if (!PLC_Device_退藥鎖.Bool)
+            {
+                PLC_Device_退藥鎖.Bool = true;
+                cnt++;
+            }
+        }
+        void cnt_Program_主畫面_領退藥_4000_退藥_退藥開鎖打開結束(ref int cnt)
+        {
+
+            if (!PLC_Device_退藥鎖.Bool)
+            {
+                if (PLC_Device_退藥鎖_OK.Bool)
+                {
+                    cnt++;
+                    return;
+                }
+                else
+                {
+                    this.MyTimer_主畫面_領退藥_退藥鎖逾時.StartTickTime(3000);
+
+                    cnt = 3990;
+                    return;
+                }
+            }
+        }
+        void cnt_Program_主畫面_領退藥_4000_退藥_開啟退藥掃碼頁面(ref int cnt)
+        {
+            DialogResult dialogResult = DialogResult.None;
+            List<object[]> list_掃碼退藥 = new List<object[]>();
+            this.Invoke(new Action(delegate
+            {
+                Dialog_掃碼退藥 dialog_掃碼退藥 = new Dialog_掃碼退藥(MySerialPort_Scanner, PLC_Device_退藥鎖_輸入, sqL_DataGridView_參數設定_藥檔資料);
+                dialogResult = dialog_掃碼退藥.ShowDialog();
+                list_掃碼退藥 = dialog_掃碼退藥.Value;
+            }));
+          
+            if (dialogResult == DialogResult.No)
+            {
+                cnt = 65500;
+                return;
+            }
+            string 狀態顯示 = "";
+            狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
+            狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Red, true);
+            狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
+            狀態顯示 += $"<退藥完成>" + " \n";
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_06.GetAdress(), 狀態顯示);
+
+
+            for (int i = 0; i < list_掃碼退藥.Count; i++)
+            {
+                string 動作 = list_掃碼退藥[i][(int)enum_掃碼退藥.動作].ObjectToString();
+
+                string 藥品碼 = list_掃碼退藥[i][(int)enum_掃碼退藥.藥品碼].ObjectToString();
+                string 藥品名稱 = list_掃碼退藥[i][(int)enum_掃碼退藥.藥品名稱].ObjectToString();
+                string 藥袋序號 = "";
+                string 房名 = 主畫面_領退藥_手術房[(int)enum_藥檔資料_手術房設定_手術房列表.名稱].ObjectToString();
+                string 庫存量 = 0.ToString();
+                string 交易量 = list_掃碼退藥[i][(int)enum_掃碼退藥.數量].ObjectToString();
+                string 結存量 = 0.ToString();
+                string 病人姓名 = "";
+                string 病歷號 = "";
+                string 操作時間 = DateTime.Now.ToDateTimeString_6();
+                string 開方時間 = DateTime.Now.ToDateTimeString_6();
+                string 操作人 = this.主畫面_登入者姓名;
+                string 備註 = "";
+
+                object[] value = new object[new enum_交易記錄查詢資料().GetLength()];
+                value[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
+                value[(int)enum_交易記錄查詢資料.動作] = 動作;
+                value[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
+                value[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
+                value[(int)enum_交易記錄查詢資料.藥袋序號] = 藥袋序號;
+                value[(int)enum_交易記錄查詢資料.房名] = 房名;
+                value[(int)enum_交易記錄查詢資料.庫存量] = 庫存量;
+                value[(int)enum_交易記錄查詢資料.交易量] = 交易量;
+                value[(int)enum_交易記錄查詢資料.結存量] = 結存量;
+                value[(int)enum_交易記錄查詢資料.病人姓名] = 病人姓名;
+                value[(int)enum_交易記錄查詢資料.病歷號] = 病歷號;
+                value[(int)enum_交易記錄查詢資料.操作人] = 操作人;
+                value[(int)enum_交易記錄查詢資料.操作時間] = 操作時間;
+                value[(int)enum_交易記錄查詢資料.開方時間] = 開方時間;
+                value[(int)enum_交易記錄查詢資料.備註] = 備註;
+                this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
+
+            }
+
+            cnt++;
+        }
+
         /*--------------------------------------------------------------------------*/
+
         void cnt_Program_主畫面_領退藥_3990_退藥_開鎖逾時(ref int cnt)
         {
             string 狀態顯示 = "";
@@ -1145,7 +1250,6 @@ namespace 智能藥品管理系統
                 return;
             }
         }
-
 
         //一般模式
         void cnt_Program_主畫面_領退藥_5000_領藥_等待掃碼(ref int cnt)
@@ -1327,9 +1431,6 @@ namespace 智能藥品管理系統
                 cnt++;
             }
         }
-
-
-
 
         void cnt_Program_主畫面_領退藥_6000_退藥_等待掃碼(ref int cnt)
         {
