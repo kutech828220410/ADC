@@ -718,7 +718,7 @@
             this.plC_RJ_ScreenButton_人員資料.按鈕型態 = MyUI.PLC_RJ_ScreenButton.StatusEnum.保持型;
             this.plC_RJ_ScreenButton_人員資料.控制位址 = "D0";
             this.plC_RJ_ScreenButton_人員資料.換頁選擇方式 = MyUI.PLC_RJ_ScreenButton.換頁選擇方式Enum.名稱;
-            this.plC_RJ_ScreenButton_人員資料.致能讀取位置 = "S39003";
+            this.plC_RJ_ScreenButton_人員資料.致能讀取位置 = "S39004";
             this.plC_RJ_ScreenButton_人員資料.讀取位元反向 = false;
             this.plC_RJ_ScreenButton_人員資料.讀取位置註解 = "";
             this.plC_RJ_ScreenButton_人員資料.讀取元件位置 = "";
@@ -13498,7 +13498,7 @@
             this.tabPage7.Controls.Add(this.plC_RJ_GroupBox17);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1048, 822);
+            this.tabPage7.Size = new System.Drawing.Size(1048, 1642);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "設定02";
             // 
