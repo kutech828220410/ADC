@@ -241,15 +241,15 @@ namespace 智能藥品管理系統
         {
             this.Invoke(new Action(delegate
             {
+               
+
+                //if (!pLC_Device_抽屜感應.Bool)
+                //{
+                //    MyMessageBox.ShowDialog("退藥抽屜未關上!");
+                //    return;
+                //}
                 this.MyThread_porgram.Abort();
                 this.MyThread_porgram = null;
-
-                if (!pLC_Device_抽屜感應.Bool)
-                {
-                    MyMessageBox.ShowDialog("退藥抽屜未關上!");
-                    return;
-                }
-
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
             }));

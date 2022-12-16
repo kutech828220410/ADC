@@ -390,18 +390,14 @@ namespace 智能藥品管理系統
             }
             if (PLC_Device_主畫面_領退藥_取藥防夾.Bool)
             {
-                if (MyTimer_主畫面_領退藥_取藥防夾.IsTimeOut())
-                {
-                    MyTimer_主畫面_領退藥_取藥防夾.TickStop();
-                    MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
-                    cnt++;
-                }
+                MyTimer_主畫面_領退藥_重複登入延遲.TickStop();
+                MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(10000);
             }
-            else
-            {
-                MyTimer_主畫面_領退藥_取藥防夾.TickStop();
-                MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
-            }
+            //else
+            //{
+            //    MyTimer_主畫面_領退藥_取藥防夾.TickStop();
+            //    MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
+            //}
         }
         void cnt_Program_主畫面_領退藥_65490_取藥防夾OFF(ref int cnt)
         {
@@ -410,20 +406,25 @@ namespace 智能藥品管理系統
                 cnt = 65501;
                 return;
             }
-            if (!PLC_Device_主畫面_領退藥_取藥防夾.Bool)
+            if (PLC_Device_主畫面_領退藥_取藥防夾.Bool)
             {
-                if (MyTimer_主畫面_領退藥_取藥防夾.IsTimeOut())
-                {
-                    MyTimer_主畫面_領退藥_取藥防夾.TickStop();
-                    MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
-                    cnt++;
-                }
+                MyTimer_主畫面_領退藥_重複登入延遲.TickStop();
+                MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(10000);
             }
-            else
-            {
-                MyTimer_主畫面_領退藥_取藥防夾.TickStop();
-                MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
-            }
+            //    if (!PLC_Device_主畫面_領退藥_取藥防夾.Bool)
+            //    {
+            //        if (MyTimer_主畫面_領退藥_取藥防夾.IsTimeOut())
+            //        {
+            //            MyTimer_主畫面_領退藥_取藥防夾.TickStop();
+            //            MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
+            //            cnt++;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MyTimer_主畫面_領退藥_取藥防夾.TickStop();
+            //        MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
+            //    }
         }
 
         void cnt_Program_主畫面_領退藥_檢查按下(ref int cnt)
