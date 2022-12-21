@@ -375,8 +375,9 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_65490_初始化(ref int cnt)
         {
+            if (plC_NumBox_關門時間.Value < 5000) plC_NumBox_關門時間.Value = 5000;
             MyTimer_主畫面_領退藥_重複登入延遲.TickStop();
-            MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(10000);
+            MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(plC_NumBox_關門時間.Value);
             MyTimer_主畫面_領退藥_取藥防夾.TickStop();
             MyTimer_主畫面_領退藥_取藥防夾.StartTickTime(200);
             cnt++;
@@ -391,7 +392,7 @@ namespace 智能藥品管理系統
             if (PLC_Device_主畫面_領退藥_取藥防夾.Bool)
             {
                 MyTimer_主畫面_領退藥_重複登入延遲.TickStop();
-                MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(10000);
+                MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(plC_NumBox_關門時間.Value);
             }
             //else
             //{
@@ -409,7 +410,7 @@ namespace 智能藥品管理系統
             if (PLC_Device_主畫面_領退藥_取藥防夾.Bool)
             {
                 MyTimer_主畫面_領退藥_重複登入延遲.TickStop();
-                MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(10000);
+                MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(plC_NumBox_關門時間.Value);
             }
             //    if (!PLC_Device_主畫面_領退藥_取藥防夾.Bool)
             //    {
