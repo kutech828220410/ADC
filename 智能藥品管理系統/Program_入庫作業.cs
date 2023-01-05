@@ -39,7 +39,7 @@ namespace 智能藥品管理系統
   
         private void Program_入庫作業_Init()
         {
-            rJ_TextBox_入庫作業_批號.KeyPress += rJ_TextBox_CheckNum_KeyPress;
+           
             rJ_TextBox_入庫作業_數量.KeyPress += rJ_TextBox_CheckNum_KeyPress;
             this.sqL_DataGridView_入庫作業_套餐資料.Init(this.sqL_DataGridView_藥檔資料_套餐設定_套餐列表);
             this.sqL_DataGridView_入庫作業_套餐資料.Set_ColumnVisible(false, new enum_藥檔資料_套餐設定_套餐列表().GetEnumNames());
@@ -115,6 +115,9 @@ namespace 智能藥品管理系統
         int 入庫作業_開鎖按鈕_poY = 0;
         int 入庫作業_開鎖按鈕_width = 0;
         int 入庫作業_開鎖按鈕_height = 0;
+        int 入庫作業_開鎖按鈕_層數 = 0;
+        int 入庫作業_開鎖按鈕_格數 = 0;
+
         PLC_Device PLC_Device_入庫作業 = new PLC_Device("S6205");
         PLC_Device PLC_Device_入庫作業_OK = new PLC_Device("S6206");
 
@@ -215,8 +218,18 @@ namespace 智能藥品管理系統
             if (cnt_Program_入庫作業 == 702)
             {
                 plC_RJ_Pannel_入庫作業_補藥完成寫入資料.Set_Enable(false);
+                cnt_Program_入庫作業 = 800;
+            }
+            if (cnt_Program_入庫作業 == 800) cnt_Program_入庫作業_800_詢問是否前推一格(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 801) cnt_Program_入庫作業_800_XY_Table開始移動(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 802) cnt_Program_入庫作業_800_XY_Table等待移動結束(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 803) cnt_Program_入庫作業_800_送料馬達前推一次開始(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 804) cnt_Program_入庫作業_800_送料馬達前推一次結束(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 805)
+            {
                 cnt_Program_入庫作業 = 65500;
             }
+
             if (cnt_Program_入庫作業 > 1) cnt_Program_入庫作業_檢查放開(ref cnt_Program_入庫作業);
 
             if (cnt_Program_入庫作業 == 65500)
@@ -572,6 +585,9 @@ namespace 智能藥品管理系統
                         int 格數 = ARRAY[1].StringToInt32() - 1;
                         this.PLC_Device_抽屜開鎖_層數.Value = 層數;
                         this.PLC_Device_抽屜開鎖_格數.Value = 格數;
+
+                        入庫作業_開鎖按鈕_層數 = 層數;
+                        入庫作業_開鎖按鈕_格數 = 格數;
                     }
                     else
                     {
@@ -738,6 +754,56 @@ namespace 智能藥品管理系統
             }
         }
 
+        void cnt_Program_入庫作業_800_詢問是否前推一格(ref int cnt)
+        {
+            if(MyMessageBox.ShowDialog("是否往前送一格?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes)
+            {
+                cnt = 65500;
+                return;
+            }
+            cnt++;
+        }
+        void cnt_Program_入庫作業_800_XY_Table開始移動(ref int cnt)
+        {
+            PLC_Device_XY_Table_移動_層數.Value = 入庫作業_開鎖按鈕_層數;
+            PLC_Device_XY_Table_移動_格數.Value = 入庫作業_開鎖按鈕_格數;
+
+
+            if (!PLC_Device_XY_Table_移動.Bool)
+            {
+                Console.WriteLine($"XY Table開始移動...");
+                PLC_Device_XY_Table_移動.Bool = true;
+                cnt++;
+            }
+        }
+        void cnt_Program_入庫作業_800_XY_Table等待移動結束(ref int cnt)
+        {
+            if (!PLC_Device_XY_Table_移動.Bool)
+            {
+                Console.WriteLine($"XY Table移動完成...");
+
+                cnt++;
+            }
+        }
+        void cnt_Program_入庫作業_800_送料馬達前推一次開始(ref int cnt)
+        {
+            PLC_Device_送料馬達出料_層數.Value = 入庫作業_開鎖按鈕_層數;
+            PLC_Device_送料馬達出料_格數.Value = 入庫作業_開鎖按鈕_格數;
+            if (!PLC_Device_送料馬達出料.Bool)
+            {
+                Console.WriteLine($"馬達開始出料...");
+                PLC_Device_送料馬達出料.Bool = true;
+                cnt++;
+            }
+        }
+        void cnt_Program_入庫作業_800_送料馬達前推一次結束(ref int cnt)
+        {
+            if (!PLC_Device_送料馬達出料.Bool)
+            {
+                Console.WriteLine($"馬達出料完成...");
+                cnt++;
+            }
+        }
         #endregion
 
         #region Funtion

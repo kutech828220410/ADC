@@ -155,6 +155,10 @@ namespace 智能藥品管理系統_WebApi.Controllers
             {
                 DateTime dateTime_start = new DateTime(operating_time_start.Value.Year, operating_time_start.Value.Month, operating_time_start.Value.Day, 0, 0, 0);
                 DateTime dateTime_end = new DateTime(operating_time_end.Value.Year, operating_time_end.Value.Month, operating_time_end.Value.Day, 23, 59, 59);
+
+                dateTime_start = operating_time_start.Value;
+                dateTime_end = operating_time_end.Value;
+
                 list_value_buf = list_value_buf.Where(a => (TypeConvert.IsInDate(a[(int)enum_trading_page.操作時間].StringToDateTime(), dateTime_start, dateTime_end))).ToList();
             }
             if (prescription_time_start != null && prescription_time_end != null)

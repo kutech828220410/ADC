@@ -1585,6 +1585,7 @@ namespace 智能藥品管理系統
                 this.送料馬達停止();
                 PLC_Device_送料馬達出料.Bool = false;
                 PLC_Device_送料馬達出料_OK.Bool = false;
+                PLC_Device_輸送帶_輸出.Bool = false;
                 cnt_Program_送料馬達出料 = 65535;
             }
         }
@@ -1685,6 +1686,7 @@ namespace 智能藥品管理系統
                 this.送料馬達停止();
                 MyTimer_送料馬達訊號持續作業延遲.TickStop();
                 MyTimer_送料馬達訊號持續作業延遲.StartTickTime(500);
+
                 cnt++;
                 return;
             }
@@ -1701,6 +1703,7 @@ namespace 智能藥品管理系統
             {
                 if (MyTimer_送料馬達訊號持續作業延遲.IsTimeOut())
                 {
+
                     if (PLC_Device_送料馬達出料_連續次數設定值.Value != 0)
                     {
                         if (PLC_Device_送料馬達出料_連續次數現在值.Value >= PLC_Device_送料馬達出料_連續次數設定值.Value)

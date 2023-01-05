@@ -1707,7 +1707,7 @@ namespace 智能藥品管理系統
 
             string 動作 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.動作].ObjectToString();
             string 藥品碼 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.藥品碼].ObjectToString();
-            string 藥品名稱 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.動作].ObjectToString();
+            string 藥品名稱 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.藥品名稱].ObjectToString();
             string 藥袋序號 = "";
             string 房名 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.房號].ObjectToString();
             string 庫存量 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.庫存量].ObjectToString();
@@ -1748,6 +1748,7 @@ namespace 智能藥品管理系統
         {
             int cnt = 0;
             object[] 儲位資料 = new object[new enum_儲位管理_儲位資料().GetLength()];
+            int index = -1;
             int 層數 = 0;
             int 格數 = 0;
             while(true)
@@ -1755,7 +1756,8 @@ namespace 智能藥品管理系統
                 if(cnt  == 0)
                 {
                     bool flag_OK = false;
-                    for(int i = 0; i < list_儲位資料.Count; i++)
+                    index = -1;
+                    for (int i = 0; i < list_儲位資料.Count; i++)
                     {
                         int 最小包裝數量 = list_儲位資料[i][(int)enum_儲位管理_儲位資料.單位包裝數量].ObjectToString().StringToInt32();
                         int 庫存 = list_儲位資料[i][(int)enum_儲位管理_儲位資料.庫存].ObjectToString().StringToInt32();
@@ -1766,6 +1768,7 @@ namespace 智能藥品管理系統
                                 儲位資料 = list_儲位資料[i];
                                 cnt++;
                                 flag_OK = true;
+                                index = i;
                                 break;
                             }
                         }
@@ -1882,6 +1885,7 @@ namespace 智能藥品管理系統
                     if (!PLC_Device_送料馬達出料.Bool)
                     {
                         Console.WriteLine($"馬達出料完成...");
+                        PLC_Device_輸送帶_輸出.Bool = true;
                         MyTimer_主畫面_領退藥_馬達出料延遲.TickStop();
                         MyTimer_主畫面_領退藥_馬達出料延遲.StartTickTime(500);
                         cnt++;
@@ -1890,14 +1894,16 @@ namespace 智能藥品管理系統
                 if (cnt == 7)
                 {
                     this.Function_儲位管理_儲位資料_儲位資料庫存異動(儲位資料, -1);
-                  
-        
+                    int 庫存 = list_儲位資料[index][(int)enum_儲位管理_儲位資料.庫存].StringToInt32();
+                    list_儲位資料[index][(int)enum_儲位管理_儲位資料.庫存] = (庫存 - 1).ToString();
+
                     cnt++;
                 }
                 if(cnt == 8)
                 {
                     if(MyTimer_主畫面_領退藥_馬達出料延遲.IsTimeOut())
                     {
+                        PLC_Device_輸送帶_輸出.Bool = false;
                         cnt = 65500;
                         return true;
                     }
