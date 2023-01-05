@@ -1,5 +1,5 @@
 {
-  "FTP_Server": "ftp://103.1.221.188/屏東榮總/智能藥品管理系統",
+  "FTP_Server": "https://github.com/kutech828220410/ADC/raw/master/Advance%20Install/Setup.msi",
   "FTP_username": "user",
   "FTP_password": "66437068"
 }
