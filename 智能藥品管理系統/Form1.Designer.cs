@@ -563,6 +563,7 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
+            this.plC_RJ_Button_交易紀錄查詢_刪除 = new MyUI.PLC_RJ_Button();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -3429,6 +3430,7 @@
             // 交易紀錄查詢
             // 
             this.交易紀錄查詢.BackColor = System.Drawing.SystemColors.Window;
+            this.交易紀錄查詢.Controls.Add(this.plC_RJ_Button_交易紀錄查詢_刪除);
             this.交易紀錄查詢.Controls.Add(this.plC_RJ_Button_交易紀錄查詢_搜尋);
             this.交易紀錄查詢.Controls.Add(this.rJ_GroupBox23);
             this.交易紀錄查詢.Controls.Add(this.rJ_GroupBox18);
@@ -13813,6 +13815,48 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
             // 
+            // plC_RJ_Button_交易紀錄查詢_刪除
+            // 
+            this.plC_RJ_Button_交易紀錄查詢_刪除.AutoResetState = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BackgroundColor = System.Drawing.Color.Orchid;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Bool = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderRadius = 5;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderSize = 0;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.but_press = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Location = new System.Drawing.Point(917, 1066);
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Name = "plC_RJ_Button_交易紀錄查詢_刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字內容 = "刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字內容 = "刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F);
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Size = new System.Drawing.Size(131, 61);
+            this.plC_RJ_Button_交易紀錄查詢_刪除.State = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.TabIndex = 126;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Text = "刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.字型鎖住 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.文字鎖住 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.致能讀取位置 = "S4077";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.讀取位元反向 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.讀寫鎖住 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.音效 = true;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示狀態 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示讀取位置 = "S4077";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -14485,6 +14529,7 @@
         private MyUI.PLC_NumBox plC_NumBox_關門時間;
         private MyUI.RJ_Lable rJ_Lable11;
         private MyUI.RJ_TextBox rJ_TextBox_入庫作業_批號;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_交易紀錄查詢_刪除;
     }
 }
 

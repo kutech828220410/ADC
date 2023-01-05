@@ -59,7 +59,11 @@ namespace 智能藥品管理系統
             {
                 this.sqL_DataGridView_交易記錄查詢.SQL_CreateTable();
             }
+            this.plC_RJ_Button_交易紀錄查詢_刪除.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_刪除_MouseDownEvent;
         }
+
+      
+
         private void Program_交易紀錄查詢()
         {
 
@@ -101,6 +105,22 @@ namespace 智能藥品管理系統
         }
         #endregion
         #region Event
+        private void PlC_RJ_Button_交易紀錄查詢_刪除_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.Get_All_Select_RowsValues();
+
+            if (list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取資料!");
+                return;
+            }
+            if (MyMessageBox.ShowDialog($"是否刪除資料,共<{list_value.Count}>筆資料", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
+
+
+            this.sqL_DataGridView_交易記錄查詢.SQL_DeleteExtra(list_value, false);
+            this.sqL_DataGridView_交易記錄查詢.DeleteExtra(list_value, true);
+
+        }
         private void plC_RJ_Button_交易紀錄查詢_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetAllRows(false);

@@ -453,6 +453,7 @@ namespace 智能藥品管理系統
             {
                 this.List_PLC_Device_權限管理[i].Bool = true;
             }
+            PLC_Device_最高權限.Bool = true;
         }
         private void Function_登入權限資料_清除權限()
         {
@@ -460,6 +461,8 @@ namespace 智能藥品管理系統
             {
                 this.List_PLC_Device_權限管理[i].Bool = false;
             }
+            PLC_Device_最高權限.Bool = false;
+
         }
 
     }
