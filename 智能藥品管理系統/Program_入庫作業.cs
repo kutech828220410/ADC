@@ -344,9 +344,19 @@ namespace 智能藥品管理系統
                         value[(int)enum_入庫作業_效期及批號.數量] = storage.List_Inventory[i];
                         list_value.Add(value);
                     }
+                    List<object[]> list_效期_value = this.sqL_DataGridView_效期批號維護.SQL_GetAllRows(false);
+                    for (int i = 0; i < list_效期_value.Count; i++)
+                    {
+                        object[] value = new object[new enum_入庫作業_效期及批號().GetEnumNames().Length];
+                        value[(int)enum_入庫作業_效期及批號.效期] = list_效期_value[i][(int)enum_效期批號維護.效期].ToDateString();
+                        value[(int)enum_入庫作業_效期及批號.批號] = list_效期_value[i][(int)enum_效期批號維護.批號].ObjectToString();
+                        value[(int)enum_入庫作業_效期及批號.數量] = "0";
+                        list_value.Add(value);
+                    }
                     this.sqL_DataGridView_入庫作業_效期及批號.RefreshGrid(list_value);
                 }
             }
+
             PLC_Device_入庫作業_輸入藥品資訊_確認.Bool = false;
 
 
@@ -721,7 +731,7 @@ namespace 智能藥品管理系統
                     string 效期 = $"{dateTimeComList_入庫作業_效期.Value.ToDateString()}";
                     string 批號 = $"{rJ_TextBox_入庫作業_批號.Text}";
                     int 數量 = rJ_TextBox_入庫作業_數量.Texts.StringToInt32();
-
+                    
                     object[] value = new object[new enum_交易記錄查詢資料().GetEnumNames().Length];
                     value[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
                     value[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.入庫.GetEnumName();
@@ -737,10 +747,25 @@ namespace 智能藥品管理系統
                     value[(int)enum_交易記錄查詢資料.開方時間] = DateTime.Now.ToDateTimeString_6();
                     value[(int)enum_交易記錄查詢資料.操作人] = this.rJ_TextBox_登入者姓名.Texts;
                     value[(int)enum_交易記錄查詢資料.備註] = $"效期[{效期}] 批號[{批號}]";
-
+                    string 藥品碼 = value[(int)enum_交易記錄查詢資料.藥品碼].ObjectToString();
                     this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
 
                     storage.效期庫存異動(效期, 批號, 數量.ToString());
+
+                    DateTime dateTime = 效期.StringToDateTime();
+                    List<object[]> list_value = this.sqL_DataGridView_效期批號維護.SQL_GetAllRows(false);
+                    list_value = list_value.GetRows((int)enum_效期批號維護.藥品碼, 藥品碼);
+                    list_value = list_value.GetRowsInDate((int)enum_效期批號維護.效期, dateTime);
+                    this.sqL_DataGridView_效期批號維護.SQL_DeleteExtra(list_value, false);
+                    object[] value_效期 = new object[new enum_效期批號維護().GetLength()];
+                    value_效期[(int)enum_效期批號維護.GUID] = Guid.NewGuid().ToString();
+                    value_效期[(int)enum_效期批號維護.藥品碼] = 藥品碼;
+                    value_效期[(int)enum_效期批號維護.效期] = dateTime.ToDateString();
+                    value_效期[(int)enum_效期批號維護.批號] = 批號;
+                    value_效期[(int)enum_效期批號維護.加入時間] = DateTime.Now.ToDateTimeString_6();
+
+                    this.sqL_DataGridView_效期批號維護.SQL_AddRow(value_效期, false);
+
                     this.storageUI_WT32.SQL_ReplaceStorage(storage);
                     cnt++;
 
@@ -756,7 +781,9 @@ namespace 智能藥品管理系統
 
         void cnt_Program_入庫作業_800_詢問是否前推一格(ref int cnt)
         {
-            if(MyMessageBox.ShowDialog("是否往前送一格?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes)
+            cnt = 65500;
+            return;
+            if (MyMessageBox.ShowDialog("是否往前送一格?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes)
             {
                 cnt = 65500;
                 return;

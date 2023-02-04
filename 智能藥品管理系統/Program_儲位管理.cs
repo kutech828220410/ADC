@@ -105,11 +105,11 @@ namespace 智能藥品管理系統
 
             this.rJ_TextBox_儲位管理_參數設定_藥品條碼.KeyPress += RJ_TextBox_儲位管理_參數設定_藥品條碼_KeyPress;
             this.plC_RJ_Button_儲位管理_套餐資料_填入儲位.MouseDownEvent += PlC_RJ_Button_儲位管理_套餐資料_填入儲位_MouseDownEvent;
-
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent;
 
         }
 
-
+   
 
         private bool flag_Program_儲位管理 = false;
         private void Program_儲位管理()
@@ -947,6 +947,34 @@ namespace 智能藥品管理系統
 
                 this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
             }
+        }
+        private void PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent(MouseEventArgs mevent)
+        {
+            if (this.wT32_GPADC.CurrentStorage == null) return;
+            Dialog_DateTime dialog_DateTime = new Dialog_DateTime();
+            DateTime dateTime = DateTime.Now;
+            this.Invoke(new Action(delegate 
+            {
+                if (dialog_DateTime.ShowDialog() != DialogResult.Yes) return;
+                dateTime = dialog_DateTime.Value;
+            }));
+            string 藥品碼 = this.wT32_GPADC.CurrentStorage.Code;
+            string 批號 = "test";
+            List<object[]> list_value = this.sqL_DataGridView_效期批號維護.SQL_GetAllRows(false);
+            list_value = list_value.GetRows((int)enum_效期批號維護.藥品碼, 藥品碼);
+            list_value = list_value.GetRowsInDate((int)enum_效期批號維護.效期, dateTime);
+            this.sqL_DataGridView_效期批號維護.SQL_DeleteExtra(list_value, false);
+            object[] value_效期 = new object[new enum_效期批號維護().GetLength()];
+            value_效期[(int)enum_效期批號維護.GUID] = Guid.NewGuid().ToString();
+            value_效期[(int)enum_效期批號維護.藥品碼] = 藥品碼;
+            value_效期[(int)enum_效期批號維護.效期] = dateTime.ToDateString();
+            value_效期[(int)enum_效期批號維護.批號] = 批號;
+            value_效期[(int)enum_效期批號維護.加入時間] = DateTime.Now.ToDateTimeString_6();
+
+            this.sqL_DataGridView_效期批號維護.SQL_AddRow(value_效期, false);
+
+
+
         }
         #endregion
     }

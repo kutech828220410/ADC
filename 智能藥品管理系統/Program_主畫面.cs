@@ -1665,10 +1665,28 @@ namespace 智能藥品管理系統
                 }
                 List<int> list_儲位數組 = Function_主畫面_取得儲位數組(list_儲位資料_buf);
                 List<int> list_取藥數組 = Function_數組找目標數值加總組合(list_儲位數組, 交易量 * -1);
+
+                string 有效組合 = "組合包裝 : ";
+                list_取藥數組 = new List<int>();
+                for (int i = 0; i < list_儲位資料_buf.Count; i++)
+                {
+                    int 單位包裝數量 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.單位包裝數量].ObjectToString().StringToInt32();
+                    if(Math.Abs(單位包裝數量) == Math.Abs(交易量))
+                    {
+                        if(list_取藥數組.Count == 0)
+                        {
+                            list_取藥數組.Add(單位包裝數量);
+                        }                      
+                    }
+                    有效組合 += $"{單位包裝數量}";
+                    if (i != list_儲位資料_buf.Count - 1) 有效組合 += ",";
+                }
+               
                 if (list_取藥數組.Count == 0)
                 {
                     主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.狀態] = enum_主畫面_藥單列表_狀態.無法找出組合.GetEnumName();
-                    voice.SpeakOnTask("無法找出組合");
+                    voice.SpeakOnTask("無法找出組合!");
+                    MyMessageBox.ShowDialog($"無法找出組合! \n{有效組合}");
                     sqL_DataGridView_主畫面_領退藥作業列表.SQL_ReplaceExtra(主畫面_取藥堆疊檢查_當前作業內容, true);
                     cnt = 65500;
                     return;

@@ -146,6 +146,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.交易紀錄查詢 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_交易紀錄查詢_刪除 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_交易紀錄查詢_搜尋 = new MyUI.PLC_RJ_Button();
             this.rJ_GroupBox23 = new MyUI.RJ_GroupBox();
             this.plC_RJ_ChechBox_交易紀錄查詢_開方時間 = new MyUI.PLC_RJ_ChechBox();
@@ -555,6 +556,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ioC12801 = new LeadShineUI.IOC1280();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.sqL_DataGridView_效期批號維護 = new SQLUI.SQL_DataGridView();
             this.plC_RJ_GroupBox17 = new MyUI.PLC_RJ_GroupBox();
             this.plC_RJ_Button_雲端藥檔_取得資料 = new MyUI.PLC_RJ_Button();
             this.sqL_DataGridView_雲端藥檔 = new SQLUI.SQL_DataGridView();
@@ -563,7 +566,7 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
-            this.plC_RJ_Button_交易紀錄查詢_刪除 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試 = new MyUI.PLC_RJ_Button();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -675,6 +678,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.plC_RJ_GroupBox17.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox17.SuspendLayout();
             this.panel_系統.SuspendLayout();
@@ -3441,6 +3445,48 @@
             this.交易紀錄查詢.Size = new System.Drawing.Size(1056, 1723);
             this.交易紀錄查詢.TabIndex = 3;
             this.交易紀錄查詢.Text = "交易紀錄查詢";
+            // 
+            // plC_RJ_Button_交易紀錄查詢_刪除
+            // 
+            this.plC_RJ_Button_交易紀錄查詢_刪除.AutoResetState = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BackgroundColor = System.Drawing.Color.Orchid;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Bool = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderRadius = 5;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderSize = 0;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.but_press = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Location = new System.Drawing.Point(917, 1066);
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Name = "plC_RJ_Button_交易紀錄查詢_刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字內容 = "刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字內容 = "刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F);
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Size = new System.Drawing.Size(131, 61);
+            this.plC_RJ_Button_交易紀錄查詢_刪除.State = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.TabIndex = 126;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.Text = "刪除";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.字型鎖住 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.文字鎖住 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.致能讀取位置 = "S4077";
+            this.plC_RJ_Button_交易紀錄查詢_刪除.讀取位元反向 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.讀寫鎖住 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.音效 = true;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示狀態 = false;
+            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示讀取位置 = "S4077";
             // 
             // plC_RJ_Button_交易紀錄查詢_搜尋
             // 
@@ -7724,6 +7770,7 @@
             this.plC_RJ_GroupBox5.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderRadius = -37;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderSize = 2;
+            this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_寫入);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_清除儲位);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_效期庫存異動);
@@ -13553,12 +13600,77 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.White;
+            this.tabPage7.Controls.Add(this.groupBox5);
             this.tabPage7.Controls.Add(this.plC_RJ_GroupBox17);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(1048, 1642);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "設定02";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.sqL_DataGridView_效期批號維護);
+            this.groupBox5.Location = new System.Drawing.Point(5, 754);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(697, 645);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "效期批號維護";
+            // 
+            // sqL_DataGridView_效期批號維護
+            // 
+            this.sqL_DataGridView_效期批號維護.AutoSelectToDeep = false;
+            this.sqL_DataGridView_效期批號維護.backColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_效期批號維護.BorderColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_效期批號維護.BorderRadius = 0;
+            this.sqL_DataGridView_效期批號維護.BorderSize = 2;
+            this.sqL_DataGridView_效期批號維護.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_效期批號維護.cellStylBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_效期批號維護.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_效期批號維護.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_效期批號維護.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
+            this.sqL_DataGridView_效期批號維護.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_效期批號維護.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_效期批號維護.columnHeadersHeight = 23;
+            this.sqL_DataGridView_效期批號維護.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqL_DataGridView_效期批號維護.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_效期批號維護.Columns"))));
+            this.sqL_DataGridView_效期批號維護.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_效期批號維護.Columns1"))));
+            this.sqL_DataGridView_效期批號維護.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_效期批號維護.Columns2"))));
+            this.sqL_DataGridView_效期批號維護.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_效期批號維護.Columns3"))));
+            this.sqL_DataGridView_效期批號維護.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_效期批號維護.Columns4"))));
+            this.sqL_DataGridView_效期批號維護.DataBaseName = "storehouse_0";
+            this.sqL_DataGridView_效期批號維護.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sqL_DataGridView_效期批號維護.Font = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_效期批號維護.ImageBox = false;
+            this.sqL_DataGridView_效期批號維護.Location = new System.Drawing.Point(3, 18);
+            this.sqL_DataGridView_效期批號維護.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sqL_DataGridView_效期批號維護.Name = "sqL_DataGridView_效期批號維護";
+            this.sqL_DataGridView_效期批號維護.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
+            this.sqL_DataGridView_效期批號維護.Password = "user82822040";
+            this.sqL_DataGridView_效期批號維護.Port = ((uint)(3306u));
+            this.sqL_DataGridView_效期批號維護.rowHeaderBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_效期批號維護.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_效期批號維護.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqL_DataGridView_效期批號維護.RowsHeight = 60;
+            this.sqL_DataGridView_效期批號維護.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView_效期批號維護.Server = "localhost";
+            this.sqL_DataGridView_效期批號維護.Size = new System.Drawing.Size(691, 552);
+            this.sqL_DataGridView_效期批號維護.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
+            this.sqL_DataGridView_效期批號維護.TabIndex = 145;
+            this.sqL_DataGridView_效期批號維護.TableName = "Validity_period_page";
+            this.sqL_DataGridView_效期批號維護.UserName = "root";
+            this.sqL_DataGridView_效期批號維護.可拖曳欄位寬度 = true;
+            this.sqL_DataGridView_效期批號維護.可選擇多列 = true;
+            this.sqL_DataGridView_效期批號維護.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_效期批號維護.自動換行 = true;
+            this.sqL_DataGridView_效期批號維護.表單字體 = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_效期批號維護.邊框樣式 = System.Windows.Forms.BorderStyle.None;
+            this.sqL_DataGridView_效期批號維護.顯示CheckBox = false;
+            this.sqL_DataGridView_效期批號維護.顯示首列 = true;
+            this.sqL_DataGridView_效期批號維護.顯示首行 = true;
+            this.sqL_DataGridView_效期批號維護.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_效期批號維護.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             // 
             // plC_RJ_GroupBox17
             // 
@@ -13815,47 +13927,47 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // plC_RJ_Button_交易紀錄查詢_刪除
+            // plC_RJ_Button_儲位管理_儲位資料_新增效期測試
             // 
-            this.plC_RJ_Button_交易紀錄查詢_刪除.AutoResetState = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.BackgroundColor = System.Drawing.Color.Orchid;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Bool = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderColor = System.Drawing.Color.SaddleBrown;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderRadius = 5;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.BorderSize = 0;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.but_press = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Location = new System.Drawing.Point(917, 1066);
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Name = "plC_RJ_Button_交易紀錄查詢_刪除";
-            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字內容 = "刪除";
-            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字內容 = "刪除";
-            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F);
-            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Size = new System.Drawing.Size(131, 61);
-            this.plC_RJ_Button_交易紀錄查詢_刪除.State = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.TabIndex = 126;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.Text = "刪除";
-            this.plC_RJ_Button_交易紀錄查詢_刪除.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.字型鎖住 = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.文字鎖住 = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.致能讀取位置 = "S4077";
-            this.plC_RJ_Button_交易紀錄查詢_刪除.讀取位元反向 = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.讀寫鎖住 = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.音效 = true;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示 = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示狀態 = false;
-            this.plC_RJ_Button_交易紀錄查詢_刪除.顯示讀取位置 = "S4077";
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.AutoResetState = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Bool = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.BorderRadius = 5;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.BorderSize = 0;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.but_press = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Location = new System.Drawing.Point(244, 231);
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Name = "plC_RJ_Button_儲位管理_儲位資料_新增效期測試";
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.OFF_文字內容 = "新增效期測試";
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.ON_文字內容 = "新增效期測試";
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Size = new System.Drawing.Size(129, 48);
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.State = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.TabIndex = 31;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Text = "新增效期測試";
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.Texts = "新增效期測試";
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.字型鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.文字鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.讀取位元反向 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.讀寫鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.音效 = true;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.顯示 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.顯示狀態 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.顯示讀取位置 = "S4077";
             // 
             // Form1
             // 
@@ -13996,6 +14108,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.plC_RJ_GroupBox17.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox17.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
@@ -14530,6 +14643,9 @@
         private MyUI.RJ_Lable rJ_Lable11;
         private MyUI.RJ_TextBox rJ_TextBox_入庫作業_批號;
         private MyUI.PLC_RJ_Button plC_RJ_Button_交易紀錄查詢_刪除;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private SQLUI.SQL_DataGridView sqL_DataGridView_效期批號維護;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_儲位管理_儲位資料_新增效期測試;
     }
 }
 
