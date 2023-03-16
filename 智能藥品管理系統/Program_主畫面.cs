@@ -1235,6 +1235,7 @@ namespace 智能藥品管理系統
                 value[(int)enum_交易記錄查詢資料.開方時間] = 開方時間;
                 value[(int)enum_交易記錄查詢資料.備註] = 備註;
                 this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
+                this.sqL_DataGridView_前次使用紀錄.AddRow(value, true);
 
             }
 
