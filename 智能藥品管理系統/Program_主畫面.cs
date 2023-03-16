@@ -36,6 +36,7 @@ namespace 智能藥品管理系統
             未搜尋到儲位,
             無法找出組合,
         }
+     
         public enum enum_主畫面_藥單列表
         {
             GUID,
@@ -62,6 +63,9 @@ namespace 智能藥品管理系統
         private void Program_主畫面_Init()
         {
             this.textBox_主畫面_密碼.PassWordChar = true;
+
+            this.sqL_DataGridView_前次使用紀錄.Init();
+
             this.sqL_DataGridView_主畫面_領退藥作業列表.Init();
             if(!this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_IsTableCreat())
             {
@@ -574,6 +578,7 @@ namespace 智能藥品管理系統
 
         void cnt_Program_主畫面_領退藥_200_選擇領退藥(ref int cnt)
         {
+            this.sqL_DataGridView_前次使用紀錄.ClearGrid();
             string 狀態顯示 = "";
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
@@ -1133,6 +1138,7 @@ namespace 智能藥品管理系統
             value[(int)enum_交易記錄查詢資料.開方時間] = 開方時間;
             value[(int)enum_交易記錄查詢資料.備註] = 備註;
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
+            this.sqL_DataGridView_前次使用紀錄.AddRow(value, true);
             cnt++;
         }
 
@@ -1365,6 +1371,7 @@ namespace 智能藥品管理系統
 
 
             this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_AddRow(value, true);
+       
             cnt++;
         }
 
@@ -1543,6 +1550,7 @@ namespace 智能藥品管理系統
             value[(int)enum_交易記錄查詢資料.開方時間] = 開方時間;
             value[(int)enum_交易記錄查詢資料.備註] = 備註;
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
+            this.sqL_DataGridView_前次使用紀錄.AddRow(value, true);
             cnt++;
         }
         #endregion
@@ -1637,6 +1645,7 @@ namespace 智能藥品管理系統
         void cnt_Program_主畫面_取藥堆疊檢查_開始作業(ref int cnt)
         {
             string Code = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.藥品碼].ObjectToString();
+            string 藥名 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.藥品名稱].ObjectToString();
             int 交易量 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.交易量].ObjectToString().StringToInt32();
             List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料();
             List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.藥品碼, Code);
@@ -1644,7 +1653,10 @@ namespace 智能藥品管理系統
             {
                 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.狀態] = enum_主畫面_藥單列表_狀態.未搜尋到儲位.GetEnumName();
                 voice.SpeakOnTask("未搜尋到儲位");
-                sqL_DataGridView_主畫面_領退藥作業列表.SQL_ReplaceExtra(主畫面_取藥堆疊檢查_當前作業內容, true);
+                List<object[]> list_delete = new List<object[]>();
+                list_delete.Add(主畫面_取藥堆疊檢查_當前作業內容);
+                sqL_DataGridView_主畫面_領退藥作業列表.SQL_DeleteExtra(list_delete, true);
+                MyMessageBox.ShowDialog($"<{Code}> {藥名} 未搜尋到儲位");
                 cnt = 65500;
                 return;
             }
@@ -1659,7 +1671,10 @@ namespace 智能藥品管理系統
                 {
                     主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.狀態] = enum_主畫面_藥單列表_狀態.庫存不足.GetEnumName();
                     voice.SpeakOnTask("庫存不足");
-                    sqL_DataGridView_主畫面_領退藥作業列表.SQL_ReplaceExtra(主畫面_取藥堆疊檢查_當前作業內容, true);
+                    List<object[]> list_delete = new List<object[]>();
+                    list_delete.Add(主畫面_取藥堆疊檢查_當前作業內容);
+                    sqL_DataGridView_主畫面_領退藥作業列表.SQL_DeleteExtra(list_delete, true);
+                    MyMessageBox.ShowDialog($"<{Code}> {藥名} 庫存不足");
                     cnt = 65500;
                     return;
                 }
@@ -1755,6 +1770,8 @@ namespace 智能藥品管理系統
             value[(int)enum_交易記錄查詢資料.開方時間] = 開方時間;
             value[(int)enum_交易記錄查詢資料.備註] = 備註;
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
+            this.sqL_DataGridView_前次使用紀錄.AddRow(value, true);
+
 
             cnt++;
         }

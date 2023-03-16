@@ -64,7 +64,7 @@
             this.sqL_DataGridView_手術房列表.RowsHeight = 60;
             this.sqL_DataGridView_手術房列表.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_手術房列表.Server = "127.0.0.0";
-            this.sqL_DataGridView_手術房列表.Size = new System.Drawing.Size(424, 361);
+            this.sqL_DataGridView_手術房列表.Size = new System.Drawing.Size(424, 1426);
             this.sqL_DataGridView_手術房列表.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_手術房列表.TabIndex = 0;
             this.sqL_DataGridView_手術房列表.UserName = "root";
@@ -74,6 +74,7 @@
             this.sqL_DataGridView_手術房列表.自動換行 = true;
             this.sqL_DataGridView_手術房列表.表單字體 = new System.Drawing.Font("新細明體", 9F);
             this.sqL_DataGridView_手術房列表.邊框樣式 = System.Windows.Forms.BorderStyle.None;
+            this.sqL_DataGridView_手術房列表.顯示CheckBox = false;
             this.sqL_DataGridView_手術房列表.顯示首列 = true;
             this.sqL_DataGridView_手術房列表.顯示首行 = true;
             this.sqL_DataGridView_手術房列表.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -100,6 +101,7 @@
             // 
             // plC_RJ_Button_確認
             // 
+            this.plC_RJ_Button_確認.AutoResetState = false;
             this.plC_RJ_Button_確認.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_確認.Bool = false;
             this.plC_RJ_Button_確認.BorderColor = System.Drawing.Color.RoyalBlue;
@@ -140,6 +142,7 @@
             // 
             // plC_RJ_Button_取消
             // 
+            this.plC_RJ_Button_取消.AutoResetState = false;
             this.plC_RJ_Button_取消.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.plC_RJ_Button_取消.Bool = false;
             this.plC_RJ_Button_取消.BorderColor = System.Drawing.Color.RoyalBlue;
@@ -183,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(635, 429);
+            this.ClientSize = new System.Drawing.Size(635, 1494);
             this.ControlBox = false;
             this.Controls.Add(this.plC_RJ_Button_取消);
             this.Controls.Add(this.plC_RJ_Button_確認);
