@@ -179,8 +179,9 @@ namespace 智能藥品管理系統
             sub_Program_退藥鎖();
             sub_Program_面板鎖();
             sub_Program_X軸安全位置移動();
+            sub_Program_清空出料盤();
 
-            if(!PLC_Device_退藥鎖_輸入.Bool)
+            if (!PLC_Device_退藥鎖_輸入.Bool)
             {
                 PLC_Device_退藥抽屜開啟警報.Bool = true;
             }
@@ -2234,6 +2235,136 @@ namespace 智能藥品管理系統
 
 
         #endregion
+        #region PLC_清空出料盤
+        PLC_Device PLC_Device_清空出料盤 = new PLC_Device("S6900");
+        PLC_Device PLC_Device_清空出料盤_致能 = new PLC_Device("S6901");
+        PLC_Device PLC_Device_清空出料盤_OK = new PLC_Device("");
+        int cnt_Program_清空出料盤 = 65534;
+        void sub_Program_清空出料盤()
+        {
+            if (cnt_Program_清空出料盤 == 65534)
+            {
+                PLC_Device_清空出料盤.SetComment("PLC_清空出料盤");
+                PLC_Device_清空出料盤_OK.SetComment("PLC_清空出料盤_OK");
+                PLC_Device_清空出料盤.Bool = false;
+                cnt_Program_清空出料盤 = 65535;
+            }
+            if (cnt_Program_清空出料盤 == 65535) cnt_Program_清空出料盤 = 1;
+            if (cnt_Program_清空出料盤 == 1) cnt_Program_清空出料盤_檢查按下(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 2) cnt_Program_清空出料盤_初始化(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 3) cnt_Program_清空出料盤_取物門_移動到關門位置開始(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 4) cnt_Program_清空出料盤_取物門_移動到關門位置結束(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 5) cnt_Program_清空出料盤_移動至出貨位置開始(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 6) cnt_Program_清空出料盤_移動至出貨位置結束(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 7) cnt_Program_清空出料盤_輸送帶開始(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 8) cnt_Program_清空出料盤_輸送帶結束(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 9) cnt_Program_清空出料盤_移動到開門位置開始(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 10) cnt_Program_清空出料盤_移動到開門位置結束(ref cnt_Program_清空出料盤);
+            if (cnt_Program_清空出料盤 == 11) cnt_Program_清空出料盤 = 65500;
+            if (cnt_Program_清空出料盤 > 1) cnt_Program_清空出料盤_檢查放開(ref cnt_Program_清空出料盤);
+
+            if (cnt_Program_清空出料盤 == 65500)
+            {
+                PLC_Device_取物門_移動到開門位置.Bool = false;
+                PLC_Device_取物門_移動到關門位置.Bool = false;
+                PLC_Device_移動至出貨位置.Bool = false;
+                PLC_Device_輸送帶.Bool = false;
+                //PLC_Device_清空出料盤_致能.Bool = true;
+                PLC_Device_清空出料盤.Bool = false;
+                PLC_Device_清空出料盤_OK.Bool = false;
+                cnt_Program_清空出料盤 = 65535;
+            }
+            if (PLC_Device_最高權限.Bool) PLC_Device_清空出料盤_致能.Bool = true;
+        }
+        void cnt_Program_清空出料盤_檢查按下(ref int cnt)
+        {
+            if (PLC_Device_清空出料盤.Bool) cnt++;
+        }
+        void cnt_Program_清空出料盤_檢查放開(ref int cnt)
+        {
+            if (!PLC_Device_清空出料盤.Bool) cnt = 65500;
+        }
+        void cnt_Program_清空出料盤_初始化(ref int cnt)
+        {
+            PLC_Device_取物門_移動到開門位置.Bool = false;
+            PLC_Device_取物門_移動到關門位置.Bool = false;
+            //PLC_Device_清空出料盤_致能.Bool = false;
+            PLC_Device_移動至出貨位置.Bool = false;
+            PLC_Device_輸送帶.Bool = false;
+            cnt++;
+        }
+        void cnt_Program_清空出料盤_取物門_移動到關門位置開始(ref int cnt)
+        {
+            if (!PLC_Device_取物門_移動到關門位置.Bool)
+            {
+                PLC_Device_取物門_移動到關門位置.Bool = true;
+                cnt++;
+            }
+        }
+        void cnt_Program_清空出料盤_取物門_移動到關門位置結束(ref int cnt)
+        {
+            if (!PLC_Device_取物門_移動到關門位置.Bool)
+            {
+                cnt++;
+            }
+        }
+        void cnt_Program_清空出料盤_移動至出貨位置開始(ref int cnt)
+        {
+            if(!PLC_Device_移動至出貨位置.Bool)
+            {
+                PLC_Device_移動至出貨位置.Bool = true;
+                cnt++;
+            }        
+        }
+        void cnt_Program_清空出料盤_移動至出貨位置結束(ref int cnt)
+        {
+            if (!PLC_Device_移動至出貨位置.Bool)
+            {
+                cnt++;
+            }
+        }
+        void cnt_Program_清空出料盤_輸送帶開始(ref int cnt)
+        {
+            if (!PLC_Device_輸送帶.Bool)
+            {
+                PLC_Device_輸送帶.Bool = true;
+                cnt++;
+            }
+        }
+        void cnt_Program_清空出料盤_輸送帶結束(ref int cnt)
+        {
+            if (!PLC_Device_輸送帶.Bool)
+            {
+                cnt++;
+            }
+        }
+        void cnt_Program_清空出料盤_移動到開門位置開始(ref int cnt)
+        {
+            if (!PLC_Device_取物門_移動到開門位置.Bool)
+            {
+                PLC_Device_取物門_移動到開門位置.Bool = true;
+                cnt++;
+            }
+        }
+        void cnt_Program_清空出料盤_移動到開門位置結束(ref int cnt)
+        {
+            if (!PLC_Device_取物門_移動到開門位置.Bool)
+            {
+                cnt++;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        #endregion
+
         #region Function
         List<int> Function_數組找目標數值加總組合(List<int> 單格所有庫存數量數組, int 目標數量)
         {

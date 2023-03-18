@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             MyUI.PLC_MultiStateDisplay.TextValue textValue11 = new MyUI.PLC_MultiStateDisplay.TextValue();
             MyUI.PLC_MultiStateDisplay.TextValue textValue12 = new MyUI.PLC_MultiStateDisplay.TextValue();
             MyUI.PLC_MultiStateDisplay.TextValue textValue13 = new MyUI.PLC_MultiStateDisplay.TextValue();
@@ -38,7 +39,6 @@
             MyUI.PLC_MultiStateDisplay.TextValue textValue18 = new MyUI.PLC_MultiStateDisplay.TextValue();
             MyUI.PLC_MultiStateDisplay.TextValue textValue19 = new MyUI.PLC_MultiStateDisplay.TextValue();
             MyUI.PLC_MultiStateDisplay.TextValue textValue20 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pannel_Main01 = new System.Windows.Forms.Panel();
             this.plC_RJ_ScreenButton_人員資料 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton_參數設定 = new MyUI.PLC_RJ_ScreenButton();
@@ -60,6 +60,8 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage_Main = new MyUI.PLC_ScreenPage();
             this.主畫面 = new System.Windows.Forms.TabPage();
+            this.rJ_GroupBox12 = new MyUI.RJ_GroupBox();
+            this.sqL_DataGridView_前次使用紀錄 = new SQLUI.SQL_DataGridView();
             this.rJ_GroupBox3 = new MyUI.RJ_GroupBox();
             this.sqL_DataGridView_主畫面_領退藥作業列表 = new SQLUI.SQL_DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -567,12 +569,13 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
-            this.rJ_GroupBox12 = new MyUI.RJ_GroupBox();
-            this.sqL_DataGridView_前次使用紀錄 = new SQLUI.SQL_DataGridView();
+            this.plC_Button67 = new MyUI.PLC_Button();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.主畫面.SuspendLayout();
+            this.rJ_GroupBox12.ContentsPanel.SuspendLayout();
+            this.rJ_GroupBox12.SuspendLayout();
             this.rJ_GroupBox3.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -684,8 +687,6 @@
             this.plC_RJ_GroupBox17.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox17.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.rJ_GroupBox12.ContentsPanel.SuspendLayout();
-            this.rJ_GroupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // pannel_Main01
@@ -1285,6 +1286,106 @@
             this.主畫面.TabIndex = 0;
             this.主畫面.Text = "主畫面";
             // 
+            // rJ_GroupBox12
+            // 
+            this.rJ_GroupBox12.BackColor = System.Drawing.Color.White;
+            // 
+            // rJ_GroupBox12.ContentsPanel
+            // 
+            this.rJ_GroupBox12.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox12.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
+            this.rJ_GroupBox12.ContentsPanel.BorderRadius = 0;
+            this.rJ_GroupBox12.ContentsPanel.BorderSize = 2;
+            this.rJ_GroupBox12.ContentsPanel.Controls.Add(this.sqL_DataGridView_前次使用紀錄);
+            this.rJ_GroupBox12.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rJ_GroupBox12.ContentsPanel.ForeColor = System.Drawing.Color.White;
+            this.rJ_GroupBox12.ContentsPanel.Location = new System.Drawing.Point(0, 37);
+            this.rJ_GroupBox12.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox12.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(1056, 745);
+            this.rJ_GroupBox12.ContentsPanel.TabIndex = 2;
+            this.rJ_GroupBox12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_GroupBox12.Location = new System.Drawing.Point(0, 1314);
+            this.rJ_GroupBox12.Name = "rJ_GroupBox12";
+            this.rJ_GroupBox12.PannelBackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox12.PannelBorderColor = System.Drawing.Color.SkyBlue;
+            this.rJ_GroupBox12.PannelBorderRadius = 0;
+            this.rJ_GroupBox12.PannelBorderSize = 2;
+            this.rJ_GroupBox12.Size = new System.Drawing.Size(1056, 782);
+            this.rJ_GroupBox12.TabIndex = 12;
+            this.rJ_GroupBox12.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox12.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_GroupBox12.TitleBorderRadius = 5;
+            this.rJ_GroupBox12.TitleBorderSize = 0;
+            this.rJ_GroupBox12.TitleFont = new System.Drawing.Font("新細明體", 12F);
+            this.rJ_GroupBox12.TitleForeColor = System.Drawing.Color.White;
+            this.rJ_GroupBox12.TitleHeight = 37;
+            this.rJ_GroupBox12.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_GroupBox12.TitleTexts = "前次使用紀錄";
+            // 
+            // sqL_DataGridView_前次使用紀錄
+            // 
+            this.sqL_DataGridView_前次使用紀錄.AutoSelectToDeep = false;
+            this.sqL_DataGridView_前次使用紀錄.backColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_前次使用紀錄.BorderColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_前次使用紀錄.BorderRadius = 0;
+            this.sqL_DataGridView_前次使用紀錄.BorderSize = 2;
+            this.sqL_DataGridView_前次使用紀錄.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_前次使用紀錄.cellStylBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_前次使用紀錄.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_前次使用紀錄.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_前次使用紀錄.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
+            this.sqL_DataGridView_前次使用紀錄.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_前次使用紀錄.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_前次使用紀錄.columnHeadersHeight = 44;
+            this.sqL_DataGridView_前次使用紀錄.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns1"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns2"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns3"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns4"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns5"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns6"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns7"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns8"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns9"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns10"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns11"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns12"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns13"))));
+            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns14"))));
+            this.sqL_DataGridView_前次使用紀錄.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sqL_DataGridView_前次使用紀錄.Font = new System.Drawing.Font("新細明體", 9F);
+            this.sqL_DataGridView_前次使用紀錄.ImageBox = false;
+            this.sqL_DataGridView_前次使用紀錄.Location = new System.Drawing.Point(5, 5);
+            this.sqL_DataGridView_前次使用紀錄.Margin = new System.Windows.Forms.Padding(4);
+            this.sqL_DataGridView_前次使用紀錄.Name = "sqL_DataGridView_前次使用紀錄";
+            this.sqL_DataGridView_前次使用紀錄.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
+            this.sqL_DataGridView_前次使用紀錄.Password = "user82822040";
+            this.sqL_DataGridView_前次使用紀錄.Port = ((uint)(3306u));
+            this.sqL_DataGridView_前次使用紀錄.rowHeaderBackColor = System.Drawing.Color.CornflowerBlue;
+            this.sqL_DataGridView_前次使用紀錄.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_前次使用紀錄.RowsColor = System.Drawing.Color.White;
+            this.sqL_DataGridView_前次使用紀錄.RowsHeight = 90;
+            this.sqL_DataGridView_前次使用紀錄.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView_前次使用紀錄.Server = "localhost";
+            this.sqL_DataGridView_前次使用紀錄.Size = new System.Drawing.Size(1046, 970);
+            this.sqL_DataGridView_前次使用紀錄.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
+            this.sqL_DataGridView_前次使用紀錄.TabIndex = 45;
+            this.sqL_DataGridView_前次使用紀錄.TableName = "trading";
+            this.sqL_DataGridView_前次使用紀錄.UserName = "root";
+            this.sqL_DataGridView_前次使用紀錄.可拖曳欄位寬度 = true;
+            this.sqL_DataGridView_前次使用紀錄.可選擇多列 = false;
+            this.sqL_DataGridView_前次使用紀錄.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_前次使用紀錄.自動換行 = true;
+            this.sqL_DataGridView_前次使用紀錄.表單字體 = new System.Drawing.Font("新細明體", 9F);
+            this.sqL_DataGridView_前次使用紀錄.邊框樣式 = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sqL_DataGridView_前次使用紀錄.顯示CheckBox = false;
+            this.sqL_DataGridView_前次使用紀錄.顯示首列 = true;
+            this.sqL_DataGridView_前次使用紀錄.顯示首行 = true;
+            this.sqL_DataGridView_前次使用紀錄.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_前次使用紀錄.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            // 
             // rJ_GroupBox3
             // 
             this.rJ_GroupBox3.BackColor = System.Drawing.Color.White;
@@ -1387,6 +1488,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.plC_Button67);
             this.panel2.Controls.Add(this.plC_RJ_Button_主畫面_開始作業);
             this.panel2.Controls.Add(this.plC_RJ_Button1);
             this.panel2.Controls.Add(this.plC_RJ_GroupBox6);
@@ -1543,10 +1645,10 @@
             this.plC_MultiStateDisplay_主畫面_狀態顯示.BackColor = System.Drawing.Color.SkyBlue;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.BorderRadius = 10;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.Cursor = System.Windows.Forms.Cursors.Default;
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.Location = new System.Drawing.Point(619, 252);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.Location = new System.Drawing.Point(619, 334);
             this.plC_MultiStateDisplay_主畫面_狀態顯示.Name = "plC_MultiStateDisplay_主畫面_狀態顯示";
             this.plC_MultiStateDisplay_主畫面_狀態顯示.RefreshTime = 50;
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.Size = new System.Drawing.Size(434, 484);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.Size = new System.Drawing.Size(434, 402);
             this.plC_MultiStateDisplay_主畫面_狀態顯示.TabIndex = 2;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.字體顏色 = System.Drawing.Color.White;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.文字對齊位置 = System.Drawing.ContentAlignment.MiddleCenter;
@@ -13974,105 +14076,40 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // rJ_GroupBox12
+            // plC_Button67
             // 
-            this.rJ_GroupBox12.BackColor = System.Drawing.Color.White;
-            // 
-            // rJ_GroupBox12.ContentsPanel
-            // 
-            this.rJ_GroupBox12.ContentsPanel.BackColor = System.Drawing.Color.White;
-            this.rJ_GroupBox12.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
-            this.rJ_GroupBox12.ContentsPanel.BorderRadius = 0;
-            this.rJ_GroupBox12.ContentsPanel.BorderSize = 2;
-            this.rJ_GroupBox12.ContentsPanel.Controls.Add(this.sqL_DataGridView_前次使用紀錄);
-            this.rJ_GroupBox12.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rJ_GroupBox12.ContentsPanel.ForeColor = System.Drawing.Color.White;
-            this.rJ_GroupBox12.ContentsPanel.Location = new System.Drawing.Point(0, 37);
-            this.rJ_GroupBox12.ContentsPanel.Name = "ContentsPanel";
-            this.rJ_GroupBox12.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(1056, 745);
-            this.rJ_GroupBox12.ContentsPanel.TabIndex = 2;
-            this.rJ_GroupBox12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rJ_GroupBox12.Location = new System.Drawing.Point(0, 1314);
-            this.rJ_GroupBox12.Name = "rJ_GroupBox12";
-            this.rJ_GroupBox12.PannelBackColor = System.Drawing.Color.White;
-            this.rJ_GroupBox12.PannelBorderColor = System.Drawing.Color.SkyBlue;
-            this.rJ_GroupBox12.PannelBorderRadius = 0;
-            this.rJ_GroupBox12.PannelBorderSize = 2;
-            this.rJ_GroupBox12.Size = new System.Drawing.Size(1056, 782);
-            this.rJ_GroupBox12.TabIndex = 12;
-            this.rJ_GroupBox12.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.rJ_GroupBox12.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_GroupBox12.TitleBorderRadius = 5;
-            this.rJ_GroupBox12.TitleBorderSize = 0;
-            this.rJ_GroupBox12.TitleFont = new System.Drawing.Font("新細明體", 12F);
-            this.rJ_GroupBox12.TitleForeColor = System.Drawing.Color.White;
-            this.rJ_GroupBox12.TitleHeight = 37;
-            this.rJ_GroupBox12.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rJ_GroupBox12.TitleTexts = "前次使用紀錄";
-            // 
-            // sqL_DataGridView_前次使用紀錄
-            // 
-            this.sqL_DataGridView_前次使用紀錄.AutoSelectToDeep = false;
-            this.sqL_DataGridView_前次使用紀錄.backColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_前次使用紀錄.BorderColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_前次使用紀錄.BorderRadius = 0;
-            this.sqL_DataGridView_前次使用紀錄.BorderSize = 2;
-            this.sqL_DataGridView_前次使用紀錄.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.sqL_DataGridView_前次使用紀錄.cellStylBackColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_前次使用紀錄.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_前次使用紀錄.cellStylForeColor = System.Drawing.Color.Black;
-            this.sqL_DataGridView_前次使用紀錄.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
-            this.sqL_DataGridView_前次使用紀錄.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_前次使用紀錄.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_前次使用紀錄.columnHeadersHeight = 44;
-            this.sqL_DataGridView_前次使用紀錄.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns1"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns2"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns3"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns4"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns5"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns6"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns7"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns8"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns9"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns10"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns11"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns12"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns13"))));
-            this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns14"))));
-            this.sqL_DataGridView_前次使用紀錄.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sqL_DataGridView_前次使用紀錄.Font = new System.Drawing.Font("新細明體", 9F);
-            this.sqL_DataGridView_前次使用紀錄.ImageBox = false;
-            this.sqL_DataGridView_前次使用紀錄.Location = new System.Drawing.Point(5, 5);
-            this.sqL_DataGridView_前次使用紀錄.Margin = new System.Windows.Forms.Padding(4);
-            this.sqL_DataGridView_前次使用紀錄.Name = "sqL_DataGridView_前次使用紀錄";
-            this.sqL_DataGridView_前次使用紀錄.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
-            this.sqL_DataGridView_前次使用紀錄.Password = "user82822040";
-            this.sqL_DataGridView_前次使用紀錄.Port = ((uint)(3306u));
-            this.sqL_DataGridView_前次使用紀錄.rowHeaderBackColor = System.Drawing.Color.CornflowerBlue;
-            this.sqL_DataGridView_前次使用紀錄.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_前次使用紀錄.RowsColor = System.Drawing.Color.White;
-            this.sqL_DataGridView_前次使用紀錄.RowsHeight = 90;
-            this.sqL_DataGridView_前次使用紀錄.SaveFileName = "SQL_DataGridView";
-            this.sqL_DataGridView_前次使用紀錄.Server = "localhost";
-            this.sqL_DataGridView_前次使用紀錄.Size = new System.Drawing.Size(1046, 970);
-            this.sqL_DataGridView_前次使用紀錄.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
-            this.sqL_DataGridView_前次使用紀錄.TabIndex = 45;
-            this.sqL_DataGridView_前次使用紀錄.TableName = "trading";
-            this.sqL_DataGridView_前次使用紀錄.UserName = "root";
-            this.sqL_DataGridView_前次使用紀錄.可拖曳欄位寬度 = true;
-            this.sqL_DataGridView_前次使用紀錄.可選擇多列 = false;
-            this.sqL_DataGridView_前次使用紀錄.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.sqL_DataGridView_前次使用紀錄.自動換行 = true;
-            this.sqL_DataGridView_前次使用紀錄.表單字體 = new System.Drawing.Font("新細明體", 9F);
-            this.sqL_DataGridView_前次使用紀錄.邊框樣式 = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sqL_DataGridView_前次使用紀錄.顯示CheckBox = false;
-            this.sqL_DataGridView_前次使用紀錄.顯示首列 = true;
-            this.sqL_DataGridView_前次使用紀錄.顯示首行 = true;
-            this.sqL_DataGridView_前次使用紀錄.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_前次使用紀錄.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.plC_Button67.Bool = false;
+            this.plC_Button67.but_press = false;
+            this.plC_Button67.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button67.Location = new System.Drawing.Point(622, 247);
+            this.plC_Button67.Name = "plC_Button67";
+            this.plC_Button67.OFF_文字內容 = "清空儲料盤";
+            this.plC_Button67.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_Button67.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button67.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button67.ON_文字內容 = "清空儲料盤";
+            this.plC_Button67.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_Button67.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button67.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button67.Size = new System.Drawing.Size(166, 81);
+            this.plC_Button67.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button67.TabIndex = 11;
+            this.plC_Button67.事件驅動 = false;
+            this.plC_Button67.字型鎖住 = false;
+            this.plC_Button67.寫入元件位置 = "S6900";
+            this.plC_Button67.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
+            this.plC_Button67.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button67.文字鎖住 = false;
+            this.plC_Button67.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button67.狀態OFF圖片")));
+            this.plC_Button67.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button67.狀態ON圖片")));
+            this.plC_Button67.致能讀取位置 = "S6901";
+            this.plC_Button67.讀取位元反向 = false;
+            this.plC_Button67.讀取元件位置 = "S6900";
+            this.plC_Button67.讀寫鎖住 = false;
+            this.plC_Button67.起始狀態 = false;
+            this.plC_Button67.音效 = true;
+            this.plC_Button67.顯示 = false;
+            this.plC_Button67.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -14092,6 +14129,8 @@
             this.pannel_Main02.ResumeLayout(false);
             this.plC_ScreenPage_Main.ResumeLayout(false);
             this.主畫面.ResumeLayout(false);
+            this.rJ_GroupBox12.ContentsPanel.ResumeLayout(false);
+            this.rJ_GroupBox12.ResumeLayout(false);
             this.rJ_GroupBox3.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -14217,8 +14256,6 @@
             this.plC_RJ_GroupBox17.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox17.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.rJ_GroupBox12.ContentsPanel.ResumeLayout(false);
-            this.rJ_GroupBox12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -14755,6 +14792,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_儲位管理_儲位資料_新增效期測試;
         private MyUI.RJ_GroupBox rJ_GroupBox12;
         private SQLUI.SQL_DataGridView sqL_DataGridView_前次使用紀錄;
+        private MyUI.PLC_Button plC_Button67;
     }
 }
 

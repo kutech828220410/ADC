@@ -184,6 +184,7 @@ namespace 智能藥品管理系統
             {
                 PLC_Device_主畫面_領退藥_狀態顯示_02.Bool = true;
                 PLC_Device_主畫面_領退藥按鈕致能.Bool = true;
+                PLC_Device_清空出料盤_致能.Bool = true;
                 this.Invoke(new Action(delegate
                 {
                     plC_RJ_Button_主畫面_登入.Texts = "登出";
@@ -316,7 +317,7 @@ namespace 智能藥品管理系統
             if (cnt_Program_主畫面_領退藥 == 65501)
             {
                 PLC_Device_主畫面_領退藥_識別登入.Bool = false;
-
+                PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_01.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_02.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_03.Bool = false;
@@ -455,6 +456,7 @@ namespace 智能藥品管理系統
             PLC_Device_主畫面_領藥按鈕.Bool = false;
             PLC_Device_主畫面_退藥按鈕.Bool = false;
             PLC_Device_主畫面_領退藥按鈕致能.Bool = false;
+            PLC_Device_清空出料盤_致能.Bool = false;
             plC_RJ_Button_主畫面_開始作業.Bool = false;
             while (true)
             {
@@ -569,6 +571,7 @@ namespace 智能藥品管理系統
                         狀態顯示 += $"ID ".StringLength(10) + $": {ID}\n";
                         狀態顯示 += $"-------------------------------------\n";
                         this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_01.GetAdress(), 狀態顯示);
+                        
                         cnt++;
                         return;
                     }
@@ -583,7 +586,7 @@ namespace 智能藥品管理系統
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
-            狀態顯示 += $"請選擇領/退藥";
+            狀態顯示 += $"請選擇領/退藥/清空儲料盤";
             this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
 
 
@@ -595,7 +598,7 @@ namespace 智能藥品管理系統
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
                 狀態顯示 += $"模式".StringLength(8) + ": <領藥>";
                 this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
-
+                PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_退藥按鈕.Bool = false;
                 cnt++;
             }
@@ -607,9 +610,20 @@ namespace 智能藥品管理系統
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
                 狀態顯示 += $"模式".StringLength(8) + ": <退藥>";
                 this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
+                PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_領藥按鈕.Bool = false;
                 cnt++;
-            }    
+            }
+            else if (PLC_Device_清空出料盤.Bool)
+            {
+                PLC_Device_清空出料盤_致能.Bool = false;
+                PLC_Device_主畫面_領退藥按鈕致能.Bool = false;
+            }
+            else
+            {
+                PLC_Device_清空出料盤_致能.Bool = true;
+                //PLC_Device_主畫面_領退藥按鈕致能.Bool = true;
+            }
         }
         void cnt_Program_主畫面_領退藥_200_檢查模式(ref int cnt)
         {
@@ -2043,6 +2057,11 @@ namespace 智能藥品管理系統
         {
             if (plC_RJ_Button_主畫面_登入.Text == "登出")
             {
+                if(PLC_Device_清空出料盤.Bool)
+                {
+                    MyMessageBox.ShowDialog("清空出料盤作業中,無法登出!");
+                    return;
+                }
                 this.MyTimer_主畫面_領退藥_重複登入延遲.TickStop();
                 this.MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(100);
                 PLC_Device_取物門_移動到關門位置.Bool = true;
