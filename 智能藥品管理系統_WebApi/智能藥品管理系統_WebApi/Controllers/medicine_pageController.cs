@@ -108,6 +108,8 @@ namespace 智能藥品管理系統_WebApi
             public string 藥品碼 { get; set; }
             [JsonPropertyName("Neme")]
             public string 藥品名稱 { get; set; }
+            [JsonPropertyName("min_package")]
+            public string 最小包裝量 { get; set; }         
             [JsonPropertyName("package")]
             public string 單位 { get; set; }
             [JsonPropertyName("inventory")]
@@ -190,6 +192,8 @@ namespace 智能藥品管理系統_WebApi
         [HttpGet()]
         public string Get_storage_list(string? code, string? name)
         {
+            List<object[]> list_藥檔資料 = sQLControl_medicine_page.GetAllRows(null);
+            List<object[]> list_藥檔資料_buf = new List<object[]>();
             List<object[]> list_套餐列表 = this.sQLControl_套餐列表.GetAllRows(null);
             List<object[]> list_套餐內容 = this.sQLControl_套餐內容.GetAllRows(null);
             List<object[]> list_套餐列表_buf = new List<object[]>();
@@ -209,6 +213,7 @@ namespace 智能藥品管理系統_WebApi
                 Class_儲位總庫存表.儲位型式 = devices[i].DeviceType.GetEnumName();
                 Class_儲位總庫存表.IP = devices[i].IP;
                 Class_儲位總庫存表.可放置盒數 = devices[i].Max_Inventory.ToString();
+                Class_儲位總庫存表.最小包裝量 = devices[i].Min_Package_Num.ToString();
 
                 list_套餐列表_buf = list_套餐列表.GetRows((int)enum_套餐列表.套餐代碼, Class_儲位總庫存表.藥品碼);
                 if (list_套餐列表_buf.Count > 0)
@@ -216,7 +221,15 @@ namespace 智能藥品管理系統_WebApi
                     Class_儲位總庫存表.藥品名稱 = list_套餐列表_buf[0][(int)enum_套餐列表.套餐名稱].ObjectToString();
                     Class_儲位總庫存表.單位 = "Package";
                 }
-  
+                else
+                {
+                    list_藥檔資料_buf = list_藥檔資料.GetRows((int)enum_medicine_page_firstclass.藥品碼, Class_儲位總庫存表.藥品碼);
+                    if (list_藥檔資料_buf.Count > 0)
+                    {
+                        Class_儲位總庫存表.藥品名稱 = list_藥檔資料_buf[0][(int)enum_medicine_page_firstclass.藥品名稱].ObjectToString();
+                        Class_儲位總庫存表.單位 = list_藥檔資料_buf[0][(int)enum_medicine_page_firstclass.包裝單位].ObjectToString();
+                    }
+                }
                 returnData.Data.Add(Class_儲位總庫存表);
 
             }
@@ -380,7 +393,7 @@ namespace 智能藥品管理系統_WebApi
                     class_medicine_page_firstclass_Data.庫存 = list_value[i][(int)enum_medicine_page_firstclass.庫存].ObjectToString();
                     class_medicine_page_firstclass_Data.安全庫存 = list_value[i][(int)enum_medicine_page_firstclass.安全庫存].ObjectToString();
 
-                             
+                    
                     class_medicine_page_firstclass_Data.庫存 = this.Function_取得儲位庫存(class_medicine_page_firstclass_Data.藥品碼).ToString();
                     list_out_value.Add(class_medicine_page_firstclass_Data);
                 }
