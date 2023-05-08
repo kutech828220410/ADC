@@ -26,6 +26,7 @@ namespace 智能藥品管理系統
         Port,
         儲位名稱,
         庫存,
+        可放置盒數,
         位置,
     }
     public enum enum_入庫作業_效期及批號
@@ -313,6 +314,7 @@ namespace 智能藥品管理系統
                 value[(int)enum_入庫作業_選擇儲位.位置] = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.位置].ObjectToString();
                 value[(int)enum_入庫作業_選擇儲位.儲位名稱] = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.儲位名稱].ObjectToString();
                 value[(int)enum_入庫作業_選擇儲位.庫存] = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.庫存].ObjectToString();
+                value[(int)enum_入庫作業_選擇儲位.可放置盒數] = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.可放置盒數].ObjectToString();
                 list_value.Add(value);
             }
             this.sqL_DataGridView_入庫作業_選擇儲位.RefreshGrid(list_value);

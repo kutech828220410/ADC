@@ -23,6 +23,8 @@ namespace 智能藥品管理系統
         包裝單位,
         庫存,
         單位包裝數量,
+        可放置盒數,
+        可放置總藥量,
         總庫存,
         位置,
     }
@@ -590,6 +592,8 @@ namespace 智能藥品管理系統
                 storage.SetValue(Storage.ValueName.藥品中文名稱, Storage.ValueType.Value, 藥品中文名稱);
                 storage.SetValue(Storage.ValueName.包裝單位, Storage.ValueType.Value, 包裝單位);
 
+                if (storage.Max_Inventory <= 0) storage.Max_Inventory = 1;
+
                 if (單位包裝數量.StringToInt32() < 0)
                 {
                     flag_replace = true;
@@ -612,6 +616,8 @@ namespace 智能藥品管理系統
                 value[(int)enum_儲位管理_儲位資料.藥品中文名稱] = 藥品中文名稱;
                 value[(int)enum_儲位管理_儲位資料.包裝單位] = 包裝單位;
                 value[(int)enum_儲位管理_儲位資料.單位包裝數量] = 單位包裝數量;
+                value[(int)enum_儲位管理_儲位資料.可放置盒數] = storage.Max_Inventory;
+                value[(int)enum_儲位管理_儲位資料.可放置總藥量] = storage.Max_Inventory * (單位包裝數量.StringToInt32());
                 value[(int)enum_儲位管理_儲位資料.庫存] = 庫存;
                 value[(int)enum_儲位管理_儲位資料.總庫存] = 總庫存;
                 value[(int)enum_儲位管理_儲位資料.位置] = 位置;
@@ -663,6 +669,7 @@ namespace 智能藥品管理系統
 
             rJ_TextBox_儲位管理_儲位資料_儲位名稱.Text = RowValue[(int)enum_儲位管理_儲位資料.儲位名稱].ObjectToString();
             rJ_TextBox_儲位管理_儲位資料_包裝數量.Text = RowValue[(int)enum_儲位管理_儲位資料.單位包裝數量].ObjectToString();
+            rJ_TextBox_儲位管理_儲位資料_可放置盒數.Text = RowValue[(int)enum_儲位管理_儲位資料.可放置盒數].ObjectToString();
 
             string IP = RowValue[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
             string JsonString = this.storageUI_WT32.GetUDPJsonString(IP);
@@ -768,6 +775,8 @@ namespace 智能藥品管理系統
                         this.wT32_GPADC.Set_Main_Page(storage);
                         storage.SetValue(Storage.ValueName.儲位名稱, Storage.ValueType.Value, rJ_TextBox_儲位管理_儲位資料_儲位名稱.Text);
                         storage.SetValue(Storage.ValueName.最小包裝單位數量, Storage.ValueType.Value, rJ_TextBox_儲位管理_儲位資料_包裝數量.Text);
+                        storage.Max_Inventory = rJ_TextBox_儲位管理_儲位資料_可放置盒數.Text.StringToInt32();
+                        if (storage.Max_Inventory <= 0) storage.Max_Inventory = 1;
                     }));
 
 
@@ -778,19 +787,7 @@ namespace 智能藥品管理系統
 
             this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
 
-            //this.storageUI_WT32.SQL_ReplaceStorage(list_Storage_replace);
-            //Task.WhenAll(taskList).Wait();
-            //string IP = list_儲位資料[0][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
-            //Storage storage = this.wT32_GPADC.CurrentStorage;
-            //if (storage != null)
-            //{
-            //    this.wT32_GPADC.Set_Main_Page(storage);
-            //    storage.SetValue(Storage.ValueName.儲位名稱, Storage.ValueType.Value, rJ_TextBox_儲位管理_儲位資料_儲位名稱.Text);
-            //    storage.SetValue(Storage.ValueName.最小包裝單位數量, Storage.ValueType.Value, rJ_TextBox_儲位管理_儲位資料_包裝數量.Text);
-            //    this.storageUI_WT32.SQL_ReplaceStorage(storage);
-
-            //    this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
-            //}
+            
         }
         private void plC_RJ_Button_儲位管理_儲位資料_複製格式_MouseDownEvent(MouseEventArgs mevent)
         {

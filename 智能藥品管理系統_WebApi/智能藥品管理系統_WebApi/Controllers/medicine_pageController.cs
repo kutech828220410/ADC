@@ -58,8 +58,9 @@ namespace 智能藥品管理系統_WebApi
         static private MySqlSslMode SSLMode = MySqlSslMode.None;
 
         private SQLControl sQLControl_WT32_serialize = new SQLControl(IP, DataBaseName, "wt32_storage_jsonstring", UserName, Password, Port, SSLMode);
-
-        private SQLControl sQLControl_medicine_page = new SQLControl(IP, DataBaseName, "medicine_page", UserName,Password, Port, SSLMode);
+        private SQLControl sQLControl_medicine_page = new SQLControl(IP, DataBaseName, "medicine_page", UserName, Password, Port, SSLMode);
+        private SQLControl sQLControl_套餐列表 = new SQLControl(IP, DataBaseName, "pakagelist_page", UserName, Password, Port, SSLMode);
+        private SQLControl sQLControl_套餐內容 = new SQLControl(IP, DataBaseName, "sub_pakagelist_page", UserName, Password, Port, SSLMode);
 
 
         #region storage_type
@@ -85,8 +86,22 @@ namespace 智能藥品管理系統_WebApi
         }
         #endregion
         #region storage_list
+        private class returnData
+        {
+            private string result = "";
+            private int code = 0;
+            private List<class_儲位總庫存表> data = new List<class_儲位總庫存表>();
+
+            public string Result { get => result; set => result = value; }
+            public int Code { get => code; set => code = value; }
+            public List<class_儲位總庫存表> Data { get => data; set => data = value; }
+        }
+
+
         public class class_儲位總庫存表
         {
+            [JsonPropertyName("IP")]
+            public string IP { get; set; }
             [JsonPropertyName("storage_name")]
             public string 儲位名稱 { get; set; }
             [JsonPropertyName("Code")]
@@ -99,8 +114,28 @@ namespace 智能藥品管理系統_WebApi
             public string 庫存 { get; set; }
             [JsonPropertyName("storage_type")]
             public string 儲位型式 { get; set; }
+            [JsonPropertyName("max_inventory")]
+            public string 可放置盒數 { get; set; }
+            [JsonPropertyName("position")]
+            public string 位置 { get; set; }
 
         }
+        public enum enum_套餐列表
+        {
+            GUID,
+            套餐代碼,
+            套餐名稱,
+        }
+        public enum enum_套餐內容
+        {
+            GUID,
+            套餐代碼,
+            藥品碼,
+            藥品名稱,
+            單位,
+            數量
+        }
+
         public enum enum_儲位總庫存表 : int
         {
             儲位名稱,
@@ -109,67 +144,94 @@ namespace 智能藥品管理系統_WebApi
             單位,
             庫存,
             儲位型式,
+            可放置盒數,
             IP,
         }
+        public class ICP_儲位管理_儲位資料 : IComparer<class_儲位總庫存表>
+        {
+            public int Compare(class_儲位總庫存表 x, class_儲位總庫存表 y)
+            {
+                string IP_0 = x.IP;
+                string IP_1 = y.IP;
+       
+                string[] IP_0_Array = IP_0.Split('.');
+                string[] IP_1_Array = IP_1.Split('.');
+                IP_0 = "";
+                IP_1 = "";
+                for (int i = 0; i < 4; i++)
+                {
+                    if (IP_0_Array[i].Length < 3) IP_0_Array[i] = "0" + IP_0_Array[i];
+                    if (IP_0_Array[i].Length < 3) IP_0_Array[i] = "0" + IP_0_Array[i];
+                    if (IP_0_Array[i].Length < 3) IP_0_Array[i] = "0" + IP_0_Array[i];
 
+                    if (IP_1_Array[i].Length < 3) IP_1_Array[i] = "0" + IP_1_Array[i];
+                    if (IP_1_Array[i].Length < 3) IP_1_Array[i] = "0" + IP_1_Array[i];
+                    if (IP_1_Array[i].Length < 3) IP_1_Array[i] = "0" + IP_1_Array[i];
+
+                    IP_0 += IP_0_Array[i];
+                    IP_1 += IP_1_Array[i];
+                }
+                int cmp = IP_0_Array[3].CompareTo(IP_1_Array[3]);
+                if (cmp > 0)
+                {
+                    return 1;
+                }
+                else if (cmp < 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
         [Route("storage_list")]
         [HttpGet()]
         public string Get_storage_list(string? code, string? name)
         {
-
+            List<object[]> list_套餐列表 = this.sQLControl_套餐列表.GetAllRows(null);
+            List<object[]> list_套餐內容 = this.sQLControl_套餐內容.GetAllRows(null);
+            List<object[]> list_套餐列表_buf = new List<object[]>();
             string jsonString = "";
             this.Function_讀取儲位();
-            List<object[]> list_藥品資料_儲位總庫存表_value = new List<object[]>();
-            List<object[]> list_藥品資料 = this.sQLControl_medicine_page.GetAllRows(null);
-            List<object[]> list_藥品資料_buf = new List<object[]>();
+            returnData returnData = new returnData();
+            returnData.Code = 200;
+            returnData.Result = "取得儲位資料成功!";
             for (int i = 0; i < devices.Count; i++)
             {
-                object[] value = new object[new enum_儲位總庫存表().GetLength()];
-
-                value[(int)enum_儲位總庫存表.儲位名稱] = devices[i].StorageName;
-                value[(int)enum_儲位總庫存表.藥品碼] = devices[i].Code;
-                value[(int)enum_儲位總庫存表.庫存] = devices[i].Inventory;
-                value[(int)enum_儲位總庫存表.儲位型式] = devices[i].DeviceType.GetEnumName();
-                value[(int)enum_儲位總庫存表.IP] = devices[i].IP;
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medicine_page_firstclass.藥品碼, devices[i].Code);
-                if (list_藥品資料_buf.Count == 0) continue;
-                value[(int)enum_儲位總庫存表.藥品名稱] = list_藥品資料_buf[0][(int)enum_medicine_page_firstclass.藥品名稱].ObjectToString();
-                value[(int)enum_儲位總庫存表.單位] = list_藥品資料_buf[0][(int)enum_medicine_page_firstclass.包裝單位].ObjectToString();
-     
-                list_藥品資料_儲位總庫存表_value.Add(value);
-            }
-
-            if (code != null)
-            {
-                list_藥品資料_儲位總庫存表_value = list_藥品資料_儲位總庫存表_value.GetRows((int)enum_儲位效期表.藥品碼, code);
-            }
-            if (name != null)
-            {
-                list_藥品資料_儲位總庫存表_value = list_藥品資料_儲位總庫存表_value.GetRowsByLike((int)enum_儲位效期表.藥品名稱, name);
-            }
-
-            list_藥品資料_儲位總庫存表_value = list_藥品資料_儲位總庫存表_value.OrderBy(r => r[(int)enum_儲位總庫存表.儲位名稱].ObjectToString()).ToList();
-            List<class_儲位總庫存表> list_out_value = new List<class_儲位總庫存表>();
-            for (int i = 0; i < list_藥品資料_儲位總庫存表_value.Count; i++)
-            {
                 class_儲位總庫存表 Class_儲位總庫存表 = new class_儲位總庫存表();
-                Class_儲位總庫存表.儲位名稱 = list_藥品資料_儲位總庫存表_value[i][(int)enum_儲位總庫存表.儲位名稱].ObjectToString();
-                Class_儲位總庫存表.藥品碼 = list_藥品資料_儲位總庫存表_value[i][(int)enum_儲位總庫存表.藥品碼].ObjectToString();
-                Class_儲位總庫存表.藥品名稱 = list_藥品資料_儲位總庫存表_value[i][(int)enum_儲位總庫存表.藥品名稱].ObjectToString();
-                Class_儲位總庫存表.單位 = list_藥品資料_儲位總庫存表_value[i][(int)enum_儲位總庫存表.單位].ObjectToString();
-                Class_儲位總庫存表.庫存 = list_藥品資料_儲位總庫存表_value[i][(int)enum_儲位總庫存表.庫存].ObjectToString();
-                Class_儲位總庫存表.儲位型式 = list_藥品資料_儲位總庫存表_value[i][(int)enum_儲位總庫存表.儲位型式].ObjectToString();
+                Class_儲位總庫存表.儲位名稱 = devices[i].StorageName;
+                Class_儲位總庫存表.藥品碼 = devices[i].Code;
+                Class_儲位總庫存表.藥品名稱 = devices[i].Name;
+                Class_儲位總庫存表.單位 = devices[i].Package;
+                Class_儲位總庫存表.庫存 = devices[i].Inventory;
+                Class_儲位總庫存表.儲位型式 = devices[i].DeviceType.GetEnumName();
+                Class_儲位總庫存表.IP = devices[i].IP;
+                Class_儲位總庫存表.可放置盒數 = devices[i].Max_Inventory.ToString();
 
-                list_out_value.Add(Class_儲位總庫存表);
+                list_套餐列表_buf = list_套餐列表.GetRows((int)enum_套餐列表.套餐代碼, Class_儲位總庫存表.藥品碼);
+                if (list_套餐列表_buf.Count > 0)
+                {
+                    Class_儲位總庫存表.藥品名稱 = list_套餐列表_buf[0][(int)enum_套餐列表.套餐名稱].ObjectToString();
+                    Class_儲位總庫存表.單位 = "Package";
+                }
+  
+                returnData.Data.Add(Class_儲位總庫存表);
 
             }
-
+            returnData.Data.Sort(new ICP_儲位管理_儲位資料());
+            //$"{(i / 6) + 1}-{(i % 6) + 1}"
+            for (int i = 0; i < returnData.Data.Count; i++)
+            {
+                returnData.Data[i].位置 = $"{(i / 6) + 1}-{(i % 6) + 1}";
+            }
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             };
-            jsonString = JsonSerializer.Serialize<List<class_儲位總庫存表>>(list_out_value, options);
+            jsonString = JsonSerializer.Serialize<returnData>(returnData, options);
 
             return jsonString;
         }
@@ -465,6 +527,8 @@ namespace 智能藥品管理系統_WebApi
 
             for (int i = 0; i < devices_pannel35s.Count; i++)
             {
+                this.devices.Add(devices_pannel35s[i]);
+                continue;
                 if (devices_pannel35s[i].Code.StringIsEmpty() != true)
                 {
                     this.devices.Add(devices_pannel35s[i]);
