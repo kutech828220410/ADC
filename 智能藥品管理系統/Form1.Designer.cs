@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            MyUI.PLC_MultiStateDisplay.TextValue textValue1 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue2 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue3 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue4 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue5 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue6 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue7 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue8 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue9 = new MyUI.PLC_MultiStateDisplay.TextValue();
-            MyUI.PLC_MultiStateDisplay.TextValue textValue10 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue11 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue12 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue13 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue14 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue15 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue16 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue17 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue18 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue19 = new MyUI.PLC_MultiStateDisplay.TextValue();
+            MyUI.PLC_MultiStateDisplay.TextValue textValue20 = new MyUI.PLC_MultiStateDisplay.TextValue();
             this.pannel_Main01 = new System.Windows.Forms.Panel();
             this.plC_RJ_ScreenButton_人員資料 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton_參數設定 = new MyUI.PLC_RJ_ScreenButton();
@@ -313,6 +313,8 @@
             this.sqL_DataGridView_人員資料 = new SQLUI.SQL_DataGridView();
             this.儲位管理 = new System.Windows.Forms.TabPage();
             this.plC_RJ_GroupBox5 = new MyUI.PLC_RJ_GroupBox();
+            this.rJ_Lable13 = new MyUI.RJ_Lable();
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量 = new MyUI.RJ_TextBox();
             this.rJ_Lable12 = new MyUI.RJ_Lable();
             this.rJ_TextBox_儲位管理_儲位資料_可放置盒數 = new MyUI.RJ_TextBox();
             this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試 = new MyUI.PLC_RJ_Button();
@@ -572,9 +574,7 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
-            this.rJ_Lable13 = new MyUI.RJ_Lable();
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量 = new MyUI.RJ_TextBox();
-            this.button_TEST = new System.Windows.Forms.Button();
+            this.panel_開始取藥 = new System.Windows.Forms.Panel();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -692,6 +692,7 @@
             this.plC_RJ_GroupBox17.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox17.SuspendLayout();
             this.panel_系統.SuspendLayout();
+            this.panel_開始取藥.SuspendLayout();
             this.SuspendLayout();
             // 
             // pannel_Main01
@@ -1496,9 +1497,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button_TEST);
+            this.panel2.Controls.Add(this.panel_開始取藥);
             this.panel2.Controls.Add(this.plC_Button67);
-            this.panel2.Controls.Add(this.plC_RJ_Button_主畫面_開始作業);
             this.panel2.Controls.Add(this.plC_RJ_Button1);
             this.panel2.Controls.Add(this.plC_RJ_GroupBox6);
             this.panel2.Controls.Add(this.plC_MultiStateDisplay_主畫面_狀態顯示);
@@ -1549,34 +1549,35 @@
             // plC_RJ_Button_主畫面_開始作業
             // 
             this.plC_RJ_Button_主畫面_開始作業.AutoResetState = false;
-            this.plC_RJ_Button_主畫面_開始作業.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_主畫面_開始作業.BackgroundColor = System.Drawing.Color.Red;
             this.plC_RJ_Button_主畫面_開始作業.Bool = false;
             this.plC_RJ_Button_主畫面_開始作業.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_主畫面_開始作業.BorderRadius = 10;
             this.plC_RJ_Button_主畫面_開始作業.BorderSize = 0;
             this.plC_RJ_Button_主畫面_開始作業.but_press = false;
             this.plC_RJ_Button_主畫面_開始作業.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_主畫面_開始作業.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_Button_主畫面_開始作業.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_主畫面_開始作業.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_主畫面_開始作業.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_開始作業.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_主畫面_開始作業.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_主畫面_開始作業.Location = new System.Drawing.Point(794, 159);
+            this.plC_RJ_Button_主畫面_開始作業.Location = new System.Drawing.Point(0, 0);
             this.plC_RJ_Button_主畫面_開始作業.Name = "plC_RJ_Button_主畫面_開始作業";
-            this.plC_RJ_Button_主畫面_開始作業.OFF_文字內容 = "開始作業";
-            this.plC_RJ_Button_主畫面_開始作業.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_開始作業.OFF_文字內容 = "請按我【開始取藥】";
+            this.plC_RJ_Button_主畫面_開始作業.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_主畫面_開始作業.OFF_文字顏色 = System.Drawing.Color.White;
             this.plC_RJ_Button_主畫面_開始作業.OFF_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_主畫面_開始作業.ON_BorderSize = 5;
-            this.plC_RJ_Button_主畫面_開始作業.ON_文字內容 = "開始作業";
-            this.plC_RJ_Button_主畫面_開始作業.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F);
+            this.plC_RJ_Button_主畫面_開始作業.ON_文字內容 = "請按我【開始取藥】";
+            this.plC_RJ_Button_主畫面_開始作業.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold);
             this.plC_RJ_Button_主畫面_開始作業.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_主畫面_開始作業.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_主畫面_開始作業.Size = new System.Drawing.Size(166, 82);
+            this.plC_RJ_Button_主畫面_開始作業.Size = new System.Drawing.Size(832, 569);
             this.plC_RJ_Button_主畫面_開始作業.State = false;
             this.plC_RJ_Button_主畫面_開始作業.TabIndex = 10;
-            this.plC_RJ_Button_主畫面_開始作業.Text = "開始作業";
+            this.plC_RJ_Button_主畫面_開始作業.Text = "請按我【開始取藥】";
             this.plC_RJ_Button_主畫面_開始作業.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_主畫面_開始作業.Texts = "開始作業";
+            this.plC_RJ_Button_主畫面_開始作業.Texts = "請按我【開始取藥】";
             this.plC_RJ_Button_主畫面_開始作業.UseVisualStyleBackColor = false;
             this.plC_RJ_Button_主畫面_開始作業.字型鎖住 = false;
             this.plC_RJ_Button_主畫面_開始作業.寫入元件位置 = "S1009";
@@ -1699,76 +1700,76 @@
             this.plC_MultiStateDisplay_主畫面_狀態顯示.TabIndex = 2;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.字體顏色 = System.Drawing.Color.White;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.文字對齊位置 = System.Drawing.ContentAlignment.MiddleCenter;
-            textValue1.Name = "M3000";
-            textValue1.Text = "顯示內容";
-            textValue1.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue1.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue1.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue1.自定義參數 = true;
-            textValue2.Name = "M3001";
-            textValue2.Text = "顯示內容";
-            textValue2.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue2.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue2.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue2.自定義參數 = true;
-            textValue3.Name = "M3002";
-            textValue3.Text = "顯示內容";
-            textValue3.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue3.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue3.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue3.自定義參數 = true;
-            textValue4.Name = "M3003";
-            textValue4.Text = "顯示內容";
-            textValue4.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue4.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue4.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue4.自定義參數 = true;
-            textValue5.Name = "M3004";
-            textValue5.Text = "顯示內容";
-            textValue5.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue5.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue5.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue5.自定義參數 = true;
-            textValue6.Name = "M3005";
-            textValue6.Text = "顯示內容";
-            textValue6.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue6.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue6.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue6.自定義參數 = true;
-            textValue7.Name = "M3006";
-            textValue7.Text = "顯示內容";
-            textValue7.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue7.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue7.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue7.自定義參數 = true;
-            textValue8.Name = "M3007";
-            textValue8.Text = "顯示內容";
-            textValue8.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue8.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue8.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue8.自定義參數 = true;
-            textValue9.Name = "M3008";
-            textValue9.Text = "顯示內容";
-            textValue9.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue9.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue9.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue9.自定義參數 = true;
-            textValue10.Name = "M3009";
-            textValue10.Text = "顯示內容";
-            textValue10.字體 = new System.Drawing.Font("新細明體", 12F);
-            textValue10.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
-            textValue10.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            textValue10.自定義參數 = true;
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue1);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue2);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue3);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue4);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue5);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue6);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue7);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue8);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue9);
-            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue10);
+            textValue11.Name = "M3000";
+            textValue11.Text = "顯示內容";
+            textValue11.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue11.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue11.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue11.自定義參數 = true;
+            textValue12.Name = "M3001";
+            textValue12.Text = "顯示內容";
+            textValue12.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue12.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue12.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue12.自定義參數 = true;
+            textValue13.Name = "M3002";
+            textValue13.Text = "顯示內容";
+            textValue13.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue13.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue13.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue13.自定義參數 = true;
+            textValue14.Name = "M3003";
+            textValue14.Text = "顯示內容";
+            textValue14.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue14.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue14.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue14.自定義參數 = true;
+            textValue15.Name = "M3004";
+            textValue15.Text = "顯示內容";
+            textValue15.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue15.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue15.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue15.自定義參數 = true;
+            textValue16.Name = "M3005";
+            textValue16.Text = "顯示內容";
+            textValue16.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue16.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue16.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue16.自定義參數 = true;
+            textValue17.Name = "M3006";
+            textValue17.Text = "顯示內容";
+            textValue17.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue17.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue17.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue17.自定義參數 = true;
+            textValue18.Name = "M3007";
+            textValue18.Text = "顯示內容";
+            textValue18.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue18.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue18.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue18.自定義參數 = true;
+            textValue19.Name = "M3008";
+            textValue19.Text = "顯示內容";
+            textValue19.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue19.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue19.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue19.自定義參數 = true;
+            textValue20.Name = "M3009";
+            textValue20.Text = "顯示內容";
+            textValue20.字體 = new System.Drawing.Font("新細明體", 12F);
+            textValue20.文字對齊方式 = MyUI.PLC_MultiStateDisplay.TextValue.Alignment.Left;
+            textValue20.文字顏色 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            textValue20.自定義參數 = true;
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue11);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue12);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue13);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue14);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue15);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue16);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue17);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue18);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue19);
+            this.plC_MultiStateDisplay_主畫面_狀態顯示.狀態內容.Add(textValue20);
             this.plC_MultiStateDisplay_主畫面_狀態顯示.背景顏色 = System.Drawing.Color.SkyBlue;
             this.plC_MultiStateDisplay_主畫面_狀態顯示.顯示字體 = new System.Drawing.Font("新細明體", 12F);
             // 
@@ -2001,7 +2002,7 @@
             this.登入畫面.Location = new System.Drawing.Point(4, 25);
             this.登入畫面.Margin = new System.Windows.Forms.Padding(0);
             this.登入畫面.Name = "登入畫面";
-            this.登入畫面.Size = new System.Drawing.Size(1056, 1723);
+            this.登入畫面.Size = new System.Drawing.Size(1056, 1743);
             this.登入畫面.TabIndex = 1;
             this.登入畫面.Text = "登入畫面";
             // 
@@ -5764,7 +5765,7 @@
             this.tabPage4.Controls.Add(this.rJ_GroupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1048, 1645);
+            this.tabPage4.Size = new System.Drawing.Size(1048, 1665);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "套餐設定";
             // 
@@ -5786,7 +5787,7 @@
             this.rJ_GroupBox8.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox8.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox8.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(656, 824);
+            this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(656, 844);
             this.rJ_GroupBox8.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox8.Location = new System.Drawing.Point(392, 784);
@@ -5795,7 +5796,7 @@
             this.rJ_GroupBox8.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox8.PannelBorderRadius = -37;
             this.rJ_GroupBox8.PannelBorderSize = 2;
-            this.rJ_GroupBox8.Size = new System.Drawing.Size(656, 861);
+            this.rJ_GroupBox8.Size = new System.Drawing.Size(656, 881);
             this.rJ_GroupBox8.TabIndex = 2;
             this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox8.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -5967,7 +5968,7 @@
             this.rJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(392, 824);
+            this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(392, 844);
             this.rJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox5.Location = new System.Drawing.Point(0, 784);
@@ -5976,7 +5977,7 @@
             this.rJ_GroupBox5.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox5.PannelBorderRadius = -37;
             this.rJ_GroupBox5.PannelBorderSize = 2;
-            this.rJ_GroupBox5.Size = new System.Drawing.Size(392, 861);
+            this.rJ_GroupBox5.Size = new System.Drawing.Size(392, 881);
             this.rJ_GroupBox5.TabIndex = 1;
             this.rJ_GroupBox5.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox5.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -6594,7 +6595,7 @@
             this.tabPage5.Controls.Add(this.rJ_GroupBox11);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1048, 1645);
+            this.tabPage5.Size = new System.Drawing.Size(1048, 1665);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "手術房設定";
             // 
@@ -8031,6 +8032,47 @@
             this.plC_RJ_GroupBox5.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.plC_RJ_GroupBox5.TitleTexts = "儲位資料";
             // 
+            // rJ_Lable13
+            // 
+            this.rJ_Lable13.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.rJ_Lable13.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.rJ_Lable13.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable13.BorderRadius = 8;
+            this.rJ_Lable13.BorderSize = 0;
+            this.rJ_Lable13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable13.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable13.Location = new System.Drawing.Point(614, 338);
+            this.rJ_Lable13.Name = "rJ_Lable13";
+            this.rJ_Lable13.Size = new System.Drawing.Size(100, 44);
+            this.rJ_Lable13.TabIndex = 34;
+            this.rJ_Lable13.Text = "最大出貨量";
+            this.rJ_Lable13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable13.TextColor = System.Drawing.Color.Black;
+            // 
+            // rJ_TextBox_儲位管理_儲位資料_最大出貨量
+            // 
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderRadius = 0;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderSize = 2;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Location = new System.Drawing.Point(720, 342);
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Multiline = false;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Name = "rJ_TextBox_儲位管理_儲位資料_最大出貨量";
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PassWordChar = false;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PlaceholderText = "";
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.ShowTouchPannel = false;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Size = new System.Drawing.Size(123, 36);
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.TabIndex = 35;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Texts = "";
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.UnderlineStyle = false;
+            // 
             // rJ_Lable12
             // 
             this.rJ_Lable12.BackColor = System.Drawing.Color.PaleTurquoise;
@@ -8936,7 +8978,7 @@
             this.工程模式.Controls.Add(this.plC_RJ_GroupBox7);
             this.工程模式.Location = new System.Drawing.Point(4, 25);
             this.工程模式.Name = "工程模式";
-            this.工程模式.Size = new System.Drawing.Size(1056, 1723);
+            this.工程模式.Size = new System.Drawing.Size(1056, 1743);
             this.工程模式.TabIndex = 8;
             this.工程模式.Text = "工程模式";
             // 
@@ -13793,7 +13835,7 @@
             this.系統.Controls.Add(this.panel_系統);
             this.系統.Location = new System.Drawing.Point(4, 25);
             this.系統.Name = "系統";
-            this.系統.Size = new System.Drawing.Size(1056, 1723);
+            this.系統.Size = new System.Drawing.Size(1056, 1743);
             this.系統.TabIndex = 9;
             this.系統.Text = "系統";
             // 
@@ -13809,7 +13851,7 @@
             this.plC_ScreenPage_系統.Location = new System.Drawing.Point(0, 52);
             this.plC_ScreenPage_系統.Name = "plC_ScreenPage_系統";
             this.plC_ScreenPage_系統.SelectedIndex = 0;
-            this.plC_ScreenPage_系統.Size = new System.Drawing.Size(1056, 1671);
+            this.plC_ScreenPage_系統.Size = new System.Drawing.Size(1056, 1691);
             this.plC_ScreenPage_系統.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_系統.TabIndex = 116;
             this.plC_ScreenPage_系統.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -13825,7 +13867,7 @@
             this.tabPage6.Controls.Add(this.tabControl1);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1048, 1642);
+            this.tabPage6.Size = new System.Drawing.Size(1048, 1662);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "設定01";
             // 
@@ -13943,7 +13985,7 @@
             this.tabPage7.Controls.Add(this.plC_RJ_GroupBox17);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1048, 1642);
+            this.tabPage7.Size = new System.Drawing.Size(1048, 1662);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "設定02";
             // 
@@ -14269,55 +14311,14 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // rJ_Lable13
+            // panel_開始取藥
             // 
-            this.rJ_Lable13.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.rJ_Lable13.BackgroundColor = System.Drawing.Color.PaleTurquoise;
-            this.rJ_Lable13.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable13.BorderRadius = 8;
-            this.rJ_Lable13.BorderSize = 0;
-            this.rJ_Lable13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable13.ForeColor = System.Drawing.Color.Black;
-            this.rJ_Lable13.Location = new System.Drawing.Point(614, 338);
-            this.rJ_Lable13.Name = "rJ_Lable13";
-            this.rJ_Lable13.Size = new System.Drawing.Size(100, 44);
-            this.rJ_Lable13.TabIndex = 34;
-            this.rJ_Lable13.Text = "最大出貨量";
-            this.rJ_Lable13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rJ_Lable13.TextColor = System.Drawing.Color.Black;
-            // 
-            // rJ_TextBox_儲位管理_儲位資料_最大出貨量
-            // 
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BackColor = System.Drawing.SystemColors.Window;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderColor = System.Drawing.Color.LightSkyBlue;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderRadius = 0;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderSize = 2;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.ForeColor = System.Drawing.Color.DimGray;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Location = new System.Drawing.Point(720, 342);
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Multiline = false;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Name = "rJ_TextBox_儲位管理_儲位資料_最大出貨量";
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PassWordChar = false;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PlaceholderText = "";
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.ShowTouchPannel = false;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Size = new System.Drawing.Size(123, 36);
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.TabIndex = 35;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Texts = "";
-            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.UnderlineStyle = false;
-            // 
-            // button_TEST
-            // 
-            this.button_TEST.Location = new System.Drawing.Point(957, 289);
-            this.button_TEST.Name = "button_TEST";
-            this.button_TEST.Size = new System.Drawing.Size(75, 23);
-            this.button_TEST.TabIndex = 12;
-            this.button_TEST.Text = "TEST";
-            this.button_TEST.UseVisualStyleBackColor = true;
+            this.panel_開始取藥.Controls.Add(this.plC_RJ_Button_主畫面_開始作業);
+            this.panel_開始取藥.Location = new System.Drawing.Point(100, 191);
+            this.panel_開始取藥.Name = "panel_開始取藥";
+            this.panel_開始取藥.Size = new System.Drawing.Size(832, 569);
+            this.panel_開始取藥.TabIndex = 1;
+            this.panel_開始取藥.Visible = false;
             // 
             // Form1
             // 
@@ -14464,6 +14465,7 @@
             this.plC_RJ_GroupBox17.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox17.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
+            this.panel_開始取藥.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -15005,7 +15007,7 @@
         private MyUI.RJ_TextBox rJ_TextBox_儲位管理_儲位資料_可放置盒數;
         private MyUI.RJ_Lable rJ_Lable13;
         private MyUI.RJ_TextBox rJ_TextBox_儲位管理_儲位資料_最大出貨量;
-        private System.Windows.Forms.Button button_TEST;
+        private System.Windows.Forms.Panel panel_開始取藥;
     }
 }
 

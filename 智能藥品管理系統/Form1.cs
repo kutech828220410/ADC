@@ -258,7 +258,6 @@ namespace 智能藥品管理系統
             this.plC_UI_Init1.Add_Method(this.Program_主畫面);
             this.plC_UI_Init1.Add_Method(this.Program_Scanner);
 
-            this.button_TEST.Click += Button_TEST_Click;
 
             this.MyThread_FaceID = new MyThread();
             this.MyThread_FaceID.SetSleepTime(100);

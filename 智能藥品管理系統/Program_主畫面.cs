@@ -36,7 +36,7 @@ namespace 智能藥品管理系統
             未搜尋到儲位,
             無法找出組合,
         }
-     
+
         public enum enum_主畫面_藥單列表
         {
             GUID,
@@ -73,17 +73,20 @@ namespace 智能藥品管理系統
             this.sqL_DataGridView_前次使用紀錄.Init();
 
             this.sqL_DataGridView_主畫面_領退藥作業列表.Init();
-            if(!this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_IsTableCreat())
+            if (!this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_IsTableCreat())
             {
                 this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_CreateTable();
             }
             this.sqL_DataGridView_主畫面_領退藥作業列表.DataGridRefreshEvent += SqL_DataGridView_主畫面_領退藥作業列表_DataGridRefreshEvent;
+            plC_RJ_Button_主畫面_開始作業.MouseDownEvent += PlC_RJ_Button_主畫面_開始作業_MouseDownEvent;
             this.MyThread_取藥堆疊 = new MyThread();
             this.MyThread_取藥堆疊.Add_Method(sub_Program_主畫面_取藥堆疊檢查);
             this.MyThread_取藥堆疊.AutoRun(true);
             this.MyThread_取藥堆疊.SetSleepTime(10);
             this.MyThread_取藥堆疊.Trigger();
-        } 
+        }
+
+ 
 
         private bool flag_Program_主畫面 = false;
         private void Program_主畫面()
@@ -196,11 +199,12 @@ namespace 智能藥品管理系統
                     plC_RJ_Button_主畫面_登入.Texts = "登出";
                     textBox_主畫面_帳號.Texts = "";
                     textBox_主畫面_密碼.Texts = "";
+                    this.panel_開始取藥.Visible = false;
                 }));
                 cnt_Program_主畫面_領退藥 = 200;
             }
             if (cnt_Program_主畫面_領退藥 == 200) cnt_Program_主畫面_領退藥_200_選擇領退藥(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 201) cnt_Program_主畫面_領退藥_200_檢查模式(ref cnt_Program_主畫面_領退藥);           
+            if (cnt_Program_主畫面_領退藥 == 201) cnt_Program_主畫面_領退藥_200_檢查模式(ref cnt_Program_主畫面_領退藥);
             if (cnt_Program_主畫面_領退藥 == 202)
             {
                 cnt_Program_主畫面_領退藥 = 300;
@@ -254,7 +258,7 @@ namespace 智能藥品管理系統
             }
 
             if (cnt_Program_主畫面_領退藥 == 3000) cnt_Program_主畫面_領退藥_3000_退藥_藥品選擇(ref cnt_Program_主畫面_領退藥);
-            if (cnt_Program_主畫面_領退藥 == 3001) cnt_Program_主畫面_領退藥_3000_退藥_空瓶實瓶選擇(ref cnt_Program_主畫面_領退藥);            
+            if (cnt_Program_主畫面_領退藥 == 3001) cnt_Program_主畫面_領退藥_3000_退藥_空瓶實瓶選擇(ref cnt_Program_主畫面_領退藥);
             if (cnt_Program_主畫面_領退藥 == 3002) cnt_Program_主畫面_領退藥_3000_退藥_等待退藥開鎖打開(ref cnt_Program_主畫面_領退藥);
             if (cnt_Program_主畫面_領退藥 == 3003) cnt_Program_主畫面_領退藥_3000_退藥_退藥開鎖打開結束(ref cnt_Program_主畫面_領退藥);
             if (cnt_Program_主畫面_領退藥 == 3004) cnt_Program_主畫面_領退藥_3000_退藥_開啟退藥掃碼頁面(ref cnt_Program_主畫面_領退藥);
@@ -337,14 +341,29 @@ namespace 智能藥品管理系統
                 {
                     plC_RJ_Button_主畫面_登入.Texts = "登入";
                 }));
-
+                flag_開始作業 = false;
                 PLC_Device_主畫面_領退藥.Bool = false;
                 PLC_Device_主畫面_領退藥_OK.Bool = false;
 
 
                 cnt_Program_主畫面_領退藥 = 65535;
             }
-
+            if (cnt_Program_主畫面_領退藥 == 5001)
+            {
+                plC_RJ_Button_主畫面_開始作業.BorderColor = Color.Lime;
+                if (PLC_Device_M8013.Bool)
+                {
+                    plC_RJ_Button_主畫面_開始作業.BorderSize = 30;
+                }
+                else
+                {
+                    plC_RJ_Button_主畫面_開始作業.BorderSize = 0;
+                }
+            }
+            else
+            {
+                plC_RJ_Button_主畫面_開始作業.BorderSize = 0;
+            }
             if (PLC_Device_主畫面_領退藥按鈕致能.Bool)
             {
                 plC_RJ_Button_主畫面_領藥.BorderColor = Color.HotPink;
@@ -365,11 +384,11 @@ namespace 智能藥品管理系統
                 plC_RJ_Button_主畫面_領藥.BorderColor = Color.Lime;
                 plC_RJ_Button_主畫面_退藥.BorderColor = Color.Lime;
                 if (PLC_Device_主畫面_領藥按鈕.Bool)
-                {               
+                {
                     plC_RJ_Button_主畫面_領藥.BorderSize = 8;
                 }
                 else
-                {           
+                {
                     plC_RJ_Button_主畫面_領藥.BorderSize = 0;
                 }
                 if (PLC_Device_主畫面_退藥按鈕.Bool)
@@ -382,7 +401,7 @@ namespace 智能藥品管理系統
                 }
             }
 
-      
+
         }
         void cnt_Program_主畫面_領退藥_65490_初始化(ref int cnt)
         {
@@ -442,7 +461,7 @@ namespace 智能藥品管理系統
         void cnt_Program_主畫面_領退藥_檢查按下(ref int cnt)
         {
             if (PLC_Device_主畫面_領退藥.Bool) cnt++;
-        }  
+        }
         void cnt_Program_主畫面_領退藥_檢查放開(ref int cnt)
         {
             if (!PLC_Device_主畫面_領退藥.Bool) cnt = 65500;
@@ -470,12 +489,12 @@ namespace 智能藥品管理系統
                 if (list_value.Count == 0) break;
                 this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_DeleteExtra(list_value, true);
             }
-            
+
             cnt++;
         }
         void cnt_Program_主畫面_領退藥_取藥門關門開始(ref int cnt)
         {
-            if(!PLC_Device_取物門_移動到關門位置.Bool)
+            if (!PLC_Device_取物門_移動到關門位置.Bool)
             {
                 PLC_Device_取物門_移動到關門位置.Bool = true;
                 cnt++;
@@ -520,12 +539,12 @@ namespace 智能藥品管理系統
                     狀態顯示 += $"--------------登入資訊---------------\n";
                     狀態顯示 += $"登入方式 ".StringLength(10) + $": RFID\n";
                     狀態顯示 += $"姓名 ".StringLength(10) + $": {姓名}\n";
-                    狀態顯示 += $"ID ".StringLength(10) +$": {ID}\n";
+                    狀態顯示 += $"ID ".StringLength(10) + $": {ID}\n";
                     狀態顯示 += $"-------------------------------------\n";
                     this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_01.GetAdress(), 狀態顯示);
                     cnt++;
                     return;
-                }             
+                }
             }
             if (retryToSucess >= 2)
             {
@@ -553,7 +572,7 @@ namespace 智能藥品管理系統
                     return;
                 }
             }
-            if(PLC_Device_主畫面_領退藥_登入按下.Bool)
+            if (PLC_Device_主畫面_領退藥_登入按下.Bool)
             {
                 PLC_Device_主畫面_領退藥_登入按下.Bool = false;
                 string ID = textBox_主畫面_帳號.Texts;
@@ -577,7 +596,7 @@ namespace 智能藥品管理系統
                         狀態顯示 += $"ID ".StringLength(10) + $": {ID}\n";
                         狀態顯示 += $"-------------------------------------\n";
                         this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_01.GetAdress(), 狀態顯示);
-                        
+
                         cnt++;
                         return;
                     }
@@ -608,7 +627,7 @@ namespace 智能藥品管理系統
                 PLC_Device_主畫面_退藥按鈕.Bool = false;
                 cnt++;
             }
-            else if(PLC_Device_主畫面_退藥按鈕.Bool)
+            else if (PLC_Device_主畫面_退藥按鈕.Bool)
             {
                 狀態顯示 = "";
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
@@ -653,7 +672,7 @@ namespace 智能藥品管理系統
                     return;
                 }
             }
-          
+
         }
 
         void cnt_Program_主畫面_領退藥_300_選擇手術房(ref int cnt)
@@ -743,7 +762,7 @@ namespace 智能藥品管理系統
             狀態顯示 += $"功能".StringLength(8) + $": <{主畫面_領退藥_功能選擇.GetEnumName()}>" + " \n";
             this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_05.GetAdress(), 狀態顯示);
             PLC_Device_主畫面_領退藥_狀態顯示_05.Bool = true;
-            if(主畫面_領退藥_功能選擇 == enum_功能選擇.套餐 && PLC_Device_主畫面_領藥按鈕.Bool)
+            if (主畫面_領退藥_功能選擇 == enum_功能選擇.套餐 && PLC_Device_主畫面_領藥按鈕.Bool)
             {
                 cnt = 1000;
                 return;
@@ -758,7 +777,7 @@ namespace 智能藥品管理系統
                 cnt = 4000;
                 return;
             }
-    
+
             if (主畫面_領退藥_功能選擇 == enum_功能選擇.None)
             {
                 cnt = 65500;
@@ -770,13 +789,13 @@ namespace 智能藥品管理系統
         void cnt_Program_主畫面_領退藥_1000_領藥_選擇套餐(ref int cnt)
         {
             DialogResult dialogResult = DialogResult.None;
-            this.Invoke(new Action(delegate 
+            this.Invoke(new Action(delegate
             {
                 Dialog_套餐選擇 dialog_套餐選擇 = new Dialog_套餐選擇(this.sqL_DataGridView_入庫作業_套餐資料, this.sqL_DataGridView_入庫作業_套餐內容);
                 dialogResult = dialog_套餐選擇.ShowDialog();
                 主畫面_領退藥_選擇套餐 = dialog_套餐選擇.Value;
             }));
-            if(dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)
             {
                 cnt++;
                 return;
@@ -786,7 +805,7 @@ namespace 智能藥品管理系統
                 cnt = 65500;
                 return;
             }
-       
+
         }
         void cnt_Program_主畫面_領退藥_1000_領藥_檢查重複領取(ref int cnt)
         {
@@ -801,7 +820,7 @@ namespace 智能藥品管理系統
             list_value = list_value.GetRows((int)enum_交易記錄查詢資料.藥品碼, 套餐代碼);
             list_value = list_value.GetRowsInDate((int)enum_交易記錄查詢資料.操作時間, dateTime_start, dateTime_end);
 
-            if(list_value.Count > 0)
+            if (list_value.Count > 0)
             {
                 string 操作時間 = list_value[0][(int)enum_交易記錄查詢資料.操作時間].ToDateTimeString();
                 DialogResult dialogResult = DialogResult.None;
@@ -845,7 +864,7 @@ namespace 智能藥品管理系統
         {
             bool flag_ok = true;
             List<object[]> list_value = this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_GetAllRows(false);
-            if(list_value.Count > 0)
+            if (list_value.Count > 0)
             {
                 for (int i = 0; i < list_value.Count; i++)
                 {
@@ -855,11 +874,11 @@ namespace 智能藥品管理系統
                     }
                 }
             }
-            if(flag_ok)
+            if (flag_ok)
             {
                 cnt++;
                 return;
-            }          
+            }
         }
         void cnt_Program_主畫面_領退藥_1000_領藥_至出貨位置開始(ref int cnt)
         {
@@ -908,11 +927,11 @@ namespace 智能藥品管理系統
         }
 
         void cnt_Program_主畫面_領退藥_2000_領藥_藥品選擇(ref int cnt)
-        {          
+        {
             DialogResult dialogResult = DialogResult.None;
             this.Invoke(new Action(delegate
             {
-                Dialog_領藥_藥品選擇 Dialog_領藥_藥品選擇 = new Dialog_領藥_藥品選擇(this.Function_儲位管理_儲位資料_取得儲位資料(),this.sqL_DataGridView_入庫作業_藥品資料);
+                Dialog_領藥_藥品選擇 Dialog_領藥_藥品選擇 = new Dialog_領藥_藥品選擇(this.Function_儲位管理_儲位資料_取得儲位資料(), this.sqL_DataGridView_入庫作業_藥品資料);
                 dialogResult = Dialog_領藥_藥品選擇.ShowDialog();
                 主畫面_領退藥_藥品選擇 = Dialog_領藥_藥品選擇.Value;
             }));
@@ -929,7 +948,7 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_2000_領藥_寫入取藥堆疊(ref int cnt)
         {
-            for(int i = 0; i < 主畫面_領退藥_藥品選擇.Count; i++)
+            for (int i = 0; i < 主畫面_領退藥_藥品選擇.Count; i++)
             {
                 object[] value = new object[new enum_主畫面_藥單列表().GetLength()];
                 value[(int)enum_主畫面_藥單列表.GUID] = Guid.NewGuid().ToString();
@@ -950,7 +969,7 @@ namespace 智能藥品管理系統
 
                 this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_AddRow(value, true);
             }
-           
+
             cnt++;
             return;
         }
@@ -1026,12 +1045,12 @@ namespace 智能藥品管理系統
             Dialog_退藥_藥品選擇 dialog_退藥_藥品選擇;
             this.Invoke(new Action(delegate
             {
-                dialog_退藥_藥品選擇 = new Dialog_退藥_藥品選擇(MySerialPort_Scanner, this.Function_儲位管理_儲位資料_取得儲位資料(),this.sqL_DataGridView_入庫作業_藥品資料);
+                dialog_退藥_藥品選擇 = new Dialog_退藥_藥品選擇(MySerialPort_Scanner, this.Function_儲位管理_儲位資料_取得儲位資料(), this.sqL_DataGridView_入庫作業_藥品資料);
                 dialogResult = dialog_退藥_藥品選擇.ShowDialog();
                 主畫面_領退藥_退藥藥品 = dialog_退藥_藥品選擇.Value;
                 主畫面_領退藥_退藥數量 = dialog_退藥_藥品選擇.數量;
             }));
-          
+
             if (dialogResult == DialogResult.Yes)
             {
                 cnt++;
@@ -1042,7 +1061,7 @@ namespace 智能藥品管理系統
                 cnt = 65500;
                 return;
             }
-           
+
         }
         void cnt_Program_主畫面_領退藥_3000_退藥_空瓶實瓶選擇(ref int cnt)
         {
@@ -1084,7 +1103,7 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_3000_退藥_退藥開鎖打開結束(ref int cnt)
         {
-      
+
             if (!PLC_Device_退藥鎖.Bool)
             {
                 if (PLC_Device_退藥鎖_OK.Bool)
@@ -1106,10 +1125,10 @@ namespace 智能藥品管理系統
             DialogResult dialogResult = DialogResult.None;
             this.Invoke(new Action(delegate
             {
-                Dialog_退藥_掃碼 dialog_退藥_掃碼 = new Dialog_退藥_掃碼(MySerialPort_Scanner, 主畫面_領退藥_退藥藥品, 主畫面_領退藥_退藥數量 , PLC_Device_退藥鎖_輸入);
+                Dialog_退藥_掃碼 dialog_退藥_掃碼 = new Dialog_退藥_掃碼(MySerialPort_Scanner, 主畫面_領退藥_退藥藥品, 主畫面_領退藥_退藥數量, PLC_Device_退藥鎖_輸入);
                 dialogResult = dialog_退藥_掃碼.ShowDialog();
             }));
-            if(dialogResult == DialogResult.No)
+            if (dialogResult == DialogResult.No)
             {
                 cnt = 65500;
                 return;
@@ -1206,7 +1225,7 @@ namespace 智能藥品管理系統
                 dialogResult = dialog_掃碼退藥.ShowDialog();
                 list_掃碼退藥 = dialog_掃碼退藥.Value;
             }));
-          
+
             if (dialogResult == DialogResult.No)
             {
                 cnt = 65500;
@@ -1273,7 +1292,7 @@ namespace 智能藥品管理系統
             狀態顯示 += $"<開鎖逾時>" + " \n";
             this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_06.GetAdress(), 狀態顯示);
             PLC_Device_主畫面_領退藥_狀態顯示_06.Bool = true;
-            if(MyTimer_主畫面_領退藥_退藥鎖逾時.IsTimeOut())
+            if (MyTimer_主畫面_領退藥_退藥鎖逾時.IsTimeOut())
             {
                 cnt = 65500;
                 return;
@@ -1283,7 +1302,7 @@ namespace 智能藥品管理系統
         //一般模式
         void cnt_Program_主畫面_領退藥_5000_領藥_等待掃碼(ref int cnt)
         {
-            if(plC_RJ_Button_主畫面_開始作業.Bool)
+            if (plC_RJ_Button_主畫面_開始作業.Bool)
             {
                 this.PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 List<object[]> list_value = this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_GetAllRows(false);
@@ -1312,10 +1331,20 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_5000_領藥_掃碼完成(ref int cnt)
         {
-            if (plC_RJ_Button_主畫面_開始作業.Bool)
+            List<object[]> list_value = this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_GetAllRows(false);
+
+            this.Invoke(new Action(delegate
             {
+                if(list_value.Count != 0)this.panel_開始取藥.Visible = true;
+            }));
+            if (flag_開始作業)
+            {
+                flag_開始作業 = false;
+                this.Invoke(new Action(delegate
+                {
+                    this.panel_開始取藥.Visible = false;
+                }));
                 this.PLC_Device_Scanner_讀取藥單資料.Bool = false;
-                List<object[]> list_value = this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_GetAllRows(false);
                 if (list_value.Count == 0)
                 {
                     MyMessageBox.ShowDialog("未有掃碼資料!");
@@ -1327,7 +1356,7 @@ namespace 智能藥品管理系統
                     list_value[i][(int)enum_主畫面_藥單列表.狀態] = enum_主畫面_藥單列表_狀態.等待作業.GetEnumName();
                 }
                 this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_ReplaceExtra(list_value, false);
-                plC_RJ_Button_主畫面_開始作業.Bool = false;
+                
                 cnt = 5100;
                 return;
             }
@@ -1351,7 +1380,7 @@ namespace 智能藥品管理系統
             string 開方時間 = Scanner_讀取藥單資料_Array[(int)enum_Scanner_陣列內容.開方時間].ObjectToString();
             string[] 領藥作業列表_serchcolName = new string[] { enum_主畫面_藥單列表.藥品碼.GetEnumName(), enum_主畫面_藥單列表.病歷號.GetEnumName(), enum_主畫面_藥單列表.開方時間.GetEnumName() };
             string[] 交易紀錄_serchcolName = new string[] { enum_交易記錄查詢資料.藥品碼.GetEnumName(), enum_交易記錄查詢資料.病歷號.GetEnumName(), enum_交易記錄查詢資料.開方時間.GetEnumName() };
-            string[] serchValue = new string[] { 藥品碼 , 病歷號 , 開方時間 };
+            string[] serchValue = new string[] { 藥品碼, 病歷號, 開方時間 };
             List<object[]> list_領藥作業列表 = this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_GetRows(領藥作業列表_serchcolName, serchValue, false);
             if (list_領藥作業列表.Count > 0)
             {
@@ -1359,7 +1388,7 @@ namespace 智能藥品管理系統
                 cnt = 5000;
                 return;
             }
-            if(plC_Button_重複領藥不檢查.Bool == false)
+            if (plC_Button_重複領藥不檢查.Bool == false)
             {
                 List<object[]> list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows(交易紀錄_serchcolName, serchValue, false);
                 if (list_交易紀錄.Count > 0)
@@ -1369,7 +1398,7 @@ namespace 智能藥品管理系統
                     return;
                 }
             }
-          
+
             cnt++;
         }
         void cnt_Program_主畫面_領退藥_5000_領藥_寫入取藥堆疊(ref int cnt)
@@ -1392,7 +1421,7 @@ namespace 智能藥品管理系統
 
 
             this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_AddRow(value, true);
-       
+
             cnt++;
         }
 
@@ -1477,13 +1506,13 @@ namespace 智能藥品管理系統
                 this.PLC_Device_Scanner_讀取藥單資料.Bool = true;
                 cnt++;
             }
-            
+
         }
         void cnt_Program_主畫面_領退藥_6000_退藥_掃碼完成(ref int cnt)
         {
             if (!this.PLC_Device_Scanner_讀取藥單資料.Bool)
             {
-                if(PLC_Device_Scanner_讀取藥單資料_OK.Bool)
+                if (PLC_Device_Scanner_讀取藥單資料_OK.Bool)
                 {
                     cnt++;
                 }
@@ -1498,10 +1527,10 @@ namespace 智能藥品管理系統
         {
             Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel();
             DialogResult dialogResult = DialogResult.None;
-            this.Invoke(new Action(delegate 
+            this.Invoke(new Action(delegate
             {
                 dialogResult = dialog_NumPannel.ShowDialog();
-                
+
             }));
             if (dialogResult != DialogResult.Yes)
             {
@@ -1627,7 +1656,7 @@ namespace 智能藥品管理系統
                 PLC_Device_主畫面_取藥堆疊檢查_OK.Bool = false;
                 cnt_Program_主畫面_取藥堆疊檢查 = 65535;
             }
-            if(PLC_Device_主畫面_取藥堆疊檢查.Bool)
+            if (PLC_Device_主畫面_取藥堆疊檢查.Bool)
             {
                 MyTimer_主畫面_取藥堆疊檢查延遲.TickStop();
                 MyTimer_主畫面_取藥堆疊檢查延遲.StartTickTime(100);
@@ -1643,7 +1672,7 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_取藥堆疊檢查_初始化(ref int cnt)
         {
-            if(MyTimer_主畫面_取藥堆疊檢查延遲.IsTimeOut())
+            if (MyTimer_主畫面_取藥堆疊檢查延遲.IsTimeOut())
             {
                 cnt++;
             }
@@ -1651,12 +1680,12 @@ namespace 智能藥品管理系統
         void cnt_Program_主畫面_取藥堆疊檢查_取得資料(ref int cnt)
         {
             List<object[]> list_value = sqL_DataGridView_主畫面_領退藥作業列表.SQL_GetAllRows(false);
-            if(list_value.Count == 0)
+            if (list_value.Count == 0)
             {
                 cnt = 65500;
                 return;
             }
-            for(int i = 0; i < list_value.Count; i++)
+            for (int i = 0; i < list_value.Count; i++)
             {
                 if (list_value[i][(int)enum_主畫面_藥單列表.狀態].ObjectToString() == enum_主畫面_藥單列表_狀態.等待作業.GetEnumName())
                 {
@@ -1669,7 +1698,7 @@ namespace 智能藥品管理系統
             }
             cnt = 65500;
             return;
-      
+
         }
         void cnt_Program_主畫面_取藥堆疊檢查_開始作業(ref int cnt)
         {
@@ -1752,7 +1781,7 @@ namespace 智能藥品管理系統
                 //        return;
                 //    }
                 //}
-                if(list_Class_取藥數組.Count == 0)
+                if (list_Class_取藥數組.Count == 0)
                 {
                     this.Invoke(new Action(delegate
                     {
@@ -1848,7 +1877,7 @@ namespace 智能藥品管理系統
             for (int i = 0; i < list_Class_取藥數組.Count; i++)
             {
                 list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.IP, list_Class_取藥數組[i].IP);
-                if(list_儲位資料_buf.Count > 0)
+                if (list_儲位資料_buf.Count > 0)
                 {
                     儲位資料 = list_儲位資料_buf[0];
                     cnt = 0;
@@ -1862,7 +1891,7 @@ namespace 智能藥品管理系統
                         if (cnt == 0)
                         {
                             bool flag_OK = true;
-                            
+
                             if (!flag_OK) break;
                             cnt++;
                         }
@@ -2066,9 +2095,9 @@ namespace 智能藥品管理系統
             int index = -1;
             int 層數 = 0;
             int 格數 = 0;
-            while(true)
+            while (true)
             {
-                if(cnt  == 0)
+                if (cnt == 0)
                 {
                     bool flag_OK = false;
                     index = -1;
@@ -2078,7 +2107,7 @@ namespace 智能藥品管理系統
                         int 庫存 = list_儲位資料[i][(int)enum_儲位管理_儲位資料.庫存].ObjectToString().StringToInt32();
                         if (目標包裝數量 == 最小包裝數量)
                         {
-                            if(庫存 > 0)
+                            if (庫存 > 0)
                             {
                                 儲位資料 = list_儲位資料[i];
                                 cnt++;
@@ -2090,7 +2119,7 @@ namespace 智能藥品管理系統
                     }
                     if (!flag_OK) break;
                 }
-                if(cnt == 1)
+                if (cnt == 1)
                 {
                     Function_儲位管理_儲位資料_取得儲位層數及格數(儲位資料, ref 層數, ref 格數);
                     if (層數 - 1 < 0)
@@ -2108,7 +2137,7 @@ namespace 智能藥品管理系統
                 }
                 if (cnt == 2)
                 {
-                  
+
 
                     string IP = 儲位資料[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
                     int Port = 儲位資料[(int)enum_儲位管理_儲位資料.Port].ObjectToString().StringToInt32();
@@ -2129,7 +2158,7 @@ namespace 智能藥品管理系統
                     {
                         string jsonString = this.storageUI_WT32.GetUDPJsonString(IP);
                         StorageUI_WT32.UDP_READ uDP_READ = jsonString.JsonDeserializet<StorageUI_WT32.UDP_READ>();
-                        if(uDP_READ.Screen_Page == (int)StorageUI_WT32.enum_Page.取藥中頁面)
+                        if (uDP_READ.Screen_Page == (int)StorageUI_WT32.enum_Page.取藥中頁面)
                         {
                             flag_screen_refresh = false;
                         }
@@ -2138,9 +2167,9 @@ namespace 智能藥品管理系統
                     {
 
                     }
-                
 
-                    if(flag_screen_refresh)
+
+                    if (flag_screen_refresh)
                     {
                         this.wT32_GPADC.Set_ToPage(IP, Port, (int)StorageUI_WT32.enum_Page.取藥中頁面);
                         this.wT32_GPADC.Set_JsonStringSend(IP, Port);
@@ -2165,14 +2194,14 @@ namespace 智能藥品管理系統
                     PLC_Device_XY_Table_移動_層數.Value = 層數 - 1;
                     PLC_Device_XY_Table_移動_格數.Value = 格數 - 1;
 
-  
+
                     if (!PLC_Device_XY_Table_移動.Bool)
                     {
                         Console.WriteLine($"XY Table開始移動...");
                         PLC_Device_XY_Table_移動.Bool = true;
                         cnt++;
                     }
-            
+
                 }
                 if (cnt == 4)
                 {
@@ -2180,7 +2209,7 @@ namespace 智能藥品管理系統
                     if (!PLC_Device_XY_Table_移動.Bool)
                     {
                         Console.WriteLine($"XY Table移動完成...");
-                 
+
                         cnt++;
                     }
                 }
@@ -2214,25 +2243,25 @@ namespace 智能藥品管理系統
 
                     cnt++;
                 }
-                if(cnt == 8)
+                if (cnt == 8)
                 {
-                    if(MyTimer_主畫面_領退藥_馬達出料延遲.IsTimeOut())
+                    if (MyTimer_主畫面_領退藥_馬達出料延遲.IsTimeOut())
                     {
                         //PLC_Device_輸送帶_輸出.Bool = false;
                         cnt = 65500;
                         return true;
                     }
-                   
+
                 }
 
 
-                
+
                 System.Threading.Thread.Sleep(10);
             }
             return false;
         }
 
-        private List<Class_取藥數組> Function_主畫面_取得取藥數組(List<object[]> list_儲位資料 , string 藥品碼)
+        private List<Class_取藥數組> Function_主畫面_取得取藥數組(List<object[]> list_儲位資料, string 藥品碼)
         {
             List<Class_取藥數組> list_取藥數組 = new List<Class_取藥數組>();
             List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.藥品碼, 藥品碼);
@@ -2263,7 +2292,7 @@ namespace 智能藥品管理系統
             交易量 = 交易量 * -1;
             int 交易量_temp = 交易量;
             List<Class_取藥數組> list_取藥數組_buf = new List<Class_取藥數組>();
-           
+
             for (int i = 0; i < list_取藥數組.Count; i++)
             {
                 if (交易量 == list_取藥數組[i].包裝數量)
@@ -2274,14 +2303,14 @@ namespace 智能藥品管理系統
                 }
                 交易量_temp = 交易量 - list_取藥數組[i].包裝數量;
                 if (交易量_temp < 0)
-                { 
-                    continue; 
+                {
+                    continue;
                 }
                 else
                 {
                     交易量 = 交易量_temp;
                     list_取藥數組_buf.Add(list_取藥數組[i]);
-                }              
+                }
             }
             if (!flag_OK) list_取藥數組_buf.Clear();
             return list_取藥數組_buf;
@@ -2289,7 +2318,7 @@ namespace 智能藥品管理系統
         private List<int> Function_主畫面_取得儲位數組(List<object[]> list_value)
         {
             List<int> list_數組 = new List<int>();
-            for(int i = 0; i < list_value.Count; i++)
+            for (int i = 0; i < list_value.Count; i++)
             {
                 int 庫存 = list_value[i][(int)enum_儲位管理_儲位資料.庫存].ObjectToString().StringToInt32();
                 int 最小包裝數量 = list_value[i][(int)enum_儲位管理_儲位資料.單位包裝數量].ObjectToString().StringToInt32();
@@ -2326,7 +2355,7 @@ namespace 智能藥品管理系統
         private bool Function_主畫面_檢查重複領取(string 藥品碼, string 藥袋序號, string 病歷號, DateTime 開方時間)
         {
             string[] serchvalue = new string[] { 藥品碼, 藥袋序號, 病歷號, 開方時間.ToDateTimeString() };
-            string[] serchcolname = new string[] { enum_交易記錄查詢資料.藥品碼.GetEnumName(), enum_交易記錄查詢資料.藥袋序號.GetEnumName() , enum_交易記錄查詢資料.病歷號.GetEnumName() , enum_交易記錄查詢資料.開方時間.GetEnumName()};
+            string[] serchcolname = new string[] { enum_交易記錄查詢資料.藥品碼.GetEnumName(), enum_交易記錄查詢資料.藥袋序號.GetEnumName(), enum_交易記錄查詢資料.病歷號.GetEnumName(), enum_交易記錄查詢資料.開方時間.GetEnumName() };
             List<object[]> list_value = sqL_DataGridView_交易記錄查詢.SQL_GetRows(serchcolname, serchvalue, false);
             if (list_value.Count > 0) return true;
             list_value = sqL_DataGridView_主畫面_領退藥作業列表.GetRows(serchcolname, serchvalue, false);
@@ -2377,7 +2406,7 @@ namespace 智能藥品管理系統
         {
             if (plC_RJ_Button_主畫面_登入.Text == "登出")
             {
-                if(PLC_Device_清空出料盤.Bool)
+                if (PLC_Device_清空出料盤.Bool)
                 {
                     MyMessageBox.ShowDialog("清空出料盤作業中,無法登出!");
                     return;
@@ -2389,6 +2418,11 @@ namespace 智能藥品管理系統
                 cnt_Program_主畫面_領退藥 = 65501;
             }
             PLC_Device_主畫面_領退藥_登入按下.Bool = true;
+        }
+        bool flag_開始作業 = false;
+        private void PlC_RJ_Button_主畫面_開始作業_MouseDownEvent(MouseEventArgs mevent)
+        {
+            flag_開始作業 = true;
         }
         #endregion
 
