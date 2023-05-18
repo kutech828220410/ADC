@@ -25,13 +25,13 @@ namespace 智能藥品管理系統
         單位包裝數量,
         可放置盒數,
         可放置總藥量,
+        最大出貨量,
         總庫存,
         位置,
     }
     public partial class Form1 : Form
     {
 
-    
         public class ICP_儲位管理_儲位資料 : IComparer<object[]>
         {
             public int Compare(object[] x, object[] y)
@@ -110,9 +110,7 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent;
 
         }
-
-   
-
+ 
         private bool flag_Program_儲位管理 = false;
         private void Program_儲位管理()
         {
@@ -618,6 +616,7 @@ namespace 智能藥品管理系統
                 value[(int)enum_儲位管理_儲位資料.單位包裝數量] = 單位包裝數量;
                 value[(int)enum_儲位管理_儲位資料.可放置盒數] = storage.Max_Inventory;
                 value[(int)enum_儲位管理_儲位資料.可放置總藥量] = storage.Max_Inventory * (單位包裝數量.StringToInt32());
+                value[(int)enum_儲位管理_儲位資料.最大出貨量] = storage.Max_shipping;
                 value[(int)enum_儲位管理_儲位資料.庫存] = 庫存;
                 value[(int)enum_儲位管理_儲位資料.總庫存] = 總庫存;
                 value[(int)enum_儲位管理_儲位資料.位置] = 位置;
@@ -670,6 +669,7 @@ namespace 智能藥品管理系統
             rJ_TextBox_儲位管理_儲位資料_儲位名稱.Text = RowValue[(int)enum_儲位管理_儲位資料.儲位名稱].ObjectToString();
             rJ_TextBox_儲位管理_儲位資料_包裝數量.Text = RowValue[(int)enum_儲位管理_儲位資料.單位包裝數量].ObjectToString();
             rJ_TextBox_儲位管理_儲位資料_可放置盒數.Text = RowValue[(int)enum_儲位管理_儲位資料.可放置盒數].ObjectToString();
+            rJ_TextBox_儲位管理_儲位資料_最大出貨量.Text = RowValue[(int)enum_儲位管理_儲位資料.最大出貨量].ObjectToString();
 
             string IP = RowValue[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
             string JsonString = this.storageUI_WT32.GetUDPJsonString(IP);
@@ -776,7 +776,9 @@ namespace 智能藥品管理系統
                         storage.SetValue(Storage.ValueName.儲位名稱, Storage.ValueType.Value, rJ_TextBox_儲位管理_儲位資料_儲位名稱.Text);
                         storage.SetValue(Storage.ValueName.最小包裝單位數量, Storage.ValueType.Value, rJ_TextBox_儲位管理_儲位資料_包裝數量.Text);
                         storage.Max_Inventory = rJ_TextBox_儲位管理_儲位資料_可放置盒數.Text.StringToInt32();
+                        storage.Max_shipping = rJ_TextBox_儲位管理_儲位資料_最大出貨量.Text.StringToInt32();
                         if (storage.Max_Inventory <= 0) storage.Max_Inventory = 1;
+                        if (storage.Max_shipping <= 0) storage.Max_shipping = 1;
                     }));
 
 

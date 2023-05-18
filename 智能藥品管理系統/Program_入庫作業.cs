@@ -118,6 +118,9 @@ namespace 智能藥品管理系統
         int 入庫作業_開鎖按鈕_height = 0;
         int 入庫作業_開鎖按鈕_層數 = 0;
         int 入庫作業_開鎖按鈕_格數 = 0;
+        int 入庫作業_庫存 = 0;
+        int 入庫作業_可放置盒數 = 0;
+
 
         PLC_Device PLC_Device_入庫作業 = new PLC_Device("S6205");
         PLC_Device PLC_Device_入庫作業_OK = new PLC_Device("S6206");
@@ -335,6 +338,8 @@ namespace 智能藥品管理系統
             if (list_選擇儲位資料.Count > 0)
             {
                 string IP = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.IP].ObjectToString();
+                入庫作業_庫存 = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.庫存].StringToInt32();
+                入庫作業_可放置盒數 = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.可放置盒數].StringToInt32();
                 Storage storage = this.Function_儲位管理_從SQL取得Storage(IP);
                 if (storage != null)
                 {
@@ -392,6 +397,13 @@ namespace 智能藥品管理系統
                 {
                     PLC_Device_入庫作業_輸入藥品資訊_確認.Bool = false;
                     MyMessageBox.ShowDialog(error_str);
+                    return;
+                }
+                if(入庫作業_庫存 + 數量 > 入庫作業_可放置盒數)
+                {
+                    PLC_Device_入庫作業_輸入藥品資訊_確認.Bool = false;
+                    MyMessageBox.ShowDialog($"入庫後數量為[{入庫作業_庫存 + 數量}] 大於 可放置盒數[{入庫作業_可放置盒數}]");
+                    System.Threading.Thread.Sleep(1000);
                     return;
                 }
                 PLC_Device_入庫作業_輸入藥品資訊_確認.Bool = false;

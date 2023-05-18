@@ -572,6 +572,9 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
+            this.rJ_Lable13 = new MyUI.RJ_Lable();
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量 = new MyUI.RJ_TextBox();
+            this.button_TEST = new System.Windows.Forms.Button();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1268,7 +1271,7 @@
             this.plC_ScreenPage_Main.Location = new System.Drawing.Point(0, 88);
             this.plC_ScreenPage_Main.Name = "plC_ScreenPage_Main";
             this.plC_ScreenPage_Main.SelectedIndex = 0;
-            this.plC_ScreenPage_Main.Size = new System.Drawing.Size(1064, 1752);
+            this.plC_ScreenPage_Main.Size = new System.Drawing.Size(1064, 1772);
             this.plC_ScreenPage_Main.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_Main.TabIndex = 3;
             this.plC_ScreenPage_Main.控制位址 = "D0";
@@ -1285,7 +1288,7 @@
             this.主畫面.Location = new System.Drawing.Point(4, 25);
             this.主畫面.Margin = new System.Windows.Forms.Padding(0);
             this.主畫面.Name = "主畫面";
-            this.主畫面.Size = new System.Drawing.Size(1056, 1723);
+            this.主畫面.Size = new System.Drawing.Size(1056, 1743);
             this.主畫面.TabIndex = 0;
             this.主畫面.Text = "主畫面";
             // 
@@ -1493,6 +1496,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button_TEST);
             this.panel2.Controls.Add(this.plC_Button67);
             this.panel2.Controls.Add(this.plC_RJ_Button_主畫面_開始作業);
             this.panel2.Controls.Add(this.plC_RJ_Button1);
@@ -2276,7 +2280,7 @@
             this.入庫作業.Controls.Add(this.panel8);
             this.入庫作業.Location = new System.Drawing.Point(4, 25);
             this.入庫作業.Name = "入庫作業";
-            this.入庫作業.Size = new System.Drawing.Size(1056, 1723);
+            this.入庫作業.Size = new System.Drawing.Size(1056, 1743);
             this.入庫作業.TabIndex = 2;
             this.入庫作業.Text = "入庫作業";
             // 
@@ -3615,7 +3619,7 @@
             this.交易紀錄查詢.Controls.Add(this.sqL_DataGridView_交易記錄查詢);
             this.交易紀錄查詢.Location = new System.Drawing.Point(4, 25);
             this.交易紀錄查詢.Name = "交易紀錄查詢";
-            this.交易紀錄查詢.Size = new System.Drawing.Size(1056, 1723);
+            this.交易紀錄查詢.Size = new System.Drawing.Size(1056, 1743);
             this.交易紀錄查詢.TabIndex = 3;
             this.交易紀錄查詢.Text = "交易紀錄查詢";
             // 
@@ -4678,7 +4682,7 @@
             this.參數設定.Controls.Add(this.panel_參數設定);
             this.參數設定.Location = new System.Drawing.Point(4, 25);
             this.參數設定.Name = "參數設定";
-            this.參數設定.Size = new System.Drawing.Size(1056, 1723);
+            this.參數設定.Size = new System.Drawing.Size(1056, 1743);
             this.參數設定.TabIndex = 4;
             this.參數設定.Text = "參數設定";
             // 
@@ -4695,7 +4699,7 @@
             this.plC_ScreenPage_參數設定.Location = new System.Drawing.Point(0, 49);
             this.plC_ScreenPage_參數設定.Name = "plC_ScreenPage_參數設定";
             this.plC_ScreenPage_參數設定.SelectedIndex = 0;
-            this.plC_ScreenPage_參數設定.Size = new System.Drawing.Size(1056, 1674);
+            this.plC_ScreenPage_參數設定.Size = new System.Drawing.Size(1056, 1694);
             this.plC_ScreenPage_參數設定.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_參數設定.TabIndex = 5;
             this.plC_ScreenPage_參數設定.控制位址 = "D2";
@@ -4711,7 +4715,7 @@
             this.tabPage3.Controls.Add(this.sqL_DataGridView_參數設定_藥檔資料);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1048, 1645);
+            this.tabPage3.Size = new System.Drawing.Size(1048, 1665);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "藥檔資料";
             // 
@@ -6989,7 +6993,7 @@
             this.人員資料.Controls.Add(this.sqL_DataGridView_人員資料);
             this.人員資料.Location = new System.Drawing.Point(4, 25);
             this.人員資料.Name = "人員資料";
-            this.人員資料.Size = new System.Drawing.Size(1056, 1723);
+            this.人員資料.Size = new System.Drawing.Size(1056, 1743);
             this.人員資料.TabIndex = 5;
             this.人員資料.Text = "人員資料";
             // 
@@ -7010,7 +7014,7 @@
             this.plC_RJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(3, 40);
             this.plC_RJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox13.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1050, 557);
+            this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1050, 577);
             this.plC_RJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_GroupBox13.Location = new System.Drawing.Point(0, 1123);
@@ -7020,7 +7024,7 @@
             this.plC_RJ_GroupBox13.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox13.PannelBorderRadius = -43;
             this.plC_RJ_GroupBox13.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(1056, 600);
+            this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(1056, 620);
             this.plC_RJ_GroupBox13.TabIndex = 5;
             this.plC_RJ_GroupBox13.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.plC_RJ_GroupBox13.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -7052,7 +7056,7 @@
             this.loginIndex_Pannel.PanelHeight = 30;
             this.loginIndex_Pannel.PanelWidth = 220;
             this.loginIndex_Pannel.Show_Index = true;
-            this.loginIndex_Pannel.Size = new System.Drawing.Size(1044, 484);
+            this.loginIndex_Pannel.Size = new System.Drawing.Size(1044, 504);
             this.loginIndex_Pannel.SpaceWidth = 10;
             this.loginIndex_Pannel.TabIndex = 12;
             this.loginIndex_Pannel.Title_BackgroundColor = System.Drawing.Color.PaleTurquoise;
@@ -7972,7 +7976,7 @@
             this.儲位管理.Controls.Add(this.wT32_GPADC);
             this.儲位管理.Location = new System.Drawing.Point(4, 25);
             this.儲位管理.Name = "儲位管理";
-            this.儲位管理.Size = new System.Drawing.Size(1056, 1723);
+            this.儲位管理.Size = new System.Drawing.Size(1056, 1743);
             this.儲位管理.TabIndex = 7;
             this.儲位管理.Text = "儲位管理";
             // 
@@ -7985,6 +7989,8 @@
             this.plC_RJ_GroupBox5.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderRadius = -37;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderSize = 2;
+            this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.rJ_Lable13);
+            this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.rJ_TextBox_儲位管理_儲位資料_最大出貨量);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.rJ_Lable12);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.rJ_TextBox_儲位管理_儲位資料_可放置盒數);
             this.plC_RJ_GroupBox5.ContentsPanel.Controls.Add(this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試);
@@ -8004,7 +8010,7 @@
             this.plC_RJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.plC_RJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(1056, 328);
+            this.plC_RJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(1056, 348);
             this.plC_RJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_GroupBox5.Location = new System.Drawing.Point(0, 1358);
@@ -8013,7 +8019,7 @@
             this.plC_RJ_GroupBox5.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox5.PannelBorderRadius = -37;
             this.plC_RJ_GroupBox5.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox5.Size = new System.Drawing.Size(1056, 365);
+            this.plC_RJ_GroupBox5.Size = new System.Drawing.Size(1056, 385);
             this.plC_RJ_GroupBox5.TabIndex = 2;
             this.plC_RJ_GroupBox5.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.plC_RJ_GroupBox5.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -8430,6 +8436,7 @@
             this.sqL_DataGridView_儲位管理_儲位資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_儲位管理_儲位資料.Columns10"))));
             this.sqL_DataGridView_儲位管理_儲位資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_儲位管理_儲位資料.Columns11"))));
             this.sqL_DataGridView_儲位管理_儲位資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_儲位管理_儲位資料.Columns12"))));
+            this.sqL_DataGridView_儲位管理_儲位資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_儲位管理_儲位資料.Columns13"))));
             this.sqL_DataGridView_儲位管理_儲位資料.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqL_DataGridView_儲位管理_儲位資料.Font = new System.Drawing.Font("新細明體", 9F);
             this.sqL_DataGridView_儲位管理_儲位資料.ImageBox = false;
@@ -14237,7 +14244,7 @@
             // plC_AlarmFlow1
             // 
             this.plC_AlarmFlow1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plC_AlarmFlow1.Location = new System.Drawing.Point(0, 1840);
+            this.plC_AlarmFlow1.Location = new System.Drawing.Point(0, 1860);
             this.plC_AlarmFlow1.Name = "plC_AlarmFlow1";
             this.plC_AlarmFlow1.Size = new System.Drawing.Size(1064, 41);
             this.plC_AlarmFlow1.TabIndex = 2;
@@ -14262,12 +14269,62 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
             // 
+            // rJ_Lable13
+            // 
+            this.rJ_Lable13.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.rJ_Lable13.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.rJ_Lable13.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable13.BorderRadius = 8;
+            this.rJ_Lable13.BorderSize = 0;
+            this.rJ_Lable13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable13.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable13.Location = new System.Drawing.Point(614, 338);
+            this.rJ_Lable13.Name = "rJ_Lable13";
+            this.rJ_Lable13.Size = new System.Drawing.Size(100, 44);
+            this.rJ_Lable13.TabIndex = 34;
+            this.rJ_Lable13.Text = "最大出貨量";
+            this.rJ_Lable13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable13.TextColor = System.Drawing.Color.Black;
+            // 
+            // rJ_TextBox_儲位管理_儲位資料_最大出貨量
+            // 
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderRadius = 0;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.BorderSize = 2;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Location = new System.Drawing.Point(720, 342);
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Multiline = false;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Name = "rJ_TextBox_儲位管理_儲位資料_最大出貨量";
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PassWordChar = false;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.PlaceholderText = "";
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.ShowTouchPannel = false;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Size = new System.Drawing.Size(123, 36);
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.TabIndex = 35;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.Texts = "";
+            this.rJ_TextBox_儲位管理_儲位資料_最大出貨量.UnderlineStyle = false;
+            // 
+            // button_TEST
+            // 
+            this.button_TEST.Location = new System.Drawing.Point(957, 289);
+            this.button_TEST.Name = "button_TEST";
+            this.button_TEST.Size = new System.Drawing.Size(75, 23);
+            this.button_TEST.TabIndex = 12;
+            this.button_TEST.Text = "TEST";
+            this.button_TEST.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1064, 1881);
+            this.ClientSize = new System.Drawing.Size(1064, 1901);
             this.Controls.Add(this.plC_ScreenPage_Main);
             this.Controls.Add(this.plC_AlarmFlow1);
             this.Controls.Add(this.pannel_Main02);
@@ -14946,6 +15003,9 @@
         private MyUI.PLC_Button plC_Button67;
         private MyUI.RJ_Lable rJ_Lable12;
         private MyUI.RJ_TextBox rJ_TextBox_儲位管理_儲位資料_可放置盒數;
+        private MyUI.RJ_Lable rJ_Lable13;
+        private MyUI.RJ_TextBox rJ_TextBox_儲位管理_儲位資料_最大出貨量;
+        private System.Windows.Forms.Button button_TEST;
     }
 }
 

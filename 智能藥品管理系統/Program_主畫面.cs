@@ -56,6 +56,12 @@ namespace 智能藥品管理系統
             操作時間,
             狀態,
         }
+        class Class_取藥數組
+        {
+            public string IP = "";
+            public int 包裝數量 = 0;
+            public int 最大出貨量 = 0;
+        }
         private MyThread MyThread_取藥堆疊;
         private List<object[]> List_人員資料 = new List<object[]>();
         private string 主畫面_登入者姓名 = "";
@@ -1412,6 +1418,8 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_5100_領藥_至出貨位置開始(ref int cnt)
         {
+            cnt++;
+            return;
             if (!PLC_Device_移動至出貨位置.Bool)
             {
                 PLC_Device_移動至出貨位置.Bool = true;
@@ -1420,6 +1428,8 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_5100_領藥_至出貨位置結束(ref int cnt)
         {
+            cnt++;
+            return;
             if (!PLC_Device_移動至出貨位置.Bool)
             {
                 cnt++;
@@ -1427,6 +1437,8 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_5100_領藥_輸送帶開始(ref int cnt)
         {
+            cnt++;
+            return;
             if (!PLC_Device_輸送帶.Bool)
             {
                 PLC_Device_輸送帶.Bool = true;
@@ -1435,6 +1447,8 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_主畫面_領退藥_5100_領藥_輸送帶結束(ref int cnt)
         {
+            cnt++;
+            return;
             if (!PLC_Device_輸送帶.Bool)
             {
                 cnt++;
@@ -1693,10 +1707,14 @@ namespace 智能藥品管理系統
                     cnt = 65500;
                     return;
                 }
-                List<int> list_儲位數組 = Function_主畫面_取得儲位數組(list_儲位資料_buf);
-                List<int> list_取藥數組 = Function_數組找目標數值加總組合(list_儲位數組, 交易量 * -1);
+                List<Class_取藥數組> list_Class_取藥數組 = Function_主畫面_取得取藥數組(list_儲位資料, Code);
+                list_Class_取藥數組 = Function_主畫面_取藥數組運算(list_Class_取藥數組, 交易量);
 
-                string 有效組合 = "組合包裝 : ";
+
+                //List<int> list_儲位數組 = Function_主畫面_取得儲位數組(list_儲位資料_buf);
+                //List<int> list_取藥數組 = Function_數組找目標數值加總組合(list_儲位數組, 交易量 * -1);
+
+                //string 有效組合 = "組合包裝 : ";
                 //list_取藥數組 = new List<int>();
                 //for (int i = 0; i < list_儲位資料_buf.Count; i++)
                 //{
@@ -1711,30 +1729,55 @@ namespace 智能藥品管理系統
                 //    有效組合 += $"{單位包裝數量}";
                 //    if (i != list_儲位資料_buf.Count - 1) 有效組合 += ",";
                 //}
-               
-                if (list_取藥數組.Count == 0)
-                {
-                    //主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.狀態] = enum_主畫面_藥單列表_狀態.無法找出組合.GetEnumName();
-                    //voice.SpeakOnTask("無法找出組合!");
-                    //MyMessageBox.ShowDialog($"無法找出組合! \n{有效組合}");
-                    //sqL_DataGridView_主畫面_領退藥作業列表.SQL_ReplaceExtra(主畫面_取藥堆疊檢查_當前作業內容, true);
-                    //cnt = 65500;
-                    //return;
-                }
-                for (int i = 0; i < list_取藥數組.Count; i++)
-                {
-                    bool flag_OK = this.Function_主畫面_儲位取藥作業(list_儲位資料_buf, list_取藥數組[i]);
-                    if (!flag_OK)
-                    {
-                        this.Invoke(new Action(delegate
-                        {
-                            MyMessageBox.ShowDialog("取藥作業失敗!");
-                        }));
-                        cnt = 65500;
-                        return;
-                    }
-                }
 
+                //if (list_取藥數組.Count == 0)
+                //{
+                //    主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.狀態] = enum_主畫面_藥單列表_狀態.無法找出組合.GetEnumName();
+                //    voice.SpeakOnTask("無法找出組合!");
+                //    MyMessageBox.ShowDialog($"無法找出組合! \n{有效組合}");
+                //    sqL_DataGridView_主畫面_領退藥作業列表.SQL_ReplaceExtra(主畫面_取藥堆疊檢查_當前作業內容, true);
+                //    cnt = 65500;
+                //    return;
+                //}
+                //for (int i = 0; i < list_取藥數組.Count; i++)
+                //{
+                //    bool flag_OK = this.Function_主畫面_儲位取藥作業(list_Class_取藥數組, list_儲位資料_buf);
+                //    if (!flag_OK)
+                //    {
+                //        this.Invoke(new Action(delegate
+                //        {
+                //            MyMessageBox.ShowDialog("取藥作業失敗!");
+                //        }));
+                //        cnt = 65500;
+                //        return;
+                //    }
+                //}
+                if(list_Class_取藥數組.Count == 0)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        MyMessageBox.ShowDialog("找無最佳組合!!");
+                    }));
+                    List<object[]> list_delete = new List<object[]>();
+                    list_delete.Add(主畫面_取藥堆疊檢查_當前作業內容);
+                    sqL_DataGridView_主畫面_領退藥作業列表.SQL_DeleteExtra(list_delete, true);
+                    cnt = 65500;
+                    return;
+                }
+                bool flag_OK = this.Function_主畫面_儲位取藥作業(list_Class_取藥數組, list_儲位資料_buf);
+                //bool flag_OK = false;
+                if (!flag_OK)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        MyMessageBox.ShowDialog("取藥作業失敗!");
+                    }));
+                    List<object[]> list_delete = new List<object[]>();
+                    list_delete.Add(主畫面_取藥堆疊檢查_當前作業內容);
+                    sqL_DataGridView_主畫面_領退藥作業列表.SQL_DeleteExtra(list_delete, true);
+                    cnt = 65500;
+                    return;
+                }
                 for (int i = 0; i < list_儲位資料_buf.Count; i++)
                 {
                     string IP = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
@@ -1794,6 +1837,228 @@ namespace 智能藥品管理系統
         #endregion
 
         #region Functionn
+        private bool Function_主畫面_儲位取藥作業(List<Class_取藥數組> list_Class_取藥數組, List<object[]> list_儲位資料)
+        {
+            List<object[]> list_儲位資料_buf = new List<object[]>();
+            int cnt = 0;
+            object[] 儲位資料;
+            int 層數 = 0;
+            int 格數 = 0;
+            #region 馬達出料取藥
+            for (int i = 0; i < list_Class_取藥數組.Count; i++)
+            {
+                list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.IP, list_Class_取藥數組[i].IP);
+                if(list_儲位資料_buf.Count > 0)
+                {
+                    儲位資料 = list_儲位資料_buf[0];
+                    cnt = 0;
+                    while (true)
+                    {
+                        if (cnt == 65500)
+                        {
+                            break;
+                        }
+
+                        if (cnt == 0)
+                        {
+                            bool flag_OK = true;
+                            
+                            if (!flag_OK) break;
+                            cnt++;
+                        }
+                        if (cnt == 1)
+                        {
+                            Function_儲位管理_儲位資料_取得儲位層數及格數(儲位資料, ref 層數, ref 格數);
+                            if (層數 - 1 < 0)
+                            {
+                                cnt = 65500;
+                                return false;
+                            }
+                            if (格數 - 1 < 0)
+                            {
+                                cnt = 65500;
+                                return false;
+                            }
+                            Console.WriteLine($"儲位 層數:{層數 - 1} , 格數{格數 - 1}");
+                            cnt++;
+                        }
+                        if (cnt == 2)
+                        {
+
+
+                            string IP = 儲位資料[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
+                            int Port = 儲位資料[(int)enum_儲位管理_儲位資料.Port].ObjectToString().StringToInt32();
+                            int Pannel_Width = WT32_GPADC.Pannel_Width;
+                            int Pannel_Height = WT32_GPADC.Pannel_Height;
+                            string Text;
+                            Font font;
+                            Color font_color;
+                            Color back_color;
+                            int border_size;
+                            Color border_color;
+                            int width;
+                            int height;
+                            int poX;
+                            int poY;
+                            bool flag_screen_refresh = true;
+                            try
+                            {
+                                string jsonString = this.storageUI_WT32.GetUDPJsonString(IP);
+                                StorageUI_WT32.UDP_READ uDP_READ = jsonString.JsonDeserializet<StorageUI_WT32.UDP_READ>();
+                                if (uDP_READ.Screen_Page == (int)StorageUI_WT32.enum_Page.取藥中頁面)
+                                {
+                                    flag_screen_refresh = false;
+                                }
+                            }
+                            catch
+                            {
+
+                            }
+
+
+                            if (flag_screen_refresh)
+                            {
+                                this.wT32_GPADC.Set_ToPage(IP, Port, (int)StorageUI_WT32.enum_Page.取藥中頁面);
+                                this.wT32_GPADC.Set_JsonStringSend(IP, Port);
+                                this.wT32_GPADC.Set_ScreenPageInit(IP, Port, false);
+                                Text = "取藥中";
+                                font = new Font("標楷體", 45, FontStyle.Bold);
+                                width = 320;
+                                height = 200;
+                                poX = (WT32_GPADC.Pannel_Width - width) / 2;
+                                poY = (WT32_GPADC.Pannel_Height - height) / 2;
+                                font_color = Color.White;
+                                back_color = Color.Red;
+                                border_size = 2;
+                                border_color = Color.RoyalBlue;
+                                this.wT32_GPADC.Set_TextEx(IP, Port, Text, poX, poY, width, height, font, font_color, back_color, border_size, border_color, H_Pannel_lib.HorizontalAlignment.Center);
+
+                            }
+                            cnt++;
+                        }
+                        if (cnt == 3)
+                        {
+                            PLC_Device_XY_Table_移動_層數.Value = 層數 - 1;
+                            PLC_Device_XY_Table_移動_格數.Value = 格數 - 1;
+
+
+                            if (!PLC_Device_XY_Table_移動.Bool)
+                            {
+                                Console.WriteLine($"XY Table開始移動...");
+                                PLC_Device_XY_Table_移動.Bool = true;
+                                cnt++;
+                            }
+
+                        }
+                        if (cnt == 4)
+                        {
+
+                            if (!PLC_Device_XY_Table_移動.Bool)
+                            {
+                                Console.WriteLine($"XY Table移動完成...");
+
+                                cnt++;
+                            }
+                        }
+                        if (cnt == 5)
+                        {
+                            PLC_Device_送料馬達出料_層數.Value = 層數 - 1;
+                            PLC_Device_送料馬達出料_格數.Value = 格數 - 1;
+                            if (!PLC_Device_送料馬達出料.Bool)
+                            {
+                                Console.WriteLine($"馬達開始出料...");
+                                PLC_Device_送料馬達出料.Bool = true;
+                                cnt++;
+                            }
+                        }
+                        if (cnt == 6)
+                        {
+                            if (!PLC_Device_送料馬達出料.Bool)
+                            {
+                                Console.WriteLine($"馬達出料完成...");
+                                //PLC_Device_輸送帶_輸出.Bool = true;
+                                MyTimer_主畫面_領退藥_馬達出料延遲.TickStop();
+                                MyTimer_主畫面_領退藥_馬達出料延遲.StartTickTime(500);
+                                cnt++;
+                            }
+                        }
+                        if (cnt == 7)
+                        {
+                            this.Function_儲位管理_儲位資料_儲位資料庫存異動(儲位資料, -1);
+                            int 庫存 = 儲位資料[(int)enum_儲位管理_儲位資料.庫存].StringToInt32();
+                            儲位資料[(int)enum_儲位管理_儲位資料.庫存] = (庫存 - 1).ToString();
+                            cnt++;
+                        }
+                        if (cnt == 8)
+                        {
+                            if (MyTimer_主畫面_領退藥_馬達出料延遲.IsTimeOut())
+                            {
+                                //PLC_Device_輸送帶_輸出.Bool = false;
+                                cnt = 65500;
+                            }
+
+                        }
+
+
+
+                        System.Threading.Thread.Sleep(10);
+                    }
+
+
+
+                }
+            }
+            #endregion
+            #region 輸送帶出料
+            cnt = 0;
+            while (true)
+            {
+                if (cnt == 65500)
+                {
+                    break;
+                }
+                if (cnt == 0)
+                {
+                    if (!PLC_Device_移動至出貨位置.Bool)
+                    {
+                        Console.WriteLine($"移動至出貨位置...");
+                        PLC_Device_移動至出貨位置.Bool = true;
+                        cnt++;
+                    }
+                }
+                if (cnt == 1)
+                {
+                    if (!PLC_Device_移動至出貨位置.Bool)
+                    {
+                        cnt++;
+                    }
+                }
+                if (cnt == 2)
+                {
+                    if (!PLC_Device_輸送帶.Bool)
+                    {
+                        Console.WriteLine($"輸送帶出料中...");
+                        PLC_Device_輸送帶.Bool = true;
+                        cnt++;
+                    }
+                }
+                if (cnt == 3)
+                {
+                    if (!PLC_Device_輸送帶.Bool)
+                    {
+                        cnt++;
+                    }
+                }
+                if (cnt == 4)
+                {
+                    cnt = 65500;
+                }
+            }
+
+            #endregion
+
+            return true;
+        }
         private bool Function_主畫面_儲位取藥作業(List<object[]> list_儲位資料, int 目標包裝數量)
         {
             int cnt = 0;
@@ -1966,6 +2231,61 @@ namespace 智能藥品管理系統
             }
             return false;
         }
+
+        private List<Class_取藥數組> Function_主畫面_取得取藥數組(List<object[]> list_儲位資料 , string 藥品碼)
+        {
+            List<Class_取藥數組> list_取藥數組 = new List<Class_取藥數組>();
+            List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.藥品碼, 藥品碼);
+            list_儲位資料_buf.Sort(new Icp_儲位資料_取藥數組());
+            for (int i = 0; i < list_儲位資料_buf.Count; i++)
+            {
+                int 最大出貨量 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.最大出貨量].StringToInt32();
+                int 庫存 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.庫存].StringToInt32();
+                int index = 0;
+                for (int k = 0; k < 庫存; k++)
+                {
+                    if (index >= 最大出貨量) break;
+                    Class_取藥數組 class_取藥數組 = new Class_取藥數組();
+                    class_取藥數組.IP = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
+                    class_取藥數組.最大出貨量 = 最大出貨量;
+                    class_取藥數組.包裝數量 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.單位包裝數量].StringToInt32();
+                    list_取藥數組.Add(class_取藥數組);
+                    index++;
+                }
+            }
+
+            return list_取藥數組;
+        }
+
+        private List<Class_取藥數組> Function_主畫面_取藥數組運算(List<Class_取藥數組> list_取藥數組, int 交易量)
+        {
+            bool flag_OK = false;
+            交易量 = 交易量 * -1;
+            int 交易量_temp = 交易量;
+            List<Class_取藥數組> list_取藥數組_buf = new List<Class_取藥數組>();
+           
+            for (int i = 0; i < list_取藥數組.Count; i++)
+            {
+                if (交易量 == list_取藥數組[i].包裝數量)
+                {
+                    list_取藥數組_buf.Add(list_取藥數組[i]);
+                    flag_OK = true;
+                    break;
+                }
+                交易量_temp = 交易量 - list_取藥數組[i].包裝數量;
+                if (交易量_temp < 0)
+                { 
+                    continue; 
+                }
+                else
+                {
+                    交易量 = 交易量_temp;
+                    list_取藥數組_buf.Add(list_取藥數組[i]);
+                }              
+            }
+            if (!flag_OK) list_取藥數組_buf.Clear();
+            return list_取藥數組_buf;
+        }
         private List<int> Function_主畫面_取得儲位數組(List<object[]> list_value)
         {
             List<int> list_數組 = new List<int>();
@@ -2071,5 +2391,15 @@ namespace 智能藥品管理系統
             PLC_Device_主畫面_領退藥_登入按下.Bool = true;
         }
         #endregion
+
+        public class Icp_儲位資料_取藥數組 : IComparer<object[]>
+        {
+            public int Compare(object[] x, object[] y)
+            {
+                int 最小包裝數量_0 = x[(int)enum_儲位管理_儲位資料.單位包裝數量].StringToInt32();
+                int 最小包裝數量_1 = y[(int)enum_儲位管理_儲位資料.單位包裝數量].StringToInt32();
+                return 最小包裝數量_1.CompareTo(最小包裝數量_0);
+            }
+        }
     }
 }
