@@ -29,6 +29,7 @@ namespace 智能藥品管理系統
         入庫,
         實瓶繳回,
         空瓶繳回,
+        退藥回收,
         None,
     }
 
@@ -197,6 +198,10 @@ namespace 智能藥品管理系統
             if (plC_RJ_ChechBox_交易紀錄查詢_操作工程模式.Checked)
             {
                 list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.操作工程模式.GetEnumName()));
+            }
+            if (plC_RJ_ChechBox_交易紀錄查詢_操作工程模式.Checked)
+            {
+                list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.退藥回收.GetEnumName()));
             }
             if (plC_RJ_ChechBox_交易紀錄查詢_效期庫存異動.Checked)
             {

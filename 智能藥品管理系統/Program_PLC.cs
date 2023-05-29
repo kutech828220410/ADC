@@ -1609,9 +1609,9 @@ namespace 智能藥品管理系統
                 List_PLC_Device_送料馬達出料_格數[i].Bool = false;
             }
             MyTimer_送料馬達出料逾時時間.TickStop();
-            MyTimer_送料馬達出料逾時時間.StartTickTime(2000);
+            MyTimer_送料馬達出料逾時時間.StartTickTime(10000);
             MyTimer_送料馬達訊號檢查延遲.TickStop();
-            MyTimer_送料馬達訊號檢查延遲.StartTickTime(0);
+            MyTimer_送料馬達訊號檢查延遲.StartTickTime(100);
             PLC_Device_送料馬達出料_連續次數現在值.Value = 0;
        
             cnt++;
@@ -1625,6 +1625,8 @@ namespace 智能藥品管理系統
 
             }
             this.送料馬達輸出(格數, 層數);
+            Console.WriteLine($"");
+            Console.WriteLine($"---------------------送料馬達輸出{格數}-{層數}---------------------");
             //List_PLC_Device_送料馬達出料_層數[層數].Bool = true;
             //List_PLC_Device_送料馬達出料_格數[格數].Bool = true;
 
@@ -1637,6 +1639,7 @@ namespace 智能藥品管理系統
             this.送料馬達輸出(格數, 層數);
             if (MyTimer_送料馬達訊號檢查延遲.IsTimeOut())
             {
+                Console.WriteLine($"訊號檢查延遲到達 {MyTimer_送料馬達訊號檢查延遲.ToString()}");
                 cnt++;
                 return;
             }
@@ -1648,13 +1651,15 @@ namespace 智能藥品管理系統
             this.送料馬達輸出(格數, 層數);
             if (MyTimer_送料馬達出料逾時時間.IsTimeOut())
             {
+                Console.WriteLine($"送料馬達出料逾時 {MyTimer_送料馬達出料逾時時間.ToString()}");
                 cnt = 65535;
                 return;
             }
             if (!取得送料馬達輸出(格數, 層數)) return;
             if (取得送料馬達出料原點(格數))
             {
-  
+                Console.WriteLine($"送料馬到達原點 ");
+
                 cnt++;
                 return;
             }
@@ -1667,12 +1672,14 @@ namespace 智能藥品管理系統
             this.送料馬達輸出(格數, 層數);
             if(MyTimer_送料馬達出料逾時時間.IsTimeOut())
             {
+                Console.WriteLine($"送料馬達出料逾時 {MyTimer_送料馬達出料逾時時間.ToString()}");
                 cnt = 65535;
                 return;
             }
             if (!取得送料馬達輸出(格數, 層數)) return;
             if (!取得送料馬達出料原點(格數))
             {
+                Console.WriteLine($"送料馬離開原點 ");
                 MyTimer_送料馬達結束延遲.TickStop();
                 MyTimer_送料馬達結束延遲.StartTickTime();
                 cnt++;
@@ -1685,6 +1692,8 @@ namespace 智能藥品管理系統
             if (MyTimer_送料馬達結束延遲.IsTimeOut())
             {
                 this.送料馬達停止();
+                
+                Console.WriteLine($"送料馬達停止 延遲 {MyTimer_送料馬達結束延遲.ToString()}");
                 MyTimer_送料馬達訊號持續作業延遲.TickStop();
                 MyTimer_送料馬達訊號持續作業延遲.StartTickTime(500);
 
@@ -2080,6 +2089,39 @@ namespace 智能藥品管理系統
             }
             if (MyTimer_退藥鎖_輸出時間.IsTimeOut())
             {
+                string 動作 = enum_交易記錄查詢動作.退藥回收.GetEnumName();
+                string 藥品碼 = "";
+                string 藥品名稱 = "";
+                string 藥袋序號 = "";
+                string 房名 = "";
+                string 庫存量 = "";
+                string 交易量 = "";
+                string 結存量 = "";
+                string 病人姓名 = "";
+                string 病歷號 = "";
+                string 操作時間 = DateTime.Now.ToDateTimeString();
+                string 開方時間 = DateTime.Now.ToDateTimeString();
+                string 操作人 = this.主畫面_登入者姓名;
+                string 備註 = "";
+
+                object[] value = new object[new enum_交易記錄查詢資料().GetLength()];
+                value[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
+                value[(int)enum_交易記錄查詢資料.動作] = 動作;
+                value[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
+                value[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
+                value[(int)enum_交易記錄查詢資料.藥袋序號] = 藥袋序號;
+                value[(int)enum_交易記錄查詢資料.房名] = 房名;
+                value[(int)enum_交易記錄查詢資料.庫存量] = 庫存量;
+                value[(int)enum_交易記錄查詢資料.交易量] = 交易量;
+                value[(int)enum_交易記錄查詢資料.結存量] = 結存量;
+                value[(int)enum_交易記錄查詢資料.病人姓名] = 病人姓名;
+                value[(int)enum_交易記錄查詢資料.病歷號] = 病歷號;
+                value[(int)enum_交易記錄查詢資料.操作人] = 操作人;
+                value[(int)enum_交易記錄查詢資料.操作時間] = 操作時間;
+                value[(int)enum_交易記錄查詢資料.開方時間] = 開方時間;
+                value[(int)enum_交易記錄查詢資料.備註] = 備註;
+                this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
+
                 PLC_Device_退藥鎖_OK.Bool = false;
                 cnt++;
                 return;

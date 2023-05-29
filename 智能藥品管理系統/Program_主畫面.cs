@@ -1869,13 +1869,24 @@ namespace 智能藥品管理系統
         private bool Function_主畫面_儲位取藥作業(List<Class_取藥數組> list_Class_取藥數組, List<object[]> list_儲位資料)
         {
             List<object[]> list_儲位資料_buf = new List<object[]>();
+            List<int> list_單格累積出貨量 = new List<int>();
+            List<object[]> list_出貨資訊_buf = new List<object[]>();
             int cnt = 0;
             object[] 儲位資料;
             int 層數 = 0;
             int 格數 = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                list_單格累積出貨量.Add(0);
+            }
             #region 馬達出料取藥
             for (int i = 0; i < list_Class_取藥數組.Count; i++)
             {
+                object[] 出貨資訊_value;
+                string IP = list_Class_取藥數組[i].IP;
+                int 最大出貨量 = list_Class_取藥數組[i].最大出貨量;
+                int 包裝數量 = list_Class_取藥數組[i].包裝數量;
+
                 list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.IP, list_Class_取藥數組[i].IP);
                 if (list_儲位資料_buf.Count > 0)
                 {
@@ -1891,6 +1902,8 @@ namespace 智能藥品管理系統
                         if (cnt == 0)
                         {
                             bool flag_OK = true;
+                        
+
 
                             if (!flag_OK) break;
                             cnt++;
@@ -1898,6 +1911,7 @@ namespace 智能藥品管理系統
                         if (cnt == 1)
                         {
                             Function_儲位管理_儲位資料_取得儲位層數及格數(儲位資料, ref 層數, ref 格數);
+                       
                             if (層數 - 1 < 0)
                             {
                                 cnt = 65500;
@@ -1908,6 +1922,12 @@ namespace 智能藥品管理系統
                                 cnt = 65500;
                                 return false;
                             }
+                            if (list_單格累積出貨量[格數 - 1] >= 5)
+                            {
+                                this.Function_主畫面_輸送帶出料();
+                                list_單格累積出貨量[格數 - 1] = 0;
+                            }
+                        
                             Console.WriteLine($"儲位 層數:{層數 - 1} , 格數{格數 - 1}");
                             cnt++;
                         }
@@ -1915,7 +1935,7 @@ namespace 智能藥品管理系統
                         {
 
 
-                            string IP = 儲位資料[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
+                            IP = 儲位資料[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
                             int Port = 儲位資料[(int)enum_儲位管理_儲位資料.Port].ObjectToString().StringToInt32();
                             int Pannel_Width = WT32_GPADC.Pannel_Width;
                             int Pannel_Height = WT32_GPADC.Pannel_Height;
@@ -2008,6 +2028,16 @@ namespace 智能藥品管理系統
                                 //PLC_Device_輸送帶_輸出.Bool = true;
                                 MyTimer_主畫面_領退藥_馬達出料延遲.TickStop();
                                 MyTimer_主畫面_領退藥_馬達出料延遲.StartTickTime(500);
+                                int 單格累積出貨量 = list_單格累積出貨量[格數 - 1]; 
+                                if(包裝數量 <= 1)
+                                {
+                                    單格累積出貨量 = 單格累積出貨量 + 2;
+                                }
+                                else
+                                {
+                                    單格累積出貨量 = 單格累積出貨量 + 3;
+                                }
+                                list_單格累積出貨量[格數 - 1] = 單格累積出貨量;
                                 cnt++;
                             }
                         }
@@ -2038,8 +2068,13 @@ namespace 智能藥品管理系統
                 }
             }
             #endregion
-            #region 輸送帶出料
-            cnt = 0;
+            this.Function_主畫面_輸送帶出料();
+
+            return true;
+        }
+        private void Function_主畫面_輸送帶出料()
+        {
+            int cnt = 0;
             while (true)
             {
                 if (cnt == 65500)
@@ -2083,10 +2118,6 @@ namespace 智能藥品管理系統
                     cnt = 65500;
                 }
             }
-
-            #endregion
-
-            return true;
         }
         private bool Function_主畫面_儲位取藥作業(List<object[]> list_儲位資料, int 目標包裝數量)
         {
@@ -2268,12 +2299,22 @@ namespace 智能藥品管理系統
             list_儲位資料_buf.Sort(new Icp_儲位資料_取藥數組());
             for (int i = 0; i < list_儲位資料_buf.Count; i++)
             {
+                int 單位包裝數量 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.單位包裝數量].StringToInt32();
+            
                 int 最大出貨量 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.最大出貨量].StringToInt32();
+                if(單位包裝數量 <= 1)
+                {
+                    最大出貨量 = 3;
+                }
+                else
+                {
+                    最大出貨量 = 2;
+                }
                 int 庫存 = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.庫存].StringToInt32();
                 int index = 0;
                 for (int k = 0; k < 庫存; k++)
                 {
-                    if (index >= 最大出貨量) break;
+                    //if (index >= 最大出貨量) break;
                     Class_取藥數組 class_取藥數組 = new Class_取藥數組();
                     class_取藥數組.IP = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
                     class_取藥數組.最大出貨量 = 最大出貨量;
