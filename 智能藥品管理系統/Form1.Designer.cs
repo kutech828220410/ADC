@@ -66,8 +66,7 @@
             this.sqL_DataGridView_主畫面_領退藥作業列表 = new SQLUI.SQL_DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.plC_Button67 = new MyUI.PLC_Button();
-            this.plC_RJ_Button_主畫面_開始作業 = new MyUI.PLC_RJ_Button();
-            this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_主畫面_領退藥_識別登入 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_GroupBox6 = new MyUI.PLC_RJ_GroupBox();
             this.myFaceIDUI_Main = new MyFaceID.MyFaceIDUI();
             this.plC_MultiStateDisplay_主畫面_狀態顯示 = new MyUI.PLC_MultiStateDisplay();
@@ -575,6 +574,7 @@
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.panel_開始取藥 = new System.Windows.Forms.Panel();
+            this.plC_RJ_Button_主畫面_開始作業 = new MyUI.PLC_RJ_Button();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1499,7 +1499,7 @@
             // 
             this.panel2.Controls.Add(this.panel_開始取藥);
             this.panel2.Controls.Add(this.plC_Button67);
-            this.panel2.Controls.Add(this.plC_RJ_Button1);
+            this.panel2.Controls.Add(this.plC_RJ_Button_主畫面_領退藥_識別登入);
             this.panel2.Controls.Add(this.plC_RJ_GroupBox6);
             this.panel2.Controls.Add(this.plC_MultiStateDisplay_主畫面_狀態顯示);
             this.panel2.Controls.Add(this.rJ_GroupBox2);
@@ -1546,96 +1546,47 @@
             this.plC_Button67.顯示 = false;
             this.plC_Button67.顯示狀態 = false;
             // 
-            // plC_RJ_Button_主畫面_開始作業
+            // plC_RJ_Button_主畫面_領退藥_識別登入
             // 
-            this.plC_RJ_Button_主畫面_開始作業.AutoResetState = false;
-            this.plC_RJ_Button_主畫面_開始作業.BackgroundColor = System.Drawing.Color.Red;
-            this.plC_RJ_Button_主畫面_開始作業.Bool = false;
-            this.plC_RJ_Button_主畫面_開始作業.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_主畫面_開始作業.BorderRadius = 10;
-            this.plC_RJ_Button_主畫面_開始作業.BorderSize = 0;
-            this.plC_RJ_Button_主畫面_開始作業.but_press = false;
-            this.plC_RJ_Button_主畫面_開始作業.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_主畫面_開始作業.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plC_RJ_Button_主畫面_開始作業.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_主畫面_開始作業.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_主畫面_開始作業.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_主畫面_開始作業.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_主畫面_開始作業.Location = new System.Drawing.Point(0, 0);
-            this.plC_RJ_Button_主畫面_開始作業.Name = "plC_RJ_Button_主畫面_開始作業";
-            this.plC_RJ_Button_主畫面_開始作業.OFF_文字內容 = "請按我【開始取藥】";
-            this.plC_RJ_Button_主畫面_開始作業.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_主畫面_開始作業.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_主畫面_開始作業.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_主畫面_開始作業.ON_BorderSize = 5;
-            this.plC_RJ_Button_主畫面_開始作業.ON_文字內容 = "請按我【開始取藥】";
-            this.plC_RJ_Button_主畫面_開始作業.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold);
-            this.plC_RJ_Button_主畫面_開始作業.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_主畫面_開始作業.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_主畫面_開始作業.Size = new System.Drawing.Size(832, 569);
-            this.plC_RJ_Button_主畫面_開始作業.State = false;
-            this.plC_RJ_Button_主畫面_開始作業.TabIndex = 10;
-            this.plC_RJ_Button_主畫面_開始作業.Text = "請按我【開始取藥】";
-            this.plC_RJ_Button_主畫面_開始作業.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_主畫面_開始作業.Texts = "請按我【開始取藥】";
-            this.plC_RJ_Button_主畫面_開始作業.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_主畫面_開始作業.字型鎖住 = false;
-            this.plC_RJ_Button_主畫面_開始作業.寫入元件位置 = "S1009";
-            this.plC_RJ_Button_主畫面_開始作業.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.交替型;
-            this.plC_RJ_Button_主畫面_開始作業.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_主畫面_開始作業.文字鎖住 = false;
-            this.plC_RJ_Button_主畫面_開始作業.致能讀取位置 = "S1005";
-            this.plC_RJ_Button_主畫面_開始作業.讀取位元反向 = false;
-            this.plC_RJ_Button_主畫面_開始作業.讀取元件位置 = "S1009";
-            this.plC_RJ_Button_主畫面_開始作業.讀寫鎖住 = false;
-            this.plC_RJ_Button_主畫面_開始作業.音效 = true;
-            this.plC_RJ_Button_主畫面_開始作業.顯示 = false;
-            this.plC_RJ_Button_主畫面_開始作業.顯示狀態 = false;
-            // 
-            // plC_RJ_Button1
-            // 
-            this.plC_RJ_Button1.AutoResetState = false;
-            this.plC_RJ_Button1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button1.Bool = false;
-            this.plC_RJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button1.BorderRadius = 10;
-            this.plC_RJ_Button1.BorderSize = 0;
-            this.plC_RJ_Button1.but_press = false;
-            this.plC_RJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button1.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button1.Location = new System.Drawing.Point(622, 159);
-            this.plC_RJ_Button1.Name = "plC_RJ_Button1";
-            this.plC_RJ_Button1.OFF_文字內容 = "識別登入";
-            this.plC_RJ_Button1.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button1.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button1.ON_BorderSize = 5;
-            this.plC_RJ_Button1.ON_文字內容 = "識別登入";
-            this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F);
-            this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button1.Size = new System.Drawing.Size(166, 82);
-            this.plC_RJ_Button1.State = false;
-            this.plC_RJ_Button1.TabIndex = 9;
-            this.plC_RJ_Button1.Text = "識別登入";
-            this.plC_RJ_Button1.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button1.Texts = "識別登入";
-            this.plC_RJ_Button1.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button1.字型鎖住 = false;
-            this.plC_RJ_Button1.寫入元件位置 = "S1008";
-            this.plC_RJ_Button1.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.交替型;
-            this.plC_RJ_Button1.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button1.文字鎖住 = false;
-            this.plC_RJ_Button1.致能讀取位置 = "S1005";
-            this.plC_RJ_Button1.讀取位元反向 = false;
-            this.plC_RJ_Button1.讀取元件位置 = "S1008";
-            this.plC_RJ_Button1.讀寫鎖住 = false;
-            this.plC_RJ_Button1.音效 = true;
-            this.plC_RJ_Button1.顯示 = false;
-            this.plC_RJ_Button1.顯示狀態 = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.AutoResetState = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Bool = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.BorderRadius = 10;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.BorderSize = 0;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.but_press = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Location = new System.Drawing.Point(622, 159);
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Name = "plC_RJ_Button_主畫面_領退藥_識別登入";
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.OFF_文字內容 = "識別登入";
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.ON_BorderSize = 5;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.ON_文字內容 = "識別登入";
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F);
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Size = new System.Drawing.Size(166, 82);
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.State = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.TabIndex = 9;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Text = "識別登入";
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.Texts = "識別登入";
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.字型鎖住 = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.交替型;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.文字鎖住 = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.讀取位元反向 = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.讀寫鎖住 = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.音效 = true;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.顯示 = false;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.顯示狀態 = false;
             // 
             // plC_RJ_GroupBox6
             // 
@@ -1904,7 +1855,7 @@
             // 
             // plC_RJ_Button_主畫面_退藥
             // 
-            this.plC_RJ_Button_主畫面_退藥.AutoResetState = false;
+            this.plC_RJ_Button_主畫面_退藥.AutoResetState = true;
             this.plC_RJ_Button_主畫面_退藥.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_主畫面_退藥.Bool = false;
             this.plC_RJ_Button_主畫面_退藥.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -1949,7 +1900,7 @@
             // 
             // plC_RJ_Button_主畫面_領藥
             // 
-            this.plC_RJ_Button_主畫面_領藥.AutoResetState = false;
+            this.plC_RJ_Button_主畫面_領藥.AutoResetState = true;
             this.plC_RJ_Button_主畫面_領藥.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_主畫面_領藥.Bool = false;
             this.plC_RJ_Button_主畫面_領藥.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -14314,11 +14265,57 @@
             // panel_開始取藥
             // 
             this.panel_開始取藥.Controls.Add(this.plC_RJ_Button_主畫面_開始作業);
-            this.panel_開始取藥.Location = new System.Drawing.Point(100, 191);
+            this.panel_開始取藥.Location = new System.Drawing.Point(112, 182);
             this.panel_開始取藥.Name = "panel_開始取藥";
             this.panel_開始取藥.Size = new System.Drawing.Size(832, 569);
-            this.panel_開始取藥.TabIndex = 1;
+            this.panel_開始取藥.TabIndex = 12;
             this.panel_開始取藥.Visible = false;
+            // 
+            // plC_RJ_Button_主畫面_開始作業
+            // 
+            this.plC_RJ_Button_主畫面_開始作業.AutoResetState = false;
+            this.plC_RJ_Button_主畫面_開始作業.BackgroundColor = System.Drawing.Color.Red;
+            this.plC_RJ_Button_主畫面_開始作業.Bool = false;
+            this.plC_RJ_Button_主畫面_開始作業.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_主畫面_開始作業.BorderRadius = 10;
+            this.plC_RJ_Button_主畫面_開始作業.BorderSize = 0;
+            this.plC_RJ_Button_主畫面_開始作業.but_press = false;
+            this.plC_RJ_Button_主畫面_開始作業.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_主畫面_開始作業.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plC_RJ_Button_主畫面_開始作業.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_主畫面_開始作業.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_主畫面_開始作業.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_開始作業.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_主畫面_開始作業.Location = new System.Drawing.Point(0, 0);
+            this.plC_RJ_Button_主畫面_開始作業.Name = "plC_RJ_Button_主畫面_開始作業";
+            this.plC_RJ_Button_主畫面_開始作業.OFF_文字內容 = "請按我【開始取藥】";
+            this.plC_RJ_Button_主畫面_開始作業.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_開始作業.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_開始作業.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_主畫面_開始作業.ON_BorderSize = 5;
+            this.plC_RJ_Button_主畫面_開始作業.ON_文字內容 = "請按我【開始取藥】";
+            this.plC_RJ_Button_主畫面_開始作業.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold);
+            this.plC_RJ_Button_主畫面_開始作業.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_主畫面_開始作業.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_主畫面_開始作業.Size = new System.Drawing.Size(832, 569);
+            this.plC_RJ_Button_主畫面_開始作業.State = false;
+            this.plC_RJ_Button_主畫面_開始作業.TabIndex = 10;
+            this.plC_RJ_Button_主畫面_開始作業.Text = "請按我【開始取藥】";
+            this.plC_RJ_Button_主畫面_開始作業.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_開始作業.Texts = "請按我【開始取藥】";
+            this.plC_RJ_Button_主畫面_開始作業.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_主畫面_開始作業.字型鎖住 = false;
+            this.plC_RJ_Button_主畫面_開始作業.寫入元件位置 = "S1009";
+            this.plC_RJ_Button_主畫面_開始作業.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.交替型;
+            this.plC_RJ_Button_主畫面_開始作業.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_主畫面_開始作業.文字鎖住 = false;
+            this.plC_RJ_Button_主畫面_開始作業.致能讀取位置 = "S1005";
+            this.plC_RJ_Button_主畫面_開始作業.讀取位元反向 = false;
+            this.plC_RJ_Button_主畫面_開始作業.讀取元件位置 = "S1009";
+            this.plC_RJ_Button_主畫面_開始作業.讀寫鎖住 = false;
+            this.plC_RJ_Button_主畫面_開始作業.音效 = true;
+            this.plC_RJ_Button_主畫面_開始作業.顯示 = false;
+            this.plC_RJ_Button_主畫面_開始作業.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -14987,8 +14984,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_參數設定_藥檔資料_資料內容_檢查藥檔;
         private MyUI.PLC_RJ_Button plC_RJ_Button_參數設定_藥檔資料_自動填入;
         private MyUI.PLC_Button plC_Button66;
-        private MyUI.PLC_RJ_Button plC_RJ_Button1;
-        private MyUI.PLC_RJ_Button plC_RJ_Button_主畫面_開始作業;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_主畫面_領退藥_識別登入;
         private MyUI.PLC_Button plC_Button_重複領藥不檢查;
         private MyUI.PLC_RJ_Pannel plC_RJ_Pannel2;
         private MyFtpUI.Ftp_DounloadUI ftp_DounloadUI;
@@ -15008,6 +15004,7 @@
         private MyUI.RJ_Lable rJ_Lable13;
         private MyUI.RJ_TextBox rJ_TextBox_儲位管理_儲位資料_最大出貨量;
         private System.Windows.Forms.Panel panel_開始取藥;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_主畫面_開始作業;
     }
 }
 

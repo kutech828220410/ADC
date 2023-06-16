@@ -79,6 +79,7 @@ namespace 智能藥品管理系統
             }
             this.sqL_DataGridView_主畫面_領退藥作業列表.DataGridRefreshEvent += SqL_DataGridView_主畫面_領退藥作業列表_DataGridRefreshEvent;
             plC_RJ_Button_主畫面_開始作業.MouseDownEvent += PlC_RJ_Button_主畫面_開始作業_MouseDownEvent;
+            this.plC_RJ_Button_主畫面_領退藥_識別登入.MouseDownEvent += PlC_RJ_Button_主畫面_領退藥_識別登入_MouseDownEvent;
             this.MyThread_取藥堆疊 = new MyThread();
             this.MyThread_取藥堆疊.Add_Method(sub_Program_主畫面_取藥堆疊檢查);
             this.MyThread_取藥堆疊.AutoRun(true);
@@ -86,7 +87,7 @@ namespace 智能藥品管理系統
             this.MyThread_取藥堆疊.Trigger();
         }
 
- 
+   
 
         private bool flag_Program_主畫面 = false;
         private void Program_主畫面()
@@ -137,7 +138,17 @@ namespace 智能藥品管理系統
         PLC_Device PLC_Device_主畫面_領退藥 = new PLC_Device("S1005");
         PLC_Device PLC_Device_主畫面_領退藥_OK = new PLC_Device("S1006");
         PLC_Device PLC_Device_主畫面_領退藥_登入按下 = new PLC_Device("S1007");
-        PLC_Device PLC_Device_主畫面_領退藥_識別登入 = new PLC_Device("S1008");
+        bool PLC_Device_主畫面_領退藥_識別登入
+        {
+            get
+            {
+                return plC_RJ_Button_主畫面_領退藥_識別登入.Bool;
+            }
+            set
+            {
+                plC_RJ_Button_主畫面_領退藥_識別登入.Bool = value;
+            }
+        }
         PLC_Device PLC_Device_主畫面_領退藥_取藥防夾 = new PLC_Device("X74");
         MyUI.MyTimer MyTimer_主畫面_領退藥_取藥防夾 = new MyUI.MyTimer();
 
@@ -155,7 +166,7 @@ namespace 智能藥品管理系統
         int cnt_Program_主畫面_領退藥 = 65534;
         void sub_Program_主畫面_領退藥()
         {
-
+            this.PLC_Device_主畫面_領退藥按鈕致能.Bool = true;
             if (this.plC_ScreenPage_Main.PageText == "主畫面")
             {
                 PLC_Device_主畫面_領退藥.Bool = true;
@@ -196,6 +207,8 @@ namespace 智能藥品管理系統
                 PLC_Device_清空出料盤_致能.Bool = true;
                 this.Invoke(new Action(delegate
                 {
+                    PLC_Device_主畫面_退藥按鈕.Bool = false;
+                    PLC_Device_主畫面_領藥按鈕.Bool = false;
                     plC_RJ_Button_主畫面_登入.Texts = "登出";
                     textBox_主畫面_帳號.Texts = "";
                     textBox_主畫面_密碼.Texts = "";
@@ -326,7 +339,7 @@ namespace 智能藥品管理系統
             }
             if (cnt_Program_主畫面_領退藥 == 65501)
             {
-                PLC_Device_主畫面_領退藥_識別登入.Bool = false;
+                PLC_Device_主畫面_領退藥_識別登入 = false;
                 PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_01.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_02.Bool = false;
@@ -476,7 +489,7 @@ namespace 智能藥品管理系統
             PLC_Device_主畫面_領退藥_狀態顯示_06.Bool = false;
 
 
-            PLC_Device_主畫面_領退藥_識別登入.Bool = false;
+            PLC_Device_主畫面_領退藥_識別登入 = false;
             PLC_Device_主畫面_領退藥_登入按下.Bool = false;
             PLC_Device_主畫面_領藥按鈕.Bool = false;
             PLC_Device_主畫面_退藥按鈕.Bool = false;
@@ -489,7 +502,7 @@ namespace 智能藥品管理系統
                 if (list_value.Count == 0) break;
                 this.sqL_DataGridView_主畫面_領退藥作業列表.SQL_DeleteExtra(list_value, true);
             }
-
+            retryToSucess = 0;
             cnt++;
         }
         void cnt_Program_主畫面_領退藥_取藥門關門開始(ref int cnt)
@@ -567,7 +580,7 @@ namespace 智能藥品管理系統
                     狀態顯示 += $"ID ".StringLength(10) + $": {ID}\n";
                     狀態顯示 += $"-------------------------------------\n";
                     this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_01.GetAdress(), 狀態顯示);
-                    PLC_Device_主畫面_領退藥_識別登入.Bool = false;
+                    PLC_Device_主畫面_領退藥_識別登入 = false;
                     cnt++;
                     return;
                 }
@@ -663,11 +676,13 @@ namespace 智能藥品管理系統
             {
                 if (PLC_Device_主畫面_領藥按鈕.Bool)
                 {
+                    PLC_Device_主畫面_領藥按鈕.Bool = false;
                     cnt = 5000;
                     return;
                 }
                 if (PLC_Device_主畫面_退藥按鈕.Bool)
                 {
+                    PLC_Device_主畫面_退藥按鈕.Bool = false;
                     cnt = 6000;
                     return;
                 }
@@ -2456,9 +2471,15 @@ namespace 智能藥品管理系統
                 this.MyTimer_主畫面_領退藥_重複登入延遲.StartTickTime(100);
                 PLC_Device_取物門_移動到關門位置.Bool = true;
                 PLC_Device_主畫面_領退藥.Bool = false;
+                PLC_Device_主畫面_領退藥_識別登入 = false;
                 cnt_Program_主畫面_領退藥 = 65501;
+                return;
             }
             PLC_Device_主畫面_領退藥_登入按下.Bool = true;
+        }
+        private void PlC_RJ_Button_主畫面_領退藥_識別登入_MouseDownEvent(MouseEventArgs mevent)
+        {
+            
         }
         bool flag_開始作業 = false;
         private void PlC_RJ_Button_主畫面_開始作業_MouseDownEvent(MouseEventArgs mevent)

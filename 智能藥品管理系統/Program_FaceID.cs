@@ -49,9 +49,9 @@ namespace 智能藥品管理系統
         bool flag_主畫面_領退藥_識別登 = false;
         private void Program_FaceID()
         {
-            if (plC_ScreenPage_Main.PageText == "主畫面" )
+            if (plC_ScreenPage_Main.PageText == "主畫面" && cnt_Program_主畫面_領退藥 == 100)
             {
-                if(!PLC_Device_主畫面_領退藥_識別登入.Bool)
+                if(!PLC_Device_主畫面_領退藥_識別登入)
                 {
                     if(flag_主畫面_領退藥_識別登)
                     {
@@ -114,7 +114,7 @@ namespace 智能藥品管理系統
                         myFaceIDUI_Main.Draw_DetectFace(Liveness_SingleFace_main_page, FaceTest_Name, 2, new Font("標楷體", 16));
                     }
 
-                    if(PLC_Device_主畫面_領退藥_識別登入.Bool)myFaceIDUI_Main.RrfreshCanvas();
+                    if(PLC_Device_主畫面_領退藥_識別登入)myFaceIDUI_Main.RrfreshCanvas();
                     else myFaceIDUI_Main.ClearCanvas();
 
                 }

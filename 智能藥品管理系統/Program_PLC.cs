@@ -103,7 +103,7 @@ namespace 智能藥品管理系統
                 MyTimer_送料馬達輸出_ON.StartTickTime(1);
                 this.ioC12801.SetOutput(0, 格數 + 1, true);
                 this.ioC12801.SetOutput(0, 層數 + 9, true);
-                if(MyTimer_送料馬達輸出_ON.IsTimeOut())
+                if (MyTimer_送料馬達輸出_ON.IsTimeOut())
                 {
                     flag_送料馬達輸出 = !flag_送料馬達輸出;
                 }
@@ -1611,7 +1611,7 @@ namespace 智能藥品管理系統
             MyTimer_送料馬達出料逾時時間.TickStop();
             MyTimer_送料馬達出料逾時時間.StartTickTime(10000);
             MyTimer_送料馬達訊號檢查延遲.TickStop();
-            MyTimer_送料馬達訊號檢查延遲.StartTickTime(100);
+            MyTimer_送料馬達訊號檢查延遲.StartTickTime(150);
             PLC_Device_送料馬達出料_連續次數現在值.Value = 0;
        
             cnt++;
