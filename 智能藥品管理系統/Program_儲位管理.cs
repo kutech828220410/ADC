@@ -108,9 +108,11 @@ namespace 智能藥品管理系統
             this.rJ_TextBox_儲位管理_參數設定_藥品條碼.KeyPress += RJ_TextBox_儲位管理_參數設定_藥品條碼_KeyPress;
             this.plC_RJ_Button_儲位管理_套餐資料_填入儲位.MouseDownEvent += PlC_RJ_Button_儲位管理_套餐資料_填入儲位_MouseDownEvent;
             this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent;
-
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_畫面更新_MouseDownEvent;
         }
- 
+
+   
+
         private bool flag_Program_儲位管理 = false;
         private void Program_儲位管理()
         {
@@ -765,7 +767,10 @@ namespace 智能藥品管理系統
             string IP = "";
             for (int i = 0; i < list_儲位資料.Count; i++)
             {
-
+                if (i > 0)
+                {
+                    continue;
+                }
                 IP = list_儲位資料[i][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
                 Storage storage = list_Storage.SortByIP(IP);
                 if (storage != null)
@@ -790,6 +795,36 @@ namespace 智能藥品管理系統
             this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
 
             
+        }
+        private void PlC_RJ_Button_儲位管理_儲位資料_畫面更新_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_儲位資料 = this.sqL_DataGridView_儲位管理_儲位資料.Get_All_Select_RowsValues();
+            if (list_儲位資料.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選擇儲位資料!");
+                return;
+            }
+         
+            List<Storage> list_Storage = this.storageUI_WT32.SQL_GetAllStorage();
+
+            List<Task> taskList = new List<Task>();
+            string IP = "";
+            for (int i = 0; i < list_儲位資料.Count; i++)
+            {
+
+                IP = list_儲位資料[i][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
+                Storage storage = list_Storage.SortByIP(IP);
+                if (storage != null)
+                {
+                    taskList.Add(Task.Run(() =>
+                    {
+                        this.wT32_GPADC.Set_Main_Page(storage);
+              
+                    }));
+                }
+            }
+
+
         }
         private void plC_RJ_Button_儲位管理_儲位資料_複製格式_MouseDownEvent(MouseEventArgs mevent)
         {
