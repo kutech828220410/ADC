@@ -314,6 +314,7 @@
             this.sqL_DataGridView_人員資料 = new SQLUI.SQL_DataGridView();
             this.儲位管理 = new System.Windows.Forms.TabPage();
             this.plC_RJ_GroupBox5 = new MyUI.PLC_RJ_GroupBox();
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新 = new MyUI.PLC_RJ_Button();
             this.rJ_Lable13 = new MyUI.RJ_Lable();
             this.rJ_TextBox_儲位管理_儲位資料_最大出貨量 = new MyUI.RJ_TextBox();
             this.rJ_Lable12 = new MyUI.RJ_Lable();
@@ -575,7 +576,6 @@
             this.plC_RJ_ScreenButton_資料維護 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
             this.ContentsPanel = new MyUI.RJ_Pannel();
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新 = new MyUI.PLC_RJ_Button();
             this.pannel_Main01.SuspendLayout();
             this.pannel_Main02.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -8040,6 +8040,48 @@
             this.plC_RJ_GroupBox5.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.plC_RJ_GroupBox5.TitleTexts = "儲位資料";
             // 
+            // plC_RJ_Button_儲位管理_儲位資料_畫面更新
+            // 
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.AutoResetState = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Bool = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BorderRadius = 5;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BorderSize = 0;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.but_press = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Location = new System.Drawing.Point(926, 334);
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Name = "plC_RJ_Button_儲位管理_儲位資料_畫面更新";
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_文字內容 = "畫面更新";
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_BorderSize = 5;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_文字內容 = "畫面更新";
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Size = new System.Drawing.Size(111, 48);
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.State = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.TabIndex = 36;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Text = "畫面更新";
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Texts = "畫面更新";
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.字型鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.文字鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.讀取位元反向 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.讀寫鎖住 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.音效 = true;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.顯示 = false;
+            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.顯示狀態 = false;
+            // 
             // rJ_Lable13
             // 
             this.rJ_Lable13.BackColor = System.Drawing.Color.PaleTurquoise;
@@ -13925,7 +13967,7 @@
             this.plC_UI_Init1.TabIndex = 1;
             this.plC_UI_Init1.光道視覺元件初始化 = false;
             this.plC_UI_Init1.全螢幕顯示 = true;
-            this.plC_UI_Init1.掃描速度 = 1;
+            this.plC_UI_Init1.掃描速度 = 10;
             this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
             this.plC_UI_Init1.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
             this.plC_UI_Init1.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init1.起始畫面背景")));
@@ -14318,48 +14360,6 @@
             this.ContentsPanel.Name = "ContentsPanel";
             this.ContentsPanel.Size = new System.Drawing.Size(1056, 342);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // plC_RJ_Button_儲位管理_儲位資料_畫面更新
-            // 
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.AutoResetState = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Bool = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BorderRadius = 5;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.BorderSize = 0;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.but_press = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Location = new System.Drawing.Point(926, 334);
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Name = "plC_RJ_Button_儲位管理_儲位資料_畫面更新";
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_文字內容 = "畫面更新";
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_BorderSize = 5;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_文字內容 = "畫面更新";
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Size = new System.Drawing.Size(111, 48);
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.State = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.TabIndex = 36;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Text = "畫面更新";
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.Texts = "畫面更新";
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.字型鎖住 = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.文字鎖住 = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.讀取位元反向 = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.讀寫鎖住 = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.音效 = true;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.顯示 = false;
-            this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.顯示狀態 = false;
             // 
             // Form1
             // 

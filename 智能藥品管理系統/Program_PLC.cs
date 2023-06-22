@@ -97,6 +97,7 @@ namespace 智能藥品管理系統
             }
             this.ioC12801.SetOutput(0, 格數 + 1, true);
             this.ioC12801.SetOutput(0, 層數 + 9, true);
+            
             return;
             if (flag_送料馬達輸出)
             {

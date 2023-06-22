@@ -15,8 +15,8 @@ using Basic;
 using MySql.Data.MySqlClient;
 using SQLUI;
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.13.0")]
-[assembly: AssemblyFileVersion("1.0.13.0")]
+[assembly: AssemblyVersion("1.0.14.0")]
+[assembly: AssemblyFileVersion("1.0.14.0")]
 namespace 智能藥品管理系統
 {
     public partial class Form1 : Form
@@ -267,7 +267,7 @@ namespace 智能藥品管理系統
 
   
             this.MyThread_ProgramPLC = new MyThread();
-            this.MyThread_ProgramPLC.SetSleepTime(1);
+            this.MyThread_ProgramPLC.SetSleepTime(0);
             this.MyThread_ProgramPLC.Add_Method(this.Program_PLC);
             this.MyThread_ProgramPLC.AutoRun(true);
             this.MyThread_ProgramPLC.Trigger();
