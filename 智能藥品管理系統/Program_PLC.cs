@@ -1384,6 +1384,11 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_XY_Table_移動_開始移動(ref int cnt)
         {
+             if(PLC_Device_XY_Table_移動_Y軸位置.Value < 0)
+            {
+                MyMessageBox.ShowDialog($"出料位置錯誤!{PLC_Device_移動至出貨位置_Y位置.Value}");
+                return;
+            }
             this.DRVA(enum_軸號.X軸, PLC_Device_XY_Table_移動_X軸位置.Value, PLC_Device_X軸_運轉速度.Value, PLC_Device_X軸_加減速度.Value);
             this.DRVA(enum_軸號.Y軸, PLC_Device_XY_Table_移動_Y軸位置.Value, PLC_Device_Y軸_運轉速度.Value, PLC_Device_Y軸_加減速度.Value);
             cnt++;
@@ -1990,6 +1995,11 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_移動至出貨位置_Y軸開始移動至出貨位置(ref int cnt)
         {
+            if(PLC_Device_移動至出貨位置_Y位置.Value < 0)
+            {
+                MyMessageBox.ShowDialog($"出料位置錯誤!{PLC_Device_移動至出貨位置_Y位置.Value}");
+                return;
+            }
             this.DRVA(enum_軸號.Y軸, PLC_Device_移動至出貨位置_Y位置.Value, PLC_Device_Y軸_運轉速度.Value, PLC_Device_Y軸_加減速度.Value);
             cnt++;
         }

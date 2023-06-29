@@ -216,9 +216,8 @@ namespace 智能藥品管理系統
                 plC_RJ_Pannel_入庫作業_補藥完成寫入資料.Set_Enable(true);
                 cnt_Program_入庫作業 = 700;
             }
-
-            if (cnt_Program_入庫作業 == 700) cnt_Program_入庫作業_700_換至主頁面(ref cnt_Program_入庫作業);
-            if (cnt_Program_入庫作業 == 701) cnt_Program_入庫作業_700_寫至SQL儲位(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 700) cnt_Program_入庫作業_700_寫至SQL儲位(ref cnt_Program_入庫作業);
+            if (cnt_Program_入庫作業 == 701) cnt_Program_入庫作業_700_換至主頁面(ref cnt_Program_入庫作業);
             if (cnt_Program_入庫作業 == 702)
             {
                 plC_RJ_Pannel_入庫作業_補藥完成寫入資料.Set_Enable(false);
@@ -710,29 +709,6 @@ namespace 智能藥品管理系統
                 }
             }
         }
-        void cnt_Program_入庫作業_700_換至主頁面(ref int cnt)
-        {
-            List<object[]> list_選擇儲位資料 = this.sqL_DataGridView_入庫作業_選擇儲位.Get_All_Select_RowsValues();
-            if (list_選擇儲位資料.Count > 0)
-            {
-                string IP = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.IP].ObjectToString();
-                int Port = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.Port].ObjectToString().StringToInt32();
-                int flag_OK = 0;
-                if (this.wT32_GPADC.Set_ToPage(IP, Port, (int)StorageUI_WT32.enum_Page.主頁面)) flag_OK++;
-                if (this.wT32_GPADC.Set_JsonStringSend(IP, Port)) flag_OK++;
-                if (flag_OK == 2)
-                {
-                    cnt++;
-                    return;
-                }
-                else
-                {
-                    MyMessageBox.ShowDialog("換至主頁面失敗!");
-                    cnt = 65500;
-                    return;
-                }
-            }
-        }
         void cnt_Program_入庫作業_700_寫至SQL儲位(ref int cnt)
         {
             List<object[]> list_選擇儲位資料 = this.sqL_DataGridView_入庫作業_選擇儲位.Get_All_Select_RowsValues();
@@ -745,7 +721,7 @@ namespace 智能藥品管理系統
                     string 效期 = $"{dateTimeComList_入庫作業_效期.Value.ToDateString()}";
                     string 批號 = $"{rJ_TextBox_入庫作業_批號.Text}";
                     int 數量 = rJ_TextBox_入庫作業_數量.Texts.StringToInt32();
-                    
+
                     object[] value = new object[new enum_交易記錄查詢資料().GetEnumNames().Length];
                     value[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
                     value[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.入庫.GetEnumName();
@@ -792,6 +768,30 @@ namespace 智能藥品管理系統
                 }
             }
         }
+        void cnt_Program_入庫作業_700_換至主頁面(ref int cnt)
+        {
+            List<object[]> list_選擇儲位資料 = this.sqL_DataGridView_入庫作業_選擇儲位.Get_All_Select_RowsValues();
+            if (list_選擇儲位資料.Count > 0)
+            {
+                string IP = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.IP].ObjectToString();
+                int Port = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.Port].ObjectToString().StringToInt32();
+                int flag_OK = 0;
+                if (this.wT32_GPADC.Set_ToPage(IP, Port, (int)StorageUI_WT32.enum_Page.主頁面)) flag_OK++;
+                if (this.wT32_GPADC.Set_JsonStringSend(IP, Port)) flag_OK++;
+                if (flag_OK == 2)
+                {
+                    cnt++;
+                    return;
+                }
+                else
+                {
+                    MyMessageBox.ShowDialog("換至主頁面失敗!");
+                    cnt = 65500;
+                    return;
+                }
+            }
+        }
+     
 
         void cnt_Program_入庫作業_800_詢問是否前推一格(ref int cnt)
         {

@@ -200,7 +200,7 @@ namespace 智能藥品管理系統
             LoadMyConfig();
             LoadDBConfig();
             LoadFtpConfig();
-
+            UDP_Class.WriteByteTime = 20;
 
             Dialog_NumPannel.form = this.FindForm();
             Dialog_手術房選擇.form = this.FindForm();
