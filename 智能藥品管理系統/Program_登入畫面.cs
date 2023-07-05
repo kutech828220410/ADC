@@ -44,7 +44,7 @@ namespace 智能藥品管理系統
                     {
                         json = this.List_人員資料[i][(int)enum_人員資料.識別圖案].ObjectToString();
                         FaceFeature faceFeature = json.JsonDeserializet<FaceFeature>();
-                        myFaceIDUI_Login.RegisterFaceList(faceFeature.ToASF_FaceFeature());
+                     if(faceFeature.feature!=null)  myFaceIDUI_Login.RegisterFaceList(faceFeature.ToASF_FaceFeature());
                     }
                     this.Function_登出(1);
 
