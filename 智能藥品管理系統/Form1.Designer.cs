@@ -11959,10 +11959,10 @@
             this.plC_NumBox26.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
             this.plC_NumBox26.密碼欄位 = false;
             this.plC_NumBox26.寫入位置註解 = "開鎖時間";
-            this.plC_NumBox26.寫入元件位置 = "D4211";
+            this.plC_NumBox26.寫入元件位置 = "D4800";
             this.plC_NumBox26.小數點位置 = 2;
             this.plC_NumBox26.微調數值 = 1;
-            this.plC_NumBox26.讀取元件位置 = "D4211";
+            this.plC_NumBox26.讀取元件位置 = "D4800";
             this.plC_NumBox26.音效 = true;
             this.plC_NumBox26.顯示微調按鈕 = false;
             this.plC_NumBox26.顯示螢幕小鍵盤 = true;

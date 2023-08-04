@@ -29,6 +29,18 @@ namespace 智能藥品管理系統
         private PLC_Device PLC_Device_取物門_JOG速度 = new PLC_Device("D4032");
         private PLC_Device PLC_Device_取物門_運轉速度 = new PLC_Device("D4033");
         private PLC_Device PLC_Device_取物門_開門位置 = new PLC_Device("D4034");
+
+        private PLC_Device PLC_Device_Y軸指定位置移動 = new PLC_Device("M12000");
+        private PLC_Device PLC_Device_Y軸指定位置移動_目標位置 = new PLC_Device("R10000");
+        private PLC_Device PLC_Device_Y軸指定位置移動_目標速度 = new PLC_Device("R10002");
+
+        private PLC_Device PLC_Device_X軸指定位置移動 = new PLC_Device("M12010");
+        private PLC_Device PLC_Device_X軸指定位置移動_目標位置 = new PLC_Device("R10010");
+        private PLC_Device PLC_Device_X軸指定位置移動_目標速度 = new PLC_Device("R10012");
+
+        private PLC_Device PLC_Device_取物軸指定位置移動 = new PLC_Device("M12020");
+        private PLC_Device PLC_Device_取物軸指定位置移動_目標位置 = new PLC_Device("R10020");
+        private PLC_Device PLC_Device_取物軸指定位置移動_目標速度 = new PLC_Device("R10022");
         public enum enum_軸號
         {
             X軸 = 0,
@@ -43,11 +55,99 @@ namespace 智能藥品管理系統
             this.dmC1000B1.PLSV((int)axis_num, active_speed, 0, Tacc, LeadShineUI.DMC1000B.enum_Axis_SpeedMode.T_Mode);
             this.dmC1000B1.Set_PC_ControlEnable((int)axis_num, false);
         }
-        private void DRVA(enum_軸號 axis_num, int target_position, int active_speed, int Tacc)
+        private bool DRVA(enum_軸號 axis_num, int target_position, int active_speed, int Tacc)
         {
-            this.dmC1000B1.Set_PC_ControlEnable((int)axis_num, true);
-            this.dmC1000B1.DRVA((int)axis_num, target_position, active_speed, 0, Tacc, LeadShineUI.DMC1000B.enum_Axis_SpeedMode.T_Mode);
-            this.dmC1000B1.Set_PC_ControlEnable((int)axis_num, false);
+            if (target_position < 0)
+            {
+                MyMessageBox.ShowDialog("觸發軟體限位保護!");
+                return false;
+            }
+
+            if(axis_num == enum_軸號.Y軸)
+            {
+                PLC_Device_Y軸指定位置移動_目標位置.Value = target_position;
+                PLC_Device_Y軸指定位置移動_目標速度.Value = active_speed;
+                PLC_Device_Y軸指定位置移動.Bool = false;
+                int cnt = 0;
+                while(true)
+                {
+                    if (cnt == 0)
+                    {
+                        if (PLC_Device_Y軸指定位置移動.Bool == false)
+                        {
+                            PLC_Device_Y軸指定位置移動.Bool = true;
+                            cnt++;
+                        }
+                    }
+                    if (cnt == 1)
+                    {
+                        if (PLC_Device_Y軸指定位置移動.Bool == false)
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt == 2) break;
+                    System.Threading.Thread.Sleep(10);
+                }
+            }
+            else if(axis_num == enum_軸號.X軸)
+            {
+                PLC_Device_X軸指定位置移動_目標位置.Value = target_position;
+                PLC_Device_X軸指定位置移動_目標速度.Value = active_speed;
+                PLC_Device_X軸指定位置移動.Bool = false;
+                int cnt = 0;
+                while (true)
+                {
+                    if (cnt == 0)
+                    {
+                        if (PLC_Device_X軸指定位置移動.Bool == false)
+                        {
+                            PLC_Device_X軸指定位置移動.Bool = true;
+                            cnt++;
+                        }
+                    }
+                    if (cnt == 1)
+                    {
+                        if (PLC_Device_X軸指定位置移動.Bool == false)
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt == 2) break;
+                    System.Threading.Thread.Sleep(10);
+                }
+            }
+            else if (axis_num == enum_軸號.取物門)
+            {
+                PLC_Device_取物軸指定位置移動_目標位置.Value = target_position;
+                PLC_Device_取物軸指定位置移動_目標速度.Value = active_speed;
+                PLC_Device_取物軸指定位置移動.Bool = false;
+                int cnt = 0;
+                while (true)
+                {
+                    if (cnt == 0)
+                    {
+                        if (PLC_Device_取物軸指定位置移動.Bool == false)
+                        {
+                            PLC_Device_取物軸指定位置移動.Bool = true;
+                            cnt++;
+                        }
+                    }
+                    if (cnt == 1)
+                    {
+                        if (PLC_Device_取物軸指定位置移動.Bool == false)
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt == 2) break;
+                    System.Threading.Thread.Sleep(10);
+                }
+            }
+            //this.dmC1000B1.Set_PC_ControlEnable((int)axis_num, true);
+            //this.dmC1000B1.DRVA((int)axis_num, target_position, active_speed, 0, Tacc, LeadShineUI.DMC1000B.enum_Axis_SpeedMode.T_Mode);
+            //this.dmC1000B1.Set_PC_ControlEnable((int)axis_num, false);
+            return true;
         }
         private void AxisStop(enum_軸號 axis_num)
         {
@@ -1386,11 +1486,15 @@ namespace 智能藥品管理系統
         {
              if(PLC_Device_XY_Table_移動_Y軸位置.Value < 0)
             {
-                MyMessageBox.ShowDialog($"出料位置錯誤!{PLC_Device_移動至出貨位置_Y位置.Value}");
+                MyMessageBox.ShowDialog($"出料位置錯誤!{PLC_Device_XY_Table_移動_Y軸位置.Value}");
                 return;
             }
             this.DRVA(enum_軸號.X軸, PLC_Device_XY_Table_移動_X軸位置.Value, PLC_Device_X軸_運轉速度.Value, PLC_Device_X軸_加減速度.Value);
-            this.DRVA(enum_軸號.Y軸, PLC_Device_XY_Table_移動_Y軸位置.Value, PLC_Device_Y軸_運轉速度.Value, PLC_Device_Y軸_加減速度.Value);
+            if (!this.DRVA(enum_軸號.Y軸, PLC_Device_XY_Table_移動_Y軸位置.Value, PLC_Device_Y軸_運轉速度.Value, PLC_Device_Y軸_加減速度.Value))
+            {
+                cnt = 2;
+                return;
+            }
             cnt++;
         }
         void cnt_Program_XY_Table_移動_檢查移動完成(ref int cnt)
@@ -1931,7 +2035,7 @@ namespace 智能藥品管理系統
         PLC_Device PLC_Device_移動至出貨位置 = new PLC_Device("S7405");
         PLC_Device PLC_Device_移動至出貨位置_OK = new PLC_Device("S7406");
         PLC_Device PLC_Device_移動至出貨位置_X位置 = new PLC_Device("D4210");
-        PLC_Device PLC_Device_移動至出貨位置_Y位置 = new PLC_Device("D4211");
+        PLC_Device PLC_Device_移動至出貨位置_Y位置 = new PLC_Device("D4800");
         int cnt_Program_移動至出貨位置 = 65534;
         void sub_Program_移動至出貨位置()
         {
@@ -1972,8 +2076,7 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_移動至出貨位置_初始化(ref int cnt)
         {
-            this.AxisStop(enum_軸號.X軸);
-            this.AxisStop(enum_軸號.Y軸);
+        
             cnt++;
         }
         void cnt_Program_移動至出貨位置_開始X軸開始移動至安全位置(ref int cnt)
@@ -1995,12 +2098,17 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_移動至出貨位置_Y軸開始移動至出貨位置(ref int cnt)
         {
+            System.Threading.Thread.Sleep(100);
             if(PLC_Device_移動至出貨位置_Y位置.Value < 0)
             {
                 MyMessageBox.ShowDialog($"出料位置錯誤!{PLC_Device_移動至出貨位置_Y位置.Value}");
                 return;
             }
-            this.DRVA(enum_軸號.Y軸, PLC_Device_移動至出貨位置_Y位置.Value, PLC_Device_Y軸_運轉速度.Value, PLC_Device_Y軸_加減速度.Value);
+            if (!this.DRVA(enum_軸號.Y軸, PLC_Device_移動至出貨位置_Y位置.Value, PLC_Device_Y軸_運轉速度.Value, PLC_Device_Y軸_加減速度.Value))
+            {
+                cnt = 2;
+                return;
+            }
             cnt++;
         }
         void cnt_Program_移動至出貨位置_等待Y軸移動至出貨位置(ref int cnt)

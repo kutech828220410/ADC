@@ -533,7 +533,7 @@ namespace 智能藥品管理系統
                 Text = "解鎖";
                 font = new Font("標楷體", 45, FontStyle.Bold);
                 width = Pannel_Width - 20;
-                height = TextRenderer.MeasureText(Text, font).Height + 80;
+                height = TextRenderer.MeasureText(Text, font).Height + 20;
                 poX = (Pannel_Width - width) / 2;
                 poY_buf += 20;
                 poY = poY_buf;
@@ -581,7 +581,7 @@ namespace 智能藥品管理系統
                         this.rJ_TextBox_入庫作業_X觸控位置.Texts = uDP_READ.Touch_xPos.ToString();
                         this.rJ_TextBox_入庫作業_Y觸控位置.Texts = uDP_READ.Touch_yPos.ToString();
                     }));
-                    WT32_GPADC.TxMouseDownType txMouseDownType = WT32_GPADC.GetMouseDownType(xPos, yPos, 入庫作業_開鎖按鈕_poX, 入庫作業_開鎖按鈕_poY, 入庫作業_開鎖按鈕_width, 入庫作業_開鎖按鈕_height);
+                    WT32_GPADC.TxMouseDownType txMouseDownType = WT32_GPADC.GetMouseDownType(xPos, yPos, 1, 1, WT32_GPADC.Pannel_Width, WT32_GPADC.Pannel_Height);
                     if(txMouseDownType != WT32_GPADC.TxMouseDownType.NONE)
                     {
                         cnt++;

@@ -355,45 +355,56 @@ namespace 智能藥品管理系統
                     {
                         if (value.INPUT_LOCK == 1)
                         {
-                            if (this.PLC_Device_儲位管理_檢查IO_M8013.Bool)
-                            {
-                                if (value.OUTPUT_LED_GREEN == 0)
-                                {
-                                    this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.GREEN, true);
-                                    this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
-                                }
-                            }
-                            else
-                            {
-                                if (value.OUTPUT_LED_GREEN == 1)
-                                {
-                                    this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.GREEN, false);
-                                    this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
-                                }
-                            }
+                            //if (this.PLC_Device_儲位管理_檢查IO_M8013.Bool)
+                            //{
+                            //    if (value.OUTPUT_LED_GREEN == 0)
+                            //    {
+                            //        this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.GREEN, true);
+                            //        this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    if (value.OUTPUT_LED_GREEN == 1)
+                            //    {
+                            //        this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.GREEN, false);
+                            //        this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
+                            //    }
+                            //}
                             if (value.OUTPUT_LED_RED == 1)
                             {
                                 this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.RED, false);
                                 this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
                             }
+                            if (value.OUTPUT_LED_GREEN == 0)
+                            {
+                                this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.GREEN, true);
+                                this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
+                            }
+
                         }
                         else
                         {
-                            if (this.PLC_Device_儲位管理_檢查IO_M8013.Bool)
+                            //if (this.PLC_Device_儲位管理_檢查IO_M8013.Bool)
+                            //{
+                            //    if (value.OUTPUT_LED_RED == 0)
+                            //    {
+                            //        this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.RED, true);
+                            //        this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    if (value.OUTPUT_LED_RED == 1)
+                            //    {
+                            //        this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.RED, false);
+                            //        this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
+                            //    }
+                            //}
+                            if (value.OUTPUT_LED_RED == 0)
                             {
-                                if (value.OUTPUT_LED_RED == 0)
-                                {
-                                    this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.RED, true);
-                                    this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
-                                }
-                            }
-                            else
-                            {
-                                if (value.OUTPUT_LED_RED == 1)
-                                {
-                                    this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.RED, false);
-                                    this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
-                                }
+                                this.wT32_GPADC.Set_LED(value.IP, value.Port, StorageUI_WT32.UDP_READ.LED_Type.RED, true);
+                                this.wT32_GPADC.Set_JsonStringSend(value.IP, value.Port);
                             }
                             if (value.OUTPUT_LED_GREEN == 1)
                             {

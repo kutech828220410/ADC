@@ -108,7 +108,15 @@ namespace 智能藥品管理系統
                     {
                         json = this.List_人員資料[i][(int)enum_人員資料.識別圖案].ObjectToString();
                         FaceFeature faceFeature = json.JsonDeserializet<FaceFeature>();
-                        if(faceFeature.feature != null) myFaceIDUI_Main.RegisterFaceList(faceFeature.ToASF_FaceFeature());
+                        if (faceFeature.feature != null)
+                        {
+                            myFaceIDUI_Main.RegisterFaceList(faceFeature.ToASF_FaceFeature());
+                        }
+                        else
+                        {
+                            string 人員姓名 = this.List_人員資料[i][(int)enum_人員資料.姓名].ObjectToString();
+                            MyMessageBox.ShowDialog($"{人員姓名},請至人員資料建立!");
+                        }
 
                     }
                     this.Function_登出();
@@ -2137,6 +2145,7 @@ namespace 智能藥品管理系統
                 {
                     cnt = 65500;
                 }
+                System.Threading.Thread.Sleep(10);
             }
         }
         private bool Function_主畫面_儲位取藥作業(List<object[]> list_儲位資料, int 目標包裝數量)

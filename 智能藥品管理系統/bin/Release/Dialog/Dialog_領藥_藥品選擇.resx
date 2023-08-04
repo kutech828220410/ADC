@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="sqL_DataGridView_儲位藥品.Columns" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAACeiX
+        peWTgeeivHgAAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtu
+        b3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93cy5G
+        b3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P///zFT
+        eXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1ZV9f
+        AAgEAAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAMAAAAF
+        9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FMVUku
+        VGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3RyaW5n
+        VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAAB3Zh
+        bHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_儲位藥品.Columns1" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAADOiX
+        peWTgeWQjeeosSwBAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVl
+        Cmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93
+        cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P//
+        /zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1
+        ZV9fAAgEAAAAEAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAA
+        AAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FM
+        VUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3Ry
+        aW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAA
+        B3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_儲位藥品.Columns2" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAAEuiX
+        peWTgeS4reaWh+WQjeeosSwBAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1l
+        BXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAA
+        AAAF+P///zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAA
+        AAd2YWx1ZV9fAAgEAAAAEAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAI
+        AgAAAAAAAAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX/
+        //8UU1FMVUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFi
+        bGUrU3RyaW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5
+        cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_儲位藥品.Columns3" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAADOiX
+        peWTgeaineeivHgAAAAAAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVl
+        Cmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93
+        cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P//
+        /zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1
+        ZV9fAAgEAAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAA
+        AAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FM
+        VUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3Ry
+        aW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAA
+        B3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_儲位藥品.Columns4" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAADOWM
+        heijneWWruS9jXgAAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVl
+        Cmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93
+        cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P//
+        /zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1
+        ZV9fAAgEAAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAA
+        AAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FM
+        VUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3Ry
+        aW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAA
+        B3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAABEdV
+        SURkAAAAAAAAAAAF+v///xRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAEbmFtZQV2YWx1ZQprbm93bkNv
+        bG9yBXN0YXRlAQAAAAkHBwMAAAAKAAAAAAAAAACkAAEABfn///8vU3lzdGVtLldpbmRvd3MuRm9ybXMu
+        RGF0YUdyaWRWaWV3Q29sdW1uU29ydE1vZGUBAAAAB3ZhbHVlX18ACAQAAAAAAAAABfj///8xU3lzdGVt
+        LldpbmRvd3MuRm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAEAAAAHdmFsdWVfXwAIBAAA
+        ACAAAAAF9////xVTUUxVSS5UYWJsZStJbmRleFR5cGUBAAAAB3ZhbHVlX18ACAIAAAAAAAAABfb///8V
+        U1FMVUkuVGFibGUrVmFsdWVUeXBlAQAAAAd2YWx1ZV9fAAgCAAAAZAAAAAX1////FFNRTFVJLlRhYmxl
+        K0RhdGVUeXBlAQAAAAd2YWx1ZV9fAAgCAAAAZAAAAAX0////FlNRTFVJLlRhYmxlK1N0cmluZ1R5cGUB
+        AAAAB3ZhbHVlX18ACAIAAAABAAAABfP///8VU1FMVUkuVGFibGUrT3RoZXJUeXBlAQAAAAd2YWx1ZV9f
+        AAgCAAAAZAAAAAs=
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns1" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAACeiX
+        peWTgeeivHgAAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtu
+        b3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93cy5G
+        b3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P///zFT
+        eXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1ZV9f
+        AAgEAAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAMAAAAF
+        9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FMVUku
+        VGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3RyaW5n
+        VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAAB3Zh
+        bHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns2" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAADOiX
+        peWTgeWQjeeosSwBAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVl
+        Cmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93
+        cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P//
+        /zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1
+        ZV9fAAgEAAAAEAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAA
+        AAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FM
+        VUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3Ry
+        aW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAA
+        B3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns3" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAAEuiX
+        peWTgeS4reaWh+WQjeeosSwBAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1l
+        BXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAA
+        AAAF+P///zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAA
+        AAd2YWx1ZV9fAAgEAAAAEAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAI
+        AgAAAAAAAAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX/
+        //8UU1FMVUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFi
+        bGUrU3RyaW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5
+        cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns4" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAADOiX
+        peWTgeaineeivHgAAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVl
+        Cmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93
+        cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P//
+        /zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1
+        ZV9fAAgEAAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAA
+        AAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FM
+        VUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3Ry
+        aW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAA
+        B3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns5" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAADOWM
+        heijneWWruS9jXgAAAAAAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVl
+        Cmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93
+        cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P//
+        /zFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1
+        ZV9fAAgEAAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAA
+        AAAF9v///xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FM
+        VUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3Ry
+        aW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAA
+        B3ZhbHVlX18ACAIAAABkAAAACw==
+</value>
+  </data>
+  <data name="sqL_DataGridView_選擇藥品.Columns6" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADxTUUxVSSwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwMAwAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EMBAAAAFdTeXN0
+        ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tl
+        eVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACRTUUxVSS5TUUxfRGF0YUdyaWRWaWV3K0NvbHVtbkVs
+        ZW1lbnQMAAAABV9OYW1lBl9XaWR0aAhfVmlzYWJsZQdkYXRhbGVuEF9CYWNrZ3JvdW5kQ29sb3IJX1Nv
+        cnRNb2RlCl9BbGlnbm1lbnQKX0luZGV4VHlwZQpfVmFsdWVUeXBlCV9EYXRlVHlwZQtfU3RyaW5nVHlw
+        ZQpfT3RoZXJUeXBlAQAAAAQEBAQEBAQECAEPFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAC9TeXN0ZW0u
+        V2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQQAAAAxU3lzdGVtLldpbmRvd3Mu
+        Rm9ybXMuRGF0YUdyaWRWaWV3Q29udGVudEFsaWdubWVudAQAAAAVU1FMVUkuVGFibGUrSW5kZXhUeXBl
+        AgAAABVTUUxVSS5UYWJsZStWYWx1ZVR5cGUCAAAAFFNRTFVJLlRhYmxlK0RhdGVUeXBlAgAAABZTUUxV
+        SS5UYWJsZStTdHJpbmdUeXBlAgAAABVTUUxVSS5UYWJsZStPdGhlclR5cGUCAAAAAgAAAAYFAAAABuaV
+        uOmHjzwAAAABAAAAAAX6////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3du
+        Q29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAKQAAQAF+f///y9TeXN0ZW0uV2luZG93cy5Gb3Jt
+        cy5EYXRhR3JpZFZpZXdDb2x1bW5Tb3J0TW9kZQEAAAAHdmFsdWVfXwAIBAAAAAAAAAAF+P///zFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5EYXRhR3JpZFZpZXdDb250ZW50QWxpZ25tZW50AQAAAAd2YWx1ZV9fAAgE
+        AAAAIAAAAAX3////FVNRTFVJLlRhYmxlK0luZGV4VHlwZQEAAAAHdmFsdWVfXwAIAgAAAAAAAAAF9v//
+        /xVTUUxVSS5UYWJsZStWYWx1ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfX///8UU1FMVUkuVGFi
+        bGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT///8WU1FMVUkuVGFibGUrU3RyaW5nVHlw
+        ZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5UYWJsZStPdGhlclR5cGUBAAAAB3ZhbHVl
+        X18ACAIAAABkAAAACw==
+</value>
+  </data>
+</root>

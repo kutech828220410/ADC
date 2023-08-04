@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="15.0.1" version="15.0.1" PreviousModules="simple" Modules="professional" RootPath="." Language="zh_TW" Id="{05B85BBD-6DED-429A-9B67-EC5834D54754}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXAppDetailsComponent;AppXCapabilitiesComponent;AppXDependenciesComponent;AppXProductDetailsComponent;AppXVisualAssetsComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_ThemeStyle" Value="aero" MultiBuildValue="DefaultBuild:classic" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:2"/>
+    <ROW Property="ARPCOMMENTS" Value="此 Installer 資料庫包含了安裝 [|ProductName] 所需的邏輯和資料。" ValueLocId="*"/>
+    <ROW Property="ARPPRODUCTICON" Value="serviceicon01.exe" Type="8"/>
+    <ROW Property="AiSkipExitDlg" Value="1"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="鴻森整合機電有限公司"/>
+    <ROW Property="ProductCode" Value="1028:{1A9C1886-1495-480B-AD2D-4E73BBD45A40} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1028"/>
+    <ROW Property="ProductName" Value="智能藥品管理系統"/>
+    <ROW Property="ProductVersion" Value="1.0.12.0" Type="32" TargetFile="exe"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{4CA903DB-1A28-4063-9984-77417528B2D8}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="C1230_Dir" Directory_Parent="APPDIR" DefaultDir="C1230"/>
+    <ROW Directory="C9016_Dir" Directory_Parent="APPDIR" DefaultDir="C9016"/>
+    <ROW Directory="DMC1000B_Dir" Directory_Parent="APPDIR" DefaultDir="DMC1000B"/>
+    <ROW Directory="DMC2410_Dir" Directory_Parent="APPDIR" DefaultDir="DMC2410"/>
+    <ROW Directory="DMC2C80_Dir" Directory_Parent="APPDIR" DefaultDir="DMC2C80"/>
+    <ROW Directory="DMC3000_Dir" Directory_Parent="APPDIR" DefaultDir="DMC3000"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="E400_Dir" Directory_Parent="APPDIR" DefaultDir="E400"/>
+    <ROW Directory="E6232_Dir" Directory_Parent="APPDIR" DefaultDir="E6232"/>
+    <ROW Directory="IOC1280_Dir" Directory_Parent="APPDIR" DefaultDir="IOC1280"/>
+    <ROW Directory="Pci1230_Dir" Directory_Parent="APPDIR" DefaultDir="Pci1230"/>
+    <ROW Directory="Pci9016_Dir" Directory_Parent="APPDIR" DefaultDir="Pci9016"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="bit_10_Dir" Directory_Parent="E6232_Dir" DefaultDir="64bit"/>
+    <ROW Directory="bit_11_Dir" Directory_Parent="Pci1230_Dir" DefaultDir="32bit"/>
+    <ROW Directory="bit_12_Dir" Directory_Parent="Pci1230_Dir" DefaultDir="64bit"/>
+    <ROW Directory="bit_13_Dir" Directory_Parent="Pci9016_Dir" DefaultDir="32bit"/>
+    <ROW Directory="bit_14_Dir" Directory_Parent="Pci9016_Dir" DefaultDir="64bit"/>
+    <ROW Directory="bit_4_Dir" Directory_Parent="C1230_Dir" DefaultDir="64bit"/>
+    <ROW Directory="bit_5_Dir" Directory_Parent="C9016_Dir" DefaultDir="32bit"/>
+    <ROW Directory="bit_6_Dir" Directory_Parent="C9016_Dir" DefaultDir="64bit"/>
+    <ROW Directory="bit_7_Dir" Directory_Parent="E400_Dir" DefaultDir="32bit"/>
+    <ROW Directory="bit_8_Dir" Directory_Parent="E400_Dir" DefaultDir="64bit"/>
+    <ROW Directory="bit_9_Dir" Directory_Parent="E6232_Dir" DefaultDir="32bit"/>
+    <ROW Directory="bit_Dir" Directory_Parent="C1230_Dir" DefaultDir="32bit"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
+    <ROW Directory="fr_Dir" Directory_Parent="APPDIR" DefaultDir="fr"/>
+    <ROW Directory="hu_Dir" Directory_Parent="APPDIR" DefaultDir="hu"/>
+    <ROW Directory="it_Dir" Directory_Parent="APPDIR" DefaultDir="it"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
+    <ROW Directory="pt_Dir" Directory_Parent="APPDIR" DefaultDir="pt"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
+    <ROW Directory="sk_Dir" Directory_Parent="APPDIR" DefaultDir="sk"/>
+    <ROW Directory="sv_Dir" Directory_Parent="APPDIR" DefaultDir="sv"/>
+    <ROW Directory="tr_Dir" Directory_Parent="APPDIR" DefaultDir="tr"/>
+    <ROW Directory="x64_1_Dir" Directory_Parent="DMC2C80_Dir" DefaultDir="x64"/>
+    <ROW Directory="x64_2_Dir" Directory_Parent="DMC1000B_Dir" DefaultDir="x64"/>
+    <ROW Directory="x64_3_Dir" Directory_Parent="DMC2410_Dir" DefaultDir="x64"/>
+    <ROW Directory="x64_4_Dir" Directory_Parent="DMC3000_Dir" DefaultDir="x64"/>
+    <ROW Directory="x64_5_Dir" Directory_Parent="IOC1280_Dir" DefaultDir="x64"/>
+    <ROW Directory="x64_Dir" Directory_Parent="APPDIR" DefaultDir="x64"/>
+    <ROW Directory="x86_1_Dir" Directory_Parent="DMC2C80_Dir" DefaultDir="x86"/>
+    <ROW Directory="x86_2_Dir" Directory_Parent="DMC1000B_Dir" DefaultDir="x86"/>
+    <ROW Directory="x86_3_Dir" Directory_Parent="DMC2410_Dir" DefaultDir="x86"/>
+    <ROW Directory="x86_4_Dir" Directory_Parent="DMC3000_Dir" DefaultDir="x86"/>
+    <ROW Directory="x86_5_Dir" Directory_Parent="IOC1280_Dir" DefaultDir="x86"/>
+    <ROW Directory="x86_Dir" Directory_Parent="APPDIR" DefaultDir="x86"/>
+    <ROW Directory="zhcn_Dir" Directory_Parent="APPDIR" DefaultDir="zh-cn"/>
+    <ROW Directory="zhtw_Dir" Directory_Parent="APPDIR" DefaultDir="zh-tw"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Basic.dll" ComponentId="{0075A9AF-676F-4D10-B574-D565C18C7A96}" Directory_="APPDIR" Attributes="0" KeyPath="Basic.dll"/>
+    <ROW Component="CallBackUI.dll" ComponentId="{297EBF9F-86AD-4D7C-B692-B3353793E6C9}" Directory_="APPDIR" Attributes="0" KeyPath="CallBackUI.dll"/>
+    <ROW Component="DMC1000B001.pro" ComponentId="{CBE05D44-502C-4584-9A5E-3E01DFDCA554}" Directory_="DMC1000B_Dir" Attributes="0" KeyPath="DMC1000B001.pro" Type="0"/>
+    <ROW Component="DMC2410.dll" ComponentId="{DFC94E74-CE8C-4447-BE64-92FD671FEEB6}" Directory_="x64_3_Dir" Attributes="256" KeyPath="DMC2410.dll"/>
+    <ROW Component="DMC2410.dll_1" ComponentId="{144C24B6-284E-49B2-87AC-04BB07EFD6E2}" Directory_="x86_3_Dir" Attributes="0" KeyPath="DMC2410.dll_1"/>
+    <ROW Component="DMC2C80.dll" ComponentId="{BBB9009A-1AF3-4E07-80F4-FD42C19121F3}" Directory_="x64_1_Dir" Attributes="256" KeyPath="DMC2C80.dll"/>
+    <ROW Component="DMC2C80.dll_1" ComponentId="{851BA395-3FF1-4F97-A8FE-ECB1F0489DAB}" Directory_="x86_1_Dir" Attributes="0" KeyPath="DMC2C80.dll_1"/>
+    <ROW Component="Dmc1000.dll" ComponentId="{8736DD13-E65E-4315-8B41-FDA0A34E1306}" Directory_="x64_2_Dir" Attributes="256" KeyPath="Dmc1000.dll"/>
+    <ROW Component="Dmc1000.dll_1" ComponentId="{93EA5BEA-33EB-4C65-BF86-49C2C894C1E0}" Directory_="x86_2_Dir" Attributes="0" KeyPath="Dmc1000.dll_1"/>
+    <ROW Component="DrawingClass.dll" ComponentId="{A5F789D8-7E85-4AD5-BD12-EEA59EAC15AF}" Directory_="APPDIR" Attributes="0" KeyPath="DrawingClass.dll"/>
+    <ROW Component="Emgu.CV.UI.GL.dll" ComponentId="{C081595E-6EF9-4CD6-BFFA-47DDD7BDDF2B}" Directory_="APPDIR" Attributes="0" KeyPath="Emgu.CV.UI.GL.dll"/>
+    <ROW Component="Emgu.CV.UI.dll" ComponentId="{D0E72423-2EFD-427F-B432-5DE1472EC86C}" Directory_="APPDIR" Attributes="0" KeyPath="Emgu.CV.UI.dll"/>
+    <ROW Component="Emgu.CV.World.dll" ComponentId="{75241750-C8A6-4A3A-B765-57014ED9524B}" Directory_="APPDIR" Attributes="0" KeyPath="Emgu.CV.World.dll"/>
+    <ROW Component="Emgu.CV.World.xml" ComponentId="{63403604-19C9-44A7-B9C8-F3368863A817}" Directory_="APPDIR" Attributes="0" KeyPath="Emgu.CV.World.xml" Type="0"/>
+    <ROW Component="FontAwesome.Sharp.dll" ComponentId="{A93B859F-A908-4410-91AB-26ABA7EBFBFA}" Directory_="APPDIR" Attributes="0" KeyPath="FontAwesome.Sharp.dll"/>
+    <ROW Component="HCGUI.dll" ComponentId="{3BD20081-1F0F-479C-B490-B0D5D4B72EF0}" Directory_="APPDIR" Attributes="0" KeyPath="HCGUI.dll"/>
+    <ROW Component="H_Pannel_lib.dll" ComponentId="{6D328F84-C781-463E-B488-B740334E3184}" Directory_="APPDIR" Attributes="0" KeyPath="H_Pannel_lib.dll"/>
+    <ROW Component="HsBase.dll" ComponentId="{37BB888C-93DF-48A5-9061-621053AF969A}" Directory_="APPDIR" Attributes="0" KeyPath="HsBase.dll"/>
+    <ROW Component="HsBasic.dll" ComponentId="{C498412E-7627-40F5-AB6E-BB1352E87770}" Directory_="APPDIR" Attributes="0" KeyPath="HsBasic.dll"/>
+    <ROW Component="IOC0640.dll" ComponentId="{62606184-3EC1-43F0-9A43-C0165428E64A}" Directory_="x64_5_Dir" Attributes="256" KeyPath="IOC0640.dll"/>
+    <ROW Component="IOC0640.dll_2" ComponentId="{359BDF3C-0CBB-4C1B-A922-ED0949B168ED}" Directory_="x86_5_Dir" Attributes="0" KeyPath="IOC0640.dll_2"/>
+    <ROW Component="IOC1280001.pro" ComponentId="{EE1BA732-9B80-435D-902A-9890DD9213DF}" Directory_="IOC1280_Dir" Attributes="0" KeyPath="IOC1280001.pro" Type="0"/>
+    <ROW Component="Interop.SpeechLib.dll" ComponentId="{20C05FE2-50F6-4AB4-B6DD-95CB42582E9F}" Directory_="APPDIR" Attributes="0" KeyPath="Interop.SpeechLib.dll"/>
+    <ROW Component="LTDMC.dll" ComponentId="{8115FA38-7C01-4644-B537-E47B3F03D840}" Directory_="x64_4_Dir" Attributes="256" KeyPath="LTDMC.dll"/>
+    <ROW Component="LTDMC.dll_1" ComponentId="{7F3231CD-C63E-403F-95B8-52BCB3F8B49E}" Directory_="x86_4_Dir" Attributes="0" KeyPath="LTDMC.dll_1"/>
+    <ROW Component="LTDMC.lib" ComponentId="{01A52DE0-4D7F-49F4-9DAB-E1A54ECB07D9}" Directory_="x64_4_Dir" Attributes="0" KeyPath="LTDMC.lib" Type="0"/>
+    <ROW Component="LTDMC.lib_1" ComponentId="{AB2C4E62-BEAC-43E4-AF1D-C3C1D6EA017B}" Directory_="x86_4_Dir" Attributes="0" KeyPath="LTDMC.lib_1" Type="0"/>
+    <ROW Component="LadderUI.dll" ComponentId="{1FA5C720-9B86-4B1F-AA8E-069CCEC339B7}" Directory_="APPDIR" Attributes="0" KeyPath="LadderUI.dll"/>
+    <ROW Component="LeadShineUI.dll" ComponentId="{5B52EF7D-BD34-4B42-97C8-CD139A2BE172}" Directory_="APPDIR" Attributes="0" KeyPath="LeadShineUI.dll"/>
+    <ROW Component="LicenseLib.dll" ComponentId="{E3BBD8E6-00D0-45CF-9AAB-8453324B186F}" Directory_="APPDIR" Attributes="0" KeyPath="LicenseLib.dll"/>
+    <ROW Component="LightControlUI.dll" ComponentId="{6E91BA10-D030-4DE8-A107-2DBB1237364F}" Directory_="APPDIR" Attributes="0" KeyPath="LightControlUI.dll"/>
+    <ROW Component="MVSDK.dll" ComponentId="{E3B2ADBA-71E0-4F07-BF94-5D3FD39E004C}" Directory_="APPDIR" Attributes="0" KeyPath="MVSDK.dll"/>
+    <ROW Component="MVSDKUI.dll" ComponentId="{4C1DCE89-4DD5-4372-932E-AF02BF9D286B}" Directory_="APPDIR" Attributes="0" KeyPath="MVSDKUI.dll"/>
+    <ROW Component="MeasureSystemUI.dll" ComponentId="{AB55CE4F-1458-4E37-A212-584BD8EB31D7}" Directory_="APPDIR" Attributes="0" KeyPath="MeasureSystemUI.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{DB3CC2F2-E11A-4332-8E6A-AB34CC3C46E1}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Component="MyFaceID.dll" ComponentId="{9F104534-3AD8-4679-9722-158B14E24AFA}" Directory_="APPDIR" Attributes="0" KeyPath="MyFaceID.dll"/>
+    <ROW Component="MyFtpUI.dll" ComponentId="{375DA242-80DA-4566-987D-579E2B1CA51C}" Directory_="APPDIR" Attributes="0" KeyPath="MyFtpUI.dll"/>
+    <ROW Component="MySQL_Login.dll" ComponentId="{60BE1837-D32F-4523-82A8-E8AF48182543}" Directory_="APPDIR" Attributes="0" KeyPath="MySQL_Login.dll"/>
+    <ROW Component="MySql.Data.dll" ComponentId="{4580D9D0-F60F-4695-B917-E96F7F8DFB67}" Directory_="APPDIR" Attributes="0" KeyPath="MySql.Data.dll"/>
+    <ROW Component="MySqlBackup.dll" ComponentId="{6841A1A0-1924-475C-A3A8-683E07A476D0}" Directory_="APPDIR" Attributes="0" KeyPath="MySqlBackup.dll"/>
+    <ROW Component="MyUI.dll" ComponentId="{9A75C612-EBBA-4DA5-9F3A-668ECE747BB0}" Directory_="APPDIR" Attributes="0" KeyPath="MyUI.dll"/>
+    <ROW Component="OpenTK.GLControl.dll" ComponentId="{696AE78A-BFBE-420A-8AC6-7419F41C41FD}" Directory_="APPDIR" Attributes="0" KeyPath="OpenTK.GLControl.dll"/>
+    <ROW Component="OpenTK.dll" ComponentId="{0D5A66F1-0586-42E7-B207-2AAAC8AD206C}" Directory_="APPDIR" Attributes="0" KeyPath="OpenTK.dll"/>
+    <ROW Component="PCI1230.dll" ComponentId="{5842B6BA-7FE8-41EA-ABFB-1F982138D3F4}" Directory_="bit_Dir" Attributes="0" KeyPath="PCI1230.dll"/>
+    <ROW Component="PCI1230.dll_2" ComponentId="{C33A77EE-6729-4AE4-9DB3-FFB6E3D782EC}" Directory_="bit_4_Dir" Attributes="256" KeyPath="PCI1230.dll_2"/>
+    <ROW Component="PCI1230.dll_3" ComponentId="{8DAB8965-D0EE-4124-B2D9-47CEDD3BAE70}" Directory_="bit_11_Dir" Attributes="0" KeyPath="PCI1230.dll_3"/>
+    <ROW Component="PCI1230.dll_4" ComponentId="{A699F397-9600-42E9-8F8F-351E14965C25}" Directory_="bit_12_Dir" Attributes="256" KeyPath="PCI1230.dll_4"/>
+    <ROW Component="PCI1230.dll_5" ComponentId="{0B9AB86C-75EE-45DD-9D28-3BA94F09EF28}" Directory_="Pci1230_Dir" Attributes="256" KeyPath="PCI1230.dll_5"/>
+    <ROW Component="Pci9016.dll" ComponentId="{953FE6B9-772C-4CE6-8FE2-8F24A78386FC}" Directory_="bit_5_Dir" Attributes="0" KeyPath="Pci9016.dll"/>
+    <ROW Component="Pci9016.dll_2" ComponentId="{EC3C5A5D-84ED-4F03-9D19-3FB51E0CAE9A}" Directory_="bit_6_Dir" Attributes="256" KeyPath="Pci9016.dll_2"/>
+    <ROW Component="Pci9016.dll_3" ComponentId="{4869DFE7-F7CB-4C2A-A1DF-6502D1020293}" Directory_="bit_13_Dir" Attributes="0" KeyPath="Pci9016.dll_3"/>
+    <ROW Component="Pci9016.dll_4" ComponentId="{24CE7EFF-0D86-47F1-8DF8-F0DEBC162546}" Directory_="bit_14_Dir" Attributes="0" KeyPath="Pci9016.dll_4"/>
+    <ROW Component="Pci9016.dll_5" ComponentId="{D8C1EA52-78C0-455F-853E-8319259FF3C6}" Directory_="Pci9016_Dir" Attributes="256" KeyPath="Pci9016.dll_5"/>
+    <ROW Component="PortControlUI.dll" ComponentId="{8DDD77C8-CCE3-4E94-8A54-7594F3B0B30D}" Directory_="APPDIR" Attributes="0" KeyPath="PortControlUI.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{D3129EEE-3E94-4FA9-8B69-170438C415F3}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="RFID_FX600lib.dll" ComponentId="{A69314F9-5EC5-4E4A-961F-D3A1565DEE30}" Directory_="APPDIR" Attributes="0" KeyPath="RFID_FX600lib.dll"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{EFF5F79F-3A35-4A3F-BEB8-7A88C164FBC2}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SLDUI.dll" ComponentId="{47BE5720-D7D0-4C72-A43F-743828999E48}" Directory_="APPDIR" Attributes="0" KeyPath="SLDUI.dll"/>
+    <ROW Component="SQLUI.dll" ComponentId="{29E46368-9B70-4895-8E7A-920916255101}" Directory_="APPDIR" Attributes="0" KeyPath="SQLUI.dll"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{5E8A32D1-7478-47EC-BA41-AE69AB21826E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{E547D6DF-5347-4106-8026-7A20E0B592AC}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{658FB19E-35F6-4B7E-9294-C3690A440A6B}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{1D1FC2C4-DC78-4337-A6A5-A0C9FB009470}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{F6E4C473-8CE7-41DE-888F-B2117540FFAD}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Text.Json.dll" ComponentId="{19FD44A9-C08B-43A4-8521-B6A9289E94A5}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Json.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll" ComponentId="{43D8FB58-71AD-4BD5-B292-7051C4396665}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="System.ValueTuple.dll" ComponentId="{A10D8AE9-DF7C-416B-B279-4D3669FC1F04}" Directory_="APPDIR" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+    <ROW Component="TCP.dll" ComponentId="{36EB7BD5-2985-42B3-BCB3-A6E40073DEBD}" Directory_="APPDIR" Attributes="0" KeyPath="TCP.dll"/>
+    <ROW Component="WT32_SC01_lib.dll" ComponentId="{44BAC65A-ABF0-4061-9129-1A08A9E3EEA2}" Directory_="APPDIR" Attributes="0" KeyPath="WT32_SC01_lib.dll"/>
+    <ROW Component="ZealTechUI.dll" ComponentId="{2E5DEC23-C872-414B-B85A-307D5C17CF08}" Directory_="APPDIR" Attributes="0" KeyPath="ZealTechUI.dll"/>
+    <ROW Component="ZedGraph.dll" ComponentId="{AC0E5F84-CEA2-497A-A6B9-07DEE942C63F}" Directory_="APPDIR" Attributes="0" KeyPath="ZedGraph.dll"/>
+    <ROW Component="ZedGraph.resources.dll" ComponentId="{BA6B4CA2-BE9F-4DF1-A68B-99FDAFE22EA2}" Directory_="sk_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll"/>
+    <ROW Component="ZedGraph.resources.dll_10" ComponentId="{89D496C9-0BFF-4B30-8C56-D0277D8DCDFE}" Directory_="it_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_10"/>
+    <ROW Component="ZedGraph.resources.dll_11" ComponentId="{D10A6448-F366-4D6A-9F5C-9D034FA28736}" Directory_="ja_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_11"/>
+    <ROW Component="ZedGraph.resources.dll_12" ComponentId="{C1F56B1F-87A1-46D7-BDB8-8D21836B97EE}" Directory_="pt_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_12"/>
+    <ROW Component="ZedGraph.resources.dll_13" ComponentId="{E31F413D-334F-44A8-B526-6E04559EE11C}" Directory_="ru_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_13"/>
+    <ROW Component="ZedGraph.resources.dll_2" ComponentId="{6D8693E3-B3BA-436B-90CE-CEA0AADF81C9}" Directory_="sv_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_2"/>
+    <ROW Component="ZedGraph.resources.dll_3" ComponentId="{69575F4D-B6AA-47B5-8E81-90070051AD67}" Directory_="tr_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_3"/>
+    <ROW Component="ZedGraph.resources.dll_4" ComponentId="{F3EC3D8D-07F8-4207-90CE-77661CE56BE7}" Directory_="zhcn_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_4"/>
+    <ROW Component="ZedGraph.resources.dll_5" ComponentId="{032CB73D-A4CD-4D03-8E08-49AE83612510}" Directory_="zhtw_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_5"/>
+    <ROW Component="ZedGraph.resources.dll_6" ComponentId="{0B0BEA3D-A8AF-4792-988C-71E8615EC48E}" Directory_="de_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_6"/>
+    <ROW Component="ZedGraph.resources.dll_7" ComponentId="{0B422248-CA50-425B-9228-81646BF92CD3}" Directory_="es_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_7"/>
+    <ROW Component="ZedGraph.resources.dll_8" ComponentId="{EB8E6E30-9303-40DD-A92B-F7EF4DE8FFEA}" Directory_="fr_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_8"/>
+    <ROW Component="ZedGraph.resources.dll_9" ComponentId="{21C7E05B-069D-4F97-9A64-33805A9F296E}" Directory_="hu_Dir" Attributes="0" KeyPath="ZedGraph.resources.dll_9"/>
+    <ROW Component="cvextern.dll" ComponentId="{B1C5D940-197C-4E21-9E10-C3076C6ACFA8}" Directory_="x64_Dir" Attributes="256" KeyPath="cvextern.dll"/>
+    <ROW Component="cvextern.dll_1" ComponentId="{5203644A-6B74-4E64-B735-48C359393EE1}" Directory_="x86_Dir" Attributes="0" KeyPath="cvextern.dll_1"/>
+    <ROW Component="exe" ComponentId="{13632CB0-8E16-4F48-BB0A-387B92F3445E}" Directory_="APPDIR" Attributes="0" KeyPath="exe"/>
+    <ROW Component="libarcsoft_face.dll" ComponentId="{B25B8223-65D5-4F84-9831-8072443FA9BA}" Directory_="APPDIR" Attributes="256" KeyPath="libarcsoft_face.dll"/>
+    <ROW Component="libarcsoft_face_engine.dll" ComponentId="{5AF21B9F-2902-4B73-AA1C-21DC0E3D335B}" Directory_="APPDIR" Attributes="256" KeyPath="libarcsoft_face_engine.dll"/>
+    <ROW Component="opencv_ffmpeg310.dll" ComponentId="{EE0B6E59-15E1-457B-B99F-3C1E2D29F373}" Directory_="x86_Dir" Attributes="0" KeyPath="opencv_ffmpeg310.dll"/>
+    <ROW Component="opencv_ffmpeg310_64.dll" ComponentId="{0BEA4C01-D20A-4ED6-A4D0-108780D5335D}" Directory_="x64_Dir" Attributes="256" KeyPath="opencv_ffmpeg310_64.dll"/>
+    <ROW Component="sld.dll" ComponentId="{F77D09A9-C82E-44F9-9E75-A2E238B6FC8A}" Directory_="bit_7_Dir" Attributes="0" KeyPath="sld.dll"/>
+    <ROW Component="sld.dll_1" ComponentId="{D79C4CDB-0C0C-488A-A56A-1DFB284D3449}" Directory_="bit_8_Dir" Attributes="256" KeyPath="sld.dll_1"/>
+    <ROW Component="sld.dll_2" ComponentId="{3897141B-1813-406C-8757-5C5A20B70E1D}" Directory_="bit_9_Dir" Attributes="0" KeyPath="sld.dll_2"/>
+    <ROW Component="sld.dll_3" ComponentId="{B03E305A-E4CF-495C-9604-101026F06A44}" Directory_="bit_10_Dir" Attributes="256" KeyPath="sld.dll_3"/>
+    <ROW Component="sldm.dll" ComponentId="{A89CE292-8448-45F4-8DF0-36846CA4C2E6}" Directory_="bit_7_Dir" Attributes="0" KeyPath="sldm.dll"/>
+    <ROW Component="sldm.dll_1" ComponentId="{A2B516C0-048D-4B68-B89E-576A26D18586}" Directory_="bit_8_Dir" Attributes="256" KeyPath="sldm.dll_1"/>
+    <ROW Component="sldm.dll_2" ComponentId="{F0A9DDB5-E8E8-40C8-A6CE-B4690437D0EA}" Directory_="bit_9_Dir" Attributes="0" KeyPath="sldm.dll_2"/>
+    <ROW Component="sldm.dll_3" ComponentId="{E0AAB383-24A4-4871-8B51-CF6B1D970928}" Directory_="bit_10_Dir" Attributes="256" KeyPath="sldm.dll_3"/>
+    <ROW Component="zxing.dll" ComponentId="{7497DBC1-89D5-4F60-B68B-B236DF539777}" Directory_="APPDIR" Attributes="0" KeyPath="zxing.dll"/>
+    <ROW Component="zxing.presentation.dll" ComponentId="{1B1A06C3-91AB-4830-A115-E0780717BCCD}" Directory_="APPDIR" Attributes="0" KeyPath="zxing.presentation.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Basic.dll CallBackUI.dll DMC1000B001.pro DMC2410.dll DMC2410.dll_1 DMC2C80.dll DMC2C80.dll_1 Dmc1000.dll Dmc1000.dll_1 DrawingClass.dll Emgu.CV.UI.GL.dll Emgu.CV.UI.dll Emgu.CV.World.dll Emgu.CV.World.xml FontAwesome.Sharp.dll HCGUI.dll H_Pannel_lib.dll HsBase.dll HsBasic.dll IOC0640.dll IOC0640.dll_2 IOC1280001.pro Interop.SpeechLib.dll LTDMC.dll LTDMC.dll_1 LTDMC.lib LTDMC.lib_1 LadderUI.dll LeadShineUI.dll LicenseLib.dll LightControlUI.dll MVSDK.dll MVSDKUI.dll MeasureSystemUI.dll Microsoft.Bcl.AsyncInterfaces.dll MyFaceID.dll MyFtpUI.dll MySQL_Login.dll MySql.Data.dll MySqlBackup.dll MyUI.dll OpenTK.GLControl.dll OpenTK.dll PCI1230.dll PCI1230.dll_2 PCI1230.dll_3 PCI1230.dll_4 PCI1230.dll_5 Pci9016.dll Pci9016.dll_2 Pci9016.dll_3 Pci9016.dll_4 Pci9016.dll_5 PortControlUI.dll ProductInformation RFID_FX600lib.dll SHORTCUTDIR SLDUI.dll SQLUI.dll System.Buffers.dll System.Memory.dll System.Numerics.Vectors.dll System.Runtime.CompilerServices.Unsafe.dll System.Text.Encodings.Web.dll System.Text.Json.dll System.Threading.Tasks.Extensions.dll System.ValueTuple.dll TCP.dll WT32_SC01_lib.dll ZealTechUI.dll ZedGraph.dll ZedGraph.resources.dll ZedGraph.resources.dll_10 ZedGraph.resources.dll_11 ZedGraph.resources.dll_12 ZedGraph.resources.dll_13 ZedGraph.resources.dll_2 ZedGraph.resources.dll_3 ZedGraph.resources.dll_4 ZedGraph.resources.dll_5 ZedGraph.resources.dll_6 ZedGraph.resources.dll_7 ZedGraph.resources.dll_8 ZedGraph.resources.dll_9 cvextern.dll cvextern.dll_1 exe libarcsoft_face.dll libarcsoft_face_engine.dll opencv_ffmpeg310.dll opencv_ffmpeg310_64.dll sld.dll sld.dll_1 sld.dll_2 sld.dll_3 sldm.dll sldm.dll_1 sldm.dll_2 sldm.dll_3 zxing.dll zxing.presentation.dll"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Basic.dll" Component_="Basic.dll" FileName="Basic.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Basic.dll" SelfReg="false" NextFile="H_Pannel_lib.dll"/>
+    <ROW File="CallBackUI.dll" Component_="CallBackUI.dll" FileName="CALLBA~1.DLL|CallBackUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\CallBackUI.dll" SelfReg="false" NextFile="MVSDKUI.dll"/>
+    <ROW File="DMC1000B001.pro" Component_="DMC1000B001.pro" FileName="DMC100~1.PRO|DMC1000B-001.pro" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC1000B\DMC1000B-001.pro" SelfReg="false" NextFile="Dmc1000.dll"/>
+    <ROW File="DMC2410.dll" Component_="DMC2410.dll" FileName="DMC2410.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC2410\x64\DMC2410.dll" SelfReg="false" NextFile="DMC2410.dll_1"/>
+    <ROW File="DMC2410.dll_1" Component_="DMC2410.dll_1" FileName="DMC2410.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC2410\x86\DMC2410.dll" SelfReg="false" NextFile="LTDMC.dll"/>
+    <ROW File="DMC2C80.dll" Component_="DMC2C80.dll" FileName="DMC2C80.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC2C80\x64\DMC2C80.dll" SelfReg="false" NextFile="DMC2C80.dll_1"/>
+    <ROW File="DMC2C80.dll_1" Component_="DMC2C80.dll_1" FileName="DMC2C80.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC2C80\x86\DMC2C80.dll" SelfReg="false" NextFile="DMC1000B001.pro"/>
+    <ROW File="Dmc1000.dll" Component_="Dmc1000.dll" FileName="Dmc1000.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC1000B\x64\Dmc1000.dll" SelfReg="false" NextFile="Dmc1000.dll_1"/>
+    <ROW File="Dmc1000.dll_1" Component_="Dmc1000.dll_1" FileName="Dmc1000.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC1000B\x86\Dmc1000.dll" SelfReg="false" NextFile="DMC2410.dll"/>
+    <ROW File="DrawingClass.dll" Component_="DrawingClass.dll" FileName="DRAWIN~1.DLL|DrawingClass.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DrawingClass.dll" SelfReg="false" NextFile="program.bak.stp"/>
+    <ROW File="Emgu.CV.UI.GL.dll" Component_="Emgu.CV.UI.GL.dll" FileName="EMGUCV~3.DLL|Emgu.CV.UI.GL.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.GL.dll" SelfReg="false" NextFile="Emgu.CV.UI.GL.xml"/>
+    <ROW File="Emgu.CV.UI.GL.xml" Component_="Emgu.CV.World.xml" FileName="EMGUCV~2.XML|Emgu.CV.UI.GL.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.GL.xml" SelfReg="false" NextFile="Emgu.CV.UI.xml"/>
+    <ROW File="Emgu.CV.UI.dll" Component_="Emgu.CV.UI.dll" FileName="EMGUCV~2.DLL|Emgu.CV.UI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.dll" SelfReg="false" NextFile="Emgu.CV.UI.GL.dll"/>
+    <ROW File="Emgu.CV.UI.xml" Component_="Emgu.CV.World.xml" FileName="EMGUCV~3.XML|Emgu.CV.UI.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.UI.xml" SelfReg="false"/>
+    <ROW File="Emgu.CV.World.dll" Component_="Emgu.CV.World.dll" FileName="EMGUCV~1.DLL|Emgu.CV.World.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.World.dll" SelfReg="false" NextFile="Emgu.CV.World.xml"/>
+    <ROW File="Emgu.CV.World.xml" Component_="Emgu.CV.World.xml" FileName="EMGUCV~1.XML|Emgu.CV.World.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Emgu.CV.World.xml" SelfReg="false" NextFile="OpenTK.GLControl.dll"/>
+    <ROW File="FontAwesome.Sharp.dll" Component_="FontAwesome.Sharp.dll" FileName="FONTAW~1.DLL|FontAwesome.Sharp.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\FontAwesome.Sharp.dll" SelfReg="false" NextFile="System.Text.Json.dll"/>
+    <ROW File="HCGUI.dll" Component_="HCGUI.dll" FileName="HCGUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\HCGUI.dll" SelfReg="false" NextFile="LightControlUI.dll"/>
+    <ROW File="H_Pannel_lib.dll" Component_="H_Pannel_lib.dll" FileName="H_PANN~1.DLL|H_Pannel_lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\H_Pannel_lib.dll" SelfReg="false" NextFile="SLDUI.dll"/>
+    <ROW File="HsBase.dll" Component_="HsBase.dll" FileName="HsBase.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\HsBase.dll" SelfReg="false" NextFile="zxing.presentation.dll"/>
+    <ROW File="HsBasic.dll" Component_="HsBasic.dll" FileName="HsBasic.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\HsBasic.dll" SelfReg="false" NextFile="LicenseLib.dll"/>
+    <ROW File="IOC0640.dll" Component_="IOC0640.dll" FileName="IOC0640.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\IOC1280\x64\IOC0640.dll" SelfReg="false" NextFile="IOC0640.dll_2"/>
+    <ROW File="IOC0640.dll_2" Component_="IOC0640.dll_2" FileName="IOC0640.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\IOC1280\x86\IOC0640.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_10"/>
+    <ROW File="IOC1280001.pro" Component_="IOC1280001.pro" FileName="IOC128~1.PRO|IOC1280-001.pro" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\IOC1280\IOC1280-001.pro" SelfReg="false" NextFile="IOC0640.dll"/>
+    <ROW File="Interop.SpeechLib.dll" Component_="Interop.SpeechLib.dll" FileName="INTERO~1.DLL|Interop.SpeechLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Interop.SpeechLib.dll" SelfReg="false" NextFile="FontAwesome.Sharp.dll"/>
+    <ROW File="LTDMC.dll" Component_="LTDMC.dll" FileName="LTDMC.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC3000\x64\LTDMC.dll" SelfReg="false" NextFile="LTDMC.lib"/>
+    <ROW File="LTDMC.dll_1" Component_="LTDMC.dll_1" FileName="LTDMC.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC3000\x86\LTDMC.dll" SelfReg="false" NextFile="LTDMC.lib_1"/>
+    <ROW File="LTDMC.lib" Component_="LTDMC.lib" FileName="LTDMC.lib" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC3000\x64\LTDMC.lib" SelfReg="false" NextFile="LTDMC.dll_1"/>
+    <ROW File="LTDMC.lib_1" Component_="LTDMC.lib_1" FileName="LTDMC.lib" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\DMC3000\x86\LTDMC.lib" SelfReg="false" NextFile="sld.dll"/>
+    <ROW File="LadderUI.dll" Component_="LadderUI.dll" FileName="LadderUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\LadderUI.dll" SelfReg="false" NextFile="HCGUI.dll"/>
+    <ROW File="LeadShineUI.dll" Component_="LeadShineUI.dll" FileName="LEADSH~1.DLL|LeadShineUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\LeadShineUI.dll" SelfReg="false" NextFile="LadderUI.dll"/>
+    <ROW File="LicenseLib.dll" Component_="LicenseLib.dll" FileName="LICENS~1.DLL|LicenseLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\LicenseLib.dll" SelfReg="false" NextFile="HsBase.dll"/>
+    <ROW File="LightControlUI.dll" Component_="LightControlUI.dll" FileName="LIGHTC~1.DLL|LightControlUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\LightControlUI.dll" SelfReg="false" NextFile="SQLUI.dll"/>
+    <ROW File="MVSDK.dll" Component_="MVSDK.dll" FileName="MVSDK.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MVSDK.dll" SelfReg="false" NextFile="System.ValueTuple.dll"/>
+    <ROW File="MVSDKUI.dll" Component_="MVSDKUI.dll" FileName="MVSDKUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MVSDKUI.dll" SelfReg="false" NextFile="MyFaceID.dll"/>
+    <ROW File="MeasureSystemUI.dll" Component_="MeasureSystemUI.dll" FileName="MEASUR~1.DLL|MeasureSystemUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MeasureSystemUI.dll" SelfReg="false" NextFile="PortControlUI.dll"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false" NextFile="libarcsoft_face_engine.dll"/>
+    <ROW File="MyFaceID.dll" Component_="MyFaceID.dll" FileName="MyFaceID.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MyFaceID.dll" SelfReg="false" NextFile="exe.config"/>
+    <ROW File="MyFtpUI.dll" Component_="MyFtpUI.dll" FileName="MyFtpUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MyFtpUI.dll" SelfReg="false" NextFile="Basic.dll"/>
+    <ROW File="MySQL_Login.dll" Component_="MySQL_Login.dll" FileName="MYSQL_~1.DLL|MySQL_Login.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MySQL_Login.dll" SelfReg="false" NextFile="DrawingClass.dll"/>
+    <ROW File="MySql.Data.dll" Component_="MySql.Data.dll" FileName="MYSQLD~1.DLL|MySql.Data.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MySql.Data.dll" SelfReg="false" NextFile="System.Buffers.dll"/>
+    <ROW File="MySqlBackup.dll" Component_="MySqlBackup.dll" FileName="MYSQLB~1.DLL|MySqlBackup.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MySqlBackup.dll" SelfReg="false" NextFile="MVSDK.dll"/>
+    <ROW File="MyUI.dll" Component_="MyUI.dll" FileName="MyUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\MyUI.dll" SelfReg="false" NextFile="LeadShineUI.dll"/>
+    <ROW File="OpenTK.GLControl.dll" Component_="OpenTK.GLControl.dll" FileName="OPENTK~1.DLL|OpenTK.GLControl.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\OpenTK.GLControl.dll" SelfReg="false" NextFile="OpenTK.GLControl.xml"/>
+    <ROW File="OpenTK.GLControl.xml" Component_="Emgu.CV.World.xml" FileName="OPENTK~1.XML|OpenTK.GLControl.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\OpenTK.GLControl.xml" SelfReg="false" NextFile="OpenTK.dll"/>
+    <ROW File="OpenTK.dll" Component_="OpenTK.dll" FileName="OpenTK.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\OpenTK.dll" SelfReg="false" NextFile="OpenTK.xml"/>
+    <ROW File="OpenTK.xml" Component_="Emgu.CV.World.xml" FileName="OpenTK.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\OpenTK.xml" SelfReg="false" NextFile="ZedGraph.xml"/>
+    <ROW File="PCI1230.dll" Component_="PCI1230.dll" FileName="PCI1230.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\C1230\32bit\PCI1230.dll" SelfReg="false" NextFile="PCI1230.dll_2"/>
+    <ROW File="PCI1230.dll_2" Component_="PCI1230.dll_2" FileName="PCI1230.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\C1230\64bit\PCI1230.dll" SelfReg="false" NextFile="Pci9016.dll"/>
+    <ROW File="PCI1230.dll_3" Component_="PCI1230.dll_3" FileName="PCI1230.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Pci1230\32bit\PCI1230.dll" SelfReg="false" NextFile="PCI1230.dll_4"/>
+    <ROW File="PCI1230.dll_4" Component_="PCI1230.dll_4" FileName="PCI1230.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Pci1230\64bit\PCI1230.dll" SelfReg="false" NextFile="PCI1230.dll_5"/>
+    <ROW File="PCI1230.dll_5" Component_="PCI1230.dll_5" FileName="PCI1230.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Pci1230\PCI1230.dll" SelfReg="false" NextFile="Pci9016.dll_3"/>
+    <ROW File="Pci9016.dll" Component_="Pci9016.dll" FileName="Pci9016.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\C9016\32bit\Pci9016.dll" SelfReg="false" NextFile="Pci9016.dll_2"/>
+    <ROW File="Pci9016.dll_2" Component_="Pci9016.dll_2" FileName="Pci9016.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\C9016\64bit\Pci9016.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_6"/>
+    <ROW File="Pci9016.dll_3" Component_="Pci9016.dll_3" FileName="Pci9016.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Pci9016\32bit\Pci9016.dll" SelfReg="false" NextFile="Pci9016.dll_4"/>
+    <ROW File="Pci9016.dll_4" Component_="Pci9016.dll_4" FileName="Pci9016.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Pci9016\64bit\Pci9016.dll" SelfReg="false" NextFile="Pci9016.dll_5"/>
+    <ROW File="Pci9016.dll_5" Component_="Pci9016.dll_5" FileName="Pci9016.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\Pci9016\Pci9016.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_12"/>
+    <ROW File="PortControlUI.dll" Component_="PortControlUI.dll" FileName="PORTCO~1.DLL|PortControlUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\PortControlUI.dll" SelfReg="false" NextFile="Interop.SpeechLib.dll"/>
+    <ROW File="RFID_FX600lib.dll" Component_="RFID_FX600lib.dll" FileName="RFID_F~1.DLL|RFID_FX600lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\RFID_FX600lib.dll" SelfReg="false" NextFile="ZealTechUI.dll"/>
+    <ROW File="SLDUI.dll" Component_="SLDUI.dll" FileName="SLDUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\SLDUI.dll" SelfReg="false" NextFile="MyUI.dll"/>
+    <ROW File="SQLUI.dll" Component_="SQLUI.dll" FileName="SQLUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\SQLUI.dll" SelfReg="false" NextFile="TCP.dll"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~4.DLL|System.Buffers.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Buffers.dll" SelfReg="false" NextFile="System.Memory.dll"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~5.DLL|System.Memory.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Memory.dll" SelfReg="false" NextFile="System.Memory.xml"/>
+    <ROW File="System.Memory.xml" Component_="Emgu.CV.World.xml" FileName="SYSTEM~1.XML|System.Memory.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Memory.xml" SelfReg="false" NextFile="System.Threading.Tasks.Extensions.dll"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~8.DLL|System.Numerics.Vectors.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Numerics.Vectors.dll" SelfReg="false" NextFile="Emgu.CV.UI.dll"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~3.DLL|System.Runtime.CompilerServices.Unsafe.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~2.DLL|System.Text.Encodings.Web.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~1.DLL|System.Text.Json.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Text.Json.dll" SelfReg="false" NextFile="System.Text.Encodings.Web.dll"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~6.DLL|System.Threading.Tasks.Extensions.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false" NextFile="MySqlBackup.dll"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~7.DLL|System.ValueTuple.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\System.ValueTuple.dll" SelfReg="false" NextFile="System.Numerics.Vectors.dll"/>
+    <ROW File="TCP.dll" Component_="TCP.dll" FileName="TCP.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\TCP.dll" SelfReg="false" NextFile="CallBackUI.dll"/>
+    <ROW File="UDPCilent.pro" Component_="Emgu.CV.World.xml" FileName="UDPCIL~1.PRO|UDPCilent.pro" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\UDPCilent.pro" SelfReg="false" NextFile="pdb"/>
+    <ROW File="WT32_SC01_lib.dll" Component_="WT32_SC01_lib.dll" FileName="WT32_S~1.DLL|WT32_SC01_lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\WT32_SC01_lib.dll" SelfReg="false" NextFile="RFID_FX600lib.dll"/>
+    <ROW File="ZealTechUI.dll" Component_="ZealTechUI.dll" FileName="ZEALTE~1.DLL|ZealTechUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\ZealTechUI.dll" SelfReg="false" NextFile="MeasureSystemUI.dll"/>
+    <ROW File="ZedGraph.dll" Component_="ZedGraph.dll" FileName="ZedGraph.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\ZedGraph.dll" SelfReg="false" NextFile="rfiD_FX600_UI.pro"/>
+    <ROW File="ZedGraph.resources.dll" Component_="ZedGraph.resources.dll" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\sk\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_2"/>
+    <ROW File="ZedGraph.resources.dll_10" Component_="ZedGraph.resources.dll_10" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\it\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_11"/>
+    <ROW File="ZedGraph.resources.dll_11" Component_="ZedGraph.resources.dll_11" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\ja\ZedGraph.resources.dll" SelfReg="false" NextFile="PCI1230.dll_3"/>
+    <ROW File="ZedGraph.resources.dll_12" Component_="ZedGraph.resources.dll_12" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\pt\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_13"/>
+    <ROW File="ZedGraph.resources.dll_13" Component_="ZedGraph.resources.dll_13" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\ru\ZedGraph.resources.dll" SelfReg="false" NextFile="Emgu.CV.World.dll"/>
+    <ROW File="ZedGraph.resources.dll_2" Component_="ZedGraph.resources.dll_2" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\sv\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_3"/>
+    <ROW File="ZedGraph.resources.dll_3" Component_="ZedGraph.resources.dll_3" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\tr\ZedGraph.resources.dll" SelfReg="false" NextFile="cvextern.dll"/>
+    <ROW File="ZedGraph.resources.dll_4" Component_="ZedGraph.resources.dll_4" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\zh-cn\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_5"/>
+    <ROW File="ZedGraph.resources.dll_5" Component_="ZedGraph.resources.dll_5" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\zh-tw\ZedGraph.resources.dll" SelfReg="false" NextFile="PCI1230.dll"/>
+    <ROW File="ZedGraph.resources.dll_6" Component_="ZedGraph.resources.dll_6" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\de\ZedGraph.resources.dll" SelfReg="false" NextFile="DMC2C80.dll"/>
+    <ROW File="ZedGraph.resources.dll_7" Component_="ZedGraph.resources.dll_7" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\es\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_8"/>
+    <ROW File="ZedGraph.resources.dll_8" Component_="ZedGraph.resources.dll_8" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\fr\ZedGraph.resources.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_9"/>
+    <ROW File="ZedGraph.resources.dll_9" Component_="ZedGraph.resources.dll_9" FileName="ZEDGRA~1.DLL|ZedGraph.resources.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\hu\ZedGraph.resources.dll" SelfReg="false" NextFile="IOC1280001.pro"/>
+    <ROW File="ZedGraph.xml" Component_="Emgu.CV.World.xml" FileName="ZedGraph.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\ZedGraph.xml" SelfReg="false" NextFile="ZedGraph.dll"/>
+    <ROW File="cvextern.dll" Component_="cvextern.dll" FileName="cvextern.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\x64\cvextern.dll" SelfReg="false" NextFile="opencv_ffmpeg310_64.dll"/>
+    <ROW File="cvextern.dll_1" Component_="cvextern.dll_1" FileName="cvextern.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\x86\cvextern.dll" SelfReg="false" NextFile="opencv_ffmpeg310.dll"/>
+    <ROW File="exe" Component_="exe" FileName="智能藥品管理系統.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\智能藥品管理系統.exe" SelfReg="false" NextFile="ZedGraph.resources.dll" DigSign="true"/>
+    <ROW File="exe.config" Component_="Emgu.CV.World.xml" FileName="智能藥品管理~1.CON|智能藥品管理系統.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\智能藥品管理系統.exe.config" SelfReg="false" NextFile="MySQL_Login.dll"/>
+    <ROW File="libarcsoft_face.dll" Component_="libarcsoft_face.dll" FileName="LIBARC~2.DLL|libarcsoft_face.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\libarcsoft_face.dll" SelfReg="false" NextFile="HsBasic.dll"/>
+    <ROW File="libarcsoft_face_engine.dll" Component_="libarcsoft_face_engine.dll" FileName="LIBARC~1.DLL|libarcsoft_face_engine.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\libarcsoft_face_engine.dll" SelfReg="false" NextFile="libarcsoft_face_engine.lib"/>
+    <ROW File="libarcsoft_face_engine.lib" Component_="Emgu.CV.World.xml" FileName="LIBARC~1.LIB|libarcsoft_face_engine.lib" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\libarcsoft_face_engine.lib" SelfReg="false" NextFile="libarcsoft_face.dll"/>
+    <ROW File="opencv_ffmpeg310.dll" Component_="opencv_ffmpeg310.dll" FileName="OPENCV~1.DLL|opencv_ffmpeg310.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\x86\opencv_ffmpeg310.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_4"/>
+    <ROW File="opencv_ffmpeg310_64.dll" Component_="opencv_ffmpeg310_64.dll" FileName="OPENCV~1.DLL|opencv_ffmpeg310_64.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\x64\opencv_ffmpeg310_64.dll" SelfReg="false" NextFile="cvextern.dll_1"/>
+    <ROW File="pdb" Component_="exe" FileName="智能藥品管理系統.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\智能藥品管理系統.pdb" SelfReg="false" NextFile="MyFtpUI.dll"/>
+    <ROW File="program.bak.stp" Component_="Emgu.CV.World.xml" FileName="PROGRA~1.STP|program.bak.stp" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\program.bak.stp" SelfReg="false" NextFile="WT32_SC01_lib.dll"/>
+    <ROW File="program.stp" Component_="Emgu.CV.World.xml" FileName="program.stp" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\program.stp" SelfReg="false" NextFile="UDPCilent.pro"/>
+    <ROW File="rfiD_FX600_UI.pro" Component_="Emgu.CV.World.xml" FileName="RFID_F~1.PRO|rfiD_FX600_UI.pro" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\rfiD_FX600_UI.pro" SelfReg="false" NextFile="program.stp"/>
+    <ROW File="sld.dll" Component_="sld.dll" FileName="sld.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E400\32bit\sld.dll" SelfReg="false" NextFile="sldm.dll"/>
+    <ROW File="sld.dll_1" Component_="sld.dll_1" FileName="sld.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E400\64bit\sld.dll" SelfReg="false" NextFile="sldm.dll_1"/>
+    <ROW File="sld.dll_2" Component_="sld.dll_2" FileName="sld.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E6232\32bit\sld.dll" SelfReg="false" NextFile="sldm.dll_2"/>
+    <ROW File="sld.dll_3" Component_="sld.dll_3" FileName="sld.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E6232\64bit\sld.dll" SelfReg="false" NextFile="sldm.dll_3"/>
+    <ROW File="sldm.dll" Component_="sldm.dll" FileName="sldm.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E400\32bit\sldm.dll" SelfReg="false" NextFile="sld.dll_1"/>
+    <ROW File="sldm.dll_1" Component_="sldm.dll_1" FileName="sldm.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E400\64bit\sldm.dll" SelfReg="false" NextFile="sld.dll_2"/>
+    <ROW File="sldm.dll_2" Component_="sldm.dll_2" FileName="sldm.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E6232\32bit\sldm.dll" SelfReg="false" NextFile="sld.dll_3"/>
+    <ROW File="sldm.dll_3" Component_="sldm.dll_3" FileName="sldm.dll" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\E6232\64bit\sldm.dll" SelfReg="false" NextFile="ZedGraph.resources.dll_7"/>
+    <ROW File="zxing.dll" Component_="zxing.dll" FileName="zxing.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\zxing.dll" SelfReg="false" NextFile="MySql.Data.dll"/>
+    <ROW File="zxing.presentation.dll" Component_="zxing.presentation.dll" FileName="ZXINGP~1.DLL|zxing.presentation.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥品管理系統\bin\Release\zxing.presentation.dll" SelfReg="false" NextFile="zxing.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." Languages="zh_TW" InstallationType="4" ExtUI="true" UseLargeSchema="true" UACExecutionLevel="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_zh_TW.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_FinishActions" Type="1" Source="aicustact.dll" Target="RunAllExitActions"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#exe]"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RestartElevated" Type="1" Source="aicustact.dll" Target="RestartElevated"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Type="1" Source="aicustact.dll" Target="MixedAllUsersInstallLocation"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:C:\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="serviceicon01.exe" SourcePath="..\service-icon-01.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Sequence="748"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="54"/>
+    <ROW Action="AI_DpiContentScale" Sequence="53"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="52"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Sequence="748"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_RestartElevated" Sequence="51" Builds="DefaultBuild"/>
+    <ROW Action="AI_FinishActions" Condition="AI_INSTALL AND AiSkipExitDlg" Sequence="1301"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] 無法安裝在 [WindowsTypeNT40Display]。" DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] 無法安裝在 [WindowsTypeNT50Display]。" DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] 無法安裝在 [WindowsTypeNT5XDisplay]。" DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] 無法安裝在 [WindowsType9XDisplay]。" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="_" Directory_="SHORTCUTDIR" Name="智能藥品管理系統" Component_="exe" Target="[#exe]" Description="藥品補給系統" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="__1" Directory_="DesktopFolder" Name="智能藥品管理系統" Component_="exe" Target="[#exe]" Description="藥品補給系統" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="BB9062A4604BB61146D7C9AA49D" DisplayName=".NET Framework 4.6.1 (web installer)" SetupFileUrl="Prerequisites\.NET Framework 4.6.1\NDP461-KB3102438-Web.exe" Location="0" ExactSize="0" WinNTVersions="Windows XP SP3 x86, Windows Server 2003 SP2 x86, Windows Vista x86, Windows Server 2008 x86, Windows 7 RTM x86, Windows 10 version 1511 x86, Windows 10 version 1607 x86, Windows 10 version 1703 x86, Windows 10 version 1709 x86, Windows 10 version 1803 x86" WinNT64Versions="Windows XP SP2 x64, Windows Server 2003 SP2 x64, Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 10 version 1511 x64, Windows 10 version 1607 x64, Windows 10 version 1703 x64, Windows 10 version 1709 x64, Windows 10 version 1803 x64, Windows Server 2016 x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" TargetName=".NET Framework 4.6.1\NDP461-KB3102438-Web.exe"/>
+    <ATTRIBUTE name="PrereqsOrder" value="BB9062A4604BB61146D7C9AA49D"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="BB9062A4604BB61146D7C9AA49DRelease" Prereq="BB9062A4604BB61146D7C9AA49D" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G394270" Order="1" Property="PreReqSearch_BB9062A4604BB61146D7C9"/>
+  </COMPONENT>
+</DOCUMENT>
