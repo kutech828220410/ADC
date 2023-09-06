@@ -422,7 +422,17 @@ namespace 智能藥品管理系統
                     plC_RJ_Button_主畫面_退藥.BorderSize = 0;
                 }
             }
-
+            if (plC_RJ_Button_主畫面_登入.Text == "登入")
+            {
+                if(this.panel_開始取藥.Visible == true)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        this.panel_開始取藥.Visible = false;
+                    }));
+                }
+          
+            }
 
         }
         void cnt_Program_主畫面_領退藥_65490_初始化(ref int cnt)
@@ -644,9 +654,11 @@ namespace 智能藥品管理系統
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
                 狀態顯示 += $"模式".StringLength(8) + ": <領藥>";
+                狀態顯示 += $"\n請掃描藥單...";
                 this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
                 PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_退藥按鈕.Bool = false;
+                if (!PLC_Device_主畫面_麻醉部模式.Bool) PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 cnt++;
             }
             else if (PLC_Device_主畫面_退藥按鈕.Bool)
@@ -656,9 +668,11 @@ namespace 智能藥品管理系統
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontString(new Font("標楷體", 24F, FontStyle.Bold), true);
                 狀態顯示 += $"模式".StringLength(8) + ": <退藥>";
+                狀態顯示 += $"\n請掃描藥單...";
                 this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
                 PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_領藥按鈕.Bool = false;
+                if (!PLC_Device_主畫面_麻醉部模式.Bool) PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 cnt++;
             }
             else if (PLC_Device_清空出料盤.Bool)
@@ -2486,6 +2500,7 @@ namespace 智能藥品管理系統
                 PLC_Device_取物門_移動到關門位置.Bool = true;
                 PLC_Device_主畫面_領退藥.Bool = false;
                 PLC_Device_主畫面_領退藥_識別登入 = false;
+            
                 cnt_Program_主畫面_領退藥 = 65501;
                 return;
             }

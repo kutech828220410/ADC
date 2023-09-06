@@ -16,7 +16,7 @@ using MySql.Data.MySqlClient;
 using SQLUI;
 using H_Pannel_lib;
 [assembly: AssemblyVersion("1.0.16.0")]
-[assembly: AssemblyFileVersion("1.0.16.0")]
+[assembly: AssemblyFileVersion("1.0.17.0")]
 namespace 智能藥品管理系統
 {
     public partial class Form1 : Form

@@ -1,5 +1,0 @@
-{
-  "FTP_Server": "https://github.com/kutech828220410/ADC/raw/master/Advance%20Install/",
-  "FTP_username": "user",
-  "FTP_password": "66437068"
-}
