@@ -49,6 +49,7 @@ namespace 智能藥品管理系統
 
             this.rfiD_FX600_UI.Init(2, RFID_FX600lib.RFID_FX600_UI.Baudrate._115200, "COM1");
             this.storageUI_WT32.Init(myConfigClass.DataBaseName, myConfigClass.UserName, myConfigClass.Password, myConfigClass.IP, myConfigClass.Port, myConfigClass.MySqlSslMode); ;
+            this.storageUI_WT32.Set_UDP_WriteTime(20);
             this.wT32_GPADC.Init(storageUI_WT32.List_UDP_Local);
 
             this.loginUI.Login_data_DataBasename = myConfigClass.DataBaseName;
