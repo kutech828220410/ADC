@@ -35,38 +35,51 @@
             // 
             // plC_RJ_Button_套餐
             // 
-            this.plC_RJ_Button_套餐.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_套餐.AutoResetState = false;
+            this.plC_RJ_Button_套餐.BackgroundColor = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_套餐.Bool = false;
             this.plC_RJ_Button_套餐.BorderColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_套餐.BorderRadius = 5;
             this.plC_RJ_Button_套餐.BorderSize = 0;
             this.plC_RJ_Button_套餐.but_press = false;
             this.plC_RJ_Button_套餐.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_套餐.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_套餐.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_套餐.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_套餐.Font = new System.Drawing.Font("標楷體", 48F);
+            this.plC_RJ_Button_套餐.GUID = "";
             this.plC_RJ_Button_套餐.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_套餐.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.plC_RJ_Button_套餐.Location = new System.Drawing.Point(23, 87);
             this.plC_RJ_Button_套餐.Name = "plC_RJ_Button_套餐";
             this.plC_RJ_Button_套餐.OFF_文字內容 = "套餐";
             this.plC_RJ_Button_套餐.OFF_文字字體 = new System.Drawing.Font("標楷體", 48F);
             this.plC_RJ_Button_套餐.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_套餐.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_套餐.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_套餐.ON_BorderSize = 5;
             this.plC_RJ_Button_套餐.ON_文字內容 = "套餐";
             this.plC_RJ_Button_套餐.ON_文字字體 = new System.Drawing.Font("標楷體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_套餐.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_套餐.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_套餐.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_套餐.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_套餐.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_套餐.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_套餐.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_套餐.ShadowSize = 0;
+            this.plC_RJ_Button_套餐.ShowLoadingForm = false;
             this.plC_RJ_Button_套餐.Size = new System.Drawing.Size(274, 161);
             this.plC_RJ_Button_套餐.State = false;
             this.plC_RJ_Button_套餐.TabIndex = 29;
             this.plC_RJ_Button_套餐.Text = "套餐";
             this.plC_RJ_Button_套餐.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_套餐.TextHeight = 0;
             this.plC_RJ_Button_套餐.Texts = "套餐";
             this.plC_RJ_Button_套餐.UseVisualStyleBackColor = false;
             this.plC_RJ_Button_套餐.字型鎖住 = false;
             this.plC_RJ_Button_套餐.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
             this.plC_RJ_Button_套餐.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
             this.plC_RJ_Button_套餐.文字鎖住 = false;
+            this.plC_RJ_Button_套餐.背景圖片 = null;
             this.plC_RJ_Button_套餐.讀取位元反向 = false;
             this.plC_RJ_Button_套餐.讀寫鎖住 = false;
             this.plC_RJ_Button_套餐.音效 = false;
@@ -75,7 +88,7 @@
             // 
             // rJ_Lable1
             // 
-            this.rJ_Lable1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable1.BorderRadius = 8;
@@ -84,8 +97,11 @@
             this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable1.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable1.GUID = "";
             this.rJ_Lable1.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable1.Name = "rJ_Lable1";
+            this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable1.ShadowSize = 0;
             this.rJ_Lable1.Size = new System.Drawing.Size(638, 68);
             this.rJ_Lable1.TabIndex = 30;
             this.rJ_Lable1.Text = "功能選擇";
@@ -94,38 +110,51 @@
             // 
             // plC_RJ_Button_藥品
             // 
-            this.plC_RJ_Button_藥品.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品.AutoResetState = false;
+            this.plC_RJ_Button_藥品.BackgroundColor = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥品.Bool = false;
             this.plC_RJ_Button_藥品.BorderColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥品.BorderRadius = 5;
             this.plC_RJ_Button_藥品.BorderSize = 0;
             this.plC_RJ_Button_藥品.but_press = false;
             this.plC_RJ_Button_藥品.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥品.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_藥品.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_藥品.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_藥品.Font = new System.Drawing.Font("標楷體", 48F);
+            this.plC_RJ_Button_藥品.GUID = "";
             this.plC_RJ_Button_藥品.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥品.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.plC_RJ_Button_藥品.Location = new System.Drawing.Point(335, 87);
             this.plC_RJ_Button_藥品.Name = "plC_RJ_Button_藥品";
             this.plC_RJ_Button_藥品.OFF_文字內容 = "藥品";
             this.plC_RJ_Button_藥品.OFF_文字字體 = new System.Drawing.Font("標楷體", 48F);
             this.plC_RJ_Button_藥品.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品.ON_BorderSize = 5;
             this.plC_RJ_Button_藥品.ON_文字內容 = "藥品";
             this.plC_RJ_Button_藥品.ON_文字字體 = new System.Drawing.Font("標楷體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥品.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_藥品.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_藥品.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_藥品.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥品.ShadowSize = 0;
+            this.plC_RJ_Button_藥品.ShowLoadingForm = false;
             this.plC_RJ_Button_藥品.Size = new System.Drawing.Size(274, 161);
             this.plC_RJ_Button_藥品.State = false;
             this.plC_RJ_Button_藥品.TabIndex = 31;
             this.plC_RJ_Button_藥品.Text = "藥品";
             this.plC_RJ_Button_藥品.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品.TextHeight = 0;
             this.plC_RJ_Button_藥品.Texts = "藥品";
             this.plC_RJ_Button_藥品.UseVisualStyleBackColor = false;
             this.plC_RJ_Button_藥品.字型鎖住 = false;
             this.plC_RJ_Button_藥品.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
             this.plC_RJ_Button_藥品.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
             this.plC_RJ_Button_藥品.文字鎖住 = false;
+            this.plC_RJ_Button_藥品.背景圖片 = null;
             this.plC_RJ_Button_藥品.讀取位元反向 = false;
             this.plC_RJ_Button_藥品.讀寫鎖住 = false;
             this.plC_RJ_Button_藥品.音效 = false;

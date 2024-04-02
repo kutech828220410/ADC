@@ -38,7 +38,7 @@
             // 
             // rJ_Lable1
             // 
-            this.rJ_Lable1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.rJ_Lable1.BackColor = System.Drawing.Color.White;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable1.BorderRadius = 8;
@@ -47,8 +47,11 @@
             this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable1.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable1.GUID = "";
             this.rJ_Lable1.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable1.Name = "rJ_Lable1";
+            this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable1.ShadowSize = 0;
             this.rJ_Lable1.Size = new System.Drawing.Size(610, 68);
             this.rJ_Lable1.TabIndex = 2;
             this.rJ_Lable1.Text = "病歷號及病人姓名";
@@ -57,38 +60,51 @@
             // 
             // plC_RJ_Button_確認
             // 
-            this.plC_RJ_Button_確認.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_確認.AutoResetState = false;
+            this.plC_RJ_Button_確認.BackgroundColor = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_確認.Bool = false;
             this.plC_RJ_Button_確認.BorderColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_確認.BorderRadius = 5;
             this.plC_RJ_Button_確認.BorderSize = 0;
             this.plC_RJ_Button_確認.but_press = false;
             this.plC_RJ_Button_確認.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_確認.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_確認.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_確認.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_確認.Font = new System.Drawing.Font("微軟正黑體", 20.25F);
+            this.plC_RJ_Button_確認.GUID = "";
             this.plC_RJ_Button_確認.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_確認.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.plC_RJ_Button_確認.Location = new System.Drawing.Point(491, 79);
             this.plC_RJ_Button_確認.Name = "plC_RJ_Button_確認";
             this.plC_RJ_Button_確認.OFF_文字內容 = "確認";
             this.plC_RJ_Button_確認.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F);
             this.plC_RJ_Button_確認.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_確認.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_確認.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_確認.ON_BorderSize = 5;
             this.plC_RJ_Button_確認.ON_文字內容 = "確認";
             this.plC_RJ_Button_確認.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F);
             this.plC_RJ_Button_確認.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_確認.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_確認.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_確認.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_確認.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_確認.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_確認.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_確認.ShadowSize = 0;
+            this.plC_RJ_Button_確認.ShowLoadingForm = false;
             this.plC_RJ_Button_確認.Size = new System.Drawing.Size(107, 116);
             this.plC_RJ_Button_確認.State = false;
             this.plC_RJ_Button_確認.TabIndex = 30;
             this.plC_RJ_Button_確認.Text = "確認";
             this.plC_RJ_Button_確認.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_確認.TextHeight = 0;
             this.plC_RJ_Button_確認.Texts = "確認";
             this.plC_RJ_Button_確認.UseVisualStyleBackColor = false;
             this.plC_RJ_Button_確認.字型鎖住 = false;
             this.plC_RJ_Button_確認.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
             this.plC_RJ_Button_確認.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
             this.plC_RJ_Button_確認.文字鎖住 = false;
+            this.plC_RJ_Button_確認.背景圖片 = null;
             this.plC_RJ_Button_確認.讀取位元反向 = false;
             this.plC_RJ_Button_確認.讀寫鎖住 = false;
             this.plC_RJ_Button_確認.音效 = false;
@@ -104,6 +120,7 @@
             this.rJ_TextBox_病歷號.BorderSize = 2;
             this.rJ_TextBox_病歷號.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.rJ_TextBox_病歷號.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_病歷號.GUID = "";
             this.rJ_TextBox_病歷號.Location = new System.Drawing.Point(160, 96);
             this.rJ_TextBox_病歷號.Multiline = false;
             this.rJ_TextBox_病歷號.Name = "rJ_TextBox_病歷號";
@@ -120,7 +137,7 @@
             // 
             // rJ_Lable39
             // 
-            this.rJ_Lable39.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.rJ_Lable39.BackColor = System.Drawing.Color.White;
             this.rJ_Lable39.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.rJ_Lable39.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable39.BorderRadius = 8;
@@ -128,8 +145,11 @@
             this.rJ_Lable39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable39.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable39.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable39.GUID = "";
             this.rJ_Lable39.Location = new System.Drawing.Point(12, 93);
             this.rJ_Lable39.Name = "rJ_Lable39";
+            this.rJ_Lable39.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable39.ShadowSize = 0;
             this.rJ_Lable39.Size = new System.Drawing.Size(142, 44);
             this.rJ_Lable39.TabIndex = 31;
             this.rJ_Lable39.Text = "病歷號";
@@ -145,6 +165,7 @@
             this.rJ_TextBox_病人姓名.BorderSize = 2;
             this.rJ_TextBox_病人姓名.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.rJ_TextBox_病人姓名.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_病人姓名.GUID = "";
             this.rJ_TextBox_病人姓名.Location = new System.Drawing.Point(160, 154);
             this.rJ_TextBox_病人姓名.Multiline = false;
             this.rJ_TextBox_病人姓名.Name = "rJ_TextBox_病人姓名";
@@ -161,7 +182,7 @@
             // 
             // rJ_Lable2
             // 
-            this.rJ_Lable2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.rJ_Lable2.BackColor = System.Drawing.Color.White;
             this.rJ_Lable2.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.rJ_Lable2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable2.BorderRadius = 8;
@@ -169,8 +190,11 @@
             this.rJ_Lable2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable2.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable2.GUID = "";
             this.rJ_Lable2.Location = new System.Drawing.Point(12, 151);
             this.rJ_Lable2.Name = "rJ_Lable2";
+            this.rJ_Lable2.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable2.ShadowSize = 0;
             this.rJ_Lable2.Size = new System.Drawing.Size(142, 44);
             this.rJ_Lable2.TabIndex = 33;
             this.rJ_Lable2.Text = "病人姓名";

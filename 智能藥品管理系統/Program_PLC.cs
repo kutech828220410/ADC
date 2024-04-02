@@ -2177,7 +2177,6 @@ namespace 智能藥品管理系統
                 PLC_Device_退藥鎖.Bool = false;
               
 
-                PLC_Device_退藥鎖_OK.Bool = false;
                 cnt_Program_退藥鎖 = 65535;
             }
         }
@@ -2191,6 +2190,8 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_退藥鎖_初始化(ref int cnt)
         {
+            PLC_Device_退藥鎖_OK.Bool = false;
+
             PLC_Device_退藥鎖_輸出.Bool = false;
             cnt++;
         }

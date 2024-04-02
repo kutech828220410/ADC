@@ -51,6 +51,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\CallBackUI.dll</HintPath>
     </Reference>
+    <Reference Include="CSkin">
+      <HintPath>..\0.DLL\CSkin.dll</HintPath>
+    </Reference>
     <Reference Include="DrawingClass, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\DrawingClass.dll</HintPath>

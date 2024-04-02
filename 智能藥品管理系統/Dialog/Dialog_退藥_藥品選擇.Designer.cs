@@ -36,38 +36,51 @@
             // 
             // plC_RJ_Button_取消
             // 
-            this.plC_RJ_Button_取消.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.plC_RJ_Button_取消.AutoResetState = false;
+            this.plC_RJ_Button_取消.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_取消.Bool = false;
             this.plC_RJ_Button_取消.BorderColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_取消.BorderRadius = 5;
             this.plC_RJ_Button_取消.BorderSize = 0;
             this.plC_RJ_Button_取消.but_press = false;
             this.plC_RJ_Button_取消.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_取消.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_取消.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_取消.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_取消.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_取消.GUID = "";
             this.plC_RJ_Button_取消.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_取消.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.plC_RJ_Button_取消.Location = new System.Drawing.Point(604, 844);
             this.plC_RJ_Button_取消.Name = "plC_RJ_Button_取消";
             this.plC_RJ_Button_取消.OFF_文字內容 = "取消";
             this.plC_RJ_Button_取消.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_取消.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_取消.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_取消.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_取消.ON_BorderSize = 5;
             this.plC_RJ_Button_取消.ON_文字內容 = "取消";
             this.plC_RJ_Button_取消.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F);
             this.plC_RJ_Button_取消.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_取消.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_取消.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_取消.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_取消.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_取消.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_取消.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_取消.ShadowSize = 0;
+            this.plC_RJ_Button_取消.ShowLoadingForm = false;
             this.plC_RJ_Button_取消.Size = new System.Drawing.Size(185, 76);
             this.plC_RJ_Button_取消.State = false;
             this.plC_RJ_Button_取消.TabIndex = 38;
             this.plC_RJ_Button_取消.Text = "取消";
             this.plC_RJ_Button_取消.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_取消.TextHeight = 0;
             this.plC_RJ_Button_取消.Texts = "取消";
             this.plC_RJ_Button_取消.UseVisualStyleBackColor = false;
             this.plC_RJ_Button_取消.字型鎖住 = false;
             this.plC_RJ_Button_取消.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
             this.plC_RJ_Button_取消.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
             this.plC_RJ_Button_取消.文字鎖住 = false;
+            this.plC_RJ_Button_取消.背景圖片 = null;
             this.plC_RJ_Button_取消.讀取位元反向 = false;
             this.plC_RJ_Button_取消.讀寫鎖住 = false;
             this.plC_RJ_Button_取消.音效 = false;
@@ -76,6 +89,7 @@
             // 
             // plC_RJ_Button_確認
             // 
+            this.plC_RJ_Button_確認.AutoResetState = false;
             this.plC_RJ_Button_確認.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_確認.Bool = false;
             this.plC_RJ_Button_確認.BorderColor = System.Drawing.Color.RoyalBlue;
@@ -83,31 +97,43 @@
             this.plC_RJ_Button_確認.BorderSize = 0;
             this.plC_RJ_Button_確認.but_press = false;
             this.plC_RJ_Button_確認.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_確認.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_確認.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_確認.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_確認.Font = new System.Drawing.Font("微軟正黑體", 20.25F);
+            this.plC_RJ_Button_確認.GUID = "";
             this.plC_RJ_Button_確認.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_確認.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.plC_RJ_Button_確認.Location = new System.Drawing.Point(795, 844);
             this.plC_RJ_Button_確認.Name = "plC_RJ_Button_確認";
             this.plC_RJ_Button_確認.OFF_文字內容 = "確認";
             this.plC_RJ_Button_確認.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F);
             this.plC_RJ_Button_確認.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_確認.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_確認.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_確認.ON_BorderSize = 5;
             this.plC_RJ_Button_確認.ON_文字內容 = "確認";
             this.plC_RJ_Button_確認.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F);
             this.plC_RJ_Button_確認.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_確認.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_確認.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_確認.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_確認.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_確認.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_確認.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_確認.ShadowSize = 0;
+            this.plC_RJ_Button_確認.ShowLoadingForm = false;
             this.plC_RJ_Button_確認.Size = new System.Drawing.Size(185, 76);
             this.plC_RJ_Button_確認.State = false;
             this.plC_RJ_Button_確認.TabIndex = 37;
             this.plC_RJ_Button_確認.Text = "確認";
             this.plC_RJ_Button_確認.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_確認.TextHeight = 0;
             this.plC_RJ_Button_確認.Texts = "確認";
             this.plC_RJ_Button_確認.UseVisualStyleBackColor = false;
             this.plC_RJ_Button_確認.字型鎖住 = false;
             this.plC_RJ_Button_確認.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
             this.plC_RJ_Button_確認.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
             this.plC_RJ_Button_確認.文字鎖住 = false;
+            this.plC_RJ_Button_確認.背景圖片 = null;
             this.plC_RJ_Button_確認.讀取位元反向 = false;
             this.plC_RJ_Button_確認.讀寫鎖住 = false;
             this.plC_RJ_Button_確認.音效 = false;
@@ -116,7 +142,7 @@
             // 
             // rJ_Lable1
             // 
-            this.rJ_Lable1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable1.BorderRadius = 12;
@@ -125,8 +151,11 @@
             this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable1.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable1.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable1.GUID = "";
             this.rJ_Lable1.Location = new System.Drawing.Point(5, 5);
             this.rJ_Lable1.Name = "rJ_Lable1";
+            this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable1.ShadowSize = 0;
             this.rJ_Lable1.Size = new System.Drawing.Size(974, 102);
             this.rJ_Lable1.TabIndex = 39;
             this.rJ_Lable1.Text = "選擇退藥藥品";
@@ -175,6 +204,7 @@
             this.sqL_DataGridView_儲位藥品.自動換行 = true;
             this.sqL_DataGridView_儲位藥品.表單字體 = new System.Drawing.Font("新細明體", 9F);
             this.sqL_DataGridView_儲位藥品.邊框樣式 = System.Windows.Forms.BorderStyle.None;
+            this.sqL_DataGridView_儲位藥品.顯示CheckBox = false;
             this.sqL_DataGridView_儲位藥品.顯示首列 = false;
             this.sqL_DataGridView_儲位藥品.顯示首行 = true;
             this.sqL_DataGridView_儲位藥品.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

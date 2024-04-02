@@ -234,3 +234,5 @@ C:\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.csproj.Core
 C:\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.csproj.CopyComplete
 C:\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.exe
 C:\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.pdb
+C:\Users\HS\Source\Repos\ADC\智能藥品管理系統\bin\Release\CSkin.dll
+C:\Users\HS\Source\Repos\ADC\智能藥品管理系統\bin\Release\Microsoft.mshtml.dll
