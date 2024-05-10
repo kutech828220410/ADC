@@ -115,6 +115,7 @@ namespace 智能藥品管理系統
             {
                
                 string text = this.MySerialPort_Scanner.ReadString();
+                text = text.Replace("\0", "");
                 Console.WriteLine($"接收資料長度 : {text.Length} ");
                 this.MySerialPort_Scanner.ClearReadByte();
                 if (text.Length <= 2 || text.Length > 300)

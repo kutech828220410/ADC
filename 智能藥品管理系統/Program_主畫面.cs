@@ -1362,6 +1362,7 @@ namespace 智能藥品管理系統
 
             if (!this.PLC_Device_Scanner_讀取藥單資料.Bool)
             {
+                MySerialPort_Scanner.ClearReadByte();
                 this.PLC_Device_Scanner_讀取藥單資料.Bool = true;
                 cnt++;
             }
@@ -1401,6 +1402,7 @@ namespace 智能藥品管理系統
 
             if (!this.PLC_Device_Scanner_讀取藥單資料.Bool)
             {
+                MySerialPort_Scanner.ClearReadByte();
                 if (PLC_Device_Scanner_讀取藥單資料_OK.Bool)
                 {
                     cnt++;
