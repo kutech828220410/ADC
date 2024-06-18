@@ -371,7 +371,7 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_抽屜開鎖_初始化(ref int cnt)
         {
-            this.list_抽屜開鎖_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+            this.list_抽屜開鎖_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
             for (int i = 0; i < List_PLC_Device_抽屜層數.Count; i++) List_PLC_Device_抽屜層數[i].Bool = false;
             for (int i = 0; i < List_PLC_Device_抽屜格數.Count; i++) List_PLC_Device_抽屜格數[i].Bool = false;
             this.MyTimer_抽屜開鎖_開鎖時間.TickStop();
@@ -1721,7 +1721,7 @@ namespace 智能藥品管理系統
             MyTimer_送料馬達出料逾時時間.TickStop();
             MyTimer_送料馬達出料逾時時間.StartTickTime(10000);
             MyTimer_送料馬達訊號檢查延遲.TickStop();
-            MyTimer_送料馬達訊號檢查延遲.StartTickTime(150);
+            MyTimer_送料馬達訊號檢查延遲.StartTickTime(20);
             PLC_Device_送料馬達出料_連續次數現在值.Value = 0;
        
             cnt++;

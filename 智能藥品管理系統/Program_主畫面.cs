@@ -56,7 +56,7 @@ namespace 智能藥品管理系統
             操作時間,
             狀態,
         }
-        class Class_取藥數組
+        public class Class_取藥數組
         {
             public string IP = "";
             public int 包裝數量 = 0;
@@ -969,7 +969,7 @@ namespace 智能藥品管理系統
             DialogResult dialogResult = DialogResult.None;
             this.Invoke(new Action(delegate
             {
-                Dialog_領藥_藥品選擇 Dialog_領藥_藥品選擇 = new Dialog_領藥_藥品選擇(this.Function_儲位管理_儲位資料_取得儲位資料(), this.sqL_DataGridView_入庫作業_藥品資料);
+                Dialog_領藥_藥品選擇 Dialog_領藥_藥品選擇 = new Dialog_領藥_藥品選擇(Function_儲位管理_儲位資料_取得儲位資料(), this.sqL_DataGridView_入庫作業_藥品資料);
                 dialogResult = Dialog_領藥_藥品選擇.ShowDialog();
                 主畫面_領退藥_藥品選擇 = Dialog_領藥_藥品選擇.Value;
             }));
@@ -1083,7 +1083,7 @@ namespace 智能藥品管理系統
             Dialog_退藥_藥品選擇 dialog_退藥_藥品選擇;
             this.Invoke(new Action(delegate
             {
-                dialog_退藥_藥品選擇 = new Dialog_退藥_藥品選擇(MySerialPort_Scanner, this.Function_儲位管理_儲位資料_取得儲位資料(), this.sqL_DataGridView_入庫作業_藥品資料);
+                dialog_退藥_藥品選擇 = new Dialog_退藥_藥品選擇(MySerialPort_Scanner, Function_儲位管理_儲位資料_取得儲位資料(), this.sqL_DataGridView_入庫作業_藥品資料);
                 dialogResult = dialog_退藥_藥品選擇.ShowDialog();
                 主畫面_領退藥_退藥藥品 = dialog_退藥_藥品選擇.Value;
                 主畫面_領退藥_退藥數量 = dialog_退藥_藥品選擇.數量;
@@ -1745,7 +1745,7 @@ namespace 智能藥品管理系統
             string Code = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.藥品碼].ObjectToString();
             string 藥名 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.藥品名稱].ObjectToString();
             int 交易量 = 主畫面_取藥堆疊檢查_當前作業內容[(int)enum_主畫面_藥單列表.交易量].ObjectToString().StringToInt32();
-            List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料();
+            List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料();
             List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.藥品碼, Code);
             if (list_儲位資料_buf.Count == 0)
             {
@@ -2087,7 +2087,7 @@ namespace 智能藥品管理系統
                         }
                         if (cnt == 7)
                         {
-                            this.Function_儲位管理_儲位資料_儲位資料庫存異動(儲位資料, -1);
+                            Function_儲位管理_儲位資料_儲位資料庫存異動(儲位資料, -1);
                             int 庫存 = 儲位資料[(int)enum_儲位管理_儲位資料.庫存].StringToInt32();
                             儲位資料[(int)enum_儲位管理_儲位資料.庫存] = (庫存 - 1).ToString();
                             cnt++;
@@ -2313,7 +2313,7 @@ namespace 智能藥品管理系統
                 }
                 if (cnt == 7)
                 {
-                    this.Function_儲位管理_儲位資料_儲位資料庫存異動(儲位資料, -1);
+                    Function_儲位管理_儲位資料_儲位資料庫存異動(儲位資料, -1);
                     int 庫存 = list_儲位資料[index][(int)enum_儲位管理_儲位資料.庫存].StringToInt32();
                     list_儲位資料[index][(int)enum_儲位管理_儲位資料.庫存] = (庫存 - 1).ToString();
 
@@ -2337,7 +2337,7 @@ namespace 智能藥品管理系統
             return false;
         }
 
-        private List<Class_取藥數組> Function_主畫面_取得取藥數組(List<object[]> list_儲位資料, string 藥品碼)
+        static public List<Class_取藥數組> Function_主畫面_取得取藥數組(List<object[]> list_儲位資料, string 藥品碼)
         {
             List<Class_取藥數組> list_取藥數組 = new List<Class_取藥數組>();
             List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.藥品碼, 藥品碼);
@@ -2371,8 +2371,7 @@ namespace 智能藥品管理系統
 
             return list_取藥數組;
         }
-
-        private List<Class_取藥數組> Function_主畫面_取藥數組運算(List<Class_取藥數組> list_取藥數組, int 交易量)
+        static public List<Class_取藥數組> Function_主畫面_取藥數組運算(List<Class_取藥數組> list_取藥數組, int 交易量)
         {
             bool flag_OK = false;
             交易量 = 交易量 * -1;

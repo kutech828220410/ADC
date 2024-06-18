@@ -15,8 +15,8 @@ using Basic;
 using MySql.Data.MySqlClient;
 using SQLUI;
 using H_Pannel_lib;
-[assembly: AssemblyVersion("1.0.18.0")]
-[assembly: AssemblyFileVersion("1.0.18.0")]
+[assembly: AssemblyVersion("1.0.19.0")]
+[assembly: AssemblyFileVersion("1.0.19.0")]
 namespace 智能藥品管理系統
 {
     public partial class Form1 : Form
@@ -174,17 +174,7 @@ namespace 智能藥品管理系統
 
             }
 
-            this.ftp_DounloadUI.FTP_Server = ftpConfigClass.FTP_Server;
-            this.ftp_DounloadUI.Username = ftpConfigClass.FTP_username;
-            this.ftp_DounloadUI.Password = ftpConfigClass.FTP_password;
-            string updateVersion = this.ftp_DounloadUI.GetFileVersion();
-            if (this.ftp_DounloadUI.CheckUpdate(this.ProductVersion, updateVersion))
-            {
-                if (Basic.MyMessageBox.ShowDialog(string.Format("有新版本是否更新? (Ver : {0})", updateVersion), "Update", Basic.MyMessageBox.enum_BoxType.Asterisk, Basic.MyMessageBox.enum_Button.Confirm_Cancel) == DialogResult.Yes)
-                {
-                    this.Invoke(new Action(delegate { this.Update(); }));
-                }
-            }
+    
         }
         #endregion
 
@@ -199,7 +189,6 @@ namespace 智能藥品管理系統
             this.label_Version.Text = $"Version {ProductVersion}";
             LoadMyConfig();
             LoadDBConfig();
-            LoadFtpConfig();
 
             Dialog_NumPannel.form = this.FindForm();
             Dialog_手術房選擇.form = this.FindForm();
@@ -274,7 +263,7 @@ namespace 智能藥品管理系統
 
         private void Button_TEST_Click(object sender, EventArgs e)
         {
-            List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料();
+            List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料();
             List<Class_取藥數組> list_取藥數組 = Function_主畫面_取得取藥數組(list_儲位資料, "08244");
         }
 
@@ -330,24 +319,7 @@ namespace 智能藥品管理系統
 
 
         #endregion
-        private void Update()
-        {
-            if (this.ftp_DounloadUI.DownloadFile())
-            {
-                if (this.ftp_DounloadUI.SaveFile())
-                {
-                    this.ftp_DounloadUI.RunFile(this.FindForm());
-                }
-                else
-                {
-                    Basic.MyMessageBox.ShowDialog("安裝檔存檔失敗!");
-                }
-            }
-            else
-            {
-                Basic.MyMessageBox.ShowDialog("下載失敗!");
-            }
-        }
+     
         private void rJ_TextBox_CheckNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48) || (int)e.KeyChar == 8) // 8 > BackSpace

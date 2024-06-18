@@ -163,7 +163,7 @@ namespace 智能藥品管理系統
          
             List<object[]> list_套餐內容 = this.sqL_DataGridView_藥檔資料_套餐設定_套餐內容.SQL_GetAllRows(false);
             List<object[]> list_套餐內容_buf = new List<object[]>();
-            List<object[]> list_儲位資訊 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+            List<object[]> list_儲位資訊 = Function_儲位管理_儲位資料_取得儲位資料(false);
             List<object[]> list_儲位資訊_buf = new List<object[]>();
             string 藥品碼 = "";
             string 套餐代碼 = "";
@@ -268,7 +268,7 @@ namespace 智能藥品管理系統
             List<object[]> list_套餐內容 = this.sqL_DataGridView_藥檔資料_套餐設定_套餐內容.SQL_GetAllRows(false);
             List<object[]> list_套餐內容_buf = new List<object[]>();
             List<object[]> list_藥檔資料_buf = new List<object[]>();
-            List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+            List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
             List<object[]> list_value = new List<object[]>();
             List<string> list_藥品碼 = (from value in list_儲位資料
                                      where value[(int)enum_儲位管理_儲位資料.包裝單位].ObjectToString() != "Package"

@@ -39,11 +39,13 @@ namespace 智能藥品管理系統
             this.sqL_DataGridView_退藥藥品 = new SQLUI.SQL_DataGridView();
             this.sqL_DataGridView_參數設定_藥檔資料 = new SQLUI.SQL_DataGridView();
             this.rJ_Button_選擇藥品 = new MyUI.RJ_Button();
+            this.plC_Button_手輸退藥 = new MyUI.PLC_Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.plC_Button_手輸退藥);
             this.panel1.Controls.Add(this.plC_RJ_Button_確認);
             this.panel1.Controls.Add(this.plC_RJ_Button_取消);
             this.panel1.Controls.Add(this.rJ_Lable_抽屜狀態);
@@ -61,7 +63,7 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_確認.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_確認.Bool = false;
             this.plC_RJ_Button_確認.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.plC_RJ_Button_確認.BorderRadius = 5;
+            this.plC_RJ_Button_確認.BorderRadius = 10;
             this.plC_RJ_Button_確認.BorderSize = 0;
             this.plC_RJ_Button_確認.but_press = false;
             this.plC_RJ_Button_確認.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -71,8 +73,8 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_確認.Font = new System.Drawing.Font("微軟正黑體", 20.25F);
             this.plC_RJ_Button_確認.GUID = "";
             this.plC_RJ_Button_確認.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_確認.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.plC_RJ_Button_確認.Location = new System.Drawing.Point(721, 12);
+            this.plC_RJ_Button_確認.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_確認.Location = new System.Drawing.Point(721, 16);
             this.plC_RJ_Button_確認.Name = "plC_RJ_Button_確認";
             this.plC_RJ_Button_確認.OFF_文字內容 = "確認";
             this.plC_RJ_Button_確認.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F);
@@ -114,7 +116,7 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_取消.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_取消.Bool = false;
             this.plC_RJ_Button_取消.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_取消.BorderRadius = 5;
+            this.plC_RJ_Button_取消.BorderRadius = 10;
             this.plC_RJ_Button_取消.BorderSize = 0;
             this.plC_RJ_Button_取消.but_press = false;
             this.plC_RJ_Button_取消.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -124,8 +126,8 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_取消.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_取消.GUID = "";
             this.plC_RJ_Button_取消.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_取消.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.plC_RJ_Button_取消.Location = new System.Drawing.Point(961, 12);
+            this.plC_RJ_Button_取消.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_取消.Location = new System.Drawing.Point(961, 16);
             this.plC_RJ_Button_取消.Name = "plC_RJ_Button_取消";
             this.plC_RJ_Button_取消.OFF_文字內容 = "取消";
             this.plC_RJ_Button_取消.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -172,7 +174,7 @@ namespace 智能藥品管理系統
             this.rJ_Lable_抽屜狀態.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable_抽屜狀態.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable_抽屜狀態.GUID = "";
-            this.rJ_Lable_抽屜狀態.Location = new System.Drawing.Point(565, 12);
+            this.rJ_Lable_抽屜狀態.Location = new System.Drawing.Point(565, 17);
             this.rJ_Lable_抽屜狀態.Name = "rJ_Lable_抽屜狀態";
             this.rJ_Lable_抽屜狀態.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable_抽屜狀態.ShadowSize = 0;
@@ -187,7 +189,7 @@ namespace 智能藥品管理系統
             this.plC_Button_實瓶繳回.Bool = false;
             this.plC_Button_實瓶繳回.but_press = false;
             this.plC_Button_實瓶繳回.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_Button_實瓶繳回.Location = new System.Drawing.Point(198, 17);
+            this.plC_Button_實瓶繳回.Location = new System.Drawing.Point(159, 21);
             this.plC_Button_實瓶繳回.Name = "plC_Button_實瓶繳回";
             this.plC_Button_實瓶繳回.OFF_文字內容 = "實瓶繳回";
             this.plC_Button_實瓶繳回.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -197,7 +199,7 @@ namespace 智能藥品管理系統
             this.plC_Button_實瓶繳回.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
             this.plC_Button_實瓶繳回.ON_文字顏色 = System.Drawing.Color.White;
             this.plC_Button_實瓶繳回.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button_實瓶繳回.Size = new System.Drawing.Size(164, 67);
+            this.plC_Button_實瓶繳回.Size = new System.Drawing.Size(141, 67);
             this.plC_Button_實瓶繳回.Style = MyUI.PLC_Button.StyleEnum.經典;
             this.plC_Button_實瓶繳回.TabIndex = 1;
             this.plC_Button_實瓶繳回.事件驅動 = false;
@@ -219,7 +221,7 @@ namespace 智能藥品管理系統
             this.plC_Button_空瓶繳回.Bool = false;
             this.plC_Button_空瓶繳回.but_press = false;
             this.plC_Button_空瓶繳回.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_Button_空瓶繳回.Location = new System.Drawing.Point(18, 17);
+            this.plC_Button_空瓶繳回.Location = new System.Drawing.Point(12, 21);
             this.plC_Button_空瓶繳回.Name = "plC_Button_空瓶繳回";
             this.plC_Button_空瓶繳回.OFF_文字內容 = "空瓶繳回";
             this.plC_Button_空瓶繳回.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -229,7 +231,7 @@ namespace 智能藥品管理系統
             this.plC_Button_空瓶繳回.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
             this.plC_Button_空瓶繳回.ON_文字顏色 = System.Drawing.Color.White;
             this.plC_Button_空瓶繳回.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button_空瓶繳回.Size = new System.Drawing.Size(164, 67);
+            this.plC_Button_空瓶繳回.Size = new System.Drawing.Size(141, 67);
             this.plC_Button_空瓶繳回.Style = MyUI.PLC_Button.StyleEnum.經典;
             this.plC_Button_空瓶繳回.TabIndex = 0;
             this.plC_Button_空瓶繳回.事件驅動 = true;
@@ -269,11 +271,13 @@ namespace 智能藥品管理系統
             this.sqL_DataGridView_退藥藥品.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_退藥藥品.Columns4"))));
             this.sqL_DataGridView_退藥藥品.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_退藥藥品.Columns5"))));
             this.sqL_DataGridView_退藥藥品.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_退藥藥品.Columns6"))));
+            this.sqL_DataGridView_退藥藥品.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_退藥藥品.Columns7"))));
+            this.sqL_DataGridView_退藥藥品.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_退藥藥品.Columns8"))));
             this.sqL_DataGridView_退藥藥品.DataBaseName = "adc_01";
             this.sqL_DataGridView_退藥藥品.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sqL_DataGridView_退藥藥品.Font = new System.Drawing.Font("新細明體", 9F);
             this.sqL_DataGridView_退藥藥品.ImageBox = false;
-            this.sqL_DataGridView_退藥藥品.Location = new System.Drawing.Point(0, 666);
+            this.sqL_DataGridView_退藥藥品.Location = new System.Drawing.Point(0, 522);
             this.sqL_DataGridView_退藥藥品.Name = "sqL_DataGridView_退藥藥品";
             this.sqL_DataGridView_退藥藥品.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
             this.sqL_DataGridView_退藥藥品.Password = "user82822040";
@@ -363,7 +367,7 @@ namespace 智能藥品管理系統
             this.rJ_Button_選擇藥品.BackColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_選擇藥品.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_選擇藥品.BorderColor = System.Drawing.Color.LawnGreen;
-            this.rJ_Button_選擇藥品.BorderRadius = 5;
+            this.rJ_Button_選擇藥品.BorderRadius = 0;
             this.rJ_Button_選擇藥品.BorderSize = 3;
             this.rJ_Button_選擇藥品.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_選擇藥品.DisenableColor = System.Drawing.Color.Gray;
@@ -373,7 +377,7 @@ namespace 智能藥品管理系統
             this.rJ_Button_選擇藥品.Font = new System.Drawing.Font("微軟正黑體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_選擇藥品.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_選擇藥品.GUID = "";
-            this.rJ_Button_選擇藥品.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.rJ_Button_選擇藥品.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_選擇藥品.Location = new System.Drawing.Point(0, 546);
             this.rJ_Button_選擇藥品.Name = "rJ_Button_選擇藥品";
             this.rJ_Button_選擇藥品.ProhibitionBorderLineWidth = 1;
@@ -382,7 +386,7 @@ namespace 智能藥品管理系統
             this.rJ_Button_選擇藥品.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_選擇藥品.ShadowSize = 0;
             this.rJ_Button_選擇藥品.ShowLoadingForm = false;
-            this.rJ_Button_選擇藥品.Size = new System.Drawing.Size(1074, 120);
+            this.rJ_Button_選擇藥品.Size = new System.Drawing.Size(1074, 0);
             this.rJ_Button_選擇藥品.State = false;
             this.rJ_Button_選擇藥品.TabIndex = 36;
             this.rJ_Button_選擇藥品.Text = "請 輸 入 退 藥 數 量";
@@ -390,12 +394,44 @@ namespace 智能藥品管理系統
             this.rJ_Button_選擇藥品.TextHeight = 0;
             this.rJ_Button_選擇藥品.UseVisualStyleBackColor = false;
             // 
+            // plC_Button_手輸退藥
+            // 
+            this.plC_Button_手輸退藥.Bool = false;
+            this.plC_Button_手輸退藥.but_press = false;
+            this.plC_Button_手輸退藥.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button_手輸退藥.Location = new System.Drawing.Point(306, 21);
+            this.plC_Button_手輸退藥.Name = "plC_Button_手輸退藥";
+            this.plC_Button_手輸退藥.OFF_文字內容 = "手輸退藥";
+            this.plC_Button_手輸退藥.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_Button_手輸退藥.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button_手輸退藥.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_手輸退藥.ON_文字內容 = "手輸退藥";
+            this.plC_Button_手輸退藥.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.plC_Button_手輸退藥.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button_手輸退藥.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_手輸退藥.Size = new System.Drawing.Size(141, 67);
+            this.plC_Button_手輸退藥.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button_手輸退藥.TabIndex = 39;
+            this.plC_Button_手輸退藥.事件驅動 = false;
+            this.plC_Button_手輸退藥.字型鎖住 = false;
+            this.plC_Button_手輸退藥.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
+            this.plC_Button_手輸退藥.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button_手輸退藥.文字鎖住 = false;
+            this.plC_Button_手輸退藥.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_手輸退藥.狀態OFF圖片")));
+            this.plC_Button_手輸退藥.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_手輸退藥.狀態ON圖片")));
+            this.plC_Button_手輸退藥.讀取位元反向 = false;
+            this.plC_Button_手輸退藥.讀寫鎖住 = false;
+            this.plC_Button_手輸退藥.起始狀態 = false;
+            this.plC_Button_手輸退藥.音效 = false;
+            this.plC_Button_手輸退藥.顯示 = false;
+            this.plC_Button_手輸退藥.顯示狀態 = false;
+            // 
             // Dialog_掃碼退藥
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1074, 1228);
+            this.ClientSize = new System.Drawing.Size(1074, 1084);
             this.ControlBox = false;
             this.Controls.Add(this.rJ_Button_選擇藥品);
             this.Controls.Add(this.sqL_DataGridView_參數設定_藥檔資料);
@@ -425,5 +461,6 @@ namespace 智能藥品管理系統
         private MyUI.PLC_RJ_Button plC_RJ_Button_確認;
         private SQLUI.SQL_DataGridView sqL_DataGridView_參數設定_藥檔資料;
         private MyUI.RJ_Button rJ_Button_選擇藥品;
+        private MyUI.PLC_Button plC_Button_手輸退藥;
     }
 }

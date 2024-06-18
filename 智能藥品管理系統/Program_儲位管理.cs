@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MyUI;
 using Basic;
 using H_Pannel_lib;
+using SQLUI;
 namespace 智能藥品管理系統
 {
     public enum enum_儲位管理_儲位資料
@@ -31,6 +32,12 @@ namespace 智能藥品管理系統
     }
     public partial class Form1 : Form
     {
+        public static StorageUI_WT32 _storageUI_WT32;
+        public static SQL_DataGridView _sqL_DataGridView_儲位管理_參數設定;
+        public static SQL_DataGridView _sqL_DataGridView_儲位管理_套餐資料;
+        public static SQL_DataGridView _sqL_DataGridView_儲位管理_儲位資料;
+        public static WT32_GPADC _wT32_GPADC;
+
 
         public class ICP_儲位管理_儲位資料 : IComparer<object[]>
         {
@@ -109,9 +116,14 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_儲位管理_套餐資料_填入儲位.MouseDownEvent += PlC_RJ_Button_儲位管理_套餐資料_填入儲位_MouseDownEvent;
             this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent;
             this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_畫面更新_MouseDownEvent;
+
+            _storageUI_WT32 = storageUI_WT32;
+            _sqL_DataGridView_儲位管理_參數設定 = sqL_DataGridView_儲位管理_參數設定;
+            _sqL_DataGridView_儲位管理_參數設定 = sqL_DataGridView_儲位管理_套餐資料;
+            _sqL_DataGridView_儲位管理_參數設定 = sqL_DataGridView_儲位管理_儲位資料;
         }
 
-   
+
 
         private bool flag_Program_儲位管理 = false;
         private void Program_儲位管理()
@@ -138,7 +150,7 @@ namespace 智能藥品管理系統
                 if (!flag_Program_儲位管理)
                 {
                     this.MySerialPort_Scanner.ClearReadByte();
-                    this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+                    this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
                     this.sqL_DataGridView_儲位管理_套餐資料.SQL_GetAllRows(true);
                     flag_Program_儲位管理 = true;
                 }
@@ -461,14 +473,14 @@ namespace 智能藥品管理系統
         #endregion
 
         #region Function
-        private void Function_儲位管理_儲位資料_儲位資料庫存異動(object[] value, int 異動量)
+        public static void Function_儲位管理_儲位資料_儲位資料庫存異動(object[] value, int 異動量)
         {
             string IP = value[(int)enum_儲位管理_儲位資料.IP].ObjectToString();
-            Storage storage = this.Function_儲位管理_從SQL取得Storage(IP);
+            Storage storage = Function_儲位管理_從SQL取得Storage(IP);
             List<string> list_效期 = new List<string>();
             List<string> list_異動量 = new List<string>();
             storage.庫存異動(異動量 , out list_效期,out list_異動量);
-            this.storageUI_WT32.SQL_ReplaceStorage(storage);
+            _storageUI_WT32.SQL_ReplaceStorage(storage);
         }
         private void Function_儲位管理_儲位資料_取得儲位層數及格數(object[] value, ref int 層數, ref int 格數)
         {
@@ -482,15 +494,22 @@ namespace 智能藥品管理系統
                 格數 = array[1].StringToInt32();
             }
         }
-        private List<object[]> Function_儲位管理_儲位資料_取得儲位資料()
+        static public List<object[]> Function_儲位管理_儲位資料_取得儲位資料(string 藥碼)
         {
-            return this.Function_儲位管理_儲位資料_取得儲位資料(true);
+            List<object[]> list_儲位資料_buf = Function_儲位管理_儲位資料_取得儲位資料(true);
+            list_儲位資料_buf = list_儲位資料_buf.GetRows((int)enum_儲位管理_儲位資料.藥品碼, 藥碼);
+            return list_儲位資料_buf;
         }
-        private List<object[]> Function_儲位管理_儲位資料_取得儲位資料(bool UpdateToSQL)
+
+        static public List<object[]> Function_儲位管理_儲位資料_取得儲位資料()
         {
-            List<object[]> list_藥品資料 = this.sqL_DataGridView_儲位管理_參數設定.SQL_GetAllRows(false);
-            List<object[]> list_套餐資料 = this.sqL_DataGridView_儲位管理_套餐資料.SQL_GetAllRows(false);
-            List<Storage> list_StorageTable = this.storageUI_WT32.SQL_GetAllStorage();
+            return Function_儲位管理_儲位資料_取得儲位資料(true);
+        }
+        static public List<object[]> Function_儲位管理_儲位資料_取得儲位資料(bool UpdateToSQL)
+        {
+            List<object[]> list_藥品資料 = _sqL_DataGridView_儲位管理_參數設定.SQL_GetAllRows(false);
+            List<object[]> list_套餐資料 = _sqL_DataGridView_儲位管理_套餐資料.SQL_GetAllRows(false);
+            List<Storage> list_StorageTable = _storageUI_WT32.SQL_GetAllStorage();
             List<object[]> list_value = new List<object[]>();
             List<Storage> list_Replace_Storage = new List<Storage>();
             List<object[]> list_藥品資料_buf = new List<object[]>();
@@ -636,7 +655,7 @@ namespace 智能藥品管理系統
                 if (flag_replace) list_Replace_Storage.Add(storage);
                 list_value.Add(value);
             }
-            if (UpdateToSQL) this.storageUI_WT32.SQL_ReplaceStorage(list_Replace_Storage);
+            if (UpdateToSQL) _storageUI_WT32.SQL_ReplaceStorage(list_Replace_Storage);
             list_value.Sort(new ICP_儲位管理_儲位資料());
             for (int i = 0; i < list_value.Count; i++)
             {
@@ -644,22 +663,22 @@ namespace 智能藥品管理系統
             }
             if (UpdateToSQL)
             {
-                List<object[]> list_select_row = this.sqL_DataGridView_儲位管理_儲位資料.Get_All_Select_RowsValues();
+                List<object[]> list_select_row = _sqL_DataGridView_儲位管理_儲位資料.Get_All_Select_RowsValues();
                 if (list_select_row.Count > 0)
                 {
                     string _IP = list_select_row[0][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
-                    Storage storage = this.storageUI_WT32.SQL_GetStorage(_IP);
-                    this.wT32_GPADC.Set_Stroage(storage);
+                    Storage storage = _storageUI_WT32.SQL_GetStorage(_IP);
+                    _wT32_GPADC.Set_Stroage(storage);
                 }
             }
 
 
             return list_value;
         }
-        private Storage Function_儲位管理_從SQL取得Storage(string IP)
+        public static Storage Function_儲位管理_從SQL取得Storage(string IP)
         {
             Storage storage = null;
-            storage = this.storageUI_WT32.SQL_GetStorage(IP);
+            storage = _storageUI_WT32.SQL_GetStorage(IP);
             return storage;
         }
         #endregion
@@ -731,7 +750,7 @@ namespace 智能藥品管理系統
 
                 this.storageUI_WT32.SQL_ReplaceStorage(storage);
 
-                this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+                this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
             }
 
 
@@ -803,7 +822,7 @@ namespace 智能藥品管理系統
             }
             this.storageUI_WT32.SQL_ReplaceStorage(list_Storage_replace);
 
-            this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+            this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
 
             
         }
@@ -880,7 +899,7 @@ namespace 智能藥品管理系統
                 }
                 this.storageUI_WT32.SQL_ReplaceStorage(list_Storage_replace);
                 Task.WhenAll(taskList).Wait();
-                //this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+                //this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
 
             }
         }
@@ -903,7 +922,7 @@ namespace 智能藥品管理系統
                     storage.SetValue(Storage.ValueName.藥品碼, Storage.ValueType.Value, 藥品碼);
                     this.storageUI_WT32.SQL_ReplaceStorage(storage);
 
-                    this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+                    this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
                 }
             }
         }
@@ -953,7 +972,7 @@ namespace 智能藥品管理系統
                 this.sqL_DataGridView_交易記錄查詢.SQL_AddRow(value, false);
 
                 this.storageUI_WT32.SQL_ReplaceStorage(storage);
-                this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+                this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
 
             }
         }
@@ -990,7 +1009,7 @@ namespace 智能藥品管理系統
 
                 this.storageUI_WT32.SQL_ReplaceStorage(storage);
 
-                this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(this.Function_儲位管理_儲位資料_取得儲位資料());
+                this.sqL_DataGridView_儲位管理_儲位資料.RefreshGrid(Function_儲位管理_儲位資料_取得儲位資料());
             }
         }
         private void PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent(MouseEventArgs mevent)

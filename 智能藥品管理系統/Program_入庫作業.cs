@@ -306,7 +306,7 @@ namespace 智能藥品管理系統
         }
         void cnt_Program_入庫作業_200_取得儲位(ref int cnt)
         {
-            List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+            List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
             List<object[]> list_儲位資料_buf = new List<object[]>();
             List<object[]> list_value = new List<object[]>();
             list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.藥品碼, this.rJ_TextBox_入庫作業_藥品套餐碼.Texts);
@@ -342,7 +342,7 @@ namespace 智能藥品管理系統
                 string IP = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.IP].ObjectToString();
                 入庫作業_庫存 = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.庫存].StringToInt32();
                 入庫作業_可放置盒數 = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.可放置盒數].StringToInt32();
-                Storage storage = this.Function_儲位管理_從SQL取得Storage(IP);
+                Storage storage = Function_儲位管理_從SQL取得Storage(IP);
                 if (storage != null)
                 {
                     for (int i = 0; i < storage.List_Validity_period.Count; i++)
@@ -597,7 +597,7 @@ namespace 智能藥品管理系統
             if(!PLC_Device_抽屜開鎖.Bool)
             {
                 List<object[]> list_選擇儲位資料 = this.sqL_DataGridView_入庫作業_選擇儲位.Get_All_Select_RowsValues();
-                List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+                List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
                 string IP = list_選擇儲位資料[0][(int)enum_入庫作業_選擇儲位.IP].ObjectToString();
                 List<object[]> list_value = new List<object[]>();
                 list_value = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.IP, IP);
@@ -856,7 +856,7 @@ namespace 智能藥品管理系統
             List<object[]> list_藥品資料 = this.sqL_DataGridView_入庫作業_藥品資料.SQL_GetAllRows(false);
             List<object[]> list_藥品資料_buf = new List<object[]>();
             List<object[]> list_value = new List<object[]>();
-            List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+            List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
             List<string> list_藥品碼 = new List<string>();
             list_藥品碼 = (from value in list_儲位資料
                         select value[(int)enum_儲位管理_儲位資料.藥品碼].ObjectToString()).Distinct().ToList();
@@ -884,7 +884,7 @@ namespace 智能藥品管理系統
             List<object[]> list_套餐資料_buf = new List<object[]>();
 
             List<object[]> list_value = new List<object[]>();
-            List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+            List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
             List<string> list_藥品碼 = new List<string>();
             list_藥品碼 = (from value in list_儲位資料
                         select value[(int)enum_儲位管理_儲位資料.藥品碼].ObjectToString()).Distinct().ToList();
@@ -1033,7 +1033,7 @@ namespace 智能藥品管理系統
                 List<object[]> list_藥品資料 = this.sqL_DataGridView_入庫作業_藥品資料.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料_buf = new List<object[]>();
                 List<object[]> list_value = new List<object[]>();
-                List<object[]> list_儲位資料 = this.Function_儲位管理_儲位資料_取得儲位資料(false);
+                List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料(false);
                 List<string> list_藥品碼 = new List<string>();
                 list_藥品碼 = (from value in list_儲位資料
                             select value[(int)enum_儲位管理_儲位資料.藥品碼].ObjectToString()).Distinct().ToList();
