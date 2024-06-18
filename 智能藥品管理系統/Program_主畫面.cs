@@ -638,7 +638,7 @@ namespace 智能藥品管理系統
 
         void cnt_Program_主畫面_領退藥_200_選擇領退藥(ref int cnt)
         {
-            this.sqL_DataGridView_前次使用紀錄.ClearGrid();
+           
             string 狀態顯示 = "";
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
             狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
@@ -649,6 +649,7 @@ namespace 智能藥品管理系統
 
             if (PLC_Device_主畫面_領藥按鈕.Bool)
             {
+                this.sqL_DataGridView_前次使用紀錄.ClearGrid();
                 狀態顯示 = "";
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
@@ -663,6 +664,7 @@ namespace 智能藥品管理系統
             }
             else if (PLC_Device_主畫面_退藥按鈕.Bool)
             {
+                this.sqL_DataGridView_前次使用紀錄.ClearGrid();
                 狀態顯示 = "";
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetAlignmentString(PLC_MultiStateDisplay.TextValue.Alignment.Left);
                 狀態顯示 += this.plC_MultiStateDisplay_主畫面_狀態顯示.GetFontColorString(Color.Black, true);
@@ -1285,9 +1287,9 @@ namespace 智能藥品管理系統
                 string 藥品名稱 = list_掃碼退藥[i][(int)enum_掃碼退藥.藥品名稱].ObjectToString();
                 string 藥袋序號 = "";
                 string 房名 = 主畫面_領退藥_手術房[(int)enum_藥檔資料_手術房設定_手術房列表.名稱].ObjectToString();
-                string 庫存量 = 0.ToString();
+                string 庫存量 = list_掃碼退藥[i][(int)enum_掃碼退藥.庫存量].ObjectToString();
                 string 交易量 = list_掃碼退藥[i][(int)enum_掃碼退藥.數量].ObjectToString();
-                string 結存量 = 0.ToString();
+                string 結存量 = list_掃碼退藥[i][(int)enum_掃碼退藥.結存量].ObjectToString();
                 string 病人姓名 = "";
                 string 病歷號 = "";
                 string 操作時間 = DateTime.Now.ToDateTimeString_6();

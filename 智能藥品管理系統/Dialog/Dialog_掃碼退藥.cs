@@ -67,7 +67,7 @@ namespace 智能藥品管理系統
             this.pLC_Device_抽屜感應 = pLC_Device_抽屜感應;
 
             this.sqL_DataGridView_參數設定_藥檔資料.Init(sQL_DataGridView_藥檔資料);
-
+            this.sqL_DataGridView_參數設定_藥檔資料.Set_ColumnWidth(100, "藥品碼");
 
         }
 
@@ -86,7 +86,8 @@ namespace 智能藥品管理系統
             this.MyThread_porgram.Add_Method(sub_program);
             this.MyThread_porgram.Add_Method(this.plC_Button_空瓶繳回.Run);
             this.MyThread_porgram.Add_Method(this.plC_Button_實瓶繳回.Run);
-         
+            this.MyThread_porgram.Add_Method(this.plC_Button_手輸退藥.Run);
+
             this.MyThread_porgram.AutoRun(true);
             this.MyThread_porgram.SetSleepTime(100);
             this.MyThread_porgram.Trigger();
@@ -210,63 +211,80 @@ namespace 智能藥品管理系統
             this.plC_Button_實瓶繳回.Bool = false;
             this.plC_Button_手輸退藥.Bool = true;
 
-            this.plC_Button_空瓶繳回.Enabled = false;
-            this.plC_Button_實瓶繳回.Enabled = false;
+            //this.plC_Button_空瓶繳回.Enabled = false;
+            //this.plC_Button_實瓶繳回.Enabled = false;
 
         }
         private void PlC_RJ_Button_確認_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_退藥藥品 = this.sqL_DataGridView_退藥藥品.GetAllRows();
             List<object[]> list_退藥藥品_ADD = new List<object[]>();
+
+            bool flag_alert = false;
             this.Invoke(new Action(delegate
             {
-                if (this.plC_Button_手輸退藥.Bool == true)
+                for (int i = 0; i < list_退藥藥品.Count; i++)
                 {
-                    if (MyMessageBox.ShowDialog("※注意※ 選取手輸退藥會數量會扣除ADC庫存,是否繼續?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes)
+                    string 動作 = list_退藥藥品[i][(int)enum_掃碼退藥.動作].ObjectToString();
+                    if (動作 == "手輸退藥")
                     {
-                        return;
-                    }
-                 
-                    for (int i = 0; i < list_退藥藥品.Count; i++)
-                    {
-                        string 藥碼 = list_退藥藥品[i][(int)enum_掃碼退藥.藥品碼].ObjectToString();
-                        string 藥名 = list_退藥藥品[i][(int)enum_掃碼退藥.藥品名稱].ObjectToString();
-                        int 數量 = list_退藥藥品[i][(int)enum_掃碼退藥.數量].ObjectToString().StringToInt32();
-                        數量 = 數量 * -1;
-                        List<object[]> list_儲位資料 = Form1.Function_儲位管理_儲位資料_取得儲位資料(藥碼);
-                        int 總庫存 = 0;
-                        for (int k = 0; k < list_儲位資料.Count; k++)
+                        if (flag_alert == false)
                         {
-                            總庫存 += list_儲位資料[k][(int)enum_儲位管理_儲位資料.總庫存].ObjectToString().StringToInt32();
- 
-                        }
-                        if (總庫存 < 數量 * -1)
-                        {
-                            MyMessageBox.ShowDialog($"<{藥碼}> {藥名} 庫存不足無法退藥");
-                            continue;
-                        }
-                        List<Form1.Class_取藥數組> list_Class_取藥數組 = Form1.Function_主畫面_取得取藥數組(list_儲位資料, 藥碼);
-                        list_Class_取藥數組 = Form1.Function_主畫面_取藥數組運算(list_Class_取藥數組, 數量);
-                        if (list_Class_取藥數組.Count == 0)
-                        {
-                            MyMessageBox.ShowDialog("找無最佳組合!!");
-                            continue;
-                        }
-                        for (int k = 0; k < list_Class_取藥數組.Count; k++)
-                        {
-                            List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.IP, list_Class_取藥數組[i].IP);
-                            if (list_儲位資料_buf.Count > 0)
+                            if (MyMessageBox.ShowDialog("※注意※ 選取手輸退藥會數量會扣除ADC庫存,是否繼續?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes)
                             {
-                                Form1.Function_儲位管理_儲位資料_儲位資料庫存異動(list_儲位資料_buf[0], -1);
-
+                                flag_alert = true;
+                                return;
                             }
-                        }
-                        list_退藥藥品[i][(int)enum_掃碼退藥.庫存量] = 總庫存;
-                        list_退藥藥品[i][(int)enum_掃碼退藥.結存量] = 總庫存 + 數量;
-                        list_退藥藥品_ADD.Add(list_退藥藥品[i]);
-                    }
 
+                        }
+                    }
+                    else
+                    {
+                        list_退藥藥品_ADD.Add(list_退藥藥品[i]);
+                        continue;
+                    }
+                    string 藥碼 = list_退藥藥品[i][(int)enum_掃碼退藥.藥品碼].ObjectToString();
+                    string 藥名 = list_退藥藥品[i][(int)enum_掃碼退藥.藥品名稱].ObjectToString();
+                    int 數量 = list_退藥藥品[i][(int)enum_掃碼退藥.數量].ObjectToString().StringToInt32();
+                    數量 = 數量 * -1;
+                    List<object[]> list_儲位資料 = Form1.Function_儲位管理_儲位資料_取得儲位資料(藥碼);
+                    int 總庫存 = 0;
+                    for (int k = 0; k < list_儲位資料.Count; k++)
+                    {
+                        總庫存 += list_儲位資料[k][(int)enum_儲位管理_儲位資料.總庫存].ObjectToString().StringToInt32();
+
+                    }
+                    if (總庫存 < 數量 * -1)
+                    {
+                        MyMessageBox.ShowDialog($"<{藥碼}> {藥名} 庫存不足無法退藥");
+                        continue;
+                    }
+                    List<Form1.Class_取藥數組> list_Class_取藥數組 = Form1.Function_主畫面_取得取藥數組(list_儲位資料, 藥碼);
+                    list_Class_取藥數組 = Form1.Function_主畫面_取藥數組運算(list_Class_取藥數組, 數量);
+                    if (list_Class_取藥數組.Count == 0)
+                    {
+                        MyMessageBox.ShowDialog("找無最佳組合!!");
+                        continue;
+                    }
+                    for (int k = 0; k < list_Class_取藥數組.Count; k++)
+                    {
+                        List<object[]> list_儲位資料_buf = list_儲位資料.GetRows((int)enum_儲位管理_儲位資料.IP, list_Class_取藥數組[i].IP);
+                        if (list_儲位資料_buf.Count > 0)
+                        {
+                            Form1.Function_儲位管理_儲位資料_儲位資料庫存異動(list_儲位資料_buf[0], -1);
+                            string IP = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.IP].ObjectToString();
+                            int Port = list_儲位資料_buf[i][(int)enum_儲位管理_儲位資料.Port].ObjectToString().StringToInt32();
+                            Form1._wT32_GPADC.Set_ScreenPageInit(IP, Port, false);
+                            Form1._wT32_GPADC.Set_ToPage(IP, Port, (int)H_Pannel_lib.StorageUI_WT32.enum_Page.主頁面);
+                            Form1._wT32_GPADC.Set_JsonStringSend(IP, Port);
+
+                        }
+                    }
+                    list_退藥藥品[i][(int)enum_掃碼退藥.庫存量] = 總庫存;
+                    list_退藥藥品[i][(int)enum_掃碼退藥.結存量] = 總庫存 + 數量;
+                    list_退藥藥品_ADD.Add(list_退藥藥品[i]);
                 }
+          
                 this.sqL_DataGridView_退藥藥品.RefreshGrid(list_退藥藥品_ADD);
 
                 this.MyThread_porgram.Abort();

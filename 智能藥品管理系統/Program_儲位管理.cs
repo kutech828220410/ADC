@@ -116,11 +116,11 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_儲位管理_套餐資料_填入儲位.MouseDownEvent += PlC_RJ_Button_儲位管理_套餐資料_填入儲位_MouseDownEvent;
             this.plC_RJ_Button_儲位管理_儲位資料_新增效期測試.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_新增效期測試_MouseDownEvent;
             this.plC_RJ_Button_儲位管理_儲位資料_畫面更新.MouseDownEvent += PlC_RJ_Button_儲位管理_儲位資料_畫面更新_MouseDownEvent;
-
+            _wT32_GPADC = wT32_GPADC;
             _storageUI_WT32 = storageUI_WT32;
             _sqL_DataGridView_儲位管理_參數設定 = sqL_DataGridView_儲位管理_參數設定;
-            _sqL_DataGridView_儲位管理_參數設定 = sqL_DataGridView_儲位管理_套餐資料;
-            _sqL_DataGridView_儲位管理_參數設定 = sqL_DataGridView_儲位管理_儲位資料;
+            _sqL_DataGridView_儲位管理_套餐資料 = sqL_DataGridView_儲位管理_套餐資料;
+            _sqL_DataGridView_儲位管理_儲位資料 = sqL_DataGridView_儲位管理_儲位資料;
         }
 
 

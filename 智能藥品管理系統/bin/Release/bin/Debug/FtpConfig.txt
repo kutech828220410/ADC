@@ -1,0 +1,5 @@
+{
+  "FTP_Server": "",
+  "FTP_username": "",
+  "FTP_password": ""
+}

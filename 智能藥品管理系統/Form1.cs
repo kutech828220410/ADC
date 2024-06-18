@@ -259,14 +259,39 @@ namespace 智能藥品管理系統
             this.MyThread_ProgramPLC.Add_Method(this.Program_PLC);
             this.MyThread_ProgramPLC.AutoRun(true);
             this.MyThread_ProgramPLC.Trigger();
+
+            this.ToolStripMenuItem_刪除.Click += ToolStripMenuItem_刪除_Click;
         }
+
+   
 
         private void Button_TEST_Click(object sender, EventArgs e)
         {
             List<object[]> list_儲位資料 = Function_儲位管理_儲位資料_取得儲位資料();
             List<Class_取藥數組> list_取藥數組 = Function_主畫面_取得取藥數組(list_儲位資料, "08244");
         }
+        private void ToolStripMenuItem_刪除_Click(object sender, EventArgs e)
+        {
+            if (plC_RJ_Button_主畫面_登入.Texts  == "登入")
+            {
+                MyMessageBox.ShowDialog("使用者未登入");
+                return;
+            }
+            List<object[]> list_value = this.sqL_DataGridView_前次使用紀錄.Get_All_Select_RowsValues();
+            List<object[]> list_value_buf = new List<object[]>();
+            if (list_value.Count ==0 )
+            {
+                MyMessageBox.ShowDialog("未選取資料");
+                return;
+            }
+            string 動作 = list_value[0][(int)enum_交易記錄查詢資料.動作].ObjectToString();
+            list_value[0][(int)enum_交易記錄查詢資料.動作] = $"{動作}-已刪除";
+            list_value_buf.Add(list_value[0]);
+            this.sqL_DataGridView_交易記錄查詢.SQL_ReplaceExtra(list_value_buf, false);
+            this.sqL_DataGridView_前次使用紀錄.DeleteExtra(list_value_buf, true);
 
+
+        }
         #region PLC_Method
         PLC_Device PLC_Device_Method = new PLC_Device("");
         PLC_Device PLC_Device_Method_OK = new PLC_Device("");

@@ -148,6 +148,7 @@ namespace 智能藥品管理系統
                 dateTime_end = new DateTime(dateTime_end.Year, dateTime_end.Month, dateTime_end.Day, 23, 59, 59);
                 list_value = list_value.GetRowsInDate((int)enum_交易記錄查詢資料.開方時間, dateTime_start, dateTime_end);
             }
+            list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.手輸退藥.GetEnumName()));
 
             if (plC_RJ_ChechBox_交易紀錄查詢_掃碼領藥.Checked)
             {
@@ -168,7 +169,6 @@ namespace 智能藥品管理系統
             if (plC_RJ_ChechBox_交易紀錄查詢_手輸退藥.Checked)
             {
                 list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.退藥回收.GetEnumName()));
-                list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.手輸退藥.GetEnumName()));
                 list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.空瓶繳回.GetEnumName()));
                 list_list_value.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.實瓶繳回.GetEnumName()));
             }
