@@ -79,6 +79,7 @@ namespace 智能藥品管理系統
             }
             this.sqL_DataGridView_主畫面_領退藥作業列表.DataGridRefreshEvent += SqL_DataGridView_主畫面_領退藥作業列表_DataGridRefreshEvent;
             plC_RJ_Button_主畫面_開始作業.MouseDownEvent += PlC_RJ_Button_主畫面_開始作業_MouseDownEvent;
+            plC_RJ_Button_主畫面_刪除.MouseDownEvent += PlC_RJ_Button_主畫面_刪除_MouseDownEvent;
             this.plC_RJ_Button_主畫面_領退藥_識別登入.MouseDownEvent += PlC_RJ_Button_主畫面_領退藥_識別登入_MouseDownEvent;
             this.MyThread_取藥堆疊 = new MyThread();
             this.MyThread_取藥堆疊.Add_Method(sub_Program_主畫面_取藥堆疊檢查);
@@ -87,7 +88,6 @@ namespace 智能藥品管理系統
             this.MyThread_取藥堆疊.Trigger();
         }
 
-   
 
         private bool flag_Program_主畫面 = false;
         private void Program_主畫面()
@@ -2517,6 +2517,11 @@ namespace 智能藥品管理系統
         private void PlC_RJ_Button_主畫面_開始作業_MouseDownEvent(MouseEventArgs mevent)
         {
             flag_開始作業 = true;
+        }
+
+        private void PlC_RJ_Button_主畫面_刪除_MouseDownEvent(MouseEventArgs mevent)
+        {
+            ToolStripMenuItem_刪除_Click(null, null);
         }
         #endregion
 

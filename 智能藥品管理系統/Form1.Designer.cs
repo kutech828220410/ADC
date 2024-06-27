@@ -65,6 +65,8 @@
             this.sqL_DataGridView_前次使用紀錄 = new SQLUI.SQL_DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_刪除 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.plC_RJ_Button_主畫面_刪除 = new MyUI.PLC_RJ_Button();
             this.rJ_GroupBox3 = new MyUI.RJ_GroupBox();
             this.sqL_DataGridView_主畫面_領退藥作業列表 = new SQLUI.SQL_DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -588,6 +590,7 @@
             this.rJ_GroupBox12.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox12.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel22.SuspendLayout();
             this.rJ_GroupBox3.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1331,6 +1334,7 @@
             this.rJ_GroupBox12.ContentsPanel.BorderRadius = 0;
             this.rJ_GroupBox12.ContentsPanel.BorderSize = 2;
             this.rJ_GroupBox12.ContentsPanel.Controls.Add(this.sqL_DataGridView_前次使用紀錄);
+            this.rJ_GroupBox12.ContentsPanel.Controls.Add(this.panel22);
             this.rJ_GroupBox12.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox12.ContentsPanel.ForeColor = System.Drawing.Color.White;
             this.rJ_GroupBox12.ContentsPanel.IsSelected = false;
@@ -1339,9 +1343,9 @@
             this.rJ_GroupBox12.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.rJ_GroupBox12.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_GroupBox12.ContentsPanel.ShadowSize = 0;
-            this.rJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(1056, 745);
+            this.rJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(1056, 372);
             this.rJ_GroupBox12.ContentsPanel.TabIndex = 2;
-            this.rJ_GroupBox12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_GroupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox12.GUID = "";
             this.rJ_GroupBox12.Location = new System.Drawing.Point(0, 1314);
             this.rJ_GroupBox12.Name = "rJ_GroupBox12";
@@ -1349,7 +1353,7 @@
             this.rJ_GroupBox12.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox12.PannelBorderRadius = 0;
             this.rJ_GroupBox12.PannelBorderSize = 2;
-            this.rJ_GroupBox12.Size = new System.Drawing.Size(1056, 782);
+            this.rJ_GroupBox12.Size = new System.Drawing.Size(1056, 409);
             this.rJ_GroupBox12.TabIndex = 12;
             this.rJ_GroupBox12.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox12.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -1393,7 +1397,7 @@
             this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns13"))));
             this.sqL_DataGridView_前次使用紀錄.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_前次使用紀錄.Columns14"))));
             this.sqL_DataGridView_前次使用紀錄.ContextMenuStrip = this.contextMenuStrip1;
-            this.sqL_DataGridView_前次使用紀錄.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sqL_DataGridView_前次使用紀錄.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sqL_DataGridView_前次使用紀錄.Font = new System.Drawing.Font("新細明體", 9F);
             this.sqL_DataGridView_前次使用紀錄.ImageBox = false;
             this.sqL_DataGridView_前次使用紀錄.Location = new System.Drawing.Point(5, 5);
@@ -1408,7 +1412,7 @@
             this.sqL_DataGridView_前次使用紀錄.RowsHeight = 90;
             this.sqL_DataGridView_前次使用紀錄.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_前次使用紀錄.Server = "localhost";
-            this.sqL_DataGridView_前次使用紀錄.Size = new System.Drawing.Size(1046, 970);
+            this.sqL_DataGridView_前次使用紀錄.Size = new System.Drawing.Size(1046, 299);
             this.sqL_DataGridView_前次使用紀錄.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_前次使用紀錄.TabIndex = 45;
             this.sqL_DataGridView_前次使用紀錄.TableName = "trading";
@@ -1437,6 +1441,68 @@
             this.ToolStripMenuItem_刪除.Name = "ToolStripMenuItem_刪除";
             this.ToolStripMenuItem_刪除.Size = new System.Drawing.Size(98, 22);
             this.ToolStripMenuItem_刪除.Text = "刪除";
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.plC_RJ_Button_主畫面_刪除);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel22.Location = new System.Drawing.Point(5, 304);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(1046, 63);
+            this.panel22.TabIndex = 46;
+            // 
+            // plC_RJ_Button_主畫面_刪除
+            // 
+            this.plC_RJ_Button_主畫面_刪除.AutoResetState = false;
+            this.plC_RJ_Button_主畫面_刪除.BackgroundColor = System.Drawing.Color.Red;
+            this.plC_RJ_Button_主畫面_刪除.Bool = false;
+            this.plC_RJ_Button_主畫面_刪除.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.plC_RJ_Button_主畫面_刪除.BorderRadius = 10;
+            this.plC_RJ_Button_主畫面_刪除.BorderSize = 0;
+            this.plC_RJ_Button_主畫面_刪除.but_press = false;
+            this.plC_RJ_Button_主畫面_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_主畫面_刪除.DisenableColor = System.Drawing.Color.Gray;
+            this.plC_RJ_Button_主畫面_刪除.Dock = System.Windows.Forms.DockStyle.Right;
+            this.plC_RJ_Button_主畫面_刪除.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_主畫面_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_主畫面_刪除.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_刪除.GUID = "";
+            this.plC_RJ_Button_主畫面_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_主畫面_刪除.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_主畫面_刪除.Location = new System.Drawing.Point(842, 0);
+            this.plC_RJ_Button_主畫面_刪除.Name = "plC_RJ_Button_主畫面_刪除";
+            this.plC_RJ_Button_主畫面_刪除.OFF_文字內容 = "刪除";
+            this.plC_RJ_Button_主畫面_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_主畫面_刪除.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_刪除.OFF_背景顏色 = System.Drawing.Color.Red;
+            this.plC_RJ_Button_主畫面_刪除.ON_BorderSize = 5;
+            this.plC_RJ_Button_主畫面_刪除.ON_文字內容 = "刪除";
+            this.plC_RJ_Button_主畫面_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F);
+            this.plC_RJ_Button_主畫面_刪除.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_刪除.ON_背景顏色 = System.Drawing.Color.Red;
+            this.plC_RJ_Button_主畫面_刪除.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_主畫面_刪除.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_主畫面_刪除.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_主畫面_刪除.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_主畫面_刪除.ShadowSize = 0;
+            this.plC_RJ_Button_主畫面_刪除.ShowLoadingForm = false;
+            this.plC_RJ_Button_主畫面_刪除.Size = new System.Drawing.Size(204, 63);
+            this.plC_RJ_Button_主畫面_刪除.State = false;
+            this.plC_RJ_Button_主畫面_刪除.TabIndex = 127;
+            this.plC_RJ_Button_主畫面_刪除.Text = "刪除";
+            this.plC_RJ_Button_主畫面_刪除.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_主畫面_刪除.TextHeight = 0;
+            this.plC_RJ_Button_主畫面_刪除.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_主畫面_刪除.字型鎖住 = false;
+            this.plC_RJ_Button_主畫面_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_主畫面_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_主畫面_刪除.文字鎖住 = false;
+            this.plC_RJ_Button_主畫面_刪除.背景圖片 = null;
+            this.plC_RJ_Button_主畫面_刪除.讀取位元反向 = false;
+            this.plC_RJ_Button_主畫面_刪除.讀寫鎖住 = false;
+            this.plC_RJ_Button_主畫面_刪除.音效 = true;
+            this.plC_RJ_Button_主畫面_刪除.顯示 = false;
+            this.plC_RJ_Button_主畫面_刪除.顯示狀態 = false;
             // 
             // rJ_GroupBox3
             // 
@@ -6395,7 +6461,7 @@
             this.tabPage4.Controls.Add(this.rJ_GroupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1048, 825);
+            this.tabPage4.Size = new System.Drawing.Size(1048, 1645);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "套餐設定";
             // 
@@ -6420,7 +6486,7 @@
             this.rJ_GroupBox8.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.rJ_GroupBox8.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_GroupBox8.ContentsPanel.ShadowSize = 0;
-            this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(656, 4);
+            this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(656, 824);
             this.rJ_GroupBox8.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_GroupBox8.GUID = "";
@@ -6430,7 +6496,7 @@
             this.rJ_GroupBox8.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox8.PannelBorderRadius = -37;
             this.rJ_GroupBox8.PannelBorderSize = 2;
-            this.rJ_GroupBox8.Size = new System.Drawing.Size(656, 41);
+            this.rJ_GroupBox8.Size = new System.Drawing.Size(656, 861);
             this.rJ_GroupBox8.TabIndex = 2;
             this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox8.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -6627,7 +6693,7 @@
             this.rJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.rJ_GroupBox5.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_GroupBox5.ContentsPanel.ShadowSize = 0;
-            this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(392, 4);
+            this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(392, 824);
             this.rJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox5.GUID = "";
@@ -6637,7 +6703,7 @@
             this.rJ_GroupBox5.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox5.PannelBorderRadius = -37;
             this.rJ_GroupBox5.PannelBorderSize = 2;
-            this.rJ_GroupBox5.Size = new System.Drawing.Size(392, 41);
+            this.rJ_GroupBox5.Size = new System.Drawing.Size(392, 861);
             this.rJ_GroupBox5.TabIndex = 1;
             this.rJ_GroupBox5.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox5.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -7345,7 +7411,7 @@
             this.tabPage5.Controls.Add(this.rJ_GroupBox11);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1048, 825);
+            this.tabPage5.Size = new System.Drawing.Size(1048, 1645);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "手術房設定";
             // 
@@ -15257,7 +15323,7 @@
             this.tabPage7.Controls.Add(this.plC_RJ_GroupBox17);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1048, 822);
+            this.tabPage7.Size = new System.Drawing.Size(1048, 1642);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "設定02";
             // 
@@ -15622,6 +15688,7 @@
             this.rJ_GroupBox12.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox12.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
             this.rJ_GroupBox3.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -16295,6 +16362,8 @@
         private MyUI.PLC_Button plC_Button69;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_刪除;
+        private System.Windows.Forms.Panel panel22;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_主畫面_刪除;
     }
 }
 

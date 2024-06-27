@@ -280,6 +280,7 @@ namespace 智能藥品管理系統
 
                         }
                     }
+                    list_退藥藥品[i][(int)enum_掃碼退藥.數量] = 數量;
                     list_退藥藥品[i][(int)enum_掃碼退藥.庫存量] = 總庫存;
                     list_退藥藥品[i][(int)enum_掃碼退藥.結存量] = 總庫存 + 數量;
                     list_退藥藥品_ADD.Add(list_退藥藥品[i]);
