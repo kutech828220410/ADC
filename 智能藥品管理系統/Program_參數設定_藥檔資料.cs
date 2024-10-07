@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyUI;
 using Basic;
+using HIS_DB_Lib;
 namespace 智能藥品管理系統
 {
     public enum enum_參數設定_藥檔資料
@@ -478,15 +479,15 @@ namespace 智能藥品管理系統
                 if(list_雲端藥檔_buf.Count > 0)
                 {
                     bool replace = false;
-                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品名稱].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_藥檔資料.藥品名稱].ObjectToString()) replace = true;
-                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品中文名稱].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_藥檔資料.中文名稱].ObjectToString()) replace = true;
-                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.包裝單位].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_藥檔資料.包裝數量].ObjectToString()) replace = true;
-                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品條碼1].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_藥檔資料.藥品條碼1].ObjectToString()) replace = true;
+                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品名稱].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品名稱].ObjectToString()) replace = true;
+                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品中文名稱].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_雲端藥檔.中文名稱].ObjectToString()) replace = true;
+                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.包裝單位].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_雲端藥檔.包裝數量].ObjectToString()) replace = true;
+                    if (list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品條碼1].ObjectToString() != list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品條碼1].ObjectToString()) replace = true;
 
-                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_藥檔資料.藥品名稱];
-                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品中文名稱] = list_雲端藥檔_buf[0][(int)enum_藥檔資料.中文名稱];
-                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.包裝單位] = list_雲端藥檔_buf[0][(int)enum_藥檔資料.包裝單位];
-                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品條碼1] = list_雲端藥檔_buf[0][(int)enum_藥檔資料.藥品條碼1];
+                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品名稱];
+                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品中文名稱] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.中文名稱];
+                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.包裝單位] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.包裝單位];
+                    list_本地藥檔[i][(int)enum_參數設定_藥檔資料.藥品條碼1] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品條碼1];
                     if(replace)
                     {
                         list_本地藥檔_replace.Add(list_本地藥檔[i]);
@@ -501,16 +502,16 @@ namespace 智能藥品管理系統
             List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_雲端藥檔_buf = new List<object[]>();
             string 藥品碼 = this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品碼.Text;
-            list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_藥檔資料.藥品碼, 藥品碼);
+            list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, 藥品碼);
             if(list_雲端藥檔_buf.Count == 0)
             {
                 MyMessageBox.ShowDialog("查無資料!");
                 return;
             }
-            this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品名稱.Text = list_雲端藥檔_buf[0][(int)enum_藥檔資料.藥品名稱].ObjectToString();
-            this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品中文名稱.Text = list_雲端藥檔_buf[0][(int)enum_藥檔資料.中文名稱].ObjectToString();
-            this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品條碼.Text = list_雲端藥檔_buf[0][(int)enum_藥檔資料.藥品條碼1].ObjectToString();
-            this.rJ_TextBox_參數設定_藥檔資料_資料內容_包裝單位.Text = list_雲端藥檔_buf[0][(int)enum_藥檔資料.包裝單位].ObjectToString();
+            this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品名稱.Text = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品名稱].ObjectToString();
+            this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品中文名稱.Text = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.中文名稱].ObjectToString();
+            this.rJ_TextBox_參數設定_藥檔資料_資料內容_藥品條碼.Text = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品條碼1].ObjectToString();
+            this.rJ_TextBox_參數設定_藥檔資料_資料內容_包裝單位.Text = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.包裝單位].ObjectToString();
         }
         #endregion
         private class ICP_參數設定_藥檔資料 : IComparer<object[]>

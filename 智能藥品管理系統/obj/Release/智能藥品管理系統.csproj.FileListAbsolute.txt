@@ -315,3 +315,4 @@ C:\Users\User\source\repos\ADC\智能藥品管理系統\obj\Release\智能藥品
 C:\Users\User\source\repos\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.csproj.CopyComplete
 C:\Users\User\source\repos\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.exe
 C:\Users\User\source\repos\ADC\智能藥品管理系統\obj\Release\智能藥品管理系統.pdb
+C:\Users\HS\Source\Repos\ADC\智能藥品管理系統\bin\Release\HIS_DB_Lib.dll

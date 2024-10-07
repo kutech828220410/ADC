@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyUI;
 using Basic;
+using HIS_DB_Lib;
+
 namespace 智能藥品管理系統
 {
     public enum enum_藥檔資料
