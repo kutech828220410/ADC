@@ -2429,6 +2429,7 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_取物門_移動到關門位置.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_取物門_移動到關門位置開始");
                 PLC_Device_取物門_移動到關門位置.Bool = true;
                 cnt++;
             }
@@ -2437,6 +2438,8 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_取物門_移動到關門位置.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_取物門_移動到關門位置結束");
+
                 cnt++;
             }
         }
@@ -2444,6 +2447,8 @@ namespace 智能藥品管理系統
         {
             if(!PLC_Device_移動至出貨位置.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_移動至出貨位置開始");
+
                 PLC_Device_移動至出貨位置.Bool = true;
                 cnt++;
             }        
@@ -2452,6 +2457,8 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_移動至出貨位置.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_移動至出貨位置結束");
+
                 cnt++;
             }
         }
@@ -2459,6 +2466,8 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_輸送帶.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_輸送帶開始");
+
                 PLC_Device_輸送帶.Bool = true;
                 cnt++;
             }
@@ -2467,6 +2476,8 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_輸送帶.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_輸送帶結束");
+
                 cnt++;
             }
         }
@@ -2474,6 +2485,8 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_取物門_移動到開門位置.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_移動到開門位置開始");
+
                 PLC_Device_取物門_移動到開門位置.Bool = true;
                 cnt++;
             }
@@ -2482,6 +2495,8 @@ namespace 智能藥品管理系統
         {
             if (!PLC_Device_取物門_移動到開門位置.Bool)
             {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - cnt_Program_清空出料盤_移動到開門位置結束");
+
                 cnt++;
             }
         }

@@ -72,7 +72,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_開始取藥 = new System.Windows.Forms.Panel();
             this.plC_RJ_Button_主畫面_開始作業 = new MyUI.PLC_RJ_Button();
-            this.plC_Button67 = new MyUI.PLC_Button();
+            this.plC_Button_清空出料盤 = new MyUI.PLC_Button();
             this.plC_RJ_Button_主畫面_領退藥_識別登入 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_GroupBox6 = new MyUI.PLC_RJ_GroupBox();
             this.myFaceIDUI_Main = new MyFaceID.MyFaceIDUI();
@@ -1612,7 +1612,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel_開始取藥);
-            this.panel2.Controls.Add(this.plC_Button67);
+            this.panel2.Controls.Add(this.plC_Button_清空出料盤);
             this.panel2.Controls.Add(this.plC_RJ_Button_主畫面_領退藥_識別登入);
             this.panel2.Controls.Add(this.plC_RJ_GroupBox6);
             this.panel2.Controls.Add(this.plC_MultiStateDisplay_主畫面_狀態顯示);
@@ -1628,9 +1628,9 @@
             // panel_開始取藥
             // 
             this.panel_開始取藥.Controls.Add(this.plC_RJ_Button_主畫面_開始作業);
-            this.panel_開始取藥.Location = new System.Drawing.Point(112, 182);
+            this.panel_開始取藥.Location = new System.Drawing.Point(112, 275);
             this.panel_開始取藥.Name = "panel_開始取藥";
-            this.panel_開始取藥.Size = new System.Drawing.Size(832, 569);
+            this.panel_開始取藥.Size = new System.Drawing.Size(832, 476);
             this.panel_開始取藥.TabIndex = 12;
             this.panel_開始取藥.Visible = false;
             // 
@@ -1669,7 +1669,7 @@
             this.plC_RJ_Button_主畫面_開始作業.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Button_主畫面_開始作業.ShadowSize = 0;
             this.plC_RJ_Button_主畫面_開始作業.ShowLoadingForm = false;
-            this.plC_RJ_Button_主畫面_開始作業.Size = new System.Drawing.Size(832, 569);
+            this.plC_RJ_Button_主畫面_開始作業.Size = new System.Drawing.Size(832, 476);
             this.plC_RJ_Button_主畫面_開始作業.State = false;
             this.plC_RJ_Button_主畫面_開始作業.TabIndex = 10;
             this.plC_RJ_Button_主畫面_開始作業.Text = "可繼續掃描藥單\n按我\n【開始取藥】";
@@ -1691,40 +1691,40 @@
             this.plC_RJ_Button_主畫面_開始作業.顯示 = false;
             this.plC_RJ_Button_主畫面_開始作業.顯示狀態 = false;
             // 
-            // plC_Button67
+            // plC_Button_清空出料盤
             // 
-            this.plC_Button67.Bool = false;
-            this.plC_Button67.but_press = false;
-            this.plC_Button67.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_Button67.Location = new System.Drawing.Point(622, 247);
-            this.plC_Button67.Name = "plC_Button67";
-            this.plC_Button67.OFF_文字內容 = "清空儲料盤";
-            this.plC_Button67.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_Button67.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.plC_Button67.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
-            this.plC_Button67.ON_文字內容 = "清空儲料盤";
-            this.plC_Button67.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_Button67.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_Button67.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
-            this.plC_Button67.Size = new System.Drawing.Size(166, 81);
-            this.plC_Button67.Style = MyUI.PLC_Button.StyleEnum.經典;
-            this.plC_Button67.TabIndex = 11;
-            this.plC_Button67.事件驅動 = false;
-            this.plC_Button67.字型鎖住 = false;
-            this.plC_Button67.寫入元件位置 = "S6900";
-            this.plC_Button67.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
-            this.plC_Button67.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
-            this.plC_Button67.文字鎖住 = false;
-            this.plC_Button67.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button67.狀態OFF圖片")));
-            this.plC_Button67.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button67.狀態ON圖片")));
-            this.plC_Button67.致能讀取位置 = "S6901";
-            this.plC_Button67.讀取位元反向 = false;
-            this.plC_Button67.讀取元件位置 = "S6900";
-            this.plC_Button67.讀寫鎖住 = false;
-            this.plC_Button67.起始狀態 = false;
-            this.plC_Button67.音效 = true;
-            this.plC_Button67.顯示 = false;
-            this.plC_Button67.顯示狀態 = false;
+            this.plC_Button_清空出料盤.Bool = false;
+            this.plC_Button_清空出料盤.but_press = false;
+            this.plC_Button_清空出料盤.Enabled = false;
+            this.plC_Button_清空出料盤.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button_清空出料盤.Location = new System.Drawing.Point(622, 247);
+            this.plC_Button_清空出料盤.Name = "plC_Button_清空出料盤";
+            this.plC_Button_清空出料盤.OFF_文字內容 = "清空儲料盤";
+            this.plC_Button_清空出料盤.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_Button_清空出料盤.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button_清空出料盤.OFF_背景顏色 = System.Drawing.Color.DarkGray;
+            this.plC_Button_清空出料盤.ON_文字內容 = "清空儲料盤";
+            this.plC_Button_清空出料盤.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_Button_清空出料盤.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button_清空出料盤.ON_背景顏色 = System.Drawing.Color.Black;
+            this.plC_Button_清空出料盤.Size = new System.Drawing.Size(166, 81);
+            this.plC_Button_清空出料盤.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button_清空出料盤.TabIndex = 11;
+            this.plC_Button_清空出料盤.事件驅動 = false;
+            this.plC_Button_清空出料盤.字型鎖住 = false;
+            this.plC_Button_清空出料盤.寫入元件位置 = "S6900";
+            this.plC_Button_清空出料盤.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
+            this.plC_Button_清空出料盤.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button_清空出料盤.文字鎖住 = false;
+            this.plC_Button_清空出料盤.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_清空出料盤.狀態OFF圖片")));
+            this.plC_Button_清空出料盤.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_清空出料盤.狀態ON圖片")));
+            this.plC_Button_清空出料盤.讀取位元反向 = false;
+            this.plC_Button_清空出料盤.讀取元件位置 = "S6900";
+            this.plC_Button_清空出料盤.讀寫鎖住 = false;
+            this.plC_Button_清空出料盤.起始狀態 = false;
+            this.plC_Button_清空出料盤.音效 = true;
+            this.plC_Button_清空出料盤.顯示 = false;
+            this.plC_Button_清空出料盤.顯示狀態 = false;
             // 
             // plC_RJ_Button_主畫面_領退藥_識別登入
             // 
@@ -16350,7 +16350,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_儲位管理_儲位資料_新增效期測試;
         private MyUI.RJ_GroupBox rJ_GroupBox12;
         private SQLUI.SQL_DataGridView sqL_DataGridView_前次使用紀錄;
-        private MyUI.PLC_Button plC_Button67;
+        private MyUI.PLC_Button plC_Button_清空出料盤;
         private MyUI.RJ_Lable rJ_Lable12;
         private MyUI.RJ_TextBox rJ_TextBox_儲位管理_儲位資料_可放置盒數;
         private MyUI.RJ_Lable rJ_Lable13;

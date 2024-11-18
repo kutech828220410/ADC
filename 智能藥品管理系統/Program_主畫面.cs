@@ -213,12 +213,13 @@ namespace 智能藥品管理系統
             {
                 PLC_Device_主畫面_領退藥_狀態顯示_02.Bool = true;
                 PLC_Device_主畫面_領退藥按鈕致能.Bool = true;
-                PLC_Device_清空出料盤_致能.Bool = true;
+                this.Invoke(new Action(delegate { plC_Button_清空出料盤.Enabled = true;}));
                 this.Invoke(new Action(delegate
                 {
                     PLC_Device_主畫面_退藥按鈕.Bool = false;
                     PLC_Device_主畫面_領藥按鈕.Bool = false;
                     plC_RJ_Button_主畫面_登入.Texts = "登出";
+                    plC_Button_清空出料盤.Enabled = true;
                     textBox_主畫面_帳號.Texts = "";
                     textBox_主畫面_密碼.Texts = "";
                     this.panel_開始取藥.Visible = false;
@@ -349,7 +350,6 @@ namespace 智能藥品管理系統
             if (cnt_Program_主畫面_領退藥 == 65501)
             {
                 PLC_Device_主畫面_領退藥_識別登入 = false;
-                PLC_Device_清空出料盤_致能.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_01.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_02.Bool = false;
                 PLC_Device_主畫面_領退藥_狀態顯示_03.Bool = false;
@@ -362,6 +362,7 @@ namespace 智能藥品管理系統
                 this.Invoke(new Action(delegate
                 {
                     plC_RJ_Button_主畫面_登入.Texts = "登入";
+                    plC_Button_清空出料盤.Enabled = false;
                 }));
                 flag_開始作業 = false;
                 PLC_Device_主畫面_領退藥.Bool = false;
@@ -513,7 +514,8 @@ namespace 智能藥品管理系統
             PLC_Device_主畫面_領藥按鈕.Bool = false;
             PLC_Device_主畫面_退藥按鈕.Bool = false;
             PLC_Device_主畫面_領退藥按鈕致能.Bool = false;
-            PLC_Device_清空出料盤_致能.Bool = false;
+
+            //this.Invoke(new Action(delegate { plC_Button_清空出料盤.Enabled = false;}));
             plC_RJ_Button_主畫面_開始作業.Bool = false;
             while (true)
             {
@@ -657,7 +659,7 @@ namespace 智能藥品管理系統
                 狀態顯示 += $"模式".StringLength(8) + ": <領藥>";
                 狀態顯示 += $"\n請掃描藥單...";
                 this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
-                PLC_Device_清空出料盤_致能.Bool = false;
+                //this.Invoke(new Action(delegate { plC_Button_清空出料盤.Enabled = false;}));
                 PLC_Device_主畫面_退藥按鈕.Bool = false;
                 if (!PLC_Device_主畫面_麻醉部模式.Bool) PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 cnt++;
@@ -672,19 +674,19 @@ namespace 智能藥品管理系統
                 狀態顯示 += $"模式".StringLength(8) + ": <退藥>";
                 狀態顯示 += $"\n請掃描藥單...";
                 this.plC_MultiStateDisplay_主畫面_狀態顯示.SetTextValue(PLC_Device_主畫面_領退藥_狀態顯示_02.GetAdress(), 狀態顯示);
-                PLC_Device_清空出料盤_致能.Bool = false;
+                //this.Invoke(new Action(delegate { plC_Button_清空出料盤.Enabled = false;}));
                 PLC_Device_主畫面_領藥按鈕.Bool = false;
                 if (!PLC_Device_主畫面_麻醉部模式.Bool) PLC_Device_Scanner_讀取藥單資料.Bool = false;
                 cnt++;
             }
             else if (PLC_Device_清空出料盤.Bool)
             {
-                PLC_Device_清空出料盤_致能.Bool = false;
+                //this.Invoke(new Action(delegate { plC_Button_清空出料盤.Enabled = false;}));
                 PLC_Device_主畫面_領退藥按鈕致能.Bool = false;
             }
             else
             {
-                PLC_Device_清空出料盤_致能.Bool = true;
+                this.Invoke(new Action(delegate { plC_Button_清空出料盤.Enabled = true;}));
                 //PLC_Device_主畫面_領退藥按鈕致能.Bool = true;
             }
         }
