@@ -43,7 +43,9 @@ namespace 智能藥品管理系統
             this.plC_RJ_Button_確認.MouseDownEvent += PlC_RJ_Button_確認_MouseDownEvent;
 
             this.sqL_DataGridView_手術房列表.Init(sQL_DataGridView);
-            this.sqL_DataGridView_手術房列表.SQL_GetAllRows(true);
+            List<object[]> list_var = this.sqL_DataGridView_手術房列表.SQL_GetAllRows(false);
+
+            list_var.Sort(new Form1.ICP_operation_room());
 
             this.Value = new object[new enum_藥檔資料_手術房設定_手術房列表().GetLength()];
         }

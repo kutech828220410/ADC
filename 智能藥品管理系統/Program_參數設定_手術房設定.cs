@@ -28,11 +28,15 @@ namespace 智能藥品管理系統
                 this.sqL_DataGridView_參數設定_手術房設定_手術房列表.SQL_CreateTable();
             }
             this.sqL_DataGridView_參數設定_手術房設定_手術房列表.RowEnterEvent += SqL_DataGridView_參數設定_手術房設定_手術房列表_RowEnterEvent;
+            sqL_DataGridView_參數設定_手術房設定_手術房列表.DataGridRowsChangeRefEvent += SqL_DataGridView_參數設定_手術房設定_手術房列表_DataGridRowsChangeRefEvent;
             this.plC_RJ_Button_參數設定_手術房設定_新增.MouseDownEvent += PlC_RJ_Button_參數設定_手術房設定_新增_MouseDownEvent;
             this.plC_RJ_Button_參數設定_手術房設定_刪除.MouseDownEvent += PlC_RJ_Button_參數設定_手術房設定_刪除_MouseDownEvent;
         }
 
-  
+        private void SqL_DataGridView_參數設定_手術房設定_手術房列表_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            RowsList.Sort(new ICP_operation_room());
+        }
 
         private bool flag_Program_參數設定_手術房設定 = false;
         private void Program_參數設定_手術房設定()
@@ -104,5 +108,23 @@ namespace 智能藥品管理系統
 
         }
         #endregion
+
+        public class ICP_operation_room : IComparer<object[]>
+        {
+            //實作Compare方法
+            //依Speed由小排到大。
+            public int Compare(object[] x, object[] y)
+            {
+
+                int temp0 = x[(int)enum_藥檔資料_手術房設定_手術房列表.GUID].StringToInt32();
+                int temp1 = y[(int)enum_藥檔資料_手術房設定_手術房列表.GUID].StringToInt32();
+                int compare = 0;
+                if (temp0 > temp1) compare = 1;
+                else if (temp0 < temp1) compare = -1;
+                else compare = 0;
+                return compare;
+
+            }
+        }
     }
 }
