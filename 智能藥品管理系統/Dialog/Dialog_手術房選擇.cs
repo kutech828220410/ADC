@@ -46,7 +46,7 @@ namespace 智能藥品管理系統
             List<object[]> list_var = this.sqL_DataGridView_手術房列表.SQL_GetAllRows(false);
 
             list_var.Sort(new Form1.ICP_operation_room());
-
+            sqL_DataGridView_手術房列表.RefreshGrid(list_var);
             this.Value = new object[new enum_藥檔資料_手術房設定_手術房列表().GetLength()];
         }
 
